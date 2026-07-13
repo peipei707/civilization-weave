@@ -1,0 +1,4 @@
+node_modules/
+data/raw_borders/
+*.log
+Thumbs.db

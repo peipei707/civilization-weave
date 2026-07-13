@@ -1,0 +1,667 @@
+id|标题|领域|年份|已有links(+分隔)
+sci_lomekwi|洛迈奎石器|sci|-3300000|sci_oldowan
+sci_oldowan|奥杜威石器工业|sci|-2600000|
+art_blombos|布隆伯斯洞穴刻纹|art|-75000|ooa
+ooa|走出非洲|ren|-70000|neo
+ren_first_australians|澳大利亚原住民定居|ren|-65000|
+ren_neanderthal_admix|尼安德特人遗传印记|ren|-50000|
+ren_denisovan|丹尼索瓦人混血|ren|-40000|ren_first_australians
+art_chauvet|肖维岩洞壁画|art|-30000|
+ren_pygmy|中非俾格米人|ren|-20000|
+art_lascaux|拉斯科洞窟壁画|art|-17000|
+ren_first_americans|美洲首批居民|ren|-15000|ren_mestizo
+art_altamira|阿尔塔米拉洞窟壁画|art|-14500|
+ren_natufian|纳图夫人定居|ren|-12000|neo
+art_jomon|绳纹陶器|art|-10000|
+art_aboriginal|澳洲原住民岩画|art|-10000|
+rel_gobekli|哥贝克力石阵|rel|-9600|neo
+neo|农业革命|eco|-9500|sumer+bantu_a+pol_egypt_kingship+sci_egypt_calendar
+ren_jericho|杰里科塔楼聚落|ren|-9000|
+art_san_rock|南非桑人岩画|art|-8000|
+ren_catalhoyuk|加泰土丘|ren|-7100|
+ren_papuan_highland|巴布亚高地农人|ren|-7000|
+art_tassili|阿杰尔高原岩画|art|-6000|
+sumer|苏美尔城邦|pol|-3500|cunei+hammu
+arc_indoeuropean|印欧语系西迁(弧)|ren|-3300|
+cunei|楔形文字|sci|-3200|phoen+hammu
+pol_egypt_kingship|古埃及法老神王制|pol|-3100|art_egypt_tomb+rel_egypt_afterlife
+eco_money_origin|货币起源 · 美索不达米亚银本位|eco|-3000|eco_lydia_coin
+arc_austronesian|南岛语族扩散(弧)|ren|-3000|art_maori
+sci_egypt_calendar|古埃及历法|sci|-2900|
+art_egypt_tomb|古埃及墓室壁画|art|-2600|
+eco_indus_weights|度量衡 · 印度河谷标准化|eco|-2600|eco_periplus_indian_ocean
+sci_indus_script|印度河谷印章文字|sci|-2600|
+eco_pyramid_labor_economy|金字塔劳役经济 · 古埃及动员|eco|-2560|
+art_indus_seals|印度河印章|art|-2500|
+rel_stonehenge|巨石阵|rel|-2500|
+rel_egypt_afterlife|来世信仰 · 古埃及|rel|-2400|
+pol_akkad|阿卡德帝国|pol|-2334|hammu
+pol_ur3|乌尔第三王朝|pol|-2112|hammu
+ren_khoisan|科伊桑人|ren|-2000|bantu_a
+sci_babylon_sexagesimal|六十进制记数法 · 巴比伦|sci|-1800|
+hammu|汉谟拉比法典|pol|-1754|
+art_qin_bronze|商周青铜器|art|-1600|
+sci_egypt_papyrus|外科医学 · 埃德温·史密斯纸草|sci|-1600|
+rel_vedic_religion|吠陀宗教 · 火祭|rel|-1500|rel_bhakti_tamil
+eco_mycenae_linear_b|王室记账 · 迈锡尼线形文字B|eco|-1400|
+judaism|犹太教 · 一神信仰|rel|-1200|christ+islam
+eco_shell_knife_money|贝币与刀布 · 商周货币|eco|-1200|eco_qin_standard_currency
+art_sanxingdui|三星堆青铜面具|art|-1200|
+arc_phoenician_expansion|腓尼基人地中海殖民(弧)|ren|-1100|pol_carthage_republic
+phoen|腓尼基字母|sci|-1050|athens+thales
+pol_israel_monarchy|大卫所罗门联合王国|pol|-1000|
+rel_zoroaster|琐罗亚斯德教|rel|-1000|christ+islam
+bantu_a|班图迁徙(弧)|ren|-1000|
+art_olmec_head|奥尔梅克巨石头像|art|-900|
+pol_assyria_provinces|亚述行省与强制迁徙|pol|-900|
+art_mesopotamia_relief|亚述宫殿浮雕|art|-865|
+eco_phoenician_trade|腓尼基-迦太基地中海商网|eco|-814|eco_venice_rialto
+pol_kush_meroe|库施 · 麦罗埃王国|pol|-750|
+arc_greek_colonization|希腊人地中海殖民潮(弧)|ren|-750|art_greek_vase+thales
+art_greek_vase|古希腊瓶画|art|-700|
+sci_babylon_astronomy|巴比伦天文观测记录|sci|-700|sci_hipparchus
+phi_upanishads|奥义书 · 梵我合一|phi|-700|phi_adi_shankara
+ren_scythians|斯基泰游牧联盟|ren|-700|
+pol_sparta_constitution|斯巴达军事寡头政制|pol|-650|
+thales|自然哲学 · 米利都|sci|-600|socrates
+eco_lydia_coin|铸币 · 吕底亚金银币|eco|-600|eco_daric_persia+eco_solidus_byzantine
+sci_sushruta|外科医学 · 妙闻本集|sci|-600|
+phi_charvaka|顺世论 · 感官即真理|phi|-600|
+pol_magadha_rise|摩揭陀国崛起|pol|-600|pol_maurya_ashoka
+persia|波斯帝国|pol|-539|alex_a
+buddha|佛教 · 释迦牟尼|rel|-528|silk_a+chan+art_gandhara
+rel_jain|耆那教|rel|-527|pol_gandhi_salt_march
+eco_daric_persia|大流克金币 · 波斯王室铸币|eco|-515|
+athens|雅典民主|pol|-508|rome+enlighten
+confucius|儒家 · 孔子|phi|-500|examsys+neoconf+art_literati+pol_qing_tribute
+laozi|道家 · 老子|phi|-500|chan+rel_daoist_religion+art_chinese_landscape
+art_andean_textile|安第斯纺织艺术|art|-500|
+art_nok|诺克陶塑|art|-500|
+pol_twelve_tables|罗马法典编纂 · 十二铜表法|pol|-450|pol_justinian_code+napcode
+ren_celts|凯尔特人群认同|ren|-450|
+art_parthenon|帕特农神庙|art|-447|
+phi_mohism|墨家 · 兼爱非攻|phi|-430|
+sci_hippocrates|医学 · 希波克拉底|sci|-400|sci_galen
+pol_carthage_republic|迦太基寡头共和政制|pol|-400|
+socrates|希腊哲学 · 苏格拉底—柏拉图—亚里士多德|phi|-380|housewisdom+scholastic+renaissance
+phi_cynicism|犬儒学派 · 第欧根尼|phi|-350|phi_stoicism
+alex_a|亚历山大东征(弧)|ren|-334|art_gandhara
+phi_zhuangzi|庄子 · 齐物论|phi|-320|chan
+phi_skepticism_pyrrho|皮浪怀疑论 · 悬置判断|phi|-320|phi_hume
+phi_epicureanism|伊壁鸠鲁学派 · 花园学派|phi|-306|
+eco_kautilya_arthashastra|治国经济术 ·《政事论》|eco|-300|pol_maurya_ashoka
+sci_euclid|几何学 · 欧几里得|sci|-300|scirev
+phi_mingjia|名家 · 白马非马|phi|-300|
+phi_mengzi|孟子 · 性善论|phi|-300|neoconf
+phi_stoicism|斯多亚学派 · 芝诺|phi|-300|smith
+ren_jomon_yayoi|绳文人与弥生人融合|ren|-300|rel_shinto_kojiki
+pol_maurya_ashoka|阿育王 · 摩崖法敕|pol|-268|art_sanchi
+sci_dujiangyan|水利工程 · 都江堰|sci|-256|pol_qin_system
+art_sanchi|桑奇佛塔|art|-250|
+sci_archimedes|力学与数学 · 阿基米德|sci|-250|
+rel_theravada_srilanka|上座部立教 · 斯里兰卡|rel|-247|rel_theravada_bagan
+sci_eratosthenes|地球测量 · 埃拉托斯特尼|sci|-240|
+phi_xunzi|荀子 · 性恶论|phi|-240|phi_legalism
+phi_legalism|法家 · 韩非子|phi|-235|
+eco_qin_standard_currency|半两钱 · 秦统一货币度量衡|eco|-221|
+pol_qin_system|秦制 · 郡县与法家集权|pol|-221|examsys
+ren_xiongnu|匈奴联盟|ren|-209|ren_huns
+ren_han|汉人认同的形成|ren|-206|examsys
+art_nazca|纳斯卡线条|art|-200|
+art_han_tomb|汉代画像石|art|-200|
+sci_apollonius|圆锥曲线 · 阿波罗尼奥斯|sci|-200|
+ren_germanic|日耳曼诸部形成|ren|-200|ren_goths
+sci_hipparchus|天文学 · 喜帕恰斯|sci|-150|sci_ptolemy
+silk_a|丝绸之路(弧)|eco|-130|arc_buddhism_silkroad+paper_a
+pol_han_centralize|推恩令 · 汉代削藩|pol|-127|
+eco_roman_annona|谷物配给 · 罗马安纳纳|eco|-123|eco_ostia_maritime_loan
+eco_han_salt_iron|盐铁官营 · 汉武帝专卖|eco|-119|
+sci_solar_terms|历法 · 二十四节气|sci|-104|
+art_roman_mosaic|古罗马镶嵌画|art|-100|
+eco_ostia_maritime_loan|海上借贷 · 罗马发财之约|eco|-100|
+sci_zhoubi|数学 · 《周髀算经》|sci|-100|
+sci_antikythera|安提基特拉机械|sci|-100|
+arc_spice_route|印度洋香料之路(弧)|eco|-100|arc_islam_maritime
+arc_buddhism_silkroad|佛教沿丝路东传(弧)|rel|-50|chan+art_dunhuang
+rome|罗马|pol|-27|christ+renaissance+napcode+arc_jewish_diaspora
+christ|基督教|rel|33|reformation+crusade_a+university+pol_charlemagne_coronation
+sci_hero|工程学 · 希罗的蒸汽转球|sci|50|
+eco_periplus_indian_ocean|季风贸易 ·《厄立特里亚海周航记》|eco|60|eco_swahili_coast
+arc_jewish_diaspora|犹太人大流散(弧)|ren|70|rel_rabbinic_judaism
+phi_wangchong|王充 ·《论衡》疑古|phi|80|
+rel_rabbinic_judaism|拉比犹太教|rel|90|rel_kabbalah_safed+rel_hasidism+rel_talmud_babylon
+art_moche|莫切陶器|art|100|
+art_hopewell|霍普韦尔艺术|art|100|
+art_gandhara|犍陀罗佛像|art|100|
+sci_nine_chapters|数学 · 《九章算术》|sci|100|
+rel_mithraism|密特拉密仪|rel|100|
+rel_mahayana|大乘佛教兴起|rel|100|rel_pure_land+rel_vajrayana_tibet+art_ajanta
+paper|造纸术 · 蔡伦|sci|105|printing_song+paper_a
+sci_zhangheng|天文仪器 · 张衡地动仪与浑天仪|sci|132|
+rel_daoist_religion|五斗米道|rel|142|
+sci_ptolemy|天文学 · 托勒密天文学大成|sci|150|scirev
+phi_nagarjuna|中观哲学 · 龙树|phi|150|chan
+rel_gnosticism|诺斯底主义|rel|150|phi_neoplatonism
+sci_galen|医学 · 盖伦|sci|180|sci_vesalius
+art_ajanta|阿旃陀石窟壁画|art|200|
+sci_zhangzhongjing|医学 · 张仲景《伤寒杂病论》|sci|200|sci_bencao
+sci_huatuo|医学 · 华佗麻沸散|sci|200|
+pol_teotihuacan_gov|特奥蒂瓦坎集体治理|pol|200|rel_mesoamerican
+arc_sogdian_trade|粟特商队东西网(弧)|eco|200|
+rel_manichaeism|摩尼教|rel|240|
+maya|玛雅文明|sci|250|art_maya_stela
+art_maya_stela|玛雅石碑艺术|art|250|
+eco_maya_cacao|可可豆货币 · 玛雅市场|eco|250|eco_aztec_market
+sci_diophantus|代数学 · 丢番图|sci|250|sci_alkhwarizmi
+phi_neoplatonism|新柏拉图主义 · 普罗提诺|phi|250|phi_augustine
+pol_maya_polity|玛雅城邦体系|pol|250|
+arc_manichaeism|摩尼教东传中亚(弧)|rel|250|ren_uyghur
+eco_aksum_coinage|阿克苏姆铸币 · 红海贸易国|eco|270|pol_axum_polity
+rel_coptic_monastic|基督教隐修传统|rel|270|
+eco_solidus_byzantine|索利都斯 · 拜占庭金币|eco|312|eco_islamic_dirham
+pol_gupta_admin|笈多帝国治理|pol|320|art_gupta_sculpture
+rel_nicaea|尼西亚公会议|rel|325|rel_east_west_schism+reformation+art_gregorian
+pol_axum_polity|阿克苏姆政教合一|pol|330|
+rel_ethiopian_church|埃塞俄比亚正教会|rel|330|rel_rastafari+pol_ethiopia_solomonic
+art_dunhuang|敦煌莫高窟|art|366|
+ren_huns|匈人冲击与民族大迁徙|ren|370|ren_goths
+ren_goths|哥特人分支认同|ren|376|
+phi_augustine|奥古斯丁 ·《忏悔录》|phi|397|scholastic
+art_gupta_sculpture|笈多雕塑|art|400|
+art_chinese_landscape|中国山水画|art|400|
+rel_pure_land|净土宗|rel|402|
+sci_zuchongzhi|数学 · 祖冲之圆周率|sci|480|
+art_persian_carpet|波斯地毯|art|500|
+rel_talmud_babylon|巴比伦塔木德|rel|500|rel_hasidism
+phi_boethius|波爱修斯 · 哲学的慰藉|phi|524|
+pol_justinian_code|查士丁尼法典|pol|529|napcode
+art_byzantine_mosaic|拜占庭镶嵌画|art|537|
+pol_khmer_chenla|扶南真腊早期政体|pol|550|art_angkor
+chan|禅宗|rel|600|modernart+phi_dogen
+eco_sogdian_network|粟特商团 · 欧亚信用网络|eco|600|
+examsys|科举制|pol|605|enlighten
+eco_grand_canal|大运河 · 隋炀帝漕运|eco|605|eco_yuan_chao
+islam|伊斯兰教 · 穆罕默德|rel|622|housewisdom+arab_a+art_islam_calligraphy+art_islam_geometry
+sci_indian_zero|数学 · 十进位值制与零|sci|628|sci_alkhwarizmi
+arab_a|阿拉伯扩张(弧)|ren|632|eco_islamic_dirham
+rel_nestorian_china|景教东传|rel|635|mongol
+pol_ritsuryo_japan|大化改新与律令制|pol|645|
+rel_quran_codify|古兰经定本|rel|650|rel_sufism
+pol_tang_code|唐律疏议|pol|653|
+pol_silla_unify|新罗统一朝鲜半岛|pol|676|
+rel_sunni_shia|逊尼什叶分野|rel|680|rel_ismaili_fatimid
+art_islam_calligraphy|伊斯兰书法|art|700|
+eco_islamic_dirham|迪拉姆银币 · 阿拉伯统一货币|eco|700|eco_ottoman_iltizam
+ren_berbers|柏柏尔人身份存续|ren|700|
+arc_trans_saharan|跨撒哈拉金盐路(弧)|eco|700|
+rel_shinto_kojiki|神道成典|rel|712|
+sci_yixing_meridian|天文测量 · 一行测子午线|sci|724|
+paper_a|造纸术西传(弧)|sci|751|
+rel_vajrayana_tibet|密宗入藏|rel|775|
+housewisdom|伊斯兰黄金时代 · 智慧宫|sci|800|renaissance+university
+art_islam_geometry|伊斯兰几何纹样|art|800|
+art_gregorian|格里高利圣咏|art|800|
+art_borobudur|婆罗浮屠浮雕|art|800|
+phi_mutazila|穆尔太齐赖 · 理性神学|phi|800|phi_al_kindi
+phi_adi_shankara|商羯罗 · 不二论吠檀多|phi|800|
+pol_charlemagne_coronation|查理曼加冕|pol|800|art_romaneseque
+rel_bhakti_tamil|巴克提运动|rel|800|rel_sikh_nanak+art_chola_bronze+art_kathakali
+ren_sami|萨米人驯鹿认同|ren|800|
+sci_alkhwarizmi|代数学 · 花拉子米|sci|820|turing
+art_chola_bronze|朱罗王朝青铜像|art|850|
+sci_gunpowder|火药|sci|850|worldwars
+phi_al_kindi|阿尔·肯迪 · 阿拉伯逍遥学派|phi|850|phi_al_farabi
+arc_viking_atlantic|维京人西渡北大西洋(弧)|ren|870|
+art_wayang|哇扬皮影戏|art|900|
+rel_sufism|苏菲派|rel|900|rel_chishti_dargah+pol_akbar_tolerance+arc_coffee_diffusion
+ren_tupi|图皮人群网络|ren|900|
+ren_uyghur|维吾尔人绿洲定居|ren|900|
+rel_ismaili_fatimid|伊斯玛仪与法蒂玛王朝|rel|909|rel_druze
+art_korean_celadon|高丽青瓷|art|918|
+pol_chola_village|朱罗王朝村社自治|pol|920|
+rel_parsi_sanjan|帕西人|rel|936|
+ren_parsi|帕西人 · 祆教避难者|ren|936|
+art_khajuraho|克久拉霍神庙雕刻|art|950|
+eco_swahili_coast|斯瓦希里海岸贸易城邦|eco|950|arc_east_african_slave
+phi_al_farabi|法拉比 · 政治哲学与德城|phi|950|phi_ibn_sina
+arc_camino_santiago|圣地亚哥朝圣之路(弧)|rel|950|
+art_celadon|宋代青瓷|art|960|
+rel_kievan_rus|罗斯受洗|rel|988|rel_east_west_schism
+art_romaneseque|罗曼式艺术|art|1000|
+rel_yoruba_ifa|约鲁巴宗教|rel|1000|rel_santeria+art_ife+pol_benin_kingdom
+arc_romani_migration|罗姆人西迁欧洲(弧)|ren|1000|
+rel_druze|德鲁兹派|rel|1017|ren_druze
+ren_druze|德鲁兹人封闭共同体|ren|1017|
+phi_ibn_sina|伊本·西那 · 存在与本质|phi|1020|phi_al_ghazali+scholastic
+sci_alhazen|光学 · 海什木的实验方法|sci|1021|scirev
+songeco|宋代商业革命|eco|1023|printing_song
+sci_albiruni|地球测量 · 比鲁尼|sci|1030|
+printing_song|活字印刷 · 毕昇|sci|1040|gutenberg
+sci_supernova1054|天文观测 · 天关客星|sci|1054|
+rel_east_west_schism|东西教会大分裂|rel|1054|
+rel_theravada_bagan|蒲甘弘法|rel|1056|
+art_literati|文人画|art|1080|
+eco_venice_rialto|威尼斯商站 · 里亚尔托与领事网络|eco|1082|eco_medici_bank+eco_double_entry+pol_venice_republic
+sci_shenkuo|科学笔记 · 沈括与指南针|sci|1088|columbus_a
+phi_al_ghazali|安萨里 · 哲学家的矛盾|phi|1095|phi_ibn_rushd
+crusade_a|十字军东征(弧)|rel|1096|eco_champagne_fairs+eco_templar_finance
+art_ife|伊费头像艺术|art|1100|
+ren_inuit_thule|因纽特人北极适应|ren|1100|
+arc_toledo_translation|托莱多翻译运动(弧)|sci|1100|university+scholastic
+art_angkor|吴哥窟浮雕|art|1113|
+arc_hakka_migration|客家人南迁(弧)|ren|1127|
+art_gothic_cathedral|哥特式大教堂|art|1140|
+pol_iroquois_confederacy|易洛魁联盟宪制|pol|1142|
+university|大学的诞生|sci|1150|scirev
+art_stained_glass|彩色玻璃艺术|art|1150|
+eco_templar_finance|圣殿骑士团 · 中世纪跨国金融|eco|1150|
+neoconf|宋明理学|phi|1175|pol_joseon_founding
+eco_champagne_fairs|香槟集市 · 中世纪贸易节律|eco|1180|eco_fibonacci_liber_abaci
+phi_ibn_rushd|伊本·鲁世德 · 双重真理|phi|1180|scholastic
+pol_benin_kingdom|贝宁王国政治体制|pol|1180|art_benin_bronze
+phi_maimonides|迈蒙尼德 · 迷途指津|phi|1190|scholastic
+art_batik|蜡染艺术|art|1200|
+ren_rapanui|拉帕努伊人的孤岛文明|ren|1200|
+ren_yazidi|雅兹迪人的坚守|ren|1200|
+arc_islam_maritime|伊斯兰教海上东渐(弧)|rel|1200|
+eco_fibonacci_liber_abaci|商用算术 ·《计算之书》|eco|1202|eco_double_entry
+sci_fibonacci|数学 · 斐波那契数字西传|sci|1202|
+mongol|蒙古帝国 · 成吉思汗|pol|1206|plague_a+eco_mongol_yam+arc_huihui_trebuchet+ren_hazara
+sci_aljazari|机械工程 · 加扎利的自动机械|sci|1206|
+pol_delhi_sultanate|德里苏丹国|pol|1206|
+pol_magna_carta|大宪章|pol|1215|amrev+pol_english_bill_rights
+phi_dogen|道元 · 身心脱落与有时|phi|1231|
+rel_inquisition|宗教裁判所|rel|1231|
+rel_chishti_dargah|契斯提圣墓文化|rel|1236|
+eco_mongol_yam|站赤驿传 · 蒙古商道整合|eco|1240|
+sci_ibnalnafis|生理学 · 伊本·纳菲斯的肺循环|sci|1242|sci_harvey
+art_benin_bronze|贝宁青铜器|art|1250|
+art_persian_miniature|波斯细密画|art|1250|
+art_maori|毛利木雕|art|1250|
+art_rapanui|复活节岛石像|art|1250|
+arc_gunpowder_west|火药技术西传(弧)|sci|1250|
+eco_yuan_chao|交钞 · 蒙元纸币帝国|eco|1260|
+scholastic|经院哲学 · 阿奎那|phi|1265|scirev
+pol_ethiopia_solomonic|埃塞俄比亚所罗门王朝复辟|pol|1270|
+arc_huihui_trebuchet|回回炮工匠东调(弧)|sci|1271|
+sci_abacus|计算工具 · 珠算|sci|1274|
+ren_hui|回族的形成|ren|1275|
+sci_guoshoujing|历法 · 郭守敬《授时历》|sci|1280|
+pol_venice_republic|威尼斯共和国政制|pol|1297|
+pol_ottoman_rise|奥斯曼国家草创|pol|1299|pol_ottoman_millet+arc_barbary_slave+ren_armenian_diaspora
+art_ethiopic_icon|埃塞俄比亚圣像画|art|1300|
+eco_great_zimbabwe|大津巴布韦 · 黄金象牙贸易国|eco|1300|
+ren_maori|毛利人定居新西兰|ren|1300|
+eco_mali_gold|马里帝国 · 黄金盐贸易|eco|1324|pol_mali_governance+arc_hajj_mali
+pol_mali_governance|马里帝国行政与朝觐|pol|1324|
+arc_hajj_mali|曼萨·穆萨的麦加朝觐(弧)|rel|1324|
+plague_a|黑死病(弧)|ren|1347|phi_ibn_khaldun
+eco_hanseatic_league|汉萨同盟 · 北海波罗的海商圈|eco|1358|
+art_nuo|能剧|art|1375|
+phi_ibn_khaldun|伊本·赫勒敦 · 历史绪论|phi|1377|
+pol_hongwu_lijia|明初里甲与户籍控制|pol|1381|
+pol_joseon_founding|朝鲜王朝建立|pol|1392|
+eco_medici_bank|美第奇银行 · 佛罗伦萨金融霸权|eco|1397|
+eco_yap_stone_money|雅浦石币 · 太平洋岛屿货币|eco|1400|
+zhenghe_a|郑和下西洋(弧)|eco|1405|ren_peranakan
+art_oil_paint|尼德兰油画|art|1420|
+sci_alkashi_pi|数学 · 阿尔·卡西的圆周率|sci|1424|
+rel_mesoamerican|阿兹特克宗教|rel|1428|art_aztec_sun
+ren_ryukyu|琉球人身份|ren|1429|
+eco_inca_mita|米塔劳役 · 印加无货币经济|eco|1438|
+pol_inca_admin|印加帝国行政体系|pol|1438|eco_inca_mita+rel_andean_religion
+rel_andean_religion|印加太阳信仰|rel|1438|
+renaissance|文艺复兴|art|1450|scirev+enlighten
+gutenberg|古腾堡印刷术|sci|1450|reformation+scirev+enlighten
+eco_aztec_market|特拉特洛尔科市场 · 阿兹特克商业|eco|1450|
+rel_wali_songo|爪哇伊斯兰化|rel|1450|rel_bali_hindu
+ren_peranakan|土生华人峇峇娘惹|ren|1450|
+arc_byzantine_scholars|拜占庭学者西迁意大利(弧)|sci|1453|renaissance
+pol_ottoman_millet|奥斯曼米利特制|pol|1454|
+art_aztec_sun|阿兹特克太阳石|art|1479|
+columbus_a|大航海 · 哥伦布交换(弧)|ren|1492|pol_encomienda_spanish+pol_comanche_empire
+pol_songhai_empire|桑海帝国官僚与教法|pol|1493|
+eco_double_entry|复式记账 · 帕乔利《数学大全》|eco|1494|eco_medici_bank+eco_voc_joint_stock
+rel_sikh_nanak|锡克教创立|rel|1499|rel_sikh_khalsa
+ren_pashtun|普什图部落认同|ren|1500|
+ren_hazara|哈扎拉人|ren|1500|
+ren_cossacks|哥萨克人|ren|1500|
+arc_east_african_slave|东非印度洋奴隶贸易(弧)|ren|1500|
+pol_encomienda_spanish|西属美洲监督劳役制|pol|1503|ren_mapuche
+phi_wangyangming|阳明心学 · 知行合一|phi|1509|
+reformation|宗教改革 · 马丁·路德|rel|1517|westphalia+enlighten+rel_anglican_schism+pol_dutch_republic
+eco_ottoman_iltizam|包税制 · 奥斯曼财政治理|eco|1520|
+rel_bali_hindu|巴厘印度教|rel|1520|
+arc_barbary_slave|巴巴里海盗掳掠欧洲(弧)|ren|1520|
+rel_anglican_schism|英国国教会|rel|1534|
+rel_jesuit_order|耶稣会|rel|1540|arc_jesuit_china+art_barock
+sci_vesalius|解剖学 · 维萨里|sci|1543|sci_harvey
+eco_potosi_silver|白银帝国 · 波托西与价格革命|eco|1545|eco_mercantilism+eco_gold_standard
+arc_potosi_silver|波托西银路(弧)|eco|1545|
+art_blue_mosque_tiles|伊兹尼克瓷砖|art|1550|
+ren_mapuche|马普切人抗征服认同|ren|1550|
+pol_akbar_tolerance|莫卧儿 · 阿克巴的宽容治理|pol|1556|eco_mughal_zabt
+art_mughal_miniature|莫卧儿细密画|art|1560|
+arc_manila_galleon|马尼拉大帆船贸易(弧)|eco|1565|
+rel_kabbalah_safed|萨费德卡巴拉|rel|1570|rel_hasidism
+arc_coffee_diffusion|咖啡从也门传向世界(弧)|eco|1570|
+eco_mughal_zabt|田赋改革 · 莫卧儿扎布特制|eco|1580|
+sci_tycho|天文观测 · 第谷·布拉赫|sci|1580|sci_kepler
+arc_jesuit_china|耶稣会士东来传教(弧)|rel|1580|
+pol_dutch_republic|荷兰联省共和国宪制|pol|1581|
+sci_bencao|本草学 · 李时珍《本草纲目》|sci|1596|
+art_opera|歌剧诞生|art|1598|
+rel_huguenot_edict|南特敕令|rel|1598|ren_huguenot
+art_rajasthani|拉贾斯坦细密画|art|1600|
+art_barock|巴洛克艺术|art|1600|
+ren_mestizo|梅斯蒂索混血身份|ren|1600|
+slave_a|大西洋奴隶贸易(弧)|ren|1600|arc_triangle_eu_af+arc_triangle_am_eu
+eco_voc_joint_stock|股份公司 · 荷兰东印度公司|eco|1602|eco_amsterdam_exchange+eco_tulip_mania
+art_kabuki|歌舞伎|art|1603|
+pol_tokugawa_bakuhan|德川幕府藩体制|pol|1603|art_kabuki
+ren_maroon|马龙人自治社群|ren|1605|
+eco_amsterdam_exchange|阿姆斯特丹交易所 · 做空雏形|eco|1609|eco_tulip_mania
+sci_kepler|天体力学 · 开普勒行星运动定律|sci|1609|scirev
+sci_harvey|生理学 · 哈维发现血液循环|sci|1628|
+eco_tulip_mania|郁金香泡沫 · 期货炒作|eco|1637|
+sci_tiangong_kaiwu|技术图册 · 《天工开物》|sci|1637|
+phi_descartes|笛卡尔 · 我思故我在|phi|1637|phi_spinoza+sci_huygens
+sci_torricelli|物理学 · 托里拆利气压实验|sci|1643|
+pol_qing_tribute|明清朝贡体系|pol|1644|eco_canton_system
+westphalia|威斯特伐利亚体系|pol|1648|frrev
+art_kathakali|卡塔卡利舞剧|art|1650|
+eco_indian_textile_trade|印度棉纺织品 · 全球贸易网络|eco|1650|eco_fordism
+arc_triangle_eu_af|三角贸易·军火易人路(弧)|eco|1650|pol_asante_kingdom+rel_vodou_haiti
+arc_triangle_am_eu|三角贸易·蔗糖归航路(弧)|eco|1650|ren_gullah+art_jazz
+phi_hobbes|霍布斯 ·《利维坦》|phi|1651|phi_locke
+rel_quaker|贵格会|rel|1652|arc_underground_railroad
+ren_boers|阿非利卡人的形成|ren|1652|ren_nguni_zulu
+sci_pascal_probability|数学 · 帕斯卡与概率论|sci|1654|
+eco_caribbean_sugar|加勒比蔗糖种植园经济|eco|1655|ren_creole_caribbean
+sci_boyle|化学 · 波义耳与气体定律|sci|1662|sci_lavoisier
+eco_mercantilism|重商主义 · 国家贸易保护政策|eco|1664|smith
+phi_zera_yacob|扎拉·雅各布 · 埃塞俄比亚理性|phi|1667|
+art_ukiyoe|浮世绘|art|1670|art_manga
+sci_microscope|显微镜 · 列文虎克发现微生物|sci|1674|sci_pasteur
+pol_maratha_confederacy|马拉塔联盟政治|pol|1674|
+phi_spinoza|斯宾诺莎 · 神即自然|phi|1677|phi_hegel+phi_leibniz
+sci_huygens|光学 · 惠更斯的波动说|sci|1678|
+ren_huguenot|胡格诺教徒离散|ren|1685|
+scirev|科学革命 · 哥白尼—伽利略—牛顿|sci|1687|enlighten+industrial+darwin
+eco_lloyds_insurance|劳合社 · 海上保险起源|eco|1688|
+phi_locke|洛克 · 白板说与政府论|phi|1689|amrev
+pol_english_bill_rights|英国权利法案|pol|1689|amrev
+eco_bank_of_england|英格兰银行 · 中央银行雏形|eco|1694|eco_gold_standard+eco_federal_reserve
+rel_sikh_khalsa|卡尔萨建立|rel|1699|
+ren_creole_caribbean|加勒比克里奥尔认同|ren|1700|
+pol_asante_kingdom|阿散蒂联盟政治|pol|1701|
+pol_utrecht_treaty|乌得勒支和约与均势原则|pol|1713|
+phi_leibniz|莱布尼茨 · 单子论|phi|1714|
+eco_john_law_mississippi|密西西比公司 · 约翰·劳的纸币实验|eco|1716|eco_south_sea_bubble+eco_assignats
+eco_south_sea_bubble|南海泡沫 · 英国股市狂热|eco|1720|
+pol_peter_great_reform|彼得大帝西化改革|pol|1721|
+sci_linnaeus|生物分类法 · 林奈|sci|1735|darwin
+phi_hume|休谟 · 因果的习惯|phi|1739|phi_utilitarianism
+rel_hasidism|哈西迪运动|rel|1740|
+rel_wahhabi|瓦哈比运动|rel|1744|
+sci_lind_scurvy|医学 · 林德与坏血病对照实验|sci|1747|
+enlighten|启蒙运动|phi|1750|amrev+frrev+smith+pol_ottoman_tanzimat
+pol_comanche_empire|科曼奇北美平原权力体|pol|1750|
+ren_gullah|海岛盖拉人的西非记忆|ren|1750|
+sci_franklin_electricity|电学 · 富兰克林的风筝实验|sci|1752|maxwell
+eco_canton_system|广州十三行 · 一口通商|eco|1757|
+eco_eic_bengal|东印度公司 · 从商站到殖民税制|eco|1757|ren_anglo_indian
+industrial|工业革命|eco|1769|marx+migr_atlantic_a+globalization+sci_babbage+sci_thermodynamics
+sci_cook_circle|首越南极圈 · 库克|sci|1773|sci_antarctic_sighting
+smith|《国富论》 · 亚当·斯密|eco|1776|industrial+marx
+amrev|美国革命|pol|1776|frrev
+phi_dai_zhen|戴震 · 以理杀人之辨|phi|1777|
+arc_opium_trade|鸦片贸易输华(弧)|eco|1780|
+frrev|法国大革命|pol|1789|napcode+romantic+marx+rel_secularization
+sci_lavoisier|化学 · 拉瓦锡与现代化学|sci|1789|sci_dalton
+phi_utilitarianism|功利主义 · 边沁的快乐计算|phi|1789|phi_rawls
+eco_assignats|阿西尼亚纸币 · 法国大革命通胀|eco|1790|
+pol_haiti_revolution|海地革命|pol|1791|pol_bolivar_independence
+rel_vodou_haiti|海地伏都教|rel|1791|
+eco_wall_street_origin|华尔街 · 梧桐树协议|eco|1792|
+sci_jenner|疫苗 · 詹纳牛痘接种|sci|1796|sci_pasteur+sci_mrna_vaccine
+sci_cavendish|物理学 · 卡文迪什称量地球|sci|1798|
+romantic|浪漫主义|art|1800|modernart
+sci_volta_battery|电学 · 伏打电堆|sci|1800|maxwell
+rel_santeria|圣特里亚教|rel|1800|
+sci_dalton|原子论 · 道尔顿|sci|1803|sci_periodic_table
+napcode|拿破仑法典|pol|1804|
+art_beethoven|贝多芬交响乐|art|1804|
+phi_hegel|黑格尔 · 辩证法与精神|phi|1807|marx
+pol_hawaii_kingdom|夏威夷王国统一|pol|1810|
+pol_congress_vienna|维也纳会议与均势体系|pol|1815|
+pol_zulu_kingdom|祖鲁王国军事政制|pol|1816|ren_nguni_zulu
+ren_metis_canada|梅蒂人 · 加拿大混血民族|ren|1816|
+phi_schopenhauer|叔本华 · 生存意志|phi|1818|freud+phi_nietzsche
+ren_nguni_zulu|祖鲁人的姆费卡内重组|ren|1818|decolonize_a
+pol_bolivar_independence|玻利瓦尔与拉美独立战争|pol|1819|
+sci_antarctic_sighting|首见南极大陆|sci|1820|arc_heroic_age
+arc_underground_railroad|地下铁路北逃网络(弧)|ren|1820|
+eco_gold_standard|金本位 · 英国率先确立|eco|1821|eco_nixon_shock
+sci_fourier|数学 · 傅里叶级数|sci|1822|sci_radio
+arc_back_to_africa|解放黑奴回迁利比里亚(弧)|ren|1822|
+eco_railway|铁路 · 斯托克顿-达灵顿蒸汽运输|eco|1825|eco_suez_canal
+sci_non_euclidean|数学 · 非欧几何|sci|1829|relativity
+phi_positivism_comte|孔德 · 实证主义与社会学|phi|1830|
+rel_mormon_founding|摩门教创立|rel|1830|arc_mormon_trail
+ren_anglo_indian|英印混血社群|ren|1830|
+pol_britain_abolition|大英帝国废除奴隶制法案|pol|1833|arc_indian_indenture
+sci_babbage|计算机器 · 巴贝奇分析机|sci|1837|
+rel_tenrikyo|天理教|rel|1838|
+arc_indian_indenture|印度契约劳工赴加勒比(弧)|ren|1838|
+art_photography|摄影术诞生|art|1839|art_impressionism
+sci_cell_theory|细胞学说|sci|1839|dna
+pol_ottoman_tanzimat|奥斯曼坦志麦特改革|pol|1839|
+sci_ross_sea|罗斯远征 · 冰障与火山|sci|1841|sci_pole_race
+phi_kierkegaard|克尔凯郭尔 · 信仰之跃|phi|1843|existential
+rel_adventist|米勒运动|rel|1844|
+arc_irish_famine|爱尔兰大饥荒移民(弧)|ren|1845|
+sci_anesthesia|麻醉术 · 乙醚公开演示|sci|1846|
+arc_mormon_trail|摩门信徒西迁盐湖城(弧)|rel|1846|
+arc_tea_transfer|茶树技术移植印度(弧)|sci|1848|
+sci_thermodynamics|热力学定律与熵|sci|1850|sci_nuclear_power
+ren_qiaopi|侨批网络|ren|1850|reform_cn
+migr_atlantic_a|跨洋移民潮(弧)|ren|1850|
+arc_xia_nanyang|下南洋(弧)|ren|1850|
+sci_foucault_pendulum|物理学 · 傅科摆|sci|1851|
+eco_department_store|百货公司 · 邦马歇零售革命|eco|1852|
+eco_limited_liability|有限责任公司法 · 1855年法案|eco|1855|
+pol_indian_rebellion_1857|印度民族大起义|pol|1857|arc_sikh_diaspora
+darwin|进化论 · 达尔文|sci|1859|freud
+sci_spectroscopy|光谱分析法|sci|1859|relativity+sci_raman
+art_arts_crafts|工艺美术运动|art|1860|
+arc_chuang_guandong|闯关东(弧)|ren|1860|
+rel_bahai|巴哈伊信仰|rel|1863|rel_world_parliament
+arc_blackbirding|太平洋黑鸟劳工贸易(弧)|ren|1863|
+maxwell|电磁学 · 法拉第—麦克斯韦|sci|1865|relativity+internet+eco_transatlantic_cable
+sci_mendel|遗传学 · 孟德尔遗传定律|sci|1865|dna
+pol_us_civil_war_13th|美国内战与废奴修正案|pol|1865|civilrights
+arc_chinese_railroad|华工筑美洲铁路(弧)|ren|1865|
+eco_transatlantic_cable|电报商业 · 跨大西洋海底电缆|eco|1866|
+marx|马克思主义 · 《资本论》|phi|1867|russrev+phi_mariategui
+sci_nobel_dynamite|化学工程 · 诺贝尔发明炸药|sci|1867|
+pol_meiji_restoration|明治维新|pol|1868|eco_zaibatsu_japan+arc_japanese_brazil
+eco_suez_canal|苏伊士运河 · 全球航运捷径|eco|1869|
+sci_periodic_table|元素周期表 · 门捷列夫|sci|1869|sci_solar_cell
+eco_zaibatsu_japan|殖产兴业 · 日本财阀近代化|eco|1873|
+art_impressionism|印象派|art|1874|
+rel_theosophy|神智学|rel|1875|rel_vivekananda
+phi_pragmatism|实用主义 · 实效准则|phi|1878|phi_quine
+sci_lightbulb|电气照明 · 爱迪生白炽灯|sci|1879|
+phi_analytic_frege_russell|分析哲学 · 弗雷格的概念文字|phi|1879|turing+phi_wittgenstein
+eco_standard_oil_trust|标准石油 · 托拉斯垄断模式|eco|1882|eco_opec
+ren_chinatown|唐人街侨社自治|ren|1882|
+phi_nietzsche|尼采 · 上帝已死|phi|1883|existential
+pol_berlin_conference|柏林会议瓜分非洲|pol|1884|decolonize_a
+sci_pasteur|细菌学说与疫苗 · 巴斯德|sci|1885|penicillin+sci_polio_vaccine
+rel_ahmadiyya|艾哈迈迪亚运动|rel|1889|
+rel_ghost_dance|幽灵舞运动|rel|1890|rel_native_american_church
+ren_ellis_island|移民甄别站|ren|1892|
+pol_nz_suffrage|新西兰妇女普选权|pol|1893|pol_womens_suffrage_wave
+rel_world_parliament|世界宗教议会|rel|1893|rel_vivekananda
+art_cinema|电影诞生|art|1895|art_hollywood
+sci_xray|医学影像 · 伦琴发现X射线|sci|1895|sci_curie_radioactivity
+rel_vivekananda|辨喜与印度教复兴|rel|1897|art_bengal_school
+arc_sikh_diaspora|锡克人移民加拿大(弧)|ren|1897|
+arc_heroic_age|南极英雄时代远征潮(弧)|ren|1897|
+sci_curie_radioactivity|放射性 · 居里夫妇|sci|1898|nuke+sci_nuclear_power
+freud|精神分析 · 弗洛伊德|phi|1900|modernart+art_surreal_cinema
+sci_radio|无线电 · 赫兹与马可尼|sci|1901|internet
+sci_wright|航空 · 莱特兄弟首飞|sci|1903|
+eco_southern_whaling|南大洋捕鲸业|eco|1904|
+relativity|相对论与量子力学|sci|1905|nuke+turing+phi_process_whitehead+sci_ligo
+art_bengal_school|孟加拉画派|art|1905|
+rel_secularization|世俗化 · 政教分离|rel|1905|
+rel_pentecostal_azusa|五旬节运动|rel|1906|
+modernart|现代主义艺术 · 毕加索—杜尚|art|1907|
+rel_umbanda|温班达教|rel|1908|
+arc_japanese_brazil|日本移民巴西咖啡园(弧)|ren|1908|
+art_jazz|爵士乐|art|1910|
+phi_kyoto_school|京都学派 · 绝对无|phi|1911|
+sci_pole_race|极点竞赛 · 阿蒙森与斯科特|sci|1911|
+eco_fordism|福特制 · 流水线与日薪五美元|eco|1913|
+eco_federal_reserve|美联储 · 分区中央银行体系|eco|1913|eco_great_depression+eco_bretton_woods
+phi_husserl|现象学 · 回到事物本身|phi|1913|phi_heidegger+phi_derrida
+worldwars|两次世界大战|pol|1914|decolonize_a+coldwar+nuke+ren_bracero
+art_hollywood|好莱坞叙事电影|art|1915|
+ren_armenian_diaspora|亚美尼亚大离散|ren|1915|
+sci_shackleton|坚忍号 · 沙克尔顿|sci|1915|
+rel_won_buddhism|圆佛教|rel|1916|
+russrev|俄国革命|pol|1917|coldwar
+phi_tagore_humanism|泰戈尔 · 普世人文主义|phi|1917|phi_sen_capability
+rel_native_american_church|美洲原住民教会|rel|1918|
+art_bauhaus|包豪斯|art|1919|
+pol_league_of_nations|国际联盟与凡尔赛体系|pol|1919|pol_un_founding+ren_kurds
+pol_weimar_constitution|魏玛共和国宪法|pol|1919|eco_weimar_hyperinflation
+pol_womens_suffrage_wave|妇女普选权修宪浪潮|pol|1920|
+ren_kurds|库尔德人 · 无国之族|ren|1920|
+phi_wittgenstein|维特根斯坦 · 语言的界限|phi|1921|
+rel_kimbanguism|金邦古教会|rel|1921|
+eco_weimar_hyperinflation|魏玛恶性通胀 · 一战赔款危机|eco|1923|
+rel_cao_dai|高台教|rel|1926|
+art_egypt_cinema|埃及电影|art|1927|
+phi_heidegger|海德格尔 ·《存在与时间》|phi|1927|existential+phi_arendt
+penicillin|抗生素 · 青霉素|sci|1928|
+sci_raman|光学 · 拉曼散射效应|sci|1928|
+phi_mariategui|马里亚特吉 · 秘鲁现实七论|phi|1928|
+art_surreal_cinema|超现实主义电影|art|1929|
+eco_great_depression|大萧条 · 1929股市崩盘|eco|1929|eco_keynesian_revolution+eco_bretton_woods
+phi_process_whitehead|怀特海 · 过程哲学|phi|1929|
+pol_gandhi_salt_march|甘地食盐进军|pol|1930|civilrights+pol_india_partition
+rel_rastafari|拉斯塔法里|rel|1930|
+art_bollywood|宝莱坞歌舞电影|art|1931|
+phi_popper|波普尔 · 证伪主义|phi|1934|
+sci_yukawa|粒子物理 · 汤川秀树介子理论|sci|1935|
+turing|计算机 · 图灵|sci|1936|internet+ai+art_video_game
+eco_keynesian_revolution|凯恩斯革命 ·《通论》|eco|1936|
+phi_frankfurt_school|法兰克福学派 · 批判理论|phi|1937|phi_foucault
+ren_bracero|墨西哥短工计划|ren|1942|
+eco_bretton_woods|布雷顿森林体系 · 美元挂钩黄金|eco|1944|eco_nixon_shock+eco_wto_gatt+ren_guest_worker_europe
+nuke|核武器 · 曼哈顿计划|sci|1945|coldwar
+existential|存在主义 · 萨特—加缪|phi|1945|
+pol_un_founding|联合国宪章|pol|1945|coldwar
+pol_nuremberg_trials|纽伦堡审判|pol|1945|pol_rwanda_tribunal
+arc_coldwar_braindrain|冷战火箭科学家西渡(弧)|sci|1945|coldwar
+coldwar|冷战|pol|1947|globalization+arc_boat_people+arc_afghan_refugees
+art_manga|现代漫画|art|1947|
+sci_transistor|晶体管|sci|1947|sci_integrated_circuit
+pol_india_partition|印度独立与印巴分治|pol|1947|decolonize_a
+decolonize_a|去殖民化浪潮(弧)|pol|1947|ren_rohingya
+pol_universal_declaration|世界人权宣言|pol|1948|
+ren_windrush|疾风世代|ren|1948|
+phi_feminist_theory_beauvoir|波伏娃 ·《第二性》|phi|1949|
+pol_chinese_revolution_1949|中华人民共和国成立|pol|1949|reform_cn+ren_tibetan_diaspora
+phi_quine|蒯因 · 经验论的两个教条|phi|1951|
+phi_arendt|阿伦特 · 极权主义的起源|phi|1951|
+pol_eu_ecsc|欧洲煤钢共同体|pol|1951|pol_eu_maastricht
+ren_refugee_convention|难民公约与庇护制度|ren|1951|migr_now_a
+dna|DNA 双螺旋|sci|1953|ai+sci_dolly
+sci_nuclear_power|核能发电|sci|1954|climate
+sci_solar_cell|光伏太阳能电池|sci|1954|climate
+pol_algeria_independence|阿尔及利亚独立战争|pol|1954|ren_pied_noir
+sci_polio_vaccine|疫苗 · 索尔克脊髓灰质炎疫苗|sci|1955|
+pol_bandung_conference|万隆会议与不结盟运动|pol|1955|
+eco_container_shipping|集装箱 · 标准化海运革命|eco|1956|globalization
+eco_silicon_valley_vc|风险投资 · 硅谷创新资本模式|eco|1957|eco_gig_economy
+sci_igy_antarctic|国际地球物理年 · 南极科学网|sci|1957|pol_antarctic_treaty
+sci_integrated_circuit|集成电路|sci|1958|sci_arpanet
+ren_tibetan_diaspora|藏人海外社群|ren|1959|
+pol_antarctic_treaty|南极条约|pol|1959|
+civilrights|民权与平权运动|pol|1960|
+art_beatles|披头士|art|1960|
+eco_opec|欧佩克 · 石油输出国组织|eco|1960|arc_gulf_labor
+sci_laser|激光|sci|1960|
+sci_green_revolution|绿色革命 · 布劳格矮秆小麦|sci|1960|globalization
+sci_contraceptive_pill|口服避孕药|sci|1960|civilrights
+phi_levinas|列维纳斯 · 他者的伦理学|phi|1961|
+ren_guest_worker_europe|欧洲客工计划|ren|1961|
+ren_pied_noir|阿尔及利亚黑脚移民|ren|1962|
+art_video_art|录像艺术|art|1963|
+art_japanese_anime|日本动画|art|1963|
+pol_oau_founding|非洲统一组织成立|pol|1963|
+eco_east_asian_tigers|亚洲四小龙 · 出口导向奇迹|eco|1965|art_kpop
+rel_vatican_ii|梵二会议|rel|1965|
+pol_cultural_revolution|文化大革命|pol|1966|reform_cn
+sci_heart_transplant|器官移植 · 首例心脏移植|sci|1967|
+phi_derrida|德里达 · 解构主义|phi|1967|
+sci_apollo|登月 · 阿波罗11号|sci|1969|climate
+sci_arpanet|阿帕网与互联网协议|sci|1969|internet
+eco_nixon_shock|尼克松冲击 · 美元与黄金脱钩|eco|1971|eco_euro
+phi_liberation_theology|解放神学 · 古铁雷斯|phi|1971|
+phi_rawls|罗尔斯 ·《正义论》|phi|1971|
+rel_liberation_theology|解放神学|rel|1971|
+art_video_game|电子游戏艺术|art|1972|
+art_hiphop|嘻哈文化|art|1973|
+arc_gulf_labor|南亚赴海湾劳工潮(弧)|ren|1973|
+phi_foucault|福柯 · 规训与惩罚|phi|1975|
+pol_helsinki_accords|赫尔辛基协议|pol|1975|
+ren_hmong|苗人跨境离散|ren|1975|
+arc_boat_people|越南船民潮(弧)|ren|1975|
+phi_hountondji|翁通吉 · 非洲哲学之争|phi|1976|
+reform_cn|改革开放与东亚崛起|eco|1978|globalization+pol_hongkong_handover
+sci_ivf|试管婴儿技术|sci|1978|sci_genome_project
+phi_postcolonial_said|萨义德 ·《东方主义》|phi|1978|
+pol_iran_revolution|伊朗伊斯兰革命|pol|1979|
+arc_afghan_refugees|阿富汗难民潮(弧)|ren|1979|
+eco_shenzhen_sez|经济特区 · 深圳制度试验|eco|1980|
+ren_rohingya|罗兴亚人的无国籍|ren|1982|
+eco_grameen_microcredit|格莱珉银行 · 小额信贷扶贫模式|eco|1983|
+sci_ozone_hole|南极臭氧洞|sci|1985|climate
+eco_walmart_supply_chain|沃尔玛 · 全球即时供应链|eco|1988|
+arc_india_silicon_valley|印度赴硅谷科技人才流(弧)|sci|1990|internet+ai
+internet|互联网与万维网|sci|1991|ai+globalization+pol_internet_governance_icann+pol_arab_spring
+art_kpop|韩国流行音乐|art|1992|
+pol_eu_maastricht|欧盟正式成立|pol|1993|pol_eu_brexit
+pol_apartheid_end|南非结束种族隔离|pol|1994|phi_ubuntu
+pol_rwanda_tribunal|卢旺达问题国际法庭|pol|1994|
+globalization|全球化|eco|1995|reform_cn+climate
+eco_wto_gatt|关贸总协定到世贸组织|eco|1995|
+pol_schengen_area|申根协定|pol|1995|
+sci_dolly|克隆技术 · 多利羊|sci|1996|
+pol_hongkong_handover|香港回归与一国两制|pol|1997|
+pol_kyoto_paris_climate_gov|京都议定书与巴黎协定|pol|1997|
+pol_internet_governance_icann|互联网治理:ICANN成立|pol|1998|
+sci_ice_core|深冰芯 · 东方站|sci|1998|climate
+eco_euro|欧元 · 单一货币的政治实验|eco|1999|
+phi_sen_capability|阿马蒂亚·森 · 以自由看待发展|phi|1999|
+phi_ubuntu|乌班图 · 我在故我们在|phi|1999|
+climate|气候变化与人类世|sci|2000|migr_now_a
+sci_genome_project|人类基因组计划|sci|2003|sci_crispr
+eco_mpesa|M-Pesa · 手机货币改变非洲金融|eco|2007|
+eco_gig_economy|零工经济 · 平台劳动新形态|eco|2009|
+pol_arab_spring|阿拉伯之春|pol|2010|
+eco_alipay_wechatpay|移动支付 · 中国扫码支付革命|eco|2011|
+ai|人工智能|sci|2012|
+sci_higgs|粒子物理 · 希格斯玻色子|sci|2012|
+sci_crispr|基因编辑 · CRISPR|sci|2012|sci_mrna_vaccine
+sci_ligo|引力波探测|sci|2015|
+migr_now_a|当代大迁移(弧)|ren|2015|
+sci_alphago|深度学习 · AlphaGo战胜李世石|sci|2016|sci_llm_boom
+pol_eu_brexit|英国脱欧|pol|2016|
+sci_mrna_vaccine|mRNA疫苗|sci|2020|
+sci_llm_boom|深度学习 · 大语言模型爆发|sci|2022|

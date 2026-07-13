@@ -1,0 +1,464 @@
+{
+ "links": [
+  {
+   "from": "ooa",
+   "to": "ren_neanderthal_admix"
+  },
+  {
+   "from": "ooa",
+   "to": "art_chauvet"
+  },
+  {
+   "from": "ren_first_australians",
+   "to": "art_aboriginal"
+  },
+  {
+   "from": "art_chauvet",
+   "to": "art_lascaux"
+  },
+  {
+   "from": "ren_pygmy",
+   "to": "bantu_a"
+  },
+  {
+   "from": "art_lascaux",
+   "to": "art_altamira"
+  },
+  {
+   "from": "art_jomon",
+   "to": "ren_jomon_yayoi"
+  },
+  {
+   "from": "rel_gobekli",
+   "to": "ren_catalhoyuk"
+  },
+  {
+   "from": "neo",
+   "to": "ren_jericho"
+  },
+  {
+   "from": "neo",
+   "to": "rel_stonehenge"
+  },
+  {
+   "from": "art_san_rock",
+   "to": "ren_khoisan"
+  },
+  {
+   "from": "ren_papuan_highland",
+   "to": "arc_austronesian"
+  },
+  {
+   "from": "art_tassili",
+   "to": "ren_berbers"
+  },
+  {
+   "from": "arc_indoeuropean",
+   "to": "ren_scythians"
+  },
+  {
+   "from": "arc_indoeuropean",
+   "to": "ren_celts"
+  },
+  {
+   "from": "arc_indoeuropean",
+   "to": "ren_germanic"
+  },
+  {
+   "from": "pol_egypt_kingship",
+   "to": "eco_pyramid_labor_economy"
+  },
+  {
+   "from": "pol_egypt_kingship",
+   "to": "pol_kush_meroe"
+  },
+  {
+   "from": "arc_austronesian",
+   "to": "ren_maori"
+  },
+  {
+   "from": "sci_indus_script",
+   "to": "art_indus_seals"
+  },
+  {
+   "from": "sci_babylon_sexagesimal",
+   "to": "sci_babylon_astronomy"
+  },
+  {
+   "from": "art_qin_bronze",
+   "to": "art_sanxingdui"
+  },
+  {
+   "from": "sci_egypt_papyrus",
+   "to": "sci_hippocrates"
+  },
+  {
+   "from": "rel_vedic_religion",
+   "to": "phi_upanishads"
+  },
+  {
+   "from": "rel_vedic_religion",
+   "to": "sci_sushruta"
+  },
+  {
+   "from": "judaism",
+   "to": "pol_israel_monarchy"
+  },
+  {
+   "from": "art_olmec_head",
+   "to": "maya"
+  },
+  {
+   "from": "pol_assyria_provinces",
+   "to": "persia"
+  },
+  {
+   "from": "pol_assyria_provinces",
+   "to": "art_mesopotamia_relief"
+  },
+  {
+   "from": "ren_scythians",
+   "to": "ren_xiongnu"
+  },
+  {
+   "from": "pol_sparta_constitution",
+   "to": "pol_carthage_republic"
+  },
+  {
+   "from": "phi_charvaka",
+   "to": "buddha"
+  },
+  {
+   "from": "art_andean_textile",
+   "to": "art_moche"
+  },
+  {
+   "from": "art_andean_textile",
+   "to": "art_nazca"
+  },
+  {
+   "from": "art_nok",
+   "to": "art_ife"
+  },
+  {
+   "from": "confucius",
+   "to": "phi_mohism"
+  },
+  {
+   "from": "art_parthenon",
+   "to": "renaissance"
+  },
+  {
+   "from": "phi_epicureanism",
+   "to": "phi_utilitarianism"
+  },
+  {
+   "from": "phi_mingjia",
+   "to": "phi_xunzi"
+  },
+  {
+   "from": "sci_archimedes",
+   "to": "scirev"
+  },
+  {
+   "from": "sci_eratosthenes",
+   "to": "sci_albiruni"
+  },
+  {
+   "from": "pol_qin_system",
+   "to": "pol_hongwu_lijia"
+  },
+  {
+   "from": "ren_han",
+   "to": "pol_han_centralize"
+  },
+  {
+   "from": "ren_germanic",
+   "to": "arc_viking_atlantic"
+  },
+  {
+   "from": "art_han_tomb",
+   "to": "art_chinese_landscape"
+  },
+  {
+   "from": "sci_apollonius",
+   "to": "sci_kepler"
+  },
+  {
+   "from": "pol_han_centralize",
+   "to": "eco_han_salt_iron"
+  },
+  {
+   "from": "sci_solar_terms",
+   "to": "sci_guoshoujing"
+  },
+  {
+   "from": "art_roman_mosaic",
+   "to": "art_byzantine_mosaic"
+  },
+  {
+   "from": "sci_zhoubi",
+   "to": "sci_nine_chapters"
+  },
+  {
+   "from": "sci_antikythera",
+   "to": "sci_hero"
+  },
+  {
+   "from": "christ",
+   "to": "rel_coptic_monastic"
+  },
+  {
+   "from": "christ",
+   "to": "arc_camino_santiago"
+  },
+  {
+   "from": "sci_nine_chapters",
+   "to": "sci_zhangheng"
+  },
+  {
+   "from": "rel_mahayana",
+   "to": "art_borobudur"
+  },
+  {
+   "from": "sci_nine_chapters",
+   "to": "sci_zuchongzhi"
+  },
+  {
+   "from": "sci_zhangheng",
+   "to": "sci_yixing_meridian"
+  },
+  {
+   "from": "arc_sogdian_trade",
+   "to": "eco_sogdian_network"
+  },
+  {
+   "from": "pol_teotihuacan_gov",
+   "to": "pol_maya_polity"
+  },
+  {
+   "from": "rel_manichaeism",
+   "to": "arc_manichaeism"
+  },
+  {
+   "from": "rel_ethiopian_church",
+   "to": "art_ethiopic_icon"
+  },
+  {
+   "from": "rel_ethiopian_church",
+   "to": "phi_zera_yacob"
+  },
+  {
+   "from": "phi_boethius",
+   "to": "scholastic"
+  },
+  {
+   "from": "chan",
+   "to": "art_nuo"
+  },
+  {
+   "from": "pol_tang_code",
+   "to": "pol_ritsuryo_japan"
+  },
+  {
+   "from": "arc_trans_saharan",
+   "to": "eco_mali_gold"
+  },
+  {
+   "from": "sci_yixing_meridian",
+   "to": "sci_supernova1054"
+  },
+  {
+   "from": "art_islam_geometry",
+   "to": "art_blue_mosque_tiles"
+  },
+  {
+   "from": "sci_alkhwarizmi",
+   "to": "sci_fibonacci"
+  },
+  {
+   "from": "sci_alkhwarizmi",
+   "to": "sci_alkashi_pi"
+  },
+  {
+   "from": "sci_gunpowder",
+   "to": "arc_gunpowder_west"
+  },
+  {
+   "from": "rel_sufism",
+   "to": "ren_yazidi"
+  },
+  {
+   "from": "rel_sufism",
+   "to": "rel_wahhabi"
+  },
+  {
+   "from": "ren_parsi",
+   "to": "rel_parsi_sanjan"
+  },
+  {
+   "from": "eco_swahili_coast",
+   "to": "eco_great_zimbabwe"
+  },
+  {
+   "from": "crusade_a",
+   "to": "rel_inquisition"
+  },
+  {
+   "from": "art_gothic_cathedral",
+   "to": "art_stained_glass"
+  },
+  {
+   "from": "neoconf",
+   "to": "phi_wangyangming"
+  },
+  {
+   "from": "neoconf",
+   "to": "phi_dai_zhen"
+  },
+  {
+   "from": "eco_champagne_fairs",
+   "to": "eco_hanseatic_league"
+  },
+  {
+   "from": "ren_rapanui",
+   "to": "art_rapanui"
+  },
+  {
+   "from": "mongol",
+   "to": "ren_hui"
+  },
+  {
+   "from": "art_persian_miniature",
+   "to": "art_mughal_miniature"
+  },
+  {
+   "from": "eco_yuan_chao",
+   "to": "sci_abacus"
+  },
+  {
+   "from": "pol_mali_governance",
+   "to": "pol_songhai_empire"
+  },
+  {
+   "from": "zhenghe_a",
+   "to": "ren_ryukyu"
+  },
+  {
+   "from": "art_oil_paint",
+   "to": "renaissance"
+  },
+  {
+   "from": "renaissance",
+   "to": "art_opera"
+  },
+  {
+   "from": "arc_potosi_silver",
+   "to": "arc_manila_galleon"
+  },
+  {
+   "from": "art_mughal_miniature",
+   "to": "art_rajasthani"
+  },
+  {
+   "from": "arc_coffee_diffusion",
+   "to": "eco_lloyds_insurance"
+  },
+  {
+   "from": "pol_dutch_republic",
+   "to": "pol_peter_great_reform"
+  },
+  {
+   "from": "sci_bencao",
+   "to": "sci_tiangong_kaiwu"
+  },
+  {
+   "from": "slave_a",
+   "to": "arc_back_to_africa"
+  },
+  {
+   "from": "slave_a",
+   "to": "ren_maroon"
+  },
+  {
+   "from": "sci_torricelli",
+   "to": "scirev"
+  },
+  {
+   "from": "scirev",
+   "to": "sci_lind_scurvy"
+  },
+  {
+   "from": "pol_utrecht_treaty",
+   "to": "pol_congress_vienna"
+  },
+  {
+   "from": "sci_cook_circle",
+   "to": "pol_hawaii_kingdom"
+  },
+  {
+   "from": "art_arts_crafts",
+   "to": "art_bauhaus"
+  },
+  {
+   "from": "arc_chinese_railroad",
+   "to": "ren_chinatown"
+  },
+  {
+   "from": "rel_theosophy",
+   "to": "rel_cao_dai"
+  },
+  {
+   "from": "arc_heroic_age",
+   "to": "eco_southern_whaling"
+  },
+  {
+   "from": "sci_wright",
+   "to": "sci_apollo"
+  },
+  {
+   "from": "sci_pole_race",
+   "to": "sci_shackleton"
+  },
+  {
+   "from": "worldwars",
+   "to": "ren_windrush"
+  },
+  {
+   "from": "sci_yukawa",
+   "to": "sci_higgs"
+  },
+  {
+   "from": "sci_transistor",
+   "to": "art_video_art"
+  },
+  {
+   "from": "coldwar",
+   "to": "ren_hmong"
+  },
+  {
+   "from": "decolonize_a",
+   "to": "phi_hountondji"
+  },
+  {
+   "from": "pol_bandung_conference",
+   "to": "pol_oau_founding"
+  },
+  {
+   "from": "eco_opec",
+   "to": "pol_iran_revolution"
+  },
+  {
+   "from": "rel_vatican_ii",
+   "to": "rel_liberation_theology"
+  },
+  {
+   "from": "eco_grameen_microcredit",
+   "to": "eco_mpesa"
+  },
+  {
+   "from": "sci_ozone_hole",
+   "to": "pol_kyoto_paris_climate_gov"
+  }
+ ]
+}

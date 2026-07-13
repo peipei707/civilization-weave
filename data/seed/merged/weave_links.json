@@ -1,0 +1,548 @@
+{
+ "links": [
+  {
+   "from": "neo",
+   "to": "pol_egypt_kingship"
+  },
+  {
+   "from": "neo",
+   "to": "sci_egypt_calendar"
+  },
+  {
+   "from": "pol_egypt_kingship",
+   "to": "art_egypt_tomb"
+  },
+  {
+   "from": "pol_egypt_kingship",
+   "to": "rel_egypt_afterlife"
+  },
+  {
+   "from": "arc_phoenician_expansion",
+   "to": "pol_carthage_republic"
+  },
+  {
+   "from": "arc_greek_colonization",
+   "to": "art_greek_vase"
+  },
+  {
+   "from": "arc_greek_colonization",
+   "to": "thales"
+  },
+  {
+   "from": "rel_jain",
+   "to": "pol_gandhi_salt_march"
+  },
+  {
+   "from": "phi_cynicism",
+   "to": "phi_stoicism"
+  },
+  {
+   "from": "phi_zhuangzi",
+   "to": "chan"
+  },
+  {
+   "from": "eco_kautilya_arthashastra",
+   "to": "pol_maurya_ashoka"
+  },
+  {
+   "from": "ren_jomon_yayoi",
+   "to": "rel_shinto_kojiki"
+  },
+  {
+   "from": "sci_dujiangyan",
+   "to": "pol_qin_system"
+  },
+  {
+   "from": "pol_maurya_ashoka",
+   "to": "art_sanchi"
+  },
+  {
+   "from": "silk_a",
+   "to": "arc_buddhism_silkroad"
+  },
+  {
+   "from": "silk_a",
+   "to": "paper_a"
+  },
+  {
+   "from": "arc_spice_route",
+   "to": "arc_islam_maritime"
+  },
+  {
+   "from": "rome",
+   "to": "arc_jewish_diaspora"
+  },
+  {
+   "from": "arc_jewish_diaspora",
+   "to": "rel_rabbinic_judaism"
+  },
+  {
+   "from": "alex_a",
+   "to": "art_gandhara"
+  },
+  {
+   "from": "buddha",
+   "to": "art_gandhara"
+  },
+  {
+   "from": "laozi",
+   "to": "rel_daoist_religion"
+  },
+  {
+   "from": "rel_gnosticism",
+   "to": "phi_neoplatonism"
+  },
+  {
+   "from": "rel_mahayana",
+   "to": "art_ajanta"
+  },
+  {
+   "from": "maya",
+   "to": "art_maya_stela"
+  },
+  {
+   "from": "eco_aksum_coinage",
+   "to": "pol_axum_polity"
+  },
+  {
+   "from": "pol_gupta_admin",
+   "to": "art_gupta_sculpture"
+  },
+  {
+   "from": "arc_buddhism_silkroad",
+   "to": "art_dunhuang"
+  },
+  {
+   "from": "laozi",
+   "to": "art_chinese_landscape"
+  },
+  {
+   "from": "rel_rabbinic_judaism",
+   "to": "rel_talmud_babylon"
+  },
+  {
+   "from": "pol_khmer_chenla",
+   "to": "art_angkor"
+  },
+  {
+   "from": "arab_a",
+   "to": "eco_islamic_dirham"
+  },
+  {
+   "from": "islam",
+   "to": "art_islam_calligraphy"
+  },
+  {
+   "from": "islam",
+   "to": "art_islam_geometry"
+  },
+  {
+   "from": "mongol",
+   "to": "eco_mongol_yam"
+  },
+  {
+   "from": "rel_nicaea",
+   "to": "art_gregorian"
+  },
+  {
+   "from": "christ",
+   "to": "pol_charlemagne_coronation"
+  },
+  {
+   "from": "arc_manichaeism",
+   "to": "ren_uyghur"
+  },
+  {
+   "from": "mongol",
+   "to": "arc_huihui_trebuchet"
+  },
+  {
+   "from": "rel_bhakti_tamil",
+   "to": "art_chola_bronze"
+  },
+  {
+   "from": "arc_austronesian",
+   "to": "art_maori"
+  },
+  {
+   "from": "rel_druze",
+   "to": "ren_druze"
+  },
+  {
+   "from": "songeco",
+   "to": "printing_song"
+  },
+  {
+   "from": "confucius",
+   "to": "art_literati"
+  },
+  {
+   "from": "crusade_a",
+   "to": "eco_champagne_fairs"
+  },
+  {
+   "from": "crusade_a",
+   "to": "eco_templar_finance"
+  },
+  {
+   "from": "rel_yoruba_ifa",
+   "to": "art_ife"
+  },
+  {
+   "from": "rel_yoruba_ifa",
+   "to": "pol_benin_kingdom"
+  },
+  {
+   "from": "pol_charlemagne_coronation",
+   "to": "art_romaneseque"
+  },
+  {
+   "from": "chan",
+   "to": "phi_dogen"
+  },
+  {
+   "from": "rel_ethiopian_church",
+   "to": "pol_ethiopia_solomonic"
+  },
+  {
+   "from": "pol_benin_kingdom",
+   "to": "art_benin_bronze"
+  },
+  {
+   "from": "eco_venice_rialto",
+   "to": "pol_venice_republic"
+  },
+  {
+   "from": "plague_a",
+   "to": "phi_ibn_khaldun"
+  },
+  {
+   "from": "neoconf",
+   "to": "pol_joseon_founding"
+  },
+  {
+   "from": "pol_teotihuacan_gov",
+   "to": "rel_mesoamerican"
+  },
+  {
+   "from": "pol_inca_admin",
+   "to": "eco_inca_mita"
+  },
+  {
+   "from": "pol_inca_admin",
+   "to": "rel_andean_religion"
+  },
+  {
+   "from": "zhenghe_a",
+   "to": "ren_peranakan"
+  },
+  {
+   "from": "pol_ottoman_rise",
+   "to": "pol_ottoman_millet"
+  },
+  {
+   "from": "rel_mesoamerican",
+   "to": "art_aztec_sun"
+  },
+  {
+   "from": "eco_mali_gold",
+   "to": "pol_mali_governance"
+  },
+  {
+   "from": "eco_mali_gold",
+   "to": "arc_hajj_mali"
+  },
+  {
+   "from": "mongol",
+   "to": "ren_hazara"
+  },
+  {
+   "from": "eco_swahili_coast",
+   "to": "arc_east_african_slave"
+  },
+  {
+   "from": "columbus_a",
+   "to": "pol_encomienda_spanish"
+  },
+  {
+   "from": "columbus_a",
+   "to": "pol_comanche_empire"
+  },
+  {
+   "from": "pol_ottoman_rise",
+   "to": "arc_barbary_slave"
+  },
+  {
+   "from": "reformation",
+   "to": "rel_anglican_schism"
+  },
+  {
+   "from": "reformation",
+   "to": "pol_dutch_republic"
+  },
+  {
+   "from": "rel_jesuit_order",
+   "to": "art_barock"
+  },
+  {
+   "from": "pol_encomienda_spanish",
+   "to": "ren_mapuche"
+  },
+  {
+   "from": "rel_sufism",
+   "to": "pol_akbar_tolerance"
+  },
+  {
+   "from": "rel_sufism",
+   "to": "arc_coffee_diffusion"
+  },
+  {
+   "from": "pol_akbar_tolerance",
+   "to": "eco_mughal_zabt"
+  },
+  {
+   "from": "pol_tokugawa_bakuhan",
+   "to": "art_kabuki"
+  },
+  {
+   "from": "slave_a",
+   "to": "arc_triangle_eu_af"
+  },
+  {
+   "from": "slave_a",
+   "to": "arc_triangle_am_eu"
+  },
+  {
+   "from": "confucius",
+   "to": "pol_qing_tribute"
+  },
+  {
+   "from": "rel_bhakti_tamil",
+   "to": "art_kathakali"
+  },
+  {
+   "from": "phi_descartes",
+   "to": "sci_huygens"
+  },
+  {
+   "from": "rel_huguenot_edict",
+   "to": "ren_huguenot"
+  },
+  {
+   "from": "pol_magna_carta",
+   "to": "pol_english_bill_rights"
+  },
+  {
+   "from": "eco_caribbean_sugar",
+   "to": "ren_creole_caribbean"
+  },
+  {
+   "from": "arc_triangle_eu_af",
+   "to": "pol_asante_kingdom"
+  },
+  {
+   "from": "phi_spinoza",
+   "to": "phi_leibniz"
+  },
+  {
+   "from": "arc_triangle_am_eu",
+   "to": "ren_gullah"
+  },
+  {
+   "from": "pol_qing_tribute",
+   "to": "eco_canton_system"
+  },
+  {
+   "from": "arc_triangle_eu_af",
+   "to": "rel_vodou_haiti"
+  },
+  {
+   "from": "pol_zulu_kingdom",
+   "to": "ren_nguni_zulu"
+  },
+  {
+   "from": "rel_quaker",
+   "to": "arc_underground_railroad"
+  },
+  {
+   "from": "eco_eic_bengal",
+   "to": "ren_anglo_indian"
+  },
+  {
+   "from": "industrial",
+   "to": "sci_babbage"
+  },
+  {
+   "from": "pol_britain_abolition",
+   "to": "arc_indian_indenture"
+  },
+  {
+   "from": "enlighten",
+   "to": "pol_ottoman_tanzimat"
+  },
+  {
+   "from": "industrial",
+   "to": "sci_thermodynamics"
+  },
+  {
+   "from": "maxwell",
+   "to": "eco_transatlantic_cable"
+  },
+  {
+   "from": "pol_meiji_restoration",
+   "to": "eco_zaibatsu_japan"
+  },
+  {
+   "from": "art_photography",
+   "to": "art_impressionism"
+  },
+  {
+   "from": "sci_xray",
+   "to": "sci_curie_radioactivity"
+  },
+  {
+   "from": "pol_indian_rebellion_1857",
+   "to": "arc_sikh_diaspora"
+  },
+  {
+   "from": "rel_vivekananda",
+   "to": "art_bengal_school"
+  },
+  {
+   "from": "frrev",
+   "to": "rel_secularization"
+  },
+  {
+   "from": "pol_meiji_restoration",
+   "to": "arc_japanese_brazil"
+  },
+  {
+   "from": "arc_triangle_am_eu",
+   "to": "art_jazz"
+  },
+  {
+   "from": "art_cinema",
+   "to": "art_hollywood"
+  },
+  {
+   "from": "pol_ottoman_rise",
+   "to": "ren_armenian_diaspora"
+  },
+  {
+   "from": "pol_league_of_nations",
+   "to": "ren_kurds"
+  },
+  {
+   "from": "phi_analytic_frege_russell",
+   "to": "phi_wittgenstein"
+  },
+  {
+   "from": "pol_weimar_constitution",
+   "to": "eco_weimar_hyperinflation"
+  },
+  {
+   "from": "sci_spectroscopy",
+   "to": "sci_raman"
+  },
+  {
+   "from": "marx",
+   "to": "phi_mariategui"
+  },
+  {
+   "from": "freud",
+   "to": "art_surreal_cinema"
+  },
+  {
+   "from": "relativity",
+   "to": "phi_process_whitehead"
+  },
+  {
+   "from": "rel_ghost_dance",
+   "to": "rel_native_american_church"
+  },
+  {
+   "from": "worldwars",
+   "to": "ren_bracero"
+  },
+  {
+   "from": "art_ukiyoe",
+   "to": "art_manga"
+  },
+  {
+   "from": "phi_heidegger",
+   "to": "phi_arendt"
+  },
+  {
+   "from": "pol_chinese_revolution_1949",
+   "to": "ren_tibetan_diaspora"
+  },
+  {
+   "from": "eco_standard_oil_trust",
+   "to": "eco_opec"
+  },
+  {
+   "from": "eco_bretton_woods",
+   "to": "ren_guest_worker_europe"
+  },
+  {
+   "from": "pol_algeria_independence",
+   "to": "ren_pied_noir"
+  },
+  {
+   "from": "phi_husserl",
+   "to": "phi_derrida"
+  },
+  {
+   "from": "turing",
+   "to": "art_video_game"
+  },
+  {
+   "from": "eco_opec",
+   "to": "arc_gulf_labor"
+  },
+  {
+   "from": "coldwar",
+   "to": "arc_boat_people"
+  },
+  {
+   "from": "coldwar",
+   "to": "arc_afghan_refugees"
+  },
+  {
+   "from": "decolonize_a",
+   "to": "ren_rohingya"
+  },
+  {
+   "from": "eco_east_asian_tigers",
+   "to": "art_kpop"
+  },
+  {
+   "from": "pol_nuremberg_trials",
+   "to": "pol_rwanda_tribunal"
+  },
+  {
+   "from": "dna",
+   "to": "sci_dolly"
+  },
+  {
+   "from": "reform_cn",
+   "to": "pol_hongkong_handover"
+  },
+  {
+   "from": "internet",
+   "to": "pol_internet_governance_icann"
+  },
+  {
+   "from": "pol_apartheid_end",
+   "to": "phi_ubuntu"
+  },
+  {
+   "from": "internet",
+   "to": "pol_arab_spring"
+  },
+  {
+   "from": "relativity",
+   "to": "sci_ligo"
+  }
+ ]
+}

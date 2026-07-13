@@ -1,0 +1,10 @@
+{
+  "name": "civilization-weave",
+  "version": "2.0.0",
+  "private": true,
+  "description": "文明星图构建工具依赖(pngjs/jpeg-js 仅 build_terrain.js 用)",
+  "devDependencies": {
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
+  }
+}
