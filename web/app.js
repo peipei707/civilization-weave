@@ -401,6 +401,22 @@
 
   function buildLegend() {
     const wrap = $('.legend');
+    // 可简可详:迷你态只剩一排彩点(仍可点按开关领域);手机默认迷你,选择记进 localStorage
+    const toggle = wrap.querySelector('.lg-toggle');
+    let mini;
+    try { mini = localStorage.getItem('cw_legend_mini'); } catch (e) { mini = null; }
+    if (mini === null) mini = matchMedia('(max-width: 640px)').matches ? '1' : '0';
+    const applyMini = () => {
+      wrap.classList.toggle('mini', mini === '1');
+      toggle.textContent = mini === '1' ? '⌄' : '⌃';
+      toggle.setAttribute('aria-label', mini === '1' ? '展开图例' : '收起图例');
+    };
+    toggle.onclick = () => {
+      mini = mini === '1' ? '0' : '1';
+      try { localStorage.setItem('cw_legend_mini', mini); } catch (e) { }
+      applyMini();
+    };
+    applyMini();
     const counts = {}, subCounts = {};
     DATA.domains.forEach(d => counts[d.id] = 0);
     [...DATA.nodes, ...DATA.arcs].forEach(it => {

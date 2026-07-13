@@ -99,6 +99,24 @@ body {
   box-shadow: inset 0 1px 0 var(--glass-hi), 0 18px 40px rgba(0,0,0,.35);
   backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
 }
+.legend .lg-head { display: flex; align-items: center; justify-content: space-between; }
+.legend .lg-toggle {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  color: var(--ink-3); font-size: 11px; line-height: 1;
+  padding: 4px 8px; border-radius: 7px;
+  transition: color .2s var(--ease), background .2s var(--ease);
+}
+.legend .lg-toggle:hover { color: var(--ink); background: rgba(255,255,255,.06); }
+
+/* —— 迷你图例:只剩一排彩点(可点按开关领域),手机默认 —— */
+.legend.mini { flex-direction: row; align-items: center; gap: 3px; padding: 6px 8px; }
+.legend.mini .lg-title, .legend.mini .nm, .legend.mini .ct,
+.legend.mini .lg-caret, .legend.mini .lg-subs { display: none; }
+.legend.mini .lg-head { order: 99; }
+.legend.mini .lg-row { display: contents; }
+.legend.mini .lg-row > button:first-child { width: auto; padding: 8px 5px; border-radius: 8px; }
+.legend.mini .lg-row .dot { width: 11px; height: 11px; }
+
 .legend .lg-title { font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase;
   color: var(--ink-3); padding: 4px 8px 6px; }
 .legend button {

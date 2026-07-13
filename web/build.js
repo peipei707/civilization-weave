@@ -67,7 +67,7 @@ const html = `<!doctype html>
   </div>
 </header>
 
-<aside class="legend"><div class="lg-title">领域</div></aside>
+<aside class="legend"><div class="lg-head"><span class="lg-title">领域</span><button class="lg-toggle" aria-label="收起/展开图例">⌃</button></div></aside>
 
 <section class="timeline">
   <button class="play" aria-label="播放"></button>
