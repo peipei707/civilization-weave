@@ -254,6 +254,9 @@ body {
   transition: background .2s var(--ease), transform .2s var(--ease), border-color .2s var(--ease); }
 .detail .chip:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); border-color: var(--cc); }
 .detail .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cc); box-shadow: 0 0 7px var(--cc); flex:none; }
+.detail .dt-en { display: block; font-size: 13px; font-weight: 400; color: var(--ink-3); letter-spacing: .05em; margin-top: 4px; font-family: var(--font-num); }
+.detail .dt-note { font-size: 10.5px; color: var(--ink-3); padding-top: 8px; }
+.detail .terr-y { padding: 5px 10px 5px 8px; font-size: 11.5px; --cc: #8FB0E0; }
 .detail .dt-src { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--hair); }
 .detail .dt-src a { color: var(--gold); font-size: 12.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
 .detail .dt-src a:hover { text-decoration: underline; }
@@ -321,14 +324,14 @@ body {
 /* —— 详情卡配图(维基热链) —— */
 .dt-media { margin: 2px 0 0; display: flex; flex-direction: column; gap: 7px; }
 .dt-media .dm-hero img {
-  width: 100%; max-height: 200px; object-fit: cover; display: block;
+  width: 100%; max-height: 240px; object-fit: contain; background: rgba(4,7,14,.5); display: block;
   border-radius: 11px; border: 1px solid var(--glass-brd);
   box-shadow: 0 10px 26px rgba(0,0,0,.4);
 }
 .dt-media .dm-thumbs { display: flex; gap: 7px; }
 .dt-media .dm-thumb { flex: 1; min-width: 0; }
 .dt-media .dm-thumb img {
-  width: 100%; height: 74px; object-fit: cover; display: block;
+  width: 100%; height: 92px; object-fit: contain; background: rgba(4,7,14,.5); display: block;
   border-radius: 8px; border: 1px solid var(--glass-brd); opacity: .88;
   transition: opacity .2s var(--ease), transform .2s var(--ease);
 }

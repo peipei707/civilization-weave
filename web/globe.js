@@ -417,6 +417,9 @@ window.GlobeView = (function () {
         refreshBorderColors();
         if (cb.onTerr) cb.onTerr(!!f);
       })
+      .onPolygonClick(f => { // 点版图 → 该政权的历史面板(无名部落地带不响应)
+        if (f && f.n && cb.onTerrClick) cb.onTerrClick(f.n);
+      })
       .arcsTransitionDuration(0)
       .arcStartLat(e => e.a.from[0]).arcStartLng(e => e.a.from[1])
       .arcEndLat(e => e.a.to[0]).arcEndLng(e => e.a.to[1])

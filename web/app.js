@@ -572,6 +572,76 @@
     if (GLOBE3D) GlobeView.setFocus(S.hover, S.sel);
   }
 
+  // —— 版图历史面板:点任何政权 → 存续年代(本图快照)+ 实时维基摘要 ——
+  let terrYears = null, terrReq = 0;
+  function terrYearsOf(name) {
+    if (!terrYears) {
+      terrYears = {};
+      const B = window.BORDERS;
+      if (B) for (const y of B.years) for (const f of (B.sets[y].f || [])) {
+        if (!f.n) continue;
+        const arr = terrYears[f.n] = terrYears[f.n] || [];
+        if (arr[arr.length - 1] !== y) arr.push(y); // 同年多块飞地只记一次
+      }
+    }
+    return terrYears[name] || [];
+  }
+  function openTerr(name) {
+    const zh = (window.TERR_ZH && window.TERR_ZH[name]) || name;
+    const years = terrYearsOf(name);
+    const chips = years.map(y =>
+      '<button class="chip terr-y" data-y="' + y + '"><span class="dot"></span>' + fmtYear(y) + '</button>').join('');
+    const span = years.length
+      ? '<div class="dt-meta"><span class="badge">' + fmtYear(years[0]) + ' — ' + fmtYear(years[years.length - 1]) + '</span><span class="badge">' + years.length + ' 个快照在册</span></div>'
+      : '';
+    detail.style.setProperty('--c', '#8FB0E0');
+    detail.innerHTML =
+      '<button class="dt-close" aria-label="关闭">✕</button>' +
+      '<span class="dt-domain"><span class="dot"></span>版图 · 历史政权</span>' +
+      '<h2>' + zh + (zh !== name ? '<span class="dt-en">' + name + '</span>' : '') + '</h2>' +
+      span +
+      (chips ? '<div class="dt-sec">在册年代(点击跳转时间轴)</div><div class="dt-links">' + chips + '</div>' : '') +
+      '<div class="dt-sec">沿革</div><p class="dt-detail terr-wiki">正在从维基百科取简介…</p>' +
+      '<div class="dt-src terr-src"></div>' +
+      '<div class="dt-note">疆界与年代为 historical-basemaps 示意性重建,存在争议与简化</div>';
+    detail.classList.add('on');
+    detail.querySelector('.dt-close').onclick = closeDetail;
+    detail.querySelectorAll('.terr-y').forEach(c => c.onclick = () => {
+      S.tFrac = clamp(yearToFrac(+c.dataset.y) + 0.004, 0, 1);
+      S.playing = false; syncPlay(); dismissHint();
+    });
+    dismissHint();
+    fetchTerrWiki(name, zh, ++terrReq);
+  }
+  async function fetchTerrWiki(name, zh, req) {
+    const box = () => terrReq === req ? detail.querySelector('.terr-wiki') : null;
+    const srcBox = () => terrReq === req ? detail.querySelector('.terr-src') : null;
+    const trySummary = async (lang, title) => {
+      const r = await fetch('https://' + lang + '.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title));
+      if (!r.ok) throw 0;
+      return r.json();
+    };
+    try {
+      let j, lang = 'zh';
+      try { j = await trySummary('zh', zh); }
+      catch (e) { lang = 'en'; j = await trySummary('en', name); }
+      const el = box(); if (!el) return;
+      if (j.extract) {
+        el.textContent = j.extract + (lang === 'en' ? '(中文维基未收录,以上为英文条目摘要)' : '');
+        if (j.thumbnail && j.thumbnail.source) {
+          const fig = document.createElement('figure');
+          fig.className = 'dt-media';
+          fig.innerHTML = '<span class="dm-hero"><img loading="lazy" src="' + j.thumbnail.source + '" onerror="this.parentNode.parentNode.style.display=\'none\'"></span>';
+          el.parentNode.insertBefore(fig, el);
+        }
+        const s = srcBox();
+        if (s && j.content_urls) s.innerHTML = '<a href="' + j.content_urls.desktop.page + '" target="_blank" rel="noopener">维基百科:' + (j.title || zh) + ' ↗</a>';
+      } else { el.textContent = '维基百科暂无该政权的独立条目。'; }
+    } catch (e) {
+      const el = box(); if (el) el.textContent = '取不到维基摘要(离线或条目不存在),以上为本图快照信息。';
+    }
+  }
+
   function selectAndReveal(id) {
     const it = ITEMS[id]; if (!it) return;
     const f = yearToFrac(it.y);
@@ -732,6 +802,7 @@
           onClick: id => { if (clickGuard()) return; openDetail(id); },
           onBg: () => { if (clickGuard()) return; closeDetail(); },
           onTerr: on => { S.terrHover = on; applyHover(); },
+          onTerrClick: name => { if (clickGuard()) return; S.clickHandledAt = performance.now(); openTerr(name); },
         },
       }) === true;
     }
@@ -749,6 +820,7 @@
     $('.tl-speed').onclick = () => { S.speed = S.speed === 1 ? 2 : S.speed === 2 ? 4 : 1; $('.tl-speed').textContent = S.speed + '×'; };
     DATA.nodes.forEach(n => n._a = 0);
     if (GLOBE3D) GlobeView.setYear(curYear());
+    window.CW = { openTerr, reveal: selectAndReveal }; // 公开入口:调试/未来 URL 直达
     requestAnimationFrame(frame);
   }
   init();
