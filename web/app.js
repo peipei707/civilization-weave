@@ -35,17 +35,33 @@
   DATA.nodes.forEach(n => { n.kind = 'node'; n._a = 0; ITEMS[n.id] = n; });
   DATA.arcs.forEach(a => { a.kind = 'arc'; a._g = 0; ITEMS[a.id] = a; });
 
-  // 邻接(影响关系,双向,用于高亮)
-  const adj = {};
+  // 邻接(影响关系,双向用于高亮;有向 in/out 用于脉络树)
+  const adj = {}, outAdj = {}, inAdj = {};
   const edges = [];
   Object.values(ITEMS).forEach(it => {
     (it.links || []).forEach(t => {
       if (!ITEMS[t]) return;
       (adj[it.id] = adj[it.id] || new Set()).add(t);
       (adj[t] = adj[t] || new Set()).add(it.id);
+      (outAdj[it.id] = outAdj[it.id] || []).push(t);
+      (inAdj[t] = inAdj[t] || []).push(it.id);
       if (it.kind === 'node') edges.push([it.id, t]);
     });
   });
+  // 脉络:沿影响边向上/向下各追两级(去重、封顶,时间序排列)
+  function lineageOf(id) {
+    const byY = arr => arr.sort((a, b) => ITEMS[a].y - ITEMS[b].y);
+    const seen = new Set([id]);
+    const grab = (ids, map) => {
+      const out = [];
+      ids.forEach(u => (map[u] || []).forEach(g => { if (!seen.has(g)) { seen.add(g); out.push(g); } }));
+      return byY(out);
+    };
+    const up1 = byY((inAdj[id] || []).filter(x => !seen.has(x) && seen.add(x)));
+    const down1 = byY((outAdj[id] || []).filter(x => !seen.has(x) && seen.add(x)));
+    const up2 = grab(up1, inAdj), down2 = grab(down1, outAdj);
+    return { up2, up1, down1, down2 };
+  }
 
   // —— 状态 ——
   const S = {
@@ -496,17 +512,38 @@
     const it = ITEMS[id]; if (!it) return;
     S.sel = id; const d = domById[it.d];
     detail.style.setProperty('--c', d.color);
-    let links = (adj[id] ? [...adj[id]] : []).map(t => ITEMS[t]).filter(Boolean);
-    links.sort((a, b) => a.y - b.y);
-    const CAP = 12;
-    const chip = t => {
+    const chip = (tid, sm) => {
+      const t = ITEMS[tid]; if (!t) return '';
       const cd = domById[t.d];
-      return '<button class="chip" data-id="' + t.id + '" style="--cc:' + cd.color + '"><span class="dot"></span>' + t.t + '</button>';
+      return '<button class="chip' + (sm ? ' chip-sm' : '') + '" data-id="' + t.id + '" style="--cc:' + cd.color + '"><span class="dot"></span>' + t.t + '</button>';
     };
-    let chips = links.slice(0, CAP).map(chip).join('');
-    if (links.length > CAP) {
-      chips += '<span class="chip-rest">' + links.slice(CAP).map(chip).join('') + '</span>' +
-        '<button class="chip chip-more">+' + (links.length - CAP) + ' 更多</button>';
+    // —— 配图(维基百科主图+文内插图,热链;点击跳共享资源署名页)——
+    const imgs = (window.IMAGES && window.IMAGES[id]) || [];
+    const filePage = f => f ? 'https://commons.wikimedia.org/wiki/' + encodeURIComponent(String(f).replace(/^文件:/, 'File:')) : null;
+    let media = '';
+    if (imgs.length) {
+      const im = (m, cls) => '<a class="' + cls + '" href="' + (filePage(m.f) || m.u) + '" target="_blank" rel="noopener">' +
+        '<img src="' + m.u + '" loading="lazy" alt="" onerror="this.parentElement.style.display=\'none\'"></a>';
+      media = '<figure class="dt-media">' + im(imgs[0], 'dm-hero') +
+        (imgs.length > 1 ? '<div class="dm-thumbs">' + imgs.slice(1).map(m => im(m, 'dm-thumb')).join('') + '</div>' : '') +
+        '<figcaption>图源:维基百科 / 维基共享资源(点击看原图与授权)</figcaption></figure>';
+    }
+    // —— 脉络树:源流(上游两级)→ 本条目 → 流变(下游两级)——
+    const L = lineageOf(id);
+    const row = (ids, label) => ids.length
+      ? '<div class="tr-row">' + (label ? '<span class="tr-tag">' + label + '</span>' : '') + ids.slice(0, 6).map(x => chip(x, true)).join('') +
+        (ids.length > 6 ? '<span class="tr-more">+' + (ids.length - 6) + '</span>' : '') + '</div>'
+      : '';
+    const arrow = '<div class="tr-link">↓</div>';
+    let tree = '';
+    if (L.up1.length || L.down1.length) {
+      tree = '<div class="dt-sec">脉络 · 源流与流变</div><div class="dt-tree">' +
+        row(L.up2, '远源') + (L.up2.length ? arrow : '') +
+        row(L.up1, '源') + (L.up1.length ? arrow : '') +
+        '<div class="tr-row tr-self"><span class="dot"></span>' + it.t + '</div>' +
+        (L.down1.length ? arrow + row(L.down1, '流') : '') +
+        (L.down2.length ? arrow + row(L.down2, '远流') : '') +
+        '</div>';
     }
     const kind = it.kind === 'arc' ? '迁徙 · 流动' : d.name;
     const src = it.src ? '<div class="dt-src"><a href="https://zh.wikipedia.org/wiki/' + encodeURIComponent(it.src) + '" target="_blank" rel="noopener">维基百科:' + it.src + ' ↗</a></div>' : '';
@@ -515,16 +552,15 @@
       '<span class="dt-domain"><span class="dot"></span>' + kind + '</span>' +
       '<h2>' + it.t + '</h2>' +
       '<p class="dt-gist">' + it.gist + '</p>' +
+      media +
       '<div class="dt-meta"><span class="badge">' + fmtYear(it.y) + (it.y < 0 ? ' BCE' : ' CE') + '</span><span class="badge">' + eraOf(it.y) + '</span>' +
       (it.sub && SUBNAME[it.d + ':' + it.sub] ? '<span class="badge badge-sub">' + SUBNAME[it.d + ':' + it.sub] + '</span>' : '') + '</div>' +
       (it.detail ? '<p class="dt-detail">' + it.detail + '</p>' : '') +
-      (chips ? '<div class="dt-sec">关联 · 影响</div><div class="dt-links">' + chips + '</div>' : '') +
+      tree +
       src;
     detail.classList.add('on');
     detail.querySelector('.dt-close').onclick = closeDetail;
     detail.querySelectorAll('.chip[data-id]').forEach(c => c.onclick = () => selectAndReveal(c.dataset.id));
-    const more = detail.querySelector('.chip-more');
-    if (more) more.onclick = () => { detail.querySelector('.chip-rest').classList.add('open'); more.remove(); };
     if (GLOBE3D) {
       GlobeView.setFocus(S.hover, S.sel);
       if (S.morph < 0.5) GlobeView.flyToItem(it);

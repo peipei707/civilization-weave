@@ -318,6 +318,46 @@ body {
 .chip-rest { display: none; }
 .chip-rest.open { display: contents; }
 
+/* —— 详情卡配图(维基热链) —— */
+.dt-media { margin: 2px 0 0; display: flex; flex-direction: column; gap: 7px; }
+.dt-media .dm-hero img {
+  width: 100%; max-height: 200px; object-fit: cover; display: block;
+  border-radius: 11px; border: 1px solid var(--glass-brd);
+  box-shadow: 0 10px 26px rgba(0,0,0,.4);
+}
+.dt-media .dm-thumbs { display: flex; gap: 7px; }
+.dt-media .dm-thumb { flex: 1; min-width: 0; }
+.dt-media .dm-thumb img {
+  width: 100%; height: 74px; object-fit: cover; display: block;
+  border-radius: 8px; border: 1px solid var(--glass-brd); opacity: .88;
+  transition: opacity .2s var(--ease), transform .2s var(--ease);
+}
+.dt-media .dm-thumb img:hover { opacity: 1; transform: translateY(-1px); }
+.dt-media figcaption { font-size: 10px; color: var(--ink-3); letter-spacing: .03em; }
+
+/* —— 脉络树:源流 → 本条目 → 流变 —— */
+.dt-tree { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.dt-tree .tr-row {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 5px; width: 100%;
+}
+.dt-tree .tr-tag {
+  font-size: 9.5px; letter-spacing: .18em; color: var(--ink-3);
+  border: 1px solid var(--hair); border-radius: 5px; padding: 1px 5px; flex: none;
+}
+.dt-tree .tr-link { color: var(--ink-3); font-size: 11px; line-height: 1; opacity: .7; }
+.dt-tree .tr-self {
+  font-family: var(--font-serif); font-weight: 600; font-size: 14px; color: var(--ink);
+  padding: 6px 14px; border-radius: 10px;
+  background: rgba(255,255,255,.05); border: 1px solid var(--c);
+  box-shadow: 0 0 14px -4px var(--c); display: inline-flex; gap: 8px; align-items: center;
+  width: auto;
+}
+.dt-tree .tr-self .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); }
+.dt-tree .tr-more { font-size: 10.5px; color: var(--ink-3); font-family: var(--font-num); }
+.chip.chip-sm { font-size: 11px; padding: 4px 9px 4px 8px; border-radius: 8px; gap: 5px; }
+.chip.chip-sm .dot { width: 6px; height: 6px; }
+
 /* —— 时间窗(双手柄截取)—— */
 .tl-fill { left: var(--p0, 0%); width: calc(var(--p) - var(--p0, 0%)); }
 .tl-head0 {
