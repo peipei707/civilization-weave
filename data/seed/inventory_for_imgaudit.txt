@@ -1,0 +1,555 @@
+id|标题|年份|一句话|图片文件名(序号:名)
+neo|农业革命|-9500|学会种地,人类第一次能囤积盈余——城市、阶级、文字的总开关。|0:Maler_der_Grabkammer_des_Sennudem_001.jpg ;; 1:Evolution_of_temperature_in_the_Post-Glacial_period_according_to_Greenland_ice_cores.jpg ;; 2:Composite_Sickles_for_Cereal_Harvesting_at_23,000-Years-Old_Ohalo_II,_Israel.jpg
+sumer|苏美尔城邦|-3500|人类最早的城市与国家,把余粮变成王权、神庙与官僚。|0:Sumer_Dynasty.svg ;; 1:Plaquet_pendant-AO_7702-IMG_9153-gradient.jpg ;; 2:Ur-Nassiriyah.jpg
+cunei|楔形文字|-3200|把语言钉进泥板,知识第一次能跨越人的寿命累积。|0:Babylonlion.JPG ;; 1:Cuneiform_script2.jpg ;; 2:Tontäfelchen_Mesopotamien_3200vChr_1.jpg
+hammu|汉谟拉比法典|-1754|把王权写成成文法——治理开始依赖规则,而非某个人的心情。|0:F0182_Louvre_Code_Hammourabi_Bas-relief_Sb8_rwk.jpg ;; 1:Codice_di_hammurabi_01.JPG ;; 2:CodeOfHammurabi.jpg
+phoen|腓尼基字母|-1050|二十二个符号让书写平民化,几乎所有西方文字的共同祖先。|0:Phoenician_alphabet.svg
+judaism|犹太教 · 一神信仰|-1200|一个民族押注唯一的神与圣约,写下影响半个地球的道德叙事。|0:Ohel_leah_hk.jpg
+buddha|佛教 · 释迦牟尼|-528|关于苦与解脱的处方,后来沿商路传遍整个亚洲。|0:Dharma_Wheel.svg ;; 1:Gandhara_Buddha_(tnm).jpeg ;; 2:Diksha_Bhumi.jpg
+confucius|儒家 · 孔子|-500|把伦理与秩序立为文明的操作系统,塑造东亚两千年。|0:EmperorShun.jpg ;; 1:Konfuzius-1770.jpg ;; 2:Dong_zhongshu.jpg
+laozi|道家 · 老子|-500|无为而治、道法自然——对秩序哲学的另一种回答。|0:Mawangdui_LaoTsu_Ms2.JPG
+socrates|希腊哲学 · 苏格拉底—柏拉图—亚里士多德|-380|把"如何思考"本身变成学问,西方哲学的地基。|0:"The_School_of_Athens"_by_Raffaello_Sanzio_da_Urbino.jpg ;; 1:Sanzio_01_cropped.png
+athens|雅典民主|-508|公民抽签议政,"人民统治"第一次成为制度实验。|0:Discurso_funebre_pericles.PNG ;; 1:Constitution-of-the-Athenians-in-the-4th-century-BC.png ;; 2:Pnyx.jpg
+persia|波斯帝国|-539|第一个横跨三洲的多民族帝国,宽容治理的早期样板。|0:Standard_of_Cyrus_the_Great.svg ;; 1:Persepolis_24.11.2009_11-12-14.jpg ;; 2:Imperial_Eagle_(Aquila_heliaca)_(38741311735).jpg
+rome|罗马|-27|法律、道路、公民权——一套可复制的治理与工程模板。|0:Roman_SPQR_banner.svg ;; 1:1770_Janvier_Map_of_Italy_-_Geographicus_-_Italy-janvier-1770.jpg ;; 2:Die_sieben_Hügel_Roms.png
+paper|造纸术 · 蔡伦|105|廉价的信息载体,最终点燃印刷与全民识字。|0:Cai-lun.jpg ;; 1:Cai-lun.jpg ;; 2:Chinese_hemp_paper_western_han.jpg
+christ|基督教|33|从边缘教派到罗马国教,再到整个西方的精神底色。|0:Gutenberg_Bible,_Lenox_Copy,_New_York_Public_Library,_2009._Pic_01.jpg ;; 1:Jesus-Christ-from-Hagia-Sophia.jpg
+maya|玛雅文明|250|独立发明了文字、历法与"零"——文明会各自趋同。|0:Mayamap.png ;; 1:Kaminaljuyu_7.jpg ;; 2:El_Mirador_5.jpg
+eco_maya_cacao|可可豆货币 · 玛雅市场|250|一颗可可豆能当钱花,也能被剥皮造假,中美洲市场很早就有了通胀与假币。|0:Mayamap.png ;; 1:Kaminaljuyu_7.jpg ;; 2:El_Mirador_5.jpg
+pol_maya_polity|玛雅城邦体系|250|从没统一过的文明:几十个玛雅王城靠联姻和战争互相较劲。|0:Mayamap.png ;; 1:Kaminaljuyu_7.jpg ;; 2:El_Mirador_5.jpg
+islam|伊斯兰教 · 穆罕默德|622|一场宗教,同时也是一个帝国与文明的引擎。|0:Supplicating_Pilgrim_at_Masjid_Al_Haram._Mecca,_Saudi_Arabia.jpg ;; 1:Quran_cover.jpg ;; 2:Istanbul,_Hagia_Sophia,_Allah.jpg
+examsys|科举制|605|以考试选官,一个早熟的精英流动机制。|0:Palastexamen-SongDynastie-Kaiser.jpg ;; 1:Militärexamen.jpg ;; 2:Civilserviceexam1.jpg
+housewisdom|伊斯兰黄金时代 · 智慧宫|800|翻译希腊与印度典籍,代数、光学、医学在此续命并跃进。|0:Libr0310.jpg ;; 1:Al-Jaahith_-_African_Arab_Naturalist_-_Basra_-_al_jahiz.jpg ;; 2:Al-jazari_robots.jpg
+chan|禅宗|600|佛教与道家在中国的合流,直指人心。|0:Bodhidharma.and.Huike-Sesshu.Toyo.jpg ;; 1:Bodhidarma.jpg ;; 2:Dai_Jin._Six_Patriarchs_of_Chan._Liaoning_Provincial_Museum..jpg
+songeco|宋代商业革命|1023|世界最早的纸币"交子",一场没有工业的近世繁荣。|0:Jiao_zi.jpg ;; 1:Jiao_zi.jpg
+mongol|蒙古帝国 · 成吉思汗|1206|史上最大陆地帝国,打通欧亚,也修好了黑死病的高速路。|0:Mongolia_9_suldes.png ;; 1:Chinggis_Khaan_statue_Complex.jpg ;; 2:YuanEmperorAlbumGenghisPortrait.jpg
+printing_song|活字印刷 · 毕昇|1040|活字问世,信息复制成本再次崩塌。|0:Metal_movable_type.jpg ;; 1:Die_Buchdruckerei_by_Daniel_Chodowiecki_(150289207).jpg ;; 2:活字《佛说观无量寿佛经》残叶.jpg
+renaissance|文艺复兴|1450|重新发现古典,人成为万物的尺度。|0:"The_School_of_Athens"_by_Raffaello_Sanzio_da_Urbino.jpg ;; 1:Da_Vinci_Vitruve_Luc_Viatour.jpg ;; 2:Michelangelo's_David_2015.jpg
+gutenberg|古腾堡印刷术|1450|金属活字让思想以病毒速度传播——宗教改革与科学革命的助燃剂。|0:Gutenberg.jpg ;; 1:Johannes_Gutenberg.jpg ;; 2:Gutenberg_Bible,_Lenox_Copy,_New_York_Public_Library,_2009._Pic_01.jpg
+reformation|宗教改革 · 马丁·路德|1517|一张抗议贴上教堂门,基督教世界从此分裂,个人直面上帝。|0:95Thesen.jpg ;; 1:Calvin.png
+scirev|科学革命 · 哥白尼—伽利略—牛顿|1687|用数学与实验改写宇宙,知识的权威从教会转向自然。|0:Libr0310.jpg ;; 1:NewtonsPrincipia.jpg ;; 2:Maquina_vapor_Watt_ETSIIM.jpg
+westphalia|威斯特伐利亚体系|1648|现代主权国家体系的出生证。|0:Münster,_Historisches_Rathaus_--_2014_--_6855.jpg
+enlighten|启蒙运动|1750|理性、自由、进步——一套至今仍在争论的现代价值操作系统。|0:Sanzio_01_cropped.png
+smith|《国富论》 · 亚当·斯密|1776|看不见的手,把自利讲成公共繁荣的引擎——资本主义的圣经。|0:Wealth_of_Nations.jpg ;; 1:Wealth_of_Nations.jpg ;; 2:The_Wealth_of_Nations.jpg
+industrial|工业革命|1769|蒸汽与工厂,人类第一次挣脱农业增长的天花板。|0:Maquina_vapor_Watt_ETSIIM.jpg ;; 1:Watt_James_von_Breda.jpg
+amrev|美国革命|1776|把启蒙理念写成一份建国文件。|0:AmericanRevolutionaryWarMon.jpg ;; 1:Boston_tea_party.jpg ;; 2:Military_Costume_of_the_Revolution_(1855_Chromolithograph).jpg
+frrev|法国大革命|1789|自由平等博爱与断头台,现代政治的原型剧。|0:Anonymous_-_Prise_de_la_Bastille.jpg ;; 1:Parliaments_and_Sovereign_Councils_of_the_Kingdom_of_France_in_1789_(fr).png ;; 2:Troisordres.jpg
+napcode|拿破仑法典|1804|把革命成果固化为一部可输出的民法典。|0:Code_Civil_1804.png
+romantic|浪漫主义|1800|对启蒙理性的反弹,歌颂情感、自然与民族。|0:Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg ;; 1:Delacroix_-_La_Mort_de_Sardanapale_(1827).jpg ;; 2:William_Blake_-_Songs_of_Innocence_and_of_Experience,_Plate_35,_"The_Little_Girl_Found"_(Bentley_36)_-_Google_Art_Project_(cropped).jpg
+darwin|进化论 · 达尔文|1859|自然选择,把人类拉回生命之树——一场神学地震。|0:Darwin's_finches_by_Gould.jpg ;; 1:Lucretius_Rome.jpg ;; 2:Charles_Darwin_aged_51.jpg
+marx|马克思主义 · 《资本论》|1867|把历史读成阶级斗争,一套预言,和一场持续百年的实验。|0:Karl_Marx_001.jpg
+maxwell|电磁学 · 法拉第—麦克斯韦|1865|把电与磁写成方程,第二次工业革命的地基。|0:Lightning.0257.jpg ;; 1:Charles_de_Coulomb.png ;; 2:Ampere_Andre_1825.jpg
+modernart|现代主义艺术 · 毕加索—杜尚|1907|打碎透视与再现,艺术从"画什么"转向"什么是艺术"。|0:NYC_-_Guggenheim_Museum.jpg
+worldwars|两次世界大战|1914|工业化战争,旧帝国崩解,世界权力彻底洗牌。|0:Gari-Melchers-War-Highsmith.jpeg ;; 1:WWI.png ;; 2:Map_of_participants_in_World_War_II.png
+penicillin|抗生素 · 青霉素|1928|感染不再是死刑,人类寿命就此跃升。|0:Penicillin_core.svg ;; 1:Benzylpenicillin-3D-balls.png ;; 2:Penicillin-F-2D-skeletal.png
+turing|计算机 · 图灵|1936|可计算性与通用机器,信息时代的蓝图。|0:Alan_turing_header.jpg ;; 1:KingsCollegeChapel.jpg ;; 2:AlanTuring-Bletchley.jpg
+nuke|核武器 · 曼哈顿计划|1945|人类第一次握有自我毁灭的能力。|0:Trinity_shot_color.jpg ;; 1:Manhattan_Project_emblem.png ;; 2:Lawrence_Compton_Bush_Conant_Compton_Loomis.jpg
+existential|存在主义 · 萨特—加缪|1945|神死之后,人被判处自由。|0:Kierkegaard-Dostoyevsky-Nietzsche-Sartre.jpg ;; 1:Sisyphus_by_von_Stuck.jpg
+dna|DNA 双螺旋|1953|读懂遗传的分子密码,生命科学的世纪由此开幕。|0:DNA_Structure+Key+Labelled.pn_NoBB.png ;; 1:DNA_in_the_cell-2.jpg ;; 2:DNA_chemical_structure_zh.png
+coldwar|冷战|1947|两种制度、两种未来的四十年对峙。|0:NATO_vs._Warsaw_Pact_(1949-1990).svg ;; 1:West_and_East_Germans_at_the_Brandenburg_Gate_in_1989.jpg ;; 2:Raising_a_flag_over_the_Reichstag_-_Restoration.jpg
+internet|互联网与万维网|1991|信息以近乎零成本流动,连接与撕裂同源。|0:Chrome_on_Linux.png ;; 1:First_Web_Server.jpg ;; 2:Internet_Key_Layers.png
+reform_cn|改革开放与东亚崛起|1978|数亿人脱贫,世界经济重心加速东移。|0:2011_深圳_莲花山顶－邓小平头像_-_panoramio.jpg ;; 1:庆祝中国共产党成立100周年北京长安街沿线立体花坛_改革开放.jpg ;; 2:Silk_Road_1992_(4367437041)_Market_in_Xinjiang,_1992.jpg
+ai|人工智能|2012|机器开始学习、生成与推理——一个新变量进入所有领域。|0:Dall-e_3_(jan_'24)_artificial_intelligence_icon.png ;; 1:Kismet_robot_at_MIT_Museum.jpg ;; 2:Vice_President_Harris_at_the_group_photo_of_the_2023_AI_Safety_Summit.jpg
+climate|气候变化与人类世|2000|人类成了地质力量,文明第一次要为自己的副作用负责。|0:BlackMarble20161km.jpg
+art_chauvet|肖维岩洞壁画|-30000|肖维岩洞壁画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Chauvethorses.jpg ;; 1:Chauvethorses.jpg ;; 2:Paintings_from_the_Chauvet_cave_(museum_replica).jpg
+art_lascaux|拉斯科洞窟壁画|-17000|拉斯科洞窟壁画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Lascaux_painting.jpg ;; 1:Lascaux_entrance.jpg ;; 2:Lascaux-IV_01.jpg
+art_altamira|阿尔塔米拉洞窟壁画|-14500|阿尔塔米拉洞窟壁画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Techo_de_Altamira_(replica)-Museo_Arqueológico_Nacional.jpg ;; 1:Altamira-1880.jpg ;; 2:Reproduction_cave_of_Altamira_01.jpg
+art_jomon|绳纹陶器|-10000|绳纹陶器把材料、技法与观看方式接在一起，留下超越时代的回声。|0:JomonStatue.JPG ;; 1:JomonStatue.JPG ;; 2:Late_Jomon_clay_statue_Kazahari_I_Aomoriken_1500BCE_-_1000BCE.jpg
+art_tassili|阿杰尔高原岩画|-6000|阿杰尔高原岩画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Tassili_n’Ajjer_National_Park_NASA_Landsat_7_(2000).jpg
+art_egypt_tomb|古埃及墓室壁画|-2600|古埃及墓室壁画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Statuette_of_the_lady_Tiye_MET_DT221869.jpg ;; 1:Ägyptisches_Museum_Kairo_2016-03-29_Ka-aper_01.jpg ;; 2:Aswan,_Egypt_WestBankTombs_2007jan15._14_byDanielCsorfoly.JPG
+eco_indus_weights|度量衡 · 印度河谷标准化|-2600|没有破译的文字也没留下王名,却留下一整套精确到克的砝码。|0:Indus_Valley_Civilization,_Mature_Phase_(2600-1900_BCE).png ;; 1:Mohenjo-daro.jpg ;; 2:Harappan_small_figures.jpg
+art_indus_seals|印度河印章|-2500|印度河印章把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Indus_Valley_Civilization,_Mature_Phase_(2600-1900_BCE).png ;; 1:Mohenjo-daro.jpg ;; 2:Harappan_small_figures.jpg
+eco_pyramid_labor_economy|金字塔劳役经济 · 古埃及动员|-2560|建金字塔的不是奴隶大军,而是国家按季节征调、供饭发薪的轮班工匠。|0:Pyramids_of_the_Giza_Necropolis.jpg ;; 1:All_Gizah_Pyramids-3.jpg
+art_qin_bronze|商周青铜器|-1600|商周青铜器把材料、技法与观看方式接在一起，留下超越时代的回声。|0:亞醜方鼎.jpg ;; 1:Square_zun_with_four_sheep_01.jpg ;; 2:Xinmang_jialiang.JPG
+sci_egypt_papyrus|外科医学 · 埃德温·史密斯纸草|-1600|不求神谕只查体征——一份纸草手册把外伤诊治写成了可复制的步骤。|0:Edwin_Smith_Papyrus_v2.jpg
+eco_mycenae_linear_b|王室记账 · 迈锡尼线形文字B|-1400|破译出的第一批希腊文字,写的不是诗也不是法律,而是宫殿的库存清单。|0:NAMA_Linear_B_tablet_of_Pylos.jpg
+eco_shell_knife_money|贝币与刀布 · 商周货币|-1200|海贝从装饰品变成计数单位,稀缺可数比有用更早决定了什么能当钱。|0:Cypraea_Moneta_Unearthed_in_Shaoxing_2012-07.JPG ;; 1:Monetaria_moneta_01.JPG ;; 2:Shell_Money,Baoji_Bronze_Ware_Museum.jpg
+eco_phoenician_trade|腓尼基-迦太基地中海商网|-814|没有大帝国的腹地,靠殖民港口串成的商业网也能主宰地中海几百年。|0:Amilcar,_Carthage,_Tunisia_-_panoramio_(15).jpg
+pol_carthage_republic|迦太基寡头共和政制|-400|没有国王的商业帝国:两名年选长官加元老院互相牵制。|0:Amilcar,_Carthage,_Tunisia_-_panoramio_(15).jpg
+art_greek_vase|古希腊瓶画|-700|古希腊瓶画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Athena_Herakles_Staatliche_Antikensammlungen_2301_A_full.jpg
+sci_babylon_astronomy|巴比伦天文观测记录|-700|祭司们记了三百年星象,意外攒出了第一份能预测未来的数据库。|0:Babylonian_tablet_recording_Halley's_comet.jpg
+eco_lydia_coin|铸币 · 吕底亚金银币|-600|把贵重金属切成标准小块并盖上王室印记,交易第一次不用再称重验色。|0:Kingdom_of_Lydia.png ;; 1:BMC_06.jpg ;; 2:Lydia_original_area_of_lydia.jpg
+art_nok|诺克陶塑|-500|诺克陶塑把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Verbreitung_Nok-Kultur-en.png
+art_parthenon|帕特农神庙|-447|帕特农神庙把材料、技法与观看方式接在一起，留下超越时代的回声。|0:The_Parthenon_in_Athens.jpg ;; 1:Parthenon_XL.jpg ;; 2:Athena_Parthenos_The_Parthenon_Nashville.jpg
+sci_hippocrates|医学 · 希波克拉底|-400|把疾病归因于体液失衡而非神罚,医生第一次开始对病人负责。|0:Hippocrates_pushkin02.jpg ;; 1:Kos_Asklepeion.jpg ;; 2:HippocraticBench.png
+sci_euclid|几何学 · 欧几里得|-300|从五条公理推出整座几何大厦,证明的方法比结论本身更改变世界。|0:Byrne_82_diagram_1.svg
+sci_dujiangyan|水利工程 · 都江堰|-256|不筑坝拦水,而是顺势分流——两千多年后它还在给成都平原供水。|0:36661-Dujiangyan_(44634340644).jpg
+sci_archimedes|力学与数学 · 阿基米德|-250|泡个澡就想通了浮力原理,顺手把杠杆变成了能撬动战争的武器。|0:Domenico-Fetti_Archimedes_1620.jpg ;; 1:Death_of_Archimedes.png ;; 2:Cicero_Discovering_the_Tomb_of_Archimedes_by_Benjamin_West.jpeg
+sci_eratosthenes|地球测量 · 埃拉托斯特尼|-240|比较两口井的日影角度,他在没有卫星的时代量出了地球有多大。|0:Portrait_of_Eratosthenes.png
+eco_qin_standard_currency|半两钱 · 秦统一货币度量衡|-221|统一文字车轨之外,秦始皇也不许六国旧钱再流通,国家先从钱袋子开始统一。|0:半兩錢.jpg ;; 1:S-88_or_82,_W_Han_banliang,_Empress_Gao,_187-180,_34mm.jpg ;; 2:S-93_W_Han_banliang,_Wendi,_179-157_BC,_24mm.jpg
+art_nazca|纳斯卡线条|-200|纳斯卡线条把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Líneas_de_Nazca,_Nazca,_Perú,_2015-07-29,_DD_55.JPG ;; 1:Líneas_de_Nazca,_Nazca,_Perú,_2015-07-29,_DD_54.JPG ;; 2:Líneas_de_Nazca,_Nazca,_Perú,_2015-07-29,_DD_61.JPG
+art_han_tomb|汉代画像石|-200|汉代画像石把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Wu_Family_Shrine_chariots_and_horses.jpg ;; 1:HanMural2.JPG
+sci_hipparchus|天文学 · 喜帕恰斯|-150|编了一份星表还发现星星在缓慢挪位,春分点比人以为的更会跑。|0:Hipparchus_by_Raphael.jpg
+sci_solar_terms|历法 · 二十四节气|-104|把太阳一年的路程切成24段,种地的人从此有了一张精确的时间表。|0:24solarterms.png ;; 1:二十四节气令鼓_202405051009.jpg
+sci_zhoubi|数学 · 《周髀算经》|-100|用一根立竿量日影,中国最早的数学书顺手证明了勾三股四弦五。|0:周髀算經.jpg ;; 1:Rigaotu1213CE.png ;; 2:Qihengtu1213CE.png
+sci_hero|工程学 · 希罗的蒸汽转球|50|他造出了会转的蒸汽球,却只把它当成神庙里逗人开心的玩具。|0:Hero_of_Alexandria.png ;; 1:Aeolipile_illustration.png
+art_moche|莫切陶器|100|莫切陶器把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Mapa_cultura_moche.png ;; 1:Mapa_cultura_moche.png
+art_hopewell|霍普韦尔艺术|100|霍普韦尔艺术把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Hopewell_Exchange_Network_HRoe_2010.jpg
+art_gandhara|犍陀罗佛像|100|犍陀罗佛像把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Gandharan_-_Seated_Buddha_in_the_Attitude_of_Preaching_-_Walters_25123.jpg
+sci_nine_chapters|数学 · 《九章算术》|100|一本写给税吏和工程师的应用题集,悄悄给出了负数和线性方程组解法。|0:九章算術細草圖說.jpg
+sci_zhangheng|天文仪器 · 张衡地动仪与浑天仪|132|京城的人还没感觉到地震,他造的铜壶已经先吐出了一颗铜球。|0:PSM_V29_D320_Ancient_chinese_choko_seismoscope_from_136_a_d.jpg ;; 1:EastHanSeismograph.JPG ;; 2:South-pointing_chariot_(Science_Museum_model).jpg
+sci_ptolemy|天文学 · 托勒密天文学大成|150|一套算错了方向的地心模型,却精准到让人信了一千四百年。|0:Almagest_1.jpeg ;; 1:Almagest_1.jpeg ;; 2:Cassini_apparent.jpg
+sci_galen|医学 · 盖伦|180|靠解剖猴子和猪推断人体构造,猜错的地方也被当真理供了一千多年。|0:Galen_detail.jpg
+art_ajanta|阿旃陀石窟壁画|200|阿旃陀石窟壁画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Meister_des_Mahâjanaka_Jâtaka_001.jpg
+sci_zhangzhongjing|医学 · 张仲景《伤寒杂病论》|200|一场家族瘟疫死了大半,他把治病经验写成了后世医生人手一册的方子书。|0:Chinese_woodcut,_Famous_medical_figures;_Zhang_Zhongjing_Wellcome_L0039319.jpg
+sci_huatuo|医学 · 华佗麻沸散|200|在乙醚问世前一千六百年,他已经能让病人无痛挨这一刀。|0:汉名医华佗.jpg
+art_maya_stela|玛雅石碑艺术|250|玛雅石碑艺术把材料、技法与观看方式接在一起，留下超越时代的回声。|0:MAYA-g-log-cal-D10-Ok_b.svg ;; 1:Stele51CalakmulMuseum.JPG ;; 2:Copan_St_H.jpg
+sci_diophantus|代数学 · 丢番图|250|专攻只要整数解的方程,他的名字后来成了数论一整类难题的代号。|0:Diophantus-cover.jpg ;; 1:Diophantus-cover.jpg
+eco_aksum_coinage|阿克苏姆铸币 · 红海贸易国|270|撒哈拉以南第一个自己铸钱的王国,靠象牙和黄金把远方的罗马也牵动起来。|0:LocationAksumiteEmpire-es.svg ;; 1:Ethio_w4.jpg
+pol_axum_polity|阿克苏姆政教合一|330|国王一声令下皈依,整个红海贸易国就换了国教。|0:LocationAksumiteEmpire-es.svg ;; 1:Ethio_w4.jpg
+art_dunhuang|敦煌莫高窟|366|敦煌莫高窟把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Dunhuang_Mogao_Ku_2013.12.31_12-30-18.jpg ;; 1:Mogao_Cave_61,_painting_of_Mount_Wutai_monasteries.jpg ;; 2:Mona_Lisa_Buddha_(27023604587).jpg
+art_chinese_landscape|中国山水画|400|中国山水画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Guo_Xi_-_Early_Spring_(large).jpg ;; 1:Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg ;; 2:Li_Tang_-_Wind_in_Pines_Among_a_Myriad_Valleys.jpg
+sci_zuchongzhi|数学 · 祖冲之圆周率|480|把圆周率算到小数点后七位,这个纪录在世界上保持了将近一千年。|0:祖冲之铜像.jpg ;; 1:昆山亭林公园祖冲之像.jpg ;; 2:祖冲之路+哈雷路,_上海市北蔡镇.jpg
+art_persian_carpet|波斯地毯|500|波斯地毯把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Mantes_carpet_Louvre_OA6610_detail1.jpg ;; 1:Ghyas_el_Din_Jami_-_Tabriz_(?)_-_Google_Art_Project.jpg ;; 2:Unknown,_Iran,_16th_Century_-_The_Schwarzenberg_Carpet_-_Google_Art_Project.jpg
+art_byzantine_mosaic|拜占庭镶嵌画|537|拜占庭镶嵌画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Byzantine_church_in_Nahariya_-_Peacocks_Mosaic.jpg ;; 1:Christ_Pantocrator_Deesis_mosaic_Hagia_Sophia.jpg ;; 2:Encaustic_Virgin.jpg
+eco_grand_canal|大运河 · 隋炀帝漕运|605|一条人工河把江南的米粮接到北方都城,谁控制运河谁就控制帝国的粮袋。|0:Grand_Canal_Gongchen_Hangzhou.webm ;; 1:Modern_Course_of_Grand_Canal_of_China.png ;; 2:大運河.png
+sci_indian_zero|数学 · 十进位值制与零|628|把什么都没有的空位当成一个真正的数字来算,数学从此换了一副骨架。|0:Hindu_astronomer,_19th-century_illustration.jpg
+art_islam_calligraphy|伊斯兰书法|700|伊斯兰书法把材料、技法与观看方式接在一起，留下超越时代的回声。|0:AndalusQuran.JPG ;; 1:KeitenAijin.jpg ;; 2:Folio_from_a_Koran_(8th-9th_century).jpg
+eco_islamic_dirham|迪拉姆银币 · 阿拉伯统一货币|700|废掉沿用的旧图案钱币,阿拉伯帝国用一套新钱宣告自己不再是谁的继承者。|0:Silver_Dirham.png ;; 1:Arab-Sasanian_Dirham_in_the_name_of_al-Hajjaj_ibn_Yusuf.jpg
+sci_yixing_meridian|天文测量 · 一行测子午线|724|派人跑遍大半个中国立竿测影,他第一次量出了地球子午线的实际长度。|0:Eight_Patriarchs_of_the_Shingon_Sect_of_Buddhism,_I_Hsing_(Nara_National_Museum).jpg ;; 1:Guoqing_Temple,_2014-12-27_51.JPG ;; 2:Mandala1_detail.jpg
+art_gregorian|格里高利圣咏|800|格里高利圣咏把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Graduale_Aboense_2.jpg ;; 1:Graduale_Aboense_2.jpg
+art_borobudur|婆罗浮屠浮雕|800|婆罗浮屠浮雕把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Borobudur,_Java,_Indonesia,_20220817_1013_8738.jpg ;; 1:Borobudur-Nothwest-view.jpg ;; 2:COLLECTIE_TROPENMUSEUM_Temperaschilderij_voorstellende_de_Borobudur_als_bedevaartsoord_TMnr_75-2.jpg
+sci_alkhwarizmi|代数学 · 花拉子米|820|他写了本解方程的教材,书名和名字后来分别变成了代数与算法两个词。|0:Al-Khwarizmi_portrait.jpg ;; 1:Image-Al-Kitāb_al-muḫtaṣar_fī_ḥisāb_al-ğabr_wa-l-muqābala.jpg ;; 2:Dixit_algorizmi.png
+sci_gunpowder|火药|850|一群想长生不老的炼丹士,意外配出了后来改写全球战争形态的黑火药。|0:Black_Powder-1.JPG
+arc_gunpowder_west|火药技术西传|1250|一个炼丹意外,两百年后变成终结骑士时代的武器。|0:Black_Powder-1.JPG
+art_wayang|哇扬皮影戏|900|哇扬皮影戏把材料、技法与观看方式接在一起，留下超越时代的回声。|0:爪哇島重迦羅國王子皮影戲偶.jpg
+art_korean_celadon|高丽青瓷|918|高丽青瓷把材料、技法与观看方式接在一起，留下超越时代的回声。|0:청자_어룡_모양_주전자.jpg ;; 1:청자_양각연화당초_상감모란문_은테_발.jpg ;; 2:청자_상감_구름_학무늬_네귀_항아리,_고려,_높이_23.8cm,_본관1984.jpg
+eco_swahili_coast|斯瓦希里海岸贸易城邦|950|一串东非港口城市,靠印度洋的季风把黄金、象牙和瓷器编进同一张贸易网。|0:Swahili_coast.png ;; 1:Swahili_coast.png
+art_celadon|宋代青瓷|960|宋代青瓷把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Chinese_vessel_(hu),_Han_dynasty,_earthenware_with_glaze,_HAA.JPG ;; 1:Verseuse_phénix_Musée_Guimet_2418.jpg ;; 2:上海博物馆藏汝窑青瓷.JPG
+art_romaneseque|罗曼式艺术|1000|罗曼式艺术把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Pisa_Cathedral_&_Leaning_Tower_of_Pisa.jpg ;; 1:Tournai_JPG001.jpg ;; 2:Angoulême_16_Façade_cathédrale_2014.JPG
+sci_alhazen|光学 · 海什木的实验方法|1021|他不信古希腊人说的眼睛发光看东西,搭个暗室做实验才算数。|0:Alhazen_(122459248).jpg
+sci_albiruni|地球测量 · 比鲁尼|1030|站在一座山顶量个角度,他就把地球半径算了出来,不用绕地球一圈。|0:Al-Biruni_Portrait.jpg ;; 1:Al-Biruni_Portrait.jpg
+sci_supernova1054|天文观测 · 天关客星|1054|白天都能看见的一颗新星,中国史官顺手记下的一笔成了后世天文学的坐标。|0:Crab_Nebula.jpg ;; 1:SN_1054_4th_Jul_1054_043000_UTC+0800_Kaifeng_zh.png
+art_literati|文人画|1080|文人画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Wang_Wei_001.jpg ;; 1:Ni_Zan_Water_and_Bamboo_Dwelling.jpg
+eco_venice_rialto|威尼斯商站 · 里亚尔托与领事网络|1082|一座没有腹地的泻湖城市,靠在别人的港口里派驻自己人赚下差价。|0:Venezianische_Kolonien.png
+pol_venice_republic|威尼斯共和国政制|1297|一次"锁门"操作,把统治阶层永久焊死成了一份世袭名单。|0:Venezianische_Kolonien.png
+sci_shenkuo|科学笔记 · 沈括与指南针|1088|他发现指南针指的不是正南,这个偏差后来救了远洋船队的命。|0:Beijing_Ancient_Observatory_20090715-19_(cropped).jpg
+art_ife|伊费头像艺术|1100|伊费头像艺术把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Faculty_of_Medicine,_Obafemi_Awolowo_University,_Ile-Ife,_Osun_State,_Nigeria_(12998041954).jpg ;; 1:Cabeza_de_rey_(ciudad_yoruba).jpg ;; 2:Yoruba-bronze-head.jpg
+art_angkor|吴哥窟浮雕|1113|吴哥窟浮雕把材料、技法与观看方式接在一起，留下超越时代的回声。|0:20171126_Angkor_Wat_4712_DxO.jpg ;; 1:SuryavarmanII01.JPG ;; 2:Henri_Mouhot.jpg
+art_gothic_cathedral|哥特式大教堂|1140|哥特式大教堂把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Wells_Cathedral_West_Front_Exterior,_UK_-_Diliff.jpg ;; 1:Sainte_Chapelle_Interior_Stained_Glass.jpg ;; 2:Rouen_(38564194996).jpg
+art_stained_glass|彩色玻璃艺术|1150|彩色玻璃艺术把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Oostende_Sint-Petrus-en-Pauluskerk_Rosette.jpg ;; 1:Chartres_RosetteNord_121_DSC08241.jpg ;; 2:The_Stained_Glass_Windows_of_St._Louis_Church_in_Tianjin_1.jpg
+eco_templar_finance|圣殿骑士团 · 中世纪跨国金融|1150|一个宗教军事团体,靠各国分部间的信用凭证做起了替人跑腿的银行生意。|0:Templarsign.jpg ;; 1:Templarsign.jpg ;; 2:Jerusalem_Al-Aqsa_Mosque_BW_2010-09-21_06-38-12.JPG
+eco_champagne_fairs|香槟集市 · 中世纪贸易节律|1180|法国伯爵的地盘上,商人一年赶六场集市,把整个欧洲的清算周期定了下来。|0:Foire_de_Champagne_XIIIe.jpg ;; 1:Scène_de_foire_-_ca_1400_-_BNF_Fr12559_f167.jpg
+art_batik|蜡染艺术|1200|蜡染艺术把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Miao_batik_苗族蜡染,_Guizhou,_2016_(52411217076).jpg ;; 1:20250509_Batik_pleated_skirt_in_the_Sichuan_University_Museum.jpg ;; 2:Indigo-guizhou.jpg
+eco_fibonacci_liber_abaci|商用算术 ·《计算之书》|1202|一个比萨商人的儿子用阿拉伯数字包装出做生意的手册,欧洲从此丢了算盘。|0:Liber_abbaci_magliab_f124r.jpg
+sci_fibonacci|数学 · 斐波那契数字西传|1202|一个跟父亲在北非做生意的比萨商人之子,把阿拉伯数字硬生生带回了欧洲账本。|0:Fibonacci.jpg ;; 1:Fibonacci.jpg ;; 2:Leonardo_da_Pisa.jpg
+sci_aljazari|机械工程 · 加扎利的自动机械|1206|会自动倒水的机器人侍女、能记谱演奏的机械乐队,他画满了一整本图纸。|0:Al-jazari_elephant_clock.png ;; 1:Al-jazari_water_device.jpg
+art_benin_bronze|贝宁青铜器|1250|贝宁青铜器把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Benin_brass_plaque_03.jpg
+art_persian_miniature|波斯细密画|1250|波斯细密画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Behzad_advice_ascetic.jpg
+eco_yuan_chao|交钞 · 蒙元纸币帝国|1260|忽必烈让白银退出流通,强制全国只认一种纸,马可·波罗都为此惊讶。|0:Yuan_dynasty_banknote_with_its_printing_plate_1287.jpg
+sci_abacus|计算工具 · 珠算|1274|十个指头拨几下算盘珠,比后来很多计算器都算得快。|0:Abacus_Display_at_the_Computer_History_Museum.jpg
+sci_guoshoujing|历法 · 郭守敬《授时历》|1280|他重新测遍全国星象,算出的一年长度和现代公历只差26秒。|0:Guo_Shoujing-beijing.JPG ;; 1:Guo_Shoujing_Observatories.jpg ;; 2:GuoShoujingMemorialHallInXingtai.jpg
+eco_great_zimbabwe|大津巴布韦 · 黄金象牙贸易国|1300|内陆高原上一座石头都城,出土的中国瓷片证明黄金贸易能绕开海岸线照样繁荣。|0:Conical_Tower_-_Great_Enclosure_III_(33736918448).jpg ;; 1:Mauch_Ruinen.jpg ;; 2:Exterior_of_great_enclosure,G.Zimbabwe.JPG
+eco_mali_gold|马里帝国 · 黄金盐贸易|1324|一位国王朝觐路上撒出的黄金太多,竟拖累了开罗当地十几年的金价。|0:Flag_of_the_Mali_Empire.svg ;; 1:Great_Mosque_of_Djenné_1.jpg ;; 2:Targui8.jpg
+pol_mali_governance|马里帝国行政与朝觐|1324|一位国王去麦加撒金子,顺便把国家的存在感撒遍了地中海世界。|0:Flag_of_the_Mali_Empire.svg ;; 1:Great_Mosque_of_Djenné_1.jpg ;; 2:Targui8.jpg
+eco_hanseatic_league|汉萨同盟 · 北海波罗的海商圈|1358|没有军队没有国王,几百座商业城市靠共同规则就能左右北欧贸易。|0:Ausbreitung_der_Hanse_um_das_Jahr_1400-Droysens_28.jpg
+art_nuo|能剧|1375|能剧把材料、技法与观看方式接在一起，留下超越时代的回声。|0:春日神社ー篠山ー翁奉納P1011774.jpg
+eco_medici_bank|美第奇银行 · 佛罗伦萨金融霸权|1397|教会禁止放贷收息,美第奇家族就靠汇兑差价把银行做成半个欧洲的钱庄。|0:Coat_of_arms_of_Medici.svg
+art_oil_paint|尼德兰油画|1420|尼德兰油画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg ;; 1:La_velada,_por_Rafael.jpg ;; 2:Vasnetsov_samolet.jpg
+eco_double_entry|复式记账 · 帕乔利《数学大全》|1494|每一笔钱都要同时记两次,借贷相等才算平账,公司财报的语法就此定型。|0:Pacioli.jpg ;; 1:Leonardo_polyhedra.png ;; 2:Divina_proportione.png
+sci_vesalius|解剖学 · 维萨里|1543|他亲自解剖尸体后发现,统治医学一千多年的教科书里有两百多处错。|0:Man_dressed_in_Black_by_Calcar_(Hermitage).jpg ;; 1:Vesalius_Fabrica_p190.jpg ;; 2:1543,_Andreas_Vesalius'_Fabrica,_Base_Of_The_Brain.jpg
+eco_potosi_silver|白银帝国 · 波托西与价格革命|1545|一座安第斯山里的银矿,把全世界头一次真正接进了同一张价格表。|0:Vista_de_la_Villa_Imperial_de_Potosí.jpg ;; 1:Cerro_Rico_Potosí,Bolivia_-_panoramio_(cropped).jpg ;; 2:Frontis_casademoneda_potosi.JPG
+arc_potosi_silver|波托西银路|1545|一座山吃掉数百万矿工性命,喂出欧洲两百年的通货膨胀。|0:Vista_de_la_Villa_Imperial_de_Potosí.jpg ;; 1:Cerro_Rico_Potosí,Bolivia_-_panoramio_(cropped).jpg ;; 2:Frontis_casademoneda_potosi.JPG
+eco_mughal_zabt|田赋改革 · 莫卧儿扎布特制|1580|皇帝按土地十年产量的平均数定税额,把庞大帝国的财政做成了统一表格。|0:Govardhan._Akbar_With_Lion_and_Calf_ca._1630,_Metmuseum_(cropped).jpg
+pol_akbar_tolerance|莫卧儿 · 阿克巴的宽容治理|1556|皇帝取消对异教徒征税,换来的是几代人的帝国稳定。|0:Govardhan._Akbar_With_Lion_and_Calf_ca._1630,_Metmuseum_(cropped).jpg
+sci_tycho|天文观测 · 第谷·布拉赫|1580|望远镜发明之前,他用肉眼积累的观测数据精度已经逼近极限。|0:Porträtt_av_Tycho_Brahe_-_Skoklosters_slott_-_90153.tif
+sci_bencao|本草学 · 李时珍《本草纲目》|1596|花了近三十年跋山采药,他把一千八百多种药物重新分了类、纠了错。|0:Siku_quanshu_Bencao_Gangmu.jpg ;; 1:Compendium_of_Materia_Medica.png
+art_opera|歌剧诞生|1598|歌剧诞生把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Don_Đovani,_Opera_SNP,_Novi_Sad,_2007-2008,_foto_B._Lučić_2.jpg ;; 1:Milano_-_Teatro_alla_Scala_3924.jpg ;; 2:(Venice)_Portrait_of_Francesco_Andreini_by_Domenico_Fetti_-_Gallerie_Accademia.jpg
+art_barock|巴洛克艺术|1600|巴洛克艺术把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Lazio_Roma_SIgnazio_tango7174.jpg ;; 1:AT_119587_Jesuitenkirche_Wien_Innenansicht_9234.jpg ;; 2:Estasi_di_Santa_Teresa.jpg
+eco_voc_joint_stock|股份公司 · 荷兰东印度公司|1602|把一次远航的风险拆成可买卖的小份额,股份公司从此比商人更能扛住沉船。|0:VOC.svg ;; 1:De_handelsloge_van_de_VOC_in_Hougly_in_Bengalen_Rijksmuseum_SK-A-4282.jpeg ;; 2:Malacka.jpg
+art_kabuki|歌舞伎|1603|歌舞伎把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Odori_Keiyō_Edo-e_no_sakae_by_Toyokuni_III.jpg ;; 1:Okuni_kabuki_byobu-zu_cropped_and_enhanced.jpg ;; 2:阿国歌舞伎発祥地の碑.jpg
+eco_amsterdam_exchange|阿姆斯特丹交易所 · 做空雏形|1609|有人抢先卖出自己还没买到的股票,交易所诞生第一年就学会了做空。|0:Effbeurs1.jpg ;; 1:Effbeurs1.jpg
+sci_kepler|天体力学 · 开普勒行星运动定律|1609|行星走的根本不是正圆,他用第谷留下的数据硬算出了椭圆轨道。|0:JKepler.jpg ;; 1:WMAP_2012.png ;; 2:Kepler-Geburtshaus.jpg
+sci_harvey|生理学 · 哈维发现血液循环|1628|血液不是被身体不断吃掉重造,而是绕着圈子一直循环流动。|0:William_Harvey_2.jpg ;; 1:William_Harvey_(1578-1657)_Venenbild.jpg ;; 2:Stamp_of_USSR_2004.jpg
+eco_tulip_mania|郁金香泡沫 · 期货炒作|1637|一颗还埋在土里的球茎,靠一纸期货合同就能被反复转手炒到房价的价钱。|0:Pamphlet_dutch_tulipomania_1637.jpg
+sci_tiangong_kaiwu|技术图册 · 《天工开物》|1637|从种田到炼铁到织布,一本书把整个帝国的生产技术都画成了图解。|0:Chinese_Fining_and_Blast_Furnace.jpg
+sci_pascal_probability|数学 · 帕斯卡与概率论|1654|一个赌徒提的分赌金难题,被两位数学家写成了整套概率论。|0:Blaise_Pascal_Versailles.JPG ;; 1:Arts_et_Metiers_Pascaline_dsc03869.jpg
+sci_boyle|化学 · 波义耳与气体定律|1662|他把化学从炼金术士的秘方堆里拽出来,逼它像数学一样讲证据。|0:The_Shannon_Portrait_of_the_Hon_Robert_Boyle.jpg ;; 1:Young_Robert_Boyle_on_monument_St._Patricks.jpg
+eco_mercantilism|重商主义 · 国家贸易保护政策|1664|一个国家的财富被算成金银库存的多少,出口被鼓励、进口被处处设卡。|0:Canal,_Giovanni_Antonio_(Canaletto)_-_Return_of_the_Bucentoro_to_the_Molo_on_Ascension_Day,_c._1733-4._Royal_Collection_Buckingham_Palace.jpg ;; 1:De_slag_bij_Terheide_-_The_Battle_of_Schevening_-_August_10_1653_(Willem_van_de_Velde_I,_1657).jpg
+art_ukiyoe|浮世绘|1670|浮世绘把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Shibai_Ukie_by_Masanobu_Okumura.jpg ;; 1:Beauty_looking_back.jpg ;; 2:Toshusai_Sharaku-_Otani_Oniji,_1794.jpg
+sci_microscope|显微镜 · 列文虎克发现微生物|1674|磨了一辈子镜片的布商,在水滴里看见了一个没人知道存在的世界。|0:Jan_Verkolje_-_Antonie_van_Leeuwenhoek.jpg ;; 1:View_of_Delft,_by_Johannes_Vermeer.jpg ;; 2:Jan_Vermeer_-_The_Art_of_Painting_-_Google_Art_Project.jpg
+sci_huygens|光学 · 惠更斯的波动说|1678|牛顿说光是粒子,他偏说光是波,两人的争论吵了一百多年才有答案。|0:Christiaan_Huygens-painting.jpeg
+eco_lloyds_insurance|劳合社 · 海上保险起源|1688|一家卖咖啡的小店,靠往来的船东和保险商聊出了全球最大的保险市场。|0:Lloyd's_of_London_logo.svg
+eco_bank_of_england|英格兰银行 · 中央银行雏形|1694|国王缺钱打仗,商人凑钱放贷换来印钞特许权,中央银行就这样跟国债一起出生。|0:Bank-of-England.jpg
+eco_south_sea_bubble|南海泡沫 · 英国股市狂热|1720|一家几乎没做成南美生意的公司,靠承诺帮政府还债把股价炒上了天,牛顿也未能全身而退。|0:South_Sea_Bubble.jpg
+sci_linnaeus|生物分类法 · 林奈|1735|给每种生物起一个属加种的双名,混乱的自然界从此有了一张身份证。|0:Carl_von_Linné.jpg ;; 1:Linne_CoA.jpg ;; 2:Carl_Linnaeus_dressed_as_a_Laplander.jpg
+sci_lind_scurvy|医学 · 林德与坏血病对照实验|1747|把病号分成六组分别喂不同的药,他用一艘船做出了史上第一次对照试验。|0:James_Lind_by_Chalmers.jpg
+sci_franklin_electricity|电学 · 富兰克林的风筝实验|1752|放风筝放出了雷电的秘密,他顺手发明了能保命的避雷针。|0:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg ;; 1:Benjamin_Franklin_Birthplace_2.JPG ;; 2:Benjamin_Franklin_Birthplace.jpg
+eco_canton_system|广州十三行 · 一口通商|1757|清廷把整个西方贸易压缩进一个口岸,顺差滚滚而来也埋下炮舰外交的引信。|0:Canton_factories.jpg ;; 1:康熙五十七年兩廣總督楊琳關於十三行的奏折.jpg ;; 2:Ostindiefararen-Götheborg-avsegling-oktober-2005.jpg
+eco_eic_bengal|东印度公司 · 从商站到殖民税制|1757|一家做胡椒生意的公司,靠一场战役的胜利意外拿到了替皇帝收税的资格。|0:Flag_of_the_British_East_India_Company_(1801).svg ;; 1:India,_by_British_Information_Services,_1944_restored_version.jpg ;; 2:European_settlements_in_India_1501-1739.png
+sci_lavoisier|化学 · 拉瓦锡与现代化学|1789|他把炼金术最后一点玄学味道过秤称掉了——质量守恒,不多不少。|0:David_-_Portrait_of_Monsieur_Lavoisier_(cropped)2.jpg ;; 1:Lavoisier,_Antoine_Laurent_de_(1743-1794)_CIPB1171.jpg ;; 2:David_-_Portrait_of_Monsieur_Lavoisier_and_His_Wife.jpg
+sci_jenner|疫苗 · 詹纳牛痘接种|1796|挤奶女工从不出天花,他从这个乡间传闻里提炼出了整套疫苗原理。|0:Edward_Jenner.jpg ;; 1:Memorial_to_Edward_Jenner_in_Gloucester_Cathedral.jpg
+sci_cavendish|物理学 · 卡文迪什称量地球|1798|用两个吊着的铅球测出万有引力常数,他等于是把地球放上了秤。|0:Cavendish_Henry_signature.jpg ;; 1:Cavendish_hydrogen.jpg
+sci_volta_battery|电学 · 伏打电堆|1800|把锌片铜片和盐水布叠成一摞,他造出了世界上第一个能持续放电的电池。|0:Alessandro_Volta_01.jpg ;; 1:Alessandro_Volta.jpeg ;; 2:Painting_of_Volta_by_Bertini_(photo).jpeg
+sci_dalton|原子论 · 道尔顿|1803|他把元素想象成一颗颗实心小球,现代化学从此有了看不见的积木。|0:John_Dalton_by_Charles_Turner.jpg ;; 1:Dalton_John_profile.jpg ;; 2:A_New_System_of_Chemical_Philosophy_fp.jpg
+art_beethoven|贝多芬交响乐|1804|贝多芬交响乐把材料、技法与观看方式接在一起，留下超越时代的回声。|0:BeethovenFXD.jpg ;; 1:Ludwig_van_Beethoven's_parents.jpg ;; 2:BEETHHS.jpg
+eco_gold_standard|金本位 · 英国率先确立|1821|英镑说能换多少黄金就真能换,别国想跟它做生意,只好也把货币钉在金价上。|0:Government-Vedder-Highsmith-detail-1.jpeg
+sci_fourier|数学 · 傅里叶级数|1822|他证明再复杂的波形都能拆成一堆简单的正弦波叠加,信号处理的地基就此打下。|0:Fourier2_-_restoration1.jpg ;; 1:Grenoble_-_ancien_évêché_-_Joseph_Fourier.JPG ;; 2:Fourier_Père_Lachaise_2024.jpg
+sci_non_euclidean|数学 · 非欧几何|1829|两条平行线也能相交——他们扔掉欧几里得的一条公理,打开了新的宇宙几何。|0:Stereographic_projection_in_3D.svg ;; 1:Triangle_on_spherical_plane.png
+sci_babbage|计算机器 · 巴贝奇分析机|1837|他用纯机械齿轮设计出了一台能编程的电脑蓝图,可惜一辈子没造出来。|0:Charles_Babbage_-_1860.jpg ;; 1:Babbages_difference_engine_1832.jpg ;; 2:AnalyticalMachine_Babbage_London.jpg
+sci_cell_theory|细胞学说|1839|植物是细胞、动物也是细胞,生命原来共用同一套最基本的积木。|0:HeLa_cells_stained_with_Hoechst_33258.jpg ;; 1:Leeuwenhoek_Microscope.png ;; 2:Hooke-microscope.png
+sci_thermodynamics|热力学定律与熵|1850|能量总量不会凭空消失,但总有一部分会不可逆地变得没法再利用。|0:Carnot_heat_engine_2.svg
+sci_foucault_pendulum|物理学 · 傅科摆|1851|一个悬在教堂穹顶下的铁球,摆动的方向本身就是地球在转动的证据。|0:Foucault.jpg ;; 1:Foucault_jean_bernard_leon_grave_montmartre_paris_01.jpg
+eco_limited_liability|有限责任公司法 · 1855年法案|1855|投资失败最多赔光本金,不用连累身家性命,普通人才敢把钱投进陌生人的生意。|0:Society.svg ;; 1:Portal_commerce.jpg
+sci_spectroscopy|光谱分析法|1859|把光分成一道道彩虹细纹,就能隔着几光年认出星星是什么元素做的。|0:Light_dispersion_of_a_mercury-vapor_lamp_with_a_flint_glass_prism_IPNr°0125.jpg
+art_arts_crafts|工艺美术运动|1860|工艺美术运动把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Artichoke_wallpaper_Morris_and_Co_J_H_Dearle.jpg ;; 1:Ogle_County_Oregon_Public_Library_Oregon_Il1.jpg ;; 2:MyersKindergartenNZ.jpg
+sci_mendel|遗传学 · 孟德尔遗传定律|1865|修道院花园里种了几年豌豆,他悄悄发现性状是按固定比例传下去的。|0:Gregor_Mendel_oval.jpg ;; 1:Zawadzki_and_Mendel.jpg ;; 2:Gregor_Johann_Mendel_bust.jpg
+sci_nobel_dynamite|化学工程 · 诺贝尔发明炸药|1867|他把危险易爆的硝化甘油吸进硅藻土里稳定下来,顺手挣出了一份以自己名字命名的和平奖。|0:AlfredNobel_adjusted.jpg ;; 1:Alfred_Nobel_young.jpg
+eco_suez_canal|苏伊士运河 · 全球航运捷径|1869|挖开一条地峡,亚洲到欧洲的航程直接砍掉大半个非洲的路程。|0:Suez_Canal,_Egypt_(31596166706).jpg ;; 1:Iss016e019375.jpg ;; 2:Suez_Canal_drawing_1881.jpg
+sci_periodic_table|元素周期表 · 门捷列夫|1869|他按规律排完元素后,故意留了几个空格,还预言了空格里该长什么样。|0:Dmitri_Mendeleev.jpg ;; 1:Dmitri_Mendeleev_portrait_-_51374360512.png ;; 2:Mendelejevs_periodiska_system_1871.png
+art_impressionism|印象派|1874|印象派把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Claude_Monet,_Impression,_soleil_levant,_1872.jpg
+sci_lightbulb|电气照明 · 爱迪生白炽灯|1879|试了上千种灯丝材料才找到能烧不断的那一根,他真正卖的其实是整套供电系统。|0:Thomas_Edison2.jpg ;; 1:Young_Thomas_Edison.jpg ;; 2:Thomas_Edison,_1878.jpg
+eco_standard_oil_trust|标准石油 · 托拉斯垄断模式|1882|把几十家对手的股票统一托管进一个信托,垄断这才有了看不见的法律外壳。|0:John_D_Rockefeller_1872.png ;; 1:HenryFlagler.jpg ;; 2:Standard_Oil.jpg
+sci_pasteur|细菌学说与疫苗 · 巴斯德|1885|肉汤变质不是自然生出来的,是看不见的活物在作祟——这句话救了无数产妇和病人。|0:Louis_Pasteur,_foto_av_Paul_Nadar,_Crisco_edit.jpg ;; 1:Louis_Pasteur_Geburtshaus_in_Dole.jpg ;; 2:Tableau_Louis_Pasteur.jpg
+art_cinema|电影诞生|1895|电影诞生把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Lascaux2.jpg ;; 1:The_Horse_in_motion._"Abe_Edgington,"_owned_by_Leland_Stanford;_driven_by_C._Marvin,_trotting_at_a_2-24_gait_over_the_Palo_Alto_track,_15th_June_1878_LOC_13624627695.jpg ;; 2:L'ArroseurArrosé.jpg
+sci_xray|医学影像 · 伦琴发现X射线|1895|他无意间让一块荧光屏隔着黑纸发起光来,人类第一次看清了活人骨头的样子。|0:Wilhelm_Röntgen_1900_Portrait_(3x4_cropped).jpg ;; 1:WilhelmRöntgen.JPG
+sci_curie_radioactivity|放射性 · 居里夫妇|1898|处理几吨沥青矿渣熬了几年,她提炼出的那一点点新元素会自己发光发热。|0:Marie_Curie_c._1920s.jpg ;; 1:Marie_Curie_birthplace.jpg ;; 2:Sklodowski_Family_Wladyslaw_and_his_daughters_Maria_Bronislawa_Helena.jpg
+sci_radio|无线电 · 赫兹与马可尼|1901|先是证明了电磁波真实存在,十几年后就有人靠它把信号扔过了整个大西洋。|0:Guglielmo_Marconi.jpg ;; 1:Marconi_Rock_Salvan,_Switzerland.jpg ;; 2:Marconi_at_newfoundland.jpg
+sci_wright|航空 · 莱特兄弟首飞|1903|十二秒钟、三十六米远,人类第一次靠动力飞机离地飞了起来。|0:Wilbur_Wright.jpg ;; 1:Orville_Wright_1905-crop.jpg ;; 2:Wilbur_Wright_child.jpg
+art_jazz|爵士乐|1910|爵士乐把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Louis_Armstrong_restored.jpg
+eco_fordism|福特制 · 流水线与日薪五美元|1913|把工人钉在固定工位上让车身自己移动过来,福特把速度换成工资再变成顾客。|0:Henry_Ford,_head-and-shoulders_portrait,_facing_slightly_left)_-_Hartsook_photo_LCCN94506959_Trim.jpg
+eco_federal_reserve|美联储 · 分区中央银行体系|1913|美国晚了英国两百年才要中央银行,还非要拆成十二个地区分行才肯接受。|0:Seal_of_the_United_States_Federal_Reserve_System.svg
+art_hollywood|好莱坞叙事电影|1915|好莱坞叙事电影把材料、技法与观看方式接在一起，留下超越时代的回声。|0:HollywoodSign.jpg ;; 1:USA_LosAngeles_CapitalRecordBldg.jpg ;; 2:USA_LosAngeles_Hollywood_ChineseTheater.jpg
+art_bauhaus|包豪斯|1919|包豪斯把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Das_Bauhaus,_Dessau,_DDR_May_1990_(5288787560).jpg ;; 1:Bauhaus.JPG ;; 2:Bauhaus_Tel-Aviv_museum.jpg
+sci_raman|光学 · 拉曼散射效应|1928|光穿过液体后颜色会悄悄改变一点点,他从这个细微现象里读出了分子的指纹。|0:Sir_CV_Raman.JPG
+art_surreal_cinema|超现实主义电影|1929|超现实主义电影把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Un_chien_andalou-_Un_perro_andaluz.jpg
+eco_great_depression|大萧条 · 1929股市崩盘|1929|华尔街崩盘不到一个月,失业和倒闭就顺着国际信贷链条淹到了大半个地球。|0:Lange-MigrantMother02.jpg ;; 1:Crowd_outside_nyse.jpg ;; 2:US_Farm_Prices_(1928-1935).JPG
+art_bollywood|宝莱坞歌舞电影|1931|宝莱坞歌舞电影把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Salman's_Being_Human_show_at_HDIL_India_Couture_Week_2010_(1).jpg ;; 1:SRK_TagH.jpg ;; 2:Aamir_Khan_March_2015.jpg
+sci_yukawa|粒子物理 · 汤川秀树介子理论|1935|他算出必须存在一种新粒子把原子核粘在一起,十几年后这颗粒子真的被找到了。|0:Yukawa.jpg ;; 1:Kahi_of_Yukawa_Hideki.jpg ;; 2:YUKAWA_HALL_001.jpg
+eco_bretton_woods|布雷顿森林体系 · 美元挂钩黄金|1944|各国货币不再各自钉黄金,而是钉住美元,世界第一次有了统一的汇率锚。|0:Mount_Washington_Hotel_2003.JPG
+art_manga|现代漫画|1947|现代漫画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Tagosaku_to_Mokube_no_Tokyo_Kenbutsu.jpg ;; 1:Japan_Bookstore.jpg ;; 2:Bookshelves_with_manga_(2).jpg
+sci_transistor|晶体管|1947|一小块锗晶体加三根金属丝,笨重发烫的电子管时代就这样被悄悄终结了。|0:Transistorer_(cropped).jpg ;; 1:Replica-of-first-transistor.jpg ;; 2:Transistor_on_portuguese_pavement.jpg
+sci_nuclear_power|核能发电|1954|同一种链式反应,换个方式释放能量,就从毁灭性武器变成了发电站。|0:RIAN_archive_409173_World's_first_nuclear_power_plant_in_Obninsk.jpg
+sci_solar_cell|光伏太阳能电池|1954|一块硅片晒晒太阳就能发电,当时没人想到这东西几十年后会铺满沙漠。|0:Solar_cell.png ;; 1:Solar_cell.png ;; 2:PRINT.4.JPG
+sci_polio_vaccine|疫苗 · 索尔克脊髓灰质炎疫苗|1955|他把疫苗专利拱手让出不申请,只为了让它尽快便宜地打进每个孩子的手臂。|0:Jonas_Salk_candid.jpg ;; 1:SalkatPitt.jpg ;; 2:Salkws.jpg
+sci_integrated_circuit|集成电路|1958|把一堆分立的晶体管电阻电容全部刻进同一块芯片,计算机才终于能揣进口袋。|0:Integrated_circuit_on_microchip.jpg ;; 1:Samsung-Exynos-4412-Quad_SoC_used_in_I9300.jpg ;; 2:Microchip_for_Carbon_Nanotube_Field_Effect_Transistors_fabrication.jpg
+art_beatles|披头士|1960|披头士把材料、技法与观看方式接在一起，留下超越时代的回声。|0:The_Beatles_1963_Dezo_Hoffman_Capitol_Records_press_photo_4-3_crop.jpg ;; 1:Abbey_Rd_Studios.jpg ;; 2:The_Beatles_and_Lill-Babs_1963.jpg
+eco_opec|欧佩克 · 石油输出国组织|1960|几个产油国联手把定价权抢了回来,油价从此成了地缘政治的温度计。|0:Flag_of_OPEC.svg ;; 1:Opec_Gebäude_Wien_Helferstorferstraße_17.jpg ;; 2:GASOLINE_SHORTAGE_HIT_THE_STATE_OF_OREGON_IN_THE_FALL_OF_1973_BY_MIDDAY_GASOLINE_WAS_BECOMING_UNAVAILABLE_ALONG..._-_NARA_-_555405.jpg
+sci_laser|激光|1960|造出来的时候连发明者自己都说这是个找不到用途的解决方案。|0:Lasers.JPG ;; 1:National_Ignition_Facility,_building_layout,_Livermore_CA.jpg ;; 2:Starfire_Optical_Range_-_three_lasers_into_space.jpg
+sci_green_revolution|绿色革命 · 布劳格矮秆小麦|1960|把小麦育矮一截让它不倒伏,这一个改动后来据估计养活了十亿张嘴。|0:Cropduster_spraying_pesticides.jpg ;; 1:Maler_der_Grabkammer_des_Sennudem_001.jpg
+sci_contraceptive_pill|口服避孕药|1960|一颗每天吃的小药丸,把生育这件事第一次交还给了女性自己决定。|0:Antibabypille.jpg
+art_japanese_anime|日本动画|1963|日本动画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:TVアニメ「ヒロインたるもの！～嫌われヒロインと内緒のお仕事～」第2弾PV_-_4月7日（木）放送開始.webm ;; 1:Momotaro's_Divine_Sea_Warriors-screeny.JPG
+eco_east_asian_tigers|亚洲四小龙 · 出口导向奇迹|1965|几乎没有天然资源,几个经济体靠专攻出口制造业,两代人时间跑完欧洲两百年的路。|0:Seoul_from_Namsan_2.jpg ;; 1:Taipei_Skyline_2022.06.29.jpg ;; 2:View_of_Toa_Payoh_2009_LL.jpg
+sci_heart_transplant|器官移植 · 首例心脏移植|1967|把一颗刚刚停跳的心脏缝进另一个人的胸腔,他证明这件事真的能做到。|0:Christiaan_Barnard_(1968).jpg
+sci_apollo|登月 · 阿波罗11号|1969|在计算能力远不如今天一部手机的年代,他们真的把人送上了月球又接了回来。|0:Aldrin_Apollo_11_original.jpg
+sci_arpanet|阿帕网与互联网协议|1969|军方担心核战炸毁通信中枢,意外催生出一张没有中心、炸不断的网络。|0:Arpanet_logical_map,_march_1977.png
+art_video_game|电子游戏艺术|1972|电子游戏艺术把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Tennis_For_Two_on_a_DuMont_Lab_Oscilloscope_Type_304-A.jpg ;; 1:Spacewar!-PDP-1-20070512.jpg ;; 2:Radio_Shack_Tandy_TRS-80_Model_I_System.JPG
+art_hiphop|嘻哈文化|1973|嘻哈文化把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Public_Enemy_at_Castillo_Negro,_Tenerife,_Islas_Canarias,_20_April_2007.jpg ;; 1:Dj_Kool_Herc-03.jpg ;; 2:DJ_Hypnotize_and_Baby_Cee.jpg
+sci_ivf|试管婴儿技术|1978|受精卵先在培养皿里完成,再放回母体——生命的第一步第一次挪出了身体。|0:Stony_coral_spawning.jpg
+eco_shenzhen_sez|经济特区 · 深圳制度试验|1980|在一个渔村划一道线,线内允许市场化做法先试先行,特区成了整场改革的沙盒。|0:Electronics_factory_in_Shenzhen.jpg ;; 1:Shenzhen_huizhanzhongxin.jpg ;; 2:Dafen_Oil_Painting_Village_(Day).JPG
+eco_grameen_microcredit|格莱珉银行 · 小额信贷扶贫模式|1983|银行嫌穷人风险太高不肯放贷,一位经济学教授就自己贷了27美元给村里妇女试试看。|0:Grameen.JPG ;; 1:Muhammad_yunus_at_weforum.jpg
+eco_walmart_supply_chain|沃尔玛 · 全球即时供应链|1988|收银台条码一扫,大洋彼岸的工厂就知道该补多少货,零售商第一次抢先看到需求。|0:Walmart_store_exterior_5266815680.jpg ;; 1:Walmart_exterior.jpg ;; 2:Walmartmexicaninteriors.jpg
+art_kpop|韩国流行音乐|1992|韩国流行音乐把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Cho_Yong-pil_from_acrofan.jpg ;; 1:Big_Bang_2012_2.jpg ;; 2:File-170529_BTS_at_a_press_conference_for_the_BBMAs_(1).png
+eco_wto_gatt|关贸总协定到世贸组织|1995|一份战后临时性关税协议,拖了近五十年才升级成有仲裁牙齿的国际组织。|0:WTO_members_and_observers.svg ;; 1:WhiteandKeynes.jpg ;; 2:Geneva_Ministerial_Conference_18-20_May_1998_(9305956531).jpg
+eco_euro|欧元 · 单一货币的政治实验|1999|十几个主权国家交出了印钞权,却没交出财政权,这道裂缝后来在债务危机里露了馅。|0:Euro_banknotes_Europa_series.png ;; 1:European_Central_Bank_041107.jpg ;; 2:Euro_coins_and_banknotes.jpg
+sci_genome_project|人类基因组计划|2003|把组成一个人的全部三十多亿个字母都读了出来,足足花了十三年、数十亿美元。|0:Vitruvian_man.jpg
+eco_mpesa|M-Pesa · 手机货币改变非洲金融|2007|银行网点没铺到的地方,一条手机短信就能把钱转给几百公里外的家人。|0:M-pesa-logo.png
+eco_alipay_wechatpay|移动支付 · 中国扫码支付革命|2011|现金和银行卡都被绕了过去,一个二维码让路边摊贩接进了全国清算网络。|0:QR_codes_for_mobile_pay_in_China.jpg ;; 1:A_woman_paying_at_Ziguangyuan,_Yuanda_Xilu_(20250411135111).jpg
+sci_higgs|粒子物理 · 希格斯玻色子|2012|为了找一颗被预言存在了近半个世纪的粒子,他们造了一台能绕地球一圈的对撞机。|0:Candidate_Higgs_Events_in_ATLAS_and_CMS.png ;; 1:Interactions_among_elementary_particles.png ;; 2:AIP-Sakurai-best.JPG
+sci_crispr|基因编辑 · CRISPR|2012|把细菌用来抵御病毒的防御系统改造一下,人类第一次能精准剪切自己的基因。|0:Crispr.png ;; 1:CAS_4qyz.png
+sci_ligo|引力波探测|2015|两个黑洞十几亿年前相撞产生的涟漪,终于在地球上被一台仪器捕捉到了。|0:LIGO_control.jpg ;; 1:LIGO_Hanford_aerial_05.jpg ;; 2:Ligo-livingston-aerial-03_599x400.jpg
+sci_alphago|深度学习 · AlphaGo战胜李世石|2016|围棋的可能局面比宇宙原子还多,一个程序还是在首尔把顶尖棋手打得心服口服。|0:Go_board_part.jpg
+sci_mrna_vaccine|mRNA疫苗|2020|不再往身体里注射病毒本身,而是给细胞一份说明书,让它自己造出防御武器。|0:RNA_vaccine_illustration_(zh).jpg
+sci_llm_boom|深度学习 · 大语言模型爆发|2022|喂给它整个互联网的文字,它学会的不只是接话,还有推理和写代码。|0:ChatGPT-Logo.svg ;; 1:Pioneer_Building,_San_Francisco_(2019)_-1.jpg ;; 2:Sam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_(cropped).jpg
+ren_first_australians|澳大利亚原住民定居|-65000|跨海而来的第一批人,守住了地球上最长的连续文化。|0:Bennelong.jpg ;; 1:Yagan_Statue_2005.jpg ;; 2:Trugannini_1866.jpg
+ren_neanderthal_admix|尼安德特人遗传印记|-50000|被视为灭绝对手的近亲,其实活在多数人的基因里。|0:Range_of_NeanderthalsAColoured.png ;; 1:Neanderthalensis.jpg ;; 2:Homo_erectus_tautavelensis.jpg
+ren_pygmy|中非俾格米人|-20000|雨林教会他们把身材调小,把脚步声调到听不见。|0:Baka_dancers_June_2006.jpg
+ren_first_americans|美洲首批居民|-15000|最后一块无人大陆,被一群追着猎物走的人踏破。|0:Distribution_of_Indigenous_Peoples_in_the_Americas.svg
+ren_papuan_highland|巴布亚高地农人|-7000|山谷把语言拆成八百种,却拆不散同一群种芋人。|0:Papua_New_Guinea_(5986599443).jpg
+pol_egypt_kingship|古埃及法老神王制|-3100|一顶双料王冠,把尼罗河两岸变成同一个神的领地。|0:NarmerPalette-CloseUpOfNarmer-ROM.png ;; 1:NarmerPalette_ROM-gamma.jpg ;; 2:Chambers_B17_and_B18_(Umm_el-Qa'ab).jpg
+pol_akkad|阿卡德帝国|-2334|萨尔贡把两河众城邦收进一顶王冠,"帝国"这个词第一次有了原型。|0:Orientmitja2300aC.png ;; 1:Babylonlion.JPG ;; 2:Sargon_of_Akkad.jpg
+pol_ur3|乌尔第三王朝|-2112|治理先靠表格而非誓言——泥板账目比法典更早统一了两河。|0:Map_of_Ur_III.svg ;; 1:Babylonlion.JPG ;; 2:Ur-Nassiriyah.jpg
+ren_khoisan|科伊桑人|-2000|基因树最深的一支,却被自己发现的土地渐渐挤到边缘。|0:San_tribesman.jpg
+rel_vedic_religion|吠陀宗教 · 火祭|-1500|用火当邮差,把供品烧给看不见的神——印度教三千年前的操作系统。|0:Late_Vedic_Culture_(1100-500_BCE).png ;; 1:Isapur_sacrificial_pillar_of_Vasishka.jpg ;; 2:Yajna1.jpg
+rel_zoroaster|琐罗亚斯德教|-1000|世界第一次被讲成善与恶两大阵营的战争,天堂地狱的账本从此开张。|0:Faravahar.svg ;; 1:Faravahar.png ;; 2:CIMRM_44-Mithraic_pater_(Dura_Europos).jpg
+pol_assyria_provinces|亚述行省与强制迁徙|-900|用恐惧当行政工具:把反抗者整族连根拔起,让他们无处扎根。|0:Assyria_zh-s.svg
+phi_upanishads|奥义书 · 梵我合一|-700|把终极追问从祭祀转向内心,梵与我本是一体——印度形而上学的起点。|0:Philbar_4.png
+ren_scythians|斯基泰游牧联盟|-700|马背上的联盟没有城墙,靠弓箭和金饰划定势力范围。|0:Scythia-Parthia_100_BC.png
+pol_sparta_constitution|斯巴达军事寡头政制|-650|把全体公民变成职业军人,自由被兑换成了纪律。|0:Sparta_Territory.svg ;; 1:Sparta_ruins.PNG ;; 2:Ithome2.jpg
+pol_magadha_rise|摩揭陀国崛起|-600|恒河边一个诸侯国,靠吞并邻居长成了孔雀王朝的底盘。|0:North_Gateway_-_Rear_Side_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4480-4481.JPG
+rel_jain|耆那教|-527|连呼吸都怕伤到虫子——把不杀生做到极致的一套生存哲学。|0:In-jain.svg ;; 1:Tirthankaras.jpg ;; 2:Worshippers_leaving_the_temple_in_Ranakpur.jpg
+pol_twelve_tables|罗马法典编纂 · 十二铜表法|-450|把贵族口头特权刻上铜板,平民第一次能查到法律长什么样。|0:Roman_SPQR_banner.svg
+ren_celts|凯尔特人群认同|-450|没有统一的国王,一种物件风格却能认出半个欧洲的自己人。|0:Celts_in_Europe-fr.svg ;; 1:Galician_Celtic_Stele_-_Estela_Galaica.jpg ;; 2:0910_Tracht_der_Kelten_in_Südpolen_im_3._Jh._v._Chr.JPG
+phi_cynicism|犬儒学派 · 第欧根尼|-350|住木桶、当众进食,用羞辱常规的方式问文明规矩哪条是天经地义。|0:Cinico_Capitolini.jpg ;; 1:Hercules_Musei_Capitolini_MC1265_n2.jpg ;; 2:Cratis_Thebani_Cynici_philosophi,_1501_-_frontispiece.png
+phi_zhuangzi|庄子 · 齐物论|-320|庄周梦蝶,分不清是人梦见了蝶还是蝶梦见了人——是非本无固定尺度。|0:Zhuangzi_book.JPG
+phi_skepticism_pyrrho|皮浪怀疑论 · 悬置判断|-320|对一切命题都不下判断,心才能真正安宁——怀疑本身也是一种解脱。|0:Petrarca-Meister_001.jpg
+phi_epicureanism|伊壁鸠鲁学派 · 花园学派|-306|快乐是善,但最大的快乐是没有恐惧——享乐主义被讲成了节制。|0:Epicurus_bust2.jpg
+phi_stoicism|斯多亚学派 · 芝诺|-300|不是世界让人痛苦,是人对世界的判断让人痛苦。|0:Zeno_of_Citium_pushkin.jpg ;; 1:Antisthenes_Pio-Clementino_Inv288.jpg ;; 2:Marcus_Aurelius_Metropolitan_Museum.png
+pol_maurya_ashoka|阿育王 · 摩崖法敕|-268|打完最血腥的一仗后,这位帝王把征服换成了刻在石头上的劝善令。|0:Ashoka's_visit_to_the_Ramagrama_stupa_Sanchi_Stupa_1_Southern_gateway.jpg ;; 1:Ashoka_pillar_at_Vaishali,_Bihar,_India_2007-01-29.jpg ;; 2:Lomas_Rishi_entrance.jpg
+rel_theravada_srilanka|上座部立教 · 斯里兰卡|-247|佛经先是被背下来的,直到岛国怕战乱失传才第一次落笔成书。|0:Dharma_Wheel.svg ;; 1:Buddhist_sects.png ;; 2:Photograph_of_Jaya_Sri_Maha_Bodhi_Anuradhapura_Sri_Lanka.jpg
+phi_xunzi|荀子 · 性恶论|-240|人性本恶,善是礼法教化磨出来的——荀子替儒家补上了强制这一课。|0:战国时楚兰陵令荀况.jpg
+pol_qin_system|秦制 · 郡县与法家集权|-221|废掉封国、统一度量衡与文字,秦把大一统焊进了两千年政治底盘。|0:Qin_empire_210_BCE_TC.jpg ;; 1:秦灭六国形势图.png ;; 2:Qinshihuang.jpg
+ren_xiongnu|匈奴联盟|-209|冒顿单于把分散部落拧成一股绳,草原第一次有了帝国的样子。|0:XiongnuMap.png ;; 1:Chinggis_Khaan_statue_Complex.jpg ;; 2:Reproduction_Hunnu_bow_-_National_Museum_of_Mongolian_History.jpg
+ren_germanic|日耳曼诸部形成|-200|罗马人嫌他们太多太散,后来却是这群人埋葬了罗马。|0:Gehrts_Armin_verabschiedet_sich_von_Thusnelda_1884.jpg
+pol_han_centralize|推恩令 · 汉代削藩|-127|不用打仗削藩:让诸侯的儿子们分家产,封地自己就碎了。|0:汉初齐地郡国.png
+rel_mithraism|密特拉密仪|100|军团士兵在地下密室分食圣餐——罗马最流行的地下俱乐部式信仰。|0:Mithra_sacrifiant_le_Taureau-005.JPG ;; 1:MithraReliefvert.jpg ;; 2:MithrasIMG_5339.JPG
+rel_mahayana|大乘佛教兴起|100|从自己解脱到人人都能成佛——一次把佛教受众从修行者扩大到全人类的改造。|0:Ashtamangala_Lotus.svg ;; 1:Preaching_Buddha_Flanked_by_Avalokitesvara_and_Maitreya_-_Schist_-_ca_2nd_Century_CE_-_Gandhara_-_Loriyan_Tangai_-_ACCN_5093_-_Indian_Museum_-_Kolkata_2016-03-06_1511.JPG ;; 2:Buddhist_sects.png
+phi_nagarjuna|中观哲学 · 龙树|150|万物没有独立不变的自性,连"空"本身也不能被执着当真理。|0:Nagarjuna_with_84_mahasiddha_cropped.jpg ;; 1:Nalanda_University_India_ruins.jpg ;; 2:Mandala1_detail.jpg
+rel_gnosticism|诺斯底主义|150|救赎不靠信,靠悟——一群人坚持神秘知识才是逃出物质牢笼的钥匙。|0:Universum.jpg
+pol_teotihuacan_gov|特奥蒂瓦坎集体治理|200|全城最大的建筑不是王宫,考古学家至今找不到这里的国王是谁。|0:Teotihuacán-5973.JPG ;; 1:Mexico_SunMoonPyramid.jpg ;; 2:Pyramid_of_Moon.JPG
+rel_manichaeism|摩尼教|240|把光明与黑暗写成一部通用剧本——一度差点成为半个欧亚大陆的国教。|0:Manicheans.jpg ;; 1:Sermon_on_Mani's_Teaching_of_Salvation._Cathayan_Manichaean_silk_painting,_13th-century.jpg ;; 2:Yüen_dynasty_Manichaean_diagram_of_the_Universe.jpg
+arc_manichaeism|摩尼教东传中亚|250|波斯先知的教义一路向东,竟成了草原汗国的国教。|0:Manicheans.jpg ;; 1:Sermon_on_Mani's_Teaching_of_Salvation._Cathayan_Manichaean_silk_painting,_13th-century.jpg ;; 2:Yüen_dynasty_Manichaean_diagram_of_the_Universe.jpg
+pol_gupta_admin|笈多帝国治理|320|中央不管闲事,笈多靠地方自治撑起了黄金时代。|0:GuptaEmpire300-550.png ;; 1:North_Gateway_-_Rear_Side_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4480-4481.JPG ;; 2:KumaraguptaFightingLion.jpg
+rel_nicaea|尼西亚公会议|325|三百多名主教投票表决神的本质——教义第一次靠开会定案而不是靠权威宣布。|0:Council_Trent.jpg ;; 1:Council_Trent.jpg
+rel_ethiopian_church|埃塞俄比亚正教会|330|非洲最早的国教基督教,比欧洲大多数王国改宗还早了几百年。|0:Addis_abeba,_chiesa_della_trinità,_esterno_01.jpg ;; 1:ChristCopticArt.png ;; 2:Sample_of_Ge'ez_writing.jpg
+ren_huns|匈人冲击与民族大迁徙|370|谁也说不清匈人从哪来,罗马却因为躲他们而轰然倒塌。|0:Eurasian_steppe_belt.jpg ;; 1:Hsiung-nu-Empire.png ;; 2:Hunnenwanderung.png
+ren_goths|哥特人分支认同|376|逃难逃出两个国家,一支蛮族反倒把罗马的遗产接过手。|0:Evariste-Vital_Luminais_-_Goths_traversant_une_rivière.jpg
+rel_pure_land|净土宗|402|不用参透玄理,念一句佛号就能往生——把成佛的门槛降到人人可及。|0:Chinese_temple_bouddha.jpg ;; 1:Amitabha_Sutra_book.jpg ;; 2:Seated_Buddha_Amitabha_statue.jpg
+rel_talmud_babylon|巴比伦塔木德|500|把几百年的口头辩论攒成一部随身携带的国家——书就是犹太人的祖国。|0:First_page_of_the_first_tractate_of_the_Talmud_(Daf_Beis_of_Maseches_Brachos).jpg
+pol_justinian_code|查士丁尼法典|529|把六百年判例清理成一部法典,欧洲大陆法系的祖本就此定型。|0:Archive-ugent-be-B96419FA-8AA4-11E3-9E68-C04DD43445F2_DS-441_(cropped).jpg ;; 1:Mosaic_of_Justinianus_I_-_Basilica_San_Vitale_(Ravenna).jpg
+pol_khmer_chenla|扶南真腊早期政体|550|湄公河边的港口国,把印度的王权符号用成了自己的合法性招牌。|0:Chen-La_locator.png
+rel_nestorian_china|景教东传|635|一群叙利亚僧侣走了几千公里,把十字架立在了长安城里。|0:00058_christ_pantocrator_mosaic_hagia_sophia_656x800.jpg
+rel_quran_codify|古兰经定本|650|一位哈里发下令统一读法,烧掉其余版本——经文从此只剩一个官方声音。|0:Qur'an_and_Rehal.jpg ;; 1:Quran_cover.jpg ;; 2:Lower_city,_Petra.jpg
+pol_silla_unify|新罗统一朝鲜半岛|676|借来的军队打完仗就翻脸赶走,新罗靠这招独吞了半岛。|0:Military_Banner_of_Silla.svg ;; 1:Seal_of_Silla.png ;; 2:History_of_Korea_576_ja.png
+rel_sunni_shia|逊尼什叶分野|680|一场继承权之争打了一千三百多年——卡尔巴拉的血让分裂成了信仰本身。|0:Brooklyn_Museum_-_Battle_of_Karbala_-_Abbas_Al-Musavi_-_cropped.jpg
+ren_berbers|柏柏尔人身份存续|700|腓尼基人、罗马人、阿拉伯人轮番统治,名字却一直是自己的。|0:Masensen_bust.jpg ;; 1:Ṭāriq_ibn_Ziyād,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png ;; 2:Saint_Augustine_by_Philippe_de_Champaigne.jpg
+rel_shinto_kojiki|神道成典|712|把口耳相传的创世神话第一次写成官方历史——神道教从此有了国家版本。|0:Kojiki_Shinpukuji.jpg
+rel_vajrayana_tibet|密宗入藏|775|咒语、手印和灌顶仪式打包传入雪域——把成佛说成可以速成的一件事。|0:Ritual_object_from_Japan,_Kamakura_period,_13th-14th_century,_gilt_bronze,.JPG ;; 1:Taizokai.jpg ;; 2:Kongokai.jpg
+phi_adi_shankara|商羯罗 · 不二论吠檀多|800|世界是幻,唯有梵是真——一套逻辑把奥义书的直觉讲成了体系。|0:Raja_Ravi_Varma_-_Sankaracharya.jpg
+pol_charlemagne_coronation|查理曼加冕|800|一顶罗马皇冠戴在法兰克国王头上,西欧从此有了统一的执念。|0:Statuette_équestre_dite_de_Charlemagne_-_Musée_du_Louvre_Objets_d'Art_OA_8260.jpg
+ren_sami|萨米人驯鹿认同|800|国界画过驯鹿的牧场四次,萨米人的迁徙历法照样没变。|0:Sami_flag.svg
+phi_al_kindi|阿尔·肯迪 · 阿拉伯逍遥学派|850|被称作阿拉伯人的哲学家,他把希腊理性第一次系统译入伊斯兰世界。|0:Al-Kindi_Portrait.jpg
+rel_sufism|苏菲派|900|跳着舞、转着圈去见真主——伊斯兰教里那条通向神秘体验的近道。|0:Shahrukne_Alam.jpg ;; 1:Whirling_Dervishes_2.JPG ;; 2:Sudan_sufis.jpg
+ren_tupi|图皮人群网络|900|语言比国界更早统一了半个巴西海岸。|0:Homtupinamba.jpg ;; 1:India_tupi.jpg ;; 2:Brazil_topo.jpg
+ren_uyghur|维吾尔人绿洲定居|900|草原上的可汗国垮了,子民却在绿洲上活成了农耕城邦。|0:Yusuphas_hajip.jpg ;; 1:Xinjiang,_China_(27637373703).jpg ;; 2:Portrait_of_Amanni_Shahan._Yarkand._2011.jpg
+rel_ismaili_fatimid|伊斯玛仪与法蒂玛王朝|909|什叶派的一个分支不甘只当反对派,直接开国称哈里发对打巴格达。|0:White_flag_3_to_2.svg ;; 1:Fatimid_Caliphate.PNG ;; 2:All_Gizah_Pyramids.jpg
+pol_chola_village|朱罗王朝村社自治|920|石碑刻着选举细则,一千年前的南印度村庄已在抽签罢免委员。|0:Flag_of_Chola_Kingdom.png ;; 1:Rajendra_territories_cl.png ;; 2:North_Gateway_-_Rear_Side_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4480-4481.JPG
+rel_parsi_sanjan|帕西人|936|逃难时只带了圣火——一小群人靠一炉火种把祆教活着带出了波斯。|0:Faravahar.svg ;; 1:Parsi-family-in-traditional-costume.jpg ;; 2:Parsi-navjote-sitting.jpg
+ren_parsi|帕西人 · 祆教避难者|936|带着圣火逃亡的难民,后来成了印度商界的顶梁柱。|0:Faravahar.svg ;; 1:Parsi-family-in-traditional-costume.jpg ;; 2:Parsi-navjote-sitting.jpg
+phi_al_farabi|法拉比 · 政治哲学与德城|950|被尊为仅次于亚里士多德的"第二导师"——他想为哲人王的城邦找一套逻辑。|0:Al-Farabi.jpg
+rel_kievan_rus|罗斯受洗|988|大公娶了拜占庭公主当彩礼——一整个民族的信仰就此改姓东正教。|0:Lebedev_baptism.jpg
+rel_yoruba_ifa|约鲁巴宗教|1000|扔几颗棕榈果就能问出神谕——一整套非洲占卜体系后来漂洋过海重生。|0:Osun_Osogbo_Festival_of_Yoruba_Water_Deity_08.jpg
+phi_ibn_sina|伊本·西那 · 存在与本质|1020|想象一个悬空、感觉不到身体的人——他仍然知道自己存在。|0:Aboali_Avicenne_Medicin_1500s.jpg
+rel_theravada_bagan|蒲甘弘法|1056|一位国王抢来一整套三藏经典,只为让全国信同一种佛教。|0:Anawrahta_at_National_museum.JPG
+phi_al_ghazali|安萨里 · 哲学家的矛盾|1095|因果不过是习惯性的先后相续,神随时能让火不烧棉花。|0:أبو_حامد_الغزالي.png ;; 1:Haruniyeh.JPG ;; 2:Munqidh_min_al-dalal_(last_page).jpg
+ren_inuit_thule|因纽特人北极适应|1100|捕鲸技术一路向东传,把北极圈住成一个文化区。|0:Cambridge_Bay_Thule_Site_1998-06-28.jpg ;; 1:Arctic_cultures_900-1500.png
+pol_iroquois_confederacy|易洛魁联盟宪制|1142|五个互相仇杀的部落坐下来定规矩,口传宪法管了几百年。|0:Flag_of_the_Iroquois_Confederacy.svg ;; 1:Haudenosaunee_Territory.png ;; 2:Long_House_Iroquois_Allen.jpg
+phi_ibn_rushd|伊本·鲁世德 · 双重真理|1180|写了一整本书反驳安萨里,书名就叫《不一致的不一致》。|0:Andrea_di_bonaiuto,_apoteosi_di_san_tommaso_d'aquino,_11_averroè.jpg ;; 1:Philbar_4.png ;; 2:Statue_of_Averroes_(Córdoba)_-_BAE09705.jpg
+phi_maimonides|迈蒙尼德 · 迷途指津|1190|教信众怎样既信摩西也信亚里士多德——理性与启示不必二选一。|0:Ben_Maimónides._Córdoba,_España-eue.jpg ;; 1:Almohads1200.png ;; 2:Guide_for_the_Perplexed_by_Maimonides.jpg
+ren_rapanui|拉帕努伊人的孤岛文明|1200|把森林刻成石像的岛民,最后连造船的木头都不剩。|0:Rapanookee_vona.jpg ;; 1:Easter_Island_Man.jpg ;; 2:Easter_Island_Woman.jpg
+pol_delhi_sultanate|德里苏丹国|1206|骑兵总督自立为王,北印度第一次有了长期的伊斯兰苏丹政权。|0:Map_of_the_Mamluk_Dynasty.png ;; 1:Map_of_the_Khalji_Sultanate.png ;; 2:Map_of_the_Tughlaqs.png
+pol_magna_carta|大宪章|1215|贵族逼国王签字画押,王权第一次被白纸黑字关进笼子。|0:Magna_Carta_(British_Library_Cotton_MS_Augustus_II.106).jpg
+phi_dogen|道元 · 身心脱落与有时|1231|打坐不是成佛的手段,坐着本身就已经是佛——修行和目标被合而为一。|0:禪-ouyang.svg
+rel_inquisition|宗教裁判所|1231|教会成立专职机构去审判“错误的信仰”——异端第一次有了标准审讯流程。|0:Galileo_before_the_Holy_Office_-_Joseph-Nicolas_Robert-Fleury,_1847.png
+pol_ethiopia_solomonic|埃塞俄比亚所罗门王朝复辟|1270|靠一个"我们是所罗门后代"的传说,新王朝把自己焊进了圣经谱系。|0:Imperial_coat_of_arms_of_Ethiopia_(Haile_Selassie).svg ;; 1:'The_Visit_of_the_Queen_of_Sheba_to_King_Solomon',_oil_on_canvas_painting_by_Edward_Poynter,_1890,_Art_Gallery_of_New_South_Wales.jpg ;; 2:Lebna_Dengel.png
+ren_hui|回族的形成|1275|波斯商人留下的不只是货物,还有一整支新的族群。|0:Islam_in_China.jpg ;; 1:Zheng_He.jpg ;; 2:Minister1.jpg
+pol_ottoman_rise|奥斯曼国家草创|1299|边境上一小群突厥骑兵,两百年后长成横跨三洲的帝国。|0:Osman_Gazi2.jpg ;; 1:Sultan_Uthman_I.jpg ;; 2:Paolo_Veronese_(Nachfolger)_-_Sultan_Osman_I._-_2242_-_Bavarian_State_Painting_Collections.jpg
+ren_maori|毛利人定居新西兰|1300|太平洋最后一块岛屿,被独木舟舰队按部落瓜分完毕。|0:Haka_performed_during_US_Defense_Secretary's_visit_to_New_Zealand_(1).jpg ;; 1:Te_Puni_Maori_Chief.jpg ;; 2:Poumatua2.jpg
+phi_ibn_khaldun|伊本·赫勒敦 · 历史绪论|1377|王朝像人一样会老会死,撑着它的不是天命,是部落的凝聚力。|0:Ibn_Khaldūn_by_Khalil_Gibran.png ;; 1:Handwriting_of_Ibn_Khaldūn,_al-Muqaddima,_MS_Atıf_Efendi_1936,_f._7a.png
+pol_joseon_founding|朝鲜王朝建立|1392|一场兵变换了国号,却把儒家官僚制焊得比前朝更紧。|0:Flag_of_the_king_of_Joseon.svg ;; 1:Gyeongbok-gung_palace-05_(xndr).jpg ;; 2:King_Taejo_Yi_02.jpg
+rel_mesoamerican|阿兹特克宗教|1428|太阳每天升起都欠着一笔血债——一个文明靠活人献祭为宇宙续命。|0:Aztec_calendar.svg
+ren_ryukyu|琉球人身份|1429|夹在两个大国中间的岛国,靠两头朝贡换来两百年独立。|0:Danses_d’Okinawa_(musée_Guimet,_Paris)_(11152072573).jpg ;; 1:Five_men_wearing_Ryukyuan_Dress.JPG ;; 2:Kamekoubaka.jpg
+pol_inca_admin|印加帝国行政体系|1438|没有文字也能管一个帝国:绳结记账,道路才是真正的宪法。|0:Suntur_Paucar.svg ;; 1:80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg ;; 2:Capitulo-XXXVIII.jpg
+rel_andean_religion|印加太阳信仰|1438|皇帝本人就是太阳的儿子——把统治合法性直接焊死在神谱最顶端。|0:80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg
+rel_wali_songo|爪哇伊斯兰化|1450|传说中的九位圣人,把伊斯兰教包装成本地皮影戏演给爪哇人看。|0:Id-siak1.GIF ;; 1:Nicolaes_Visscher_Indiae_Orientalis.jpg ;; 2:Masjid_demak.jpg
+pol_songhai_empire|桑海帝国官僚与教法|1493|军人皇帝上台第一件事,是把行政权交给了法官和学者。|0:Songhai_Empire_(orthographic_projection).svg
+rel_sikh_nanak|锡克教创立|1499|河边失踪三天回来后说了一句“既非印度教徒也非穆斯林”——一个新信仰的开场白。|0:Sikh_Gurus_with_Bhai_Bala_and_Bhai_Mardana.jpg
+ren_pashtun|普什图部落认同|1500|没有中央政府管得住,一部不成文的荣誉法典却能。|0:King_Amanullah_Khan.jpg ;; 1:Abdul_Qadeer_Khan.jpg ;; 2:Sayyid_Dschamāl_ad-Dīn_al-Afghānī.jpg
+ren_hazara|哈扎拉人|1500|面容里藏着草原的痕迹,却在兴都库什山里扎根成什叶飞地。|0:Hazara_man,_Khulm.jpg ;; 1:Hazaras_of_Afghanistan_in_1879-80.jpg ;; 2:Hazara_of_Daykundi_province.jpg
+ren_cossacks|哥萨克人|1500|逃亡农奴凑成的边民,后来成了帝国最锋利的一把刀。|0:Ilja_Jefimowitsch_Repin_-_Reply_of_the_Zaporozhian_Cossacks_-_Yorck.jpg ;; 1:Kubanskie_kazaki_2.jpg ;; 2:Novosibirsk-Karimov.jpg
+pol_encomienda_spanish|西属美洲监督劳役制|1503|名义上是保护,实际是把原住民连人带地一并分给了殖民者。|0:Francisco_Hernandez_Giron_2.jpg ;; 1:Kingsborough.jpg
+phi_wangyangming|阳明心学 · 知行合一|1509|知而不行,只是未知——贬谪的绝境里想通了良知不必外求。|0:蔡世新_王阳明肖像轴_(cropped).jpg ;; 1:王守仁容像.jpg ;; 2:Lushan_Xiufeng_Moya_2018.06.10_11-24-22.jpg
+rel_anglican_schism|英国国教会|1534|教皇不批离婚,国王干脆自己当教皇——一场婚姻纠纷分裂出一整个教会。|0:Logo_of_the_Church_of_England.svg
+rel_jesuit_order|耶稣会|1540|不建修道院,直接派人进宫廷和课堂——一支专为对抗宗教改革设计的特种部队。|0:Ihs-logo.svg
+ren_mapuche|马普切人抗征服认同|1550|唯一挡住了印加又挡住西班牙三百年的南美人群。|0:Cacique_Colo-Colo.jpg ;; 1:Lautaro_(de_Pedro_Subercaseaux).jpg ;; 2:Galvarino.jpg
+rel_kabbalah_safed|萨费德卡巴拉|1570|把犹太人被逐出西班牙的苦难,解释成宇宙本身破碎待修——神秘主义安慰了一整代难民。|0:Tree_of_Life,_Medieval.jpg
+pol_dutch_republic|荷兰联省共和国宪制|1581|七个省联名宣布国王下岗,共和制第一次在欧洲扎下根。|0:Anthonie_Heinsius.JPG
+rel_huguenot_edict|南特敕令|1598|打了三十多年内战才想明白——同一个国家其实可以装下两种信仰。|0:Édit_de_Nantes._Page_24_-_Archives_Nationales_-_AE-II-763.jpg ;; 1:Cathédrale_Saint-Pierre_de_Nantes_-_façade.jpg
+ren_mestizo|梅斯蒂索混血身份|1600|殖民者发明的血统等级表,意外定义了整个拉美的自我认知。|0:Porfirio_Diaz_civilian.jpg
+pol_tokugawa_bakuhan|德川幕府藩体制|1603|将军闭上国门,却打开了两百多年不打仗的太平日子。|0:Flag_of_the_Tokugawa_Shogunate.svg ;; 1:1855_Colton_Map_of_Japan_-_Geographicus_-_Japan-colton-1855.jpg ;; 2:Tokugawa_Ieyasu2.JPG
+phi_descartes|笛卡尔 · 我思故我在|1637|怀疑一切能怀疑的,最后剩下不能怀疑的,只有正在怀疑这件事本身。|0:Frans_Hals_-_Portret_van_René_Descartes.jpg ;; 1:Descartes2.jpg ;; 2:DescartesGraduationRegistry.JPG
+rel_quaker|贵格会|1652|没有牧师也没有仪式,人人都能直接听见神说话——教会组织被简化到极致。|0:Quaker_star-T.svg
+pol_maratha_confederacy|马拉塔联盟政治|1674|一个山地领主自封为王,搅动了整个南亚次大陆的权力平衡。|0:India1760_1905.jpg ;; 1:North_Gateway_-_Rear_Side_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4480-4481.JPG
+phi_spinoza|斯宾诺莎 · 神即自然|1677|神不在世界之外发号施令,神就是世界本身运行的必然规律。|0:Spinoza.jpg ;; 1:Spinoza_Nicolas_Dings_Zwanenburgwal_Amsterdam.JPG ;; 2:Jodenbreestraat_Amsterdam_from_a_map_of_1625.png
+ren_huguenot|胡格诺教徒离散|1685|国王一道诏书收回宽容,却把一整批技术工匠送给了对手。|0:Croix_huguenote.svg ;; 1:Calvin.png ;; 2:Croix_Huguenote.jpg
+phi_locke|洛克 · 白板说与政府论|1689|心灵生来是一块白板,经验才在上面写下所有观念。|0:Godfrey_Kneller_-_Portrait_of_John_Locke_(Hermitage).jpg ;; 1:Locke_sig.png ;; 2:Locke-John-LOC.jpg
+pol_english_bill_rights|英国权利法案|1689|议会请国王夫妇来即位,条件是先在合同上签字放权。|0:English_Bill_of_Rights_of_1689.jpg
+pol_asante_kingdom|阿散蒂联盟政治|1701|一张金凳子被奉为国魂,几个部落靠它拧成了一个王国。|0:Flag_of_Ashanti.svg ;; 1:Gold_Coast_Map_1896.jpg
+phi_hume|休谟 · 因果的习惯|1739|太阳明天会升起不是逻辑必然,只是我们看多了习惯性相信。|0:Allan_Ramsay_-_David_Hume,_1711_-_1776._Historian_and_philosopher_-_PG_3521_-_National_Galleries_of_Scotland.jpg ;; 1:Allan_Ramsay_-_David_Hume,_1711_-_1776._Historian_and_philosopher_-_Google_Art_Project.jpg ;; 2:Old_Calton_David_Hume.jpg
+rel_wahhabi|瓦哈比运动|1744|一位学者和一位酋长握手,约定用最严格的一神论重塑半岛——后来那个约定建成了一个国家。|0:Ahlul_Sunnah.png
+pol_comanche_empire|科曼奇北美平原权力体|1750|没有首都也没有官僚,一群骑马的猎人却让殖民帝国绕道走。|0:Comanche_portraits.jpg ;; 1:Comanche_portraits.jpg
+phi_dai_zhen|戴震 · 以理杀人之辨|1777|礼教吃人不是礼教本身的错,是有人拿"理"当刀子在杀人。|0:Dai_Zhen.png ;; 1:Daizhen.jpg
+pol_haiti_revolution|海地革命|1791|奴隶自己动手,把种植园殖民地变成了世界第一个黑人共和国。|0:Battle_for_Palm_Tree_Hill.jpg
+rel_vodou_haiti|海地伏都教|1791|一场雨林里的宗教仪式点燃了起义的火种,烧出了美洲第一个黑人共和国。|0:Voodoo_altar_in_Tropenmuseum.jpg
+phi_hegel|黑格尔 · 辩证法与精神|1807|历史不是杂乱的偶然,是绝对精神通过矛盾不断认识自己的过程。|0:Jakob_Schlesinger_-_Hegel_1831.jpg
+pol_congress_vienna|维也纳会议与均势体系|1815|战胜国关起门来重画地图,只为让下一场大战晚点到来。|0:Europe_1815_map_en.png ;; 1:Congress_of_Vienna.PNG
+pol_zulu_kingdom|祖鲁王国军事政制|1816|一位年轻酋长改了作战队形,整个南部非洲的势力版图就此洗牌。|0:Conjectural_flag_of_Zululand_(1884-1897)_by_Roberto_Breschi_taken_from_The_South_African_Flag_Book_by_A.P.Burgers.png ;; 1:KingShaka.jpg ;; 2:Zuluchargegutt.jpg
+ren_metis_canada|梅蒂人 · 加拿大混血民族|1816|皮毛贸易生下的族群,打赢过一场仗才换来宪法里的名分。|0:A_Métis_man_and_his_two_wives,_circa_1825-1826.jpg
+phi_schopenhauer|叔本华 · 生存意志|1818|世界的内核不是理性,是一股盲目、永不满足的求生意志在推动一切。|0:Arthur_Schopenhauer_by_J_Schäfer,_1859b.jpg
+pol_bolivar_independence|玻利瓦尔与拉美独立战争|1819|一个人骑马跨越安第斯山,身后跟着好几个即将诞生的国家。|0:Simón_Bolívar._Toro_Moreno,_Luis._1922,_Legislative_Palace,_La_Paz.png ;; 1:Bolivarmemorial01.jpg ;; 2:EstatuaDelLibertadorEnLaPlazaBolivar2004-6.jpg
+phi_positivism_comte|孔德 · 实证主义与社会学|1830|知识从神学、形而上学一路进化到实证科学,社会本身也能被这样研究。|0:Auguste_Comte_daguerreotype.jpeg
+rel_mormon_founding|摩门教创立|1830|一本刻在金页片上的“新大陆圣经”——美国本土第一次长出自己的先知传统。|0:Slc_mormon_tempel.jpg ;; 1:Slc_mormon_tempel.jpg ;; 2:Chinese_triple_combination_(Book_of_Mormon,_Doctrine_&_Convenants,_Pearl_of_Great_Price).jpg
+pol_ottoman_tanzimat|奥斯曼坦志麦特改革|1839|帝国宣布境内臣民不分信仰一律平等,试图用改革续命。|0:Edict_of_Gülhane.jpg ;; 1:MahmutII.jpg ;; 2:Sultan_Abdülmecid_-_Google_Art_Project.jpg
+phi_kierkegaard|克尔凯郭尔 · 信仰之跃|1843|理性没法证明该不该信仰,那一步只能靠纵身一跃自己迈过去。|0:Søren_Kierkegaard_(1813-1855)_-_(cropped).jpg ;; 1:Søren_Kierkegaard's_family2.jpg ;; 2:Kierkegaard_influences.jpg
+ren_qiaopi|侨批网络|1850|一封信捎着一沓钱,潮汕人靠水客把整个家族网养活百年。|0:侨批1.jpg ;; 1:侨批2.jpg
+pol_indian_rebellion_1857|印度民族大起义|1857|士兵拒绝咬开一发涂了油脂的子弹,一整个殖民统治体系应声动摇。|0:Capture_of_Delhi,_1857..jpg ;; 1:SepoyMutiny.jpg ;; 2:North_Gateway_-_Rear_Side_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4480-4481.JPG
+rel_bahai|巴哈伊信仰|1863|所有先知说的其实是同一件事——一神论历史上最直白的一次“求同”宣言。|0:BahaiTempleChicago1.JPG ;; 1:Wilmette_how_side.jpg ;; 2:Shrine_Bab_North_West.jpg
+pol_us_civil_war_13th|美国内战与废奴修正案|1865|一场内战打完,宪法第一次把"人不能是财产"写进正文。|0:Greater_coat_of_arms_of_the_United_States.svg ;; 1:13th_Amendment_Pg1of1_AC.jpg ;; 2:Cicatrices_de_flagellation_sur_un_esclave.jpg
+pol_meiji_restoration|明治维新|1868|武士自己动手废掉武士特权,只为让国家不被列强吞掉。|0:Stonewall-Kotetsu.jpg ;; 1:Black_and_white_photo_of_emperor_Meiji_of_Japan.jpg ;; 2:Tokyo_hoheikosho.jpg
+rel_theosophy|神智学|1875|一位俄国灵媒宣称接通了喜马拉雅隐世大师——把东方宗教包装成了西方时髦货。|0:Koothoomi.jpg ;; 1:Moryaportrait.jpg
+phi_pragmatism|实用主义 · 实效准则|1878|一个概念的全部意义,就是它在实践中带来的效果,别无其他。|0:Pragmatists-Peirce,James,Dewey,Mead.JPG
+ren_chinatown|唐人街侨社自治|1882|排华法案把大门焊死,侨社却在门内建起了一整套自治政府。|0:Chinatown_manhattan_2009.JPG
+phi_nietzsche|尼采 · 上帝已死|1883|上帝已死,旧道德失去了靠山,人得自己给自己的价值签字。|0:Nietzsche187a.jpg
+pol_berlin_conference|柏林会议瓜分非洲|1884|十几个欧洲国家围着地图分蛋糕,桌上没有一个非洲人。|0:Afrikakonferenz.jpg
+rel_ahmadiyya|艾哈迈迪亚运动|1889|自称是等待已久的救世主,却因此被主流教派逐出伊斯兰的大门。|0:Hadhrat_Mirza_Ghulam_Ahmad2.jpg
+rel_ghost_dance|幽灵舞运动|1890|围成圈跳一种舞就能唤回祖先、赶走殖民者——绝境中的一次宗教总动员。|0:Ghost_Dance_at_Pine_Ridge.png ;; 1:Wovoka_Paiute_Shaman.jpg ;; 2:Ghost_dance.jpg
+ren_ellis_island|移民甄别站|1892|自由女神像脚下,一道体检和问询决定了谁能留下。|0:Ellis_island_air_photo.jpg ;; 1:Ellis_Island_photo_D_Ramey_Logan.jpg ;; 2:Ellis_Island_Entrance.JPG
+rel_vivekananda|辨喜与印度教复兴|1897|在美国一鸣惊人后回国办教团——印度教第一次学会向世界推销自己。|0:Swami_Vivekananda-1893-09-signed.jpg ;; 1:Ramakrishna_1883_image.jpg ;; 2:Bhuvaneshwari-Devi-1841-1911.jpg
+rel_secularization|世俗化 · 政教分离|1905|国家宣布不再有官方信仰——政府第一次公开对所有宗教一视同仁地保持距离。|0:Loi_de_séparation_des_églises_et_de_l’État._Page_1_-_Archives_Nationales_-_AE-II-2991.jpg
+phi_husserl|现象学 · 回到事物本身|1913|把关于世界是否真实的预设先悬置起来,老实描述意识里显现了什么。|0:Edmund_Husserl_1910s.jpg
+ren_armenian_diaspora|亚美尼亚大离散|1915|故土只剩零星几处,教堂和字母却把散落世界的人系在一起。|0:Flag_of_Armenia.svg ;; 1:AhuR-Persepolis.jpg ;; 2:Armenian_Empire.png
+rel_won_buddhism|圆佛教|1916|用一个圆圈代替佛像当信仰核心——韩国人给佛教做了一次极简主义改造。|0:원불교일원상.jpg ;; 1:Daegu_wonbulgyo.jpg
+phi_tagore_humanism|泰戈尔 · 普世人文主义|1917|民族主义是把机器当成了信仰,他更愿意相信人不分国界的相通。|0:Rabindranath_Tagore.jpg ;; 1:Rabindranath-Tagore-Mrinalini-Devi-1883.jpg ;; 2:Tagore-THU.jpg
+pol_league_of_nations|国际联盟与凡尔赛体系|1919|人类第一次为永久和平设了个总部,却没给它配军队。|0:Flag_of_the_League_of_Nations_(1939).svg ;; 1:Original_Geneva_Conventions.jpg ;; 2:1st_Viscount_Bryce_1893.jpg
+pol_weimar_constitution|魏玛共和国宪法|1919|当时全世界最民主的一部宪法,十几年后被合法地投票废掉。|0:Weimar_Constitution.jpg ;; 1:Weimar_Constitution.jpg ;; 2:Hugo_Preuß_1919_(cropped).jpg
+pol_womens_suffrage_wave|妇女普选权修宪浪潮|1920|用了七十多年游说和示威,才换来一次修宪投票。|0:The_19th_amendment..jpg
+ren_kurds|库尔德人 · 无国之族|1920|地图画了一条边界,四个国家都分到了一块库尔德斯坦。|0:Roj_emblem.svg ;; 1:Cristofano_dell'altissimo,_saladino,_ante_1568_-_Serie_Gioviana.jpg ;; 2:Nizami_Rug_Crop.jpg
+phi_wittgenstein|维特根斯坦 · 语言的界限|1921|凡是能说清楚的都能说清楚,凡是说不清楚的,就该保持沉默。|0:Ludwig_Wittgenstein_4-5(cropped).jpg ;; 1:Karl_Wittgenstein.jpg ;; 2:Palais_Wittgenstein_03.jpg
+rel_cao_dai|高台教|1926|把耶稣、佛陀、孔子和维克多·雨果供在同一座殿里——一次把全人类信仰合并同类项的尝试。|0:Thiên_nhãn_Cao_Đài.jpg
+phi_heidegger|海德格尔 ·《存在与时间》|1927|两千年哲学一直在问存在者是什么,却没正经问过存在本身是什么。|0:1920年代的海德格尔.jpg
+phi_mariategui|马里亚特吉 · 秘鲁现实七论|1928|照搬欧洲教科书解释不了秘鲁,马克思主义得先掺进土地问题。|0:José_Carlos_Mariátegui_in_1929.jpg
+pol_gandhi_salt_march|甘地食盐进军|1930|走到海边捧起一把盐,就是对帝国专卖制度最响亮的犯规。|0:Marche_sel.jpg
+phi_popper|波普尔 · 证伪主义|1934|再多例证也证明不了一个理论为真,一个反例却足以推翻它。|0:Karl_Popper.jpg
+phi_frankfurt_school|法兰克福学派 · 批判理论|1937|工具理性把人从神话中解放出来,却又造出了新的、更精致的牢笼。|0:AdornoHorkheimerHabermasbyJeremyJShapiro2.png
+pol_un_founding|联合国宪章|1945|二战刚打完,战胜国就先给自己留了一票否决权。|0:Uncharter.pdf ;; 1:President_Roosevelt_and_Winston_Churchill_seated_on_the_quarterdeck_of_HMS_PRINCE_OF_WALES_for_a_Sunday_service_during_the_Atlantic_Conference,_10_August_1941._A4816.jpg ;; 2:Original_United_Nations.jpg
+pol_nuremberg_trials|纽伦堡审判|1945|第一次有法庭对"我只是服从命令"说不。|0:Color_photograph_of_judges'_bench_at_IMT.jpg ;; 1:Selection_on_the_ramp_at_Auschwitz-Birkenau,_1944_(Auschwitz_Album)_1a.jpg ;; 2:A.N._Trainin_speaks_at_the_War_Crimes_Executive_Committee.jpg
+pol_india_partition|印度独立与印巴分治|1947|一条仓促画出的边界线,让同一片土地上的邻居连夜互换了国籍。|0:Brit_IndianEmpireReligions3.jpg ;; 1:Hindu_percent_1909.jpg ;; 2:Muslim_percent_1909.jpg
+pol_universal_declaration|世界人权宣言|1948|一份不具法律约束力的文件,却成了此后所有人权立法的共同底本。|0:Eleanor_Roosevelt_UDHR.jpg ;; 1:FDR_in_1933.jpg
+pol_chinese_revolution_1949|中华人民共和国成立|1949|内战尘埃落定,一个延续两千年的王朝式国家框架被彻底另起炉灶。|0:Flag_of_the_People's_Republic_of_China.svg ;; 1:Mao_Proclaiming_New_China.JPG ;; 2:Shanghai_Skyline_from_a_tour_boat_(Pudong).jpg
+phi_arendt|阿伦特 · 极权主义的起源|1951|恶最可怕的样子不是穷凶极恶,是一个平庸官僚照章办事的面孔。|0:Hannah_Arendt_auf_dem_1._Kulturkritikerkongress,_Barbara_Niggl_Radloff,_FM-2019-1-5-9-16_(cropped).jpg ;; 1:Hannah_Arendt_1924.jpg
+pol_eu_ecsc|欧洲煤钢共同体|1951|把彼此的军工原料交给对方管,是不再互相开战最朴素的保险。|0:EU-candidate_countries_map.svg ;; 1:EGKS.png
+ren_refugee_convention|难民公约与庇护制度|1951|战争刚结束,世界第一次坐下来给难民这个身份定了法律。|0:Refugeeconvention.PNG
+pol_algeria_independence|阿尔及利亚独立战争|1954|一场殖民地战争打到宗主国自己修改了宪法。|0:Algerian_war_collage_wikipedia.jpg ;; 1:Ligne_Morice.jpg ;; 2:Chlef_1957_-_Guerre_d'Algerie.png
+pol_bandung_conference|万隆会议与不结盟运动|1955|二十九个新独立国家开会宣布:冷战的两个阵营,我们都不选。|0:Gedung.Merdeka.jpg
+ren_tibetan_diaspora|藏人海外社群|1959|翻山越岭到了印度小镇,却把一整套政教体制原样搬了过去。|0:Flag_of_Tibet.svg ;; 1:LocationDharamsala.png ;; 2:Lhasa_Potala.jpg
+phi_levinas|列维纳斯 · 他者的伦理学|1961|伦理学不该从自我出发,该从对方那张无法被化约的脸开始。|0:Emmanuel_Levinas.jpg
+ren_guest_worker_europe|欧洲客工计划|1961|本想借用几年劳动力,结果借来了半个新德国人口。|0:Migrant_Worker_by_David_Shankbone.JPG
+rel_vatican_ii|梵二会议|1965|弥撒第一次改说本地话——一场会议让天主教主动向现代世界打开大门。|0:Council_Trent.jpg ;; 1:Konzilseroeffnung_2.jpg ;; 2:Second_Vatican_Council_by_Lothar_Wolleh_005_–_unframed.jpg
+pol_cultural_revolution|文化大革命|1966|一场自上而下发动的群众运动,把国家机器本身当成了革命对象。|0:Political_slogan_by_Red_Guards_on_the_campus_of_Fudan_University_1976.jpg ;; 1:1957_Mao_Zedong_on_airplane.jpg ;; 2:To_outperform_the_steelmaking_plan.jpg
+phi_derrida|德里达 · 解构主义|1967|每一对非此即彼的概念背后,总有一方被悄悄压低了地位。|0:Derrida_Dibujo.jpg
+phi_rawls|罗尔斯 ·《正义论》|1971|不知道自己投胎会落在哪个阶层,才能设计出真正公平的规则。|0:A_Theory_of_Justice_-_first_American_hardcover_edition.jpg
+phi_foucault|福柯 · 规训与惩罚|1975|监狱不只是关人的地方,是一套训练温顺身体的技术在全社会铺开。|0:Michel_Foucault_1974_Brasil.jpg ;; 1:Philbar_4.png ;; 2:Sanzio_01_cropped.png
+pol_helsinki_accords|赫尔辛基协议|1975|冷战双方在协议里悄悄塞进一条必须尊重人权,后来变成了一把钥匙。|0:Schlussakte_Helsinki_1975_(KSZE).jpg ;; 1:Bundesarchiv_Bild_183-P0801-026,_Helsinki,_KSZE-Konferenz,_Schlussakte.jpg
+ren_hmong|苗人跨境离散|1975|帮错了一方打仗,战后只能带着全族翻山逃命。|0:Teng_Daiyuan.jpg ;; 1:Shencongwen001.jpg ;; 2:Soob_Lwj_Yaj.jpg
+pol_iran_revolution|伊朗伊斯兰革命|1979|君主制一夜倒台,取而代之的是一套全新设计的政教合一体制。|0:Mass_demonstration_in_Iran,_date_unknown.jpg ;; 1:Persepolis_24.11.2009_11-12-14.jpg ;; 2:1979_Iranian_Revolution.jpg
+ren_rohingya|罗兴亚人的无国籍|1982|一纸公民法,把一个族群从本国居民改成了法外之人。|0:MayyuKhan2024.jpg ;; 1:Displaced_Rohingya_people_in_Rakhine_State_(8280610831).jpg ;; 2:Rohingya_mujahid_surrenders_(1961).jpg
+pol_apartheid_end|南非结束种族隔离|1994|关了二十七年牢的人,出狱后第一件事是邀请狱卒来谈判。|0:DFMalanPortret.jpg ;; 1:Ciskei2.jpg ;; 2:DurbanSign1989.jpg
+pol_schengen_area|申根协定|1995|在一艘小客船上签的字,后来让边境检查站从半个欧洲消失。|0:Schengen_Agreement_(1985)_signatures.jpg ;; 1:SchengenGrenzeBayern-Tirol.jpg
+pol_hongkong_handover|香港回归与一国两制|1997|主权移交的同时,承诺五十年内制度先不变。|0:Handover_of_Hong_Kong,_Flags_of_the_PRC_and_HKSAR.png ;; 1:Hkhist.png ;; 2:Li_Hongzhang_and_Henry_Arthur_Blake.jpg
+pol_kyoto_paris_climate_gov|京都议定书与巴黎协定|1997|从规定每个国家减多少,改成让每个国家自己承诺减多少。|0:Major_greenhouse_gas_trends.png ;; 1:Carbon_Emission_by_Region_(zh).png ;; 2:AirPollutionSource.jpg
+pol_internet_governance_icann|互联网治理:ICANN成立|1998|全球网址的钥匙,交给了一家美国注册的非营利公司保管。|0:Internet_map_1024_-_transparent,_inverted.png ;; 1:ICANN_Headquarters.jpg
+phi_sen_capability|阿马蒂亚·森 · 以自由看待发展|1999|发展不该只看财富涨了多少,该看一个人真正能做、能成为什么。|0:Amartya_Sen_2012.jpg ;; 1:Amartya_Sen_NIH.jpg
+pol_arab_spring|阿拉伯之春|2010|一个小贩自焚抗议罚款,火苗顺着社交媒体烧遍了半个中东。|0:Infobox_collage_for_MENA_protests.PNG ;; 1:Tunisia_Unrest_-_VOA_-_Tunis_14_Jan_2011_(2).jpg ;; 2:Tahrir_Square_on_February11.png
+pol_eu_brexit|英国脱欧|2016|全民公投过半数,足以让一个大国从半个国家里退出会籍。|0:Brexit_crowds_in_Parliament_Square.jpg
+sci_cook_circle|首越南极圈 · 库克|1773|库克三入南冰洋没见大陆,却把传说中的富饶南方大陆从地图上抹掉。|0:Captainjamescookportrait.jpg ;; 1:Melbourne_Capt_Cooks_Cottage_-_outer00.jpg ;; 2:Cooks_Karte_von_Neufundland.jpg
+sci_antarctic_sighting|首见南极大陆|1820|同一年,三国船长先后望见白色海岸,"谁第一"吵了两百年。|0:Adelie_Penguins_on_iceberg.jpg ;; 1:Antarctica_surface.jpg ;; 2:Mt_Herschel,_Antarctica,_Jan_2006.jpg
+sci_ross_sea|罗斯远征 · 冰障与火山|1841|帆船撞上四十多米高的冰墙,墙后竟是一座喷发中的火山。|0:James_Clark_Ross_(cropped).jpg
+sci_shackleton|坚忍号 · 沙克尔顿|1915|船被浮冰碾碎,漂流七百天,二十八人一个不少地回了家。|0:Ernest_Shackleton_before_1909.jpg ;; 1:Discoveryboat.jpg ;; 2:TheSouthernParty_(cropped).jpg
+sci_igy_antarctic|国际地球物理年 · 南极科学网|1957|冷战最冷的年头,十二国却在冰盖上共建观测站网。|0:Sputnik_asm.jpg
+pol_antarctic_treaty|南极条约|1959|主权冻结、军事禁入、科学优先——整块大陆让给了望远镜和企鹅。|0:Antarctica_6400px_from_Blue_Marble.jpg
+sci_ozone_hole|南极臭氧洞|1985|地面小站的老式仪器,揭穿了连卫星都"没看见"的天洞。|0:NASA_and_NOAA_Announce_Ozone_Hole_is_a_Double_Record_Breaker.png ;; 1:TOMS_Global_Ozone_65N-65S.png ;; 2:Min_ozone.jpg
+sci_ice_core|深冰芯 · 东方站|1998|三千米冰下抽出四十二万年的大气标本,气候变化有了铁证。|0:Icecore_4.jpg
+sci_oldowan|奥杜威石器工业|-2600000|两块石头一敲二百六十万年,人类第一项技术传统开机。|0:Canto_tallado_2-Guelmim-Es_Semara.jpg ;; 1:Oldowan_tradition_chopper.jpg ;; 2:Dmanisi_stone_tool_1.jpg
+art_blombos|布隆伯斯洞穴刻纹|-75000|一块画着交叉线的赭石,把艺术心智前推到走出非洲之前。|0:Localisation_Blombos.jpg
+rel_gobekli|哥贝克力石阵|-9600|先有神庙,后有农业——为聚会修巨石,定居可能只是副产品。|0:Göbekli_Tepe,_Urfa.jpg ;; 1:GobeklitepeHeykel.jpg ;; 2:Gobekli_Tepe_2.jpg
+ren_jericho|杰里科塔楼聚落|-9000|一万一千年前的石墙与高塔,定居生活的第一份不动产。|0:Jericho_cityscape_from_wall_ruins.jpg ;; 1:Prise_de_Jéricho.jpg ;; 2:Jerico1.JPG
+sci_indus_script|印度河谷印章文字|-2600|四百多个符号至今无人读懂,一个大文明保持沉默。|0:Indus_seal_impression.jpg ;; 1:Indus_script.jpg ;; 2:Stamp_seal_and_modern_impression-_unicorn_and_incense_burner_(?)_MET_DP23101_(cropped).jpg
+rel_stonehenge|巨石阵|-2500|巨石对准至日的日出日落,日历、神庙与墓地兼而有之。|0:Stonehenge2007_07_30.jpg ;; 1:Trilith_Stonehenge.jpg
+art_sanxingdui|三星堆青铜面具|-1200|纵目千里的青铜面具,长江流域自成一格的神权美学。|0:Sanxingdui_Bronsmask.jpg ;; 1:Shang_bronze_mask.jpg ;; 2:圆顶金面青铜人头像B.jpg
+sci_antikythera|安提基特拉机械|-100|沉船里捞出的青铜齿轮箱,精密度领先其后一千四百年。|0:NAMA_Machine_d'Anticythère_1.jpg ;; 1:NAMA_Machine_d'Anticythère_4.jpg ;; 2:Fragments_of_the_Antikythera_Mechanism.jpg
+art_rapanui|复活节岛石像|1250|与世隔绝的岛民竖起近千尊巨像,然后森林没了。|0:Rano_Raraku_quarry.jpg ;; 1:Priests_traveling_across_kealakekua_bay_for_first_contact_rituals.jpg ;; 2:Ahu-Akivi-1.JPG
+bantu_a|班图迁徙|-1000|农业与铁器带着班图语族,铺满撒哈拉以南非洲。|0:Bantu_Phillipson.png
+alex_a|亚历山大东征|-334|把希腊文化一路撒到印度门口,希腊化世界诞生。|0:Alexander_the_Great_mosaic_(cropped).jpg ;; 1:AlexanderTheGreat_Bust.jpg ;; 2:Aristotle_tutoring_Alexander.jpg
+silk_a|丝绸之路|-130|货物、病菌、信仰与技术,沿一条路双向流动千年。|0:Silk_route_chinese.jpg ;; 1:介绍板_二、海陆开拓.JPG ;; 2:Ancient_Chineese_customs_post_on_Silk_Road_near_Dunhuang.jpg
+paper_a|造纸术西传|751|怛罗斯之战后造纸西渐,伊斯兰与欧洲的知识加速。|0:Battle_of_Talas.png ;; 1:Umayyad750ADloc-zh.png
+arab_a|阿拉伯扩张|632|一个世纪横扫三洲,把地中海变成伊斯兰之海。|0:ArabianpeninsulaAL.PNG ;; 1:Meshed_ali_usnavy_(PD).jpg ;; 2:Mohammad_adil-Rashidun-empire-at-its-peak-close.PNG
+columbus_a|大航海 · 哥伦布交换|1492|两个半球重新连接,作物、白银、疾病与人重塑全球。|0:Intikawan_Amantani.jpg ;; 1:Namban-15.jpg ;; 2:New_World_Domesticated_plants.JPG
+slave_a|大西洋奴隶贸易|1600|上千万非洲人被贩运,美洲种植园与现代种族观的黑暗根基。|0:Slave_Auction_Ad.jpg ;; 1:IJzeren_voetring_voor_gevangenen_transparent_background.png ;; 2:Kongo_audience.jpg
+migr_atlantic_a|跨洋移民潮|1850|数千万欧洲人涌入新大陆,重塑两岸人口。|0:2023_Naturalization_Ceremony-_oath_of_citizenship_(3)_(53196381652).jpg ;; 1:White_Americans_by_National_Origin_in_the_1790_Census_(1909_CPG_and_1929_ACLS_estimates).png ;; 2:National_Origins_of_the_White_Population_of_the_USA,_1920.png
+decolonize_a|去殖民化浪潮|1947|亚非拉数十国独立,全球政治版图重绘。|0:Colonization_1945.png ;; 1:Asia1899.JPG
+migr_now_a|当代大迁移|2015|战争与气候推动的新一轮人口流动。|0:Wien_-_Westbahnhof,_Migranten_am_5_Sep_2015.jpg ;; 1:LE_Eithne_Operation_Triton.jpg ;; 2:Refugee_march_Hungary_2015-09-04_02.jpg
+arc_indoeuropean|印欧语系西迁|-3300|颜那亚牧民的马车,把一个语系铺成半个地球的母语。|0:Indo-European_Language_Family_Branches_in_Eurasia.png ;; 1:Indo-European_distribution.png ;; 2:IE_expansion.png
+arc_austronesian|南岛语族扩散|-3000|从台湾出发的独木舟,把一个语系撒满半个地球的海洋。|0:Chronological_dispersal_of_Austronesian_people_across_the_Pacific_(per_Benton_et_al,_2012,_adapted_from_Bellwood,_2011).png ;; 1:Austronesia_with_hypothetical_greatest_expansion_extent_(Blench,_2009)_01.png ;; 2:Austronesian_gene.png
+arc_phoenician_expansion|腓尼基人地中海殖民|-1100|推罗商人一路西航建立殖民地,顺带把字母卖给了世界。|0:Phoenicia_map-zh.png ;; 1:Griechischen_und_phönizischen_Kolonien.jpg
+arc_greek_colonization|希腊人地中海殖民潮|-750|城邦人口过剩就出海建新城,大希腊比希腊本土还大。|0:1770_Janvier_Map_of_Italy_-_Geographicus_-_Italy-janvier-1770.jpg ;; 1:Colonne_Doriche.JPG ;; 2:Metapontum_2013.JPG
+arc_spice_route|印度洋香料之路|-100|季风一年一个来回,把香料群岛和地中海连成一张价格表。|0:Spices1.jpg ;; 1:Silk_route.jpg ;; 2:Vascodagama.JPG
+arc_camino_santiago|圣地亚哥朝圣之路|950|一条扇贝壳指路的朝圣路,意外催生中世纪最早的旅游经济。|0:Burgos-Metal-Pilgrim-2010.jpg
+arc_romani_migration|罗姆人西迁欧洲|1000|从拉贾斯坦走到巴尔干,千年后依然找不到一块承认的家园。|0:Romanis-historical-distribution.png ;; 1:Pearson,_Transylvanian_Gipsy_group.png ;; 2:Serbian_Gypsy.jpg
+arc_hakka_migration|客家人南迁|1127|中原战乱一次次把移民推向南方山地,客居久了成了客家。|0:Hong_Xiuquan.jpg ;; 1:Zhang_Bishi.jpg ;; 2:Huang_Zun_Xian.jpg
+arc_huihui_trebuchet|回回炮工匠东调|1271|波斯工程师造出的配重投石机,砸开了南宋最后的城墙。|0:Caerlaverock_Castle_-_replica_trebuchet_-_geograph.org.uk_-_1135461.jpg ;; 1:Kyivtrebuchet.JPG
+arc_hajj_mali|曼萨·穆萨的麦加朝觐|1324|国王沿途撒金,一趟朝圣走衰了开罗的金价十年。|0:Catalan_Atlas_BNF_Sheet_6_Mansa_Musa_(cropped).jpg
+arc_byzantine_scholars|拜占庭学者西迁意大利|1453|君士坦丁堡陷落前后,希腊原典随逃亡学者流入佛罗伦萨。|0:A_portion_of_Panorama_1453_siege_scene_(cropped).jpg ;; 1:Constantinople-zh.png ;; 2:Siege_constantinople_bnf_fr2691.jpg
+arc_east_african_slave|东非印度洋奴隶贸易|1500|另一条奴隶贸易线,把非洲内陆人口送去印度洋世界。|0:IJzeren_voetring_voor_gevangenen_transparent_background.png ;; 1:Slave_market_Khartoum_19th_c.png ;; 2:Slaves_Zadib_Yemen_13th_century_BNF_Paris.jpg
+arc_barbary_slave|巴巴里海盗掳掠欧洲|1520|被掳去北非的欧洲人超过百万,方向和课本讲的正好相反。|0:Christelijke_gevangenen_worden_op_een_plein_te_Algiers_als_slaaf_verkocht,_Jan_Luyken,_1684.jpg ;; 1:Purchase_of_Christian_captives_from_the_Barbary_States.jpg
+arc_coffee_diffusion|咖啡从也门传向世界|1570|苏菲派用来提神的饮料,两百年后开成整个欧洲的咖啡馆。|0:French_School_-_Enjoying_Coffee_-_Google_Art_Project.jpg ;; 1:Palestinian_women_grinding_coffee_beans.jpg ;; 2:Bedouincoffeecup.jpg
+arc_jesuit_china|耶稣会士东来传教|1580|传教士带来钟表与几何,换来了在紫禁城传教的许可。|0:利玛窦像，游文辉绘.jpg ;; 1:Ricci1.jpg ;; 2:Ricciyifu.JPG
+arc_triangle_eu_af|三角贸易·军火易人路|1650|布匹与火枪运抵西非海岸,换回的是下一船的人。|0:Triangle_trade2.png
+arc_triangle_am_eu|三角贸易·蔗糖归航路|1650|蔗糖、烟草与棉花运回母港,利润变成工厂与银行。|0:Triangle_trade2.png
+arc_underground_railroad|地下铁路北逃网络|1820|没有铁轨的地下铁路,靠暗号与藏身处把奴隶送过国界。|0:NO._D51_train_of_Wuhan_Metro_Line_4.jpg ;; 1:A_Exit_of_Xuzhoudao_Station_20220306.jpg ;; 2:Beijing_Subway_in_Construction_-_satellite_image_(1967-09-20).jpg
+arc_chuang_guandong|闯关东|1860|华北饥民闯过山海关,把黑土地种成新粮仓。|0:Amur_Railway_-_construction_over_river_bolshaya_omutnaya.jpg ;; 1:Haolianghe_Town_-_aerial_-_P1040684.JPG
+arc_japanese_brazil|日本移民巴西咖啡园|1908|笠户丸载着第一批移民抵达,巴西成了日本海外最大聚居地。|0:Affiche_émigration_JP_au_BR-déb._XXe_s..jpg ;; 1:Japanese_Brazilian_Miko_Curitiba_Paraná.jpg
+arc_coldwar_braindrain|冷战火箭科学家西渡|1945|回形针行动把纳粹火箭工程师,变成登月计划的功臣。|0:Project_Paperclip_Team_at_Fort_Bliss.jpg ;; 1:Bundesarchiv_Bild_141-1880,_Peenemünde,_Start_einer_V2.jpg
+arc_boat_people|越南船民潮|1975|西贡陷落后百万人搭船出逃,逼世界重写难民公约的细则。|0:35_Vietnamese_boat_people_2.JPEG
+university|大学的诞生|1150|知识第一次拥有了自我复制的制度。|0:Meeting_of_doctors_at_the_university_of_Paris.jpg
+globalization|全球化|1995|供应链、资本与人前所未有地跨境流动。|0:NanbanCarrack.jpg ;; 1:U.S._Trade_Balance_(1895–2015)_and_Trade_Policies.png ;; 2:World-airline-routemap-2009.png
+sci_babylon_sexagesimal|六十进制记数法 · 巴比伦|-1800|一天24小时、一圈360度,四千年前的记账习惯至今卡在每只钟表里。|0:Babylonian_numerals.svg
+art_olmec_head|奥尔梅克巨石头像|-900|奥尔梅克巨石头像把材料、技法与观看方式接在一起，留下超越时代的回声。|0:San_Lorenzo_Monument_4_crop.jpg
+art_mesopotamia_relief|亚述宫殿浮雕|-865|亚述宫殿浮雕把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Genien,_Nimrud_870_v._Chr._Aegyptisches_Museum,_Muenchen-4.jpg ;; 1:VAM_-_Assurnasirpal_II_Relief_3.jpg ;; 2:The_Assyrian_gallery_at_the_Iraq_Museum.jpg
+art_roman_mosaic|古罗马镶嵌画|-100|古罗马镶嵌画把材料、技法与观看方式接在一起，留下超越时代的回声。|0:Pompeii_-_House_VIII,_2,_16_-_MAN_120177.jpg ;; 1:House_of_the_Neptune_Mosaic_(7254082844).jpg ;; 2:Pompeii_-_Cave_Canem_(4786638740).jpg
+sci_torricelli|物理学 · 托里拆利气压实验|1643|把一根灌满水银的玻璃管倒扣进水银槽,他意外做出了第一个真空。|0:Evangelista_Torricelli_by_Lorenzo_Lippi_(circa_1647,_Galleria_Silvano_Lodi_&_Due).jpg
+eco_silicon_valley_vc|风险投资 · 硅谷创新资本模式|1957|一群工程师集体出走单干,投资人赌的不是厂房存货,而是几个人脑子里的点子。|0:Aktien_1709.jpg ;; 1:Philippine-stock-market-board.jpg
+ren_natufian|纳图夫人定居|-12000|先盖房子后种地,农业革命的顺序被这群人推翻。|0:NatufianSpread.svg
+pol_israel_monarchy|大卫所罗门联合王国|-1000|十二支派拼成一个王国,统一的代价是后来的分裂。|0:Kingdom_of_Israel_1020_map_zh-hans.svg ;; 1:Kingdoms_of_Israel_and_Judah_map_830_zh.svg
+pol_kush_meroe|库施 · 麦罗埃王国|-750|埃及衰落时,努比亚人反过来把法老的王冠戴上了自己的头。|0:Africa_in_400_BC.jpg
+phi_mohism|墨家 · 兼爱非攻|-430|爱不分亲疏远近,战争没有正义可言——墨子给儒家的等级秩序找了个对手。|0:Old_Mohism_character.svg
+phi_legalism|法家 · 韩非子|-235|不靠贤君靠制度,不讲仁义讲赏罚——治国从道德问题变成了工程问题。|0:It-法.svg
+phi_mutazila|穆尔太齐赖 · 理性神学|800|古兰经是被造的还是永恒的?一场教义辩论逼出了理性主义。|0:Allah-green.svg
+rel_druze|德鲁兹派|1017|信徒相信自己灵魂会立刻转世投胎——一个封闭到几乎不再接纳新信徒的宗教。|0:Druze_star.svg ;; 1:Abraxas_gem_scan.svg ;; 2:Flickr_-_Government_Press_Office_(GPO)_-_Nebi_Shueib_Festival.jpg
+ren_druze|德鲁兹人封闭共同体|1017|教义一千年前就已封笔,信徒只能生不能选。|0:Druze_star.svg ;; 1:Abraxas_gem_scan.svg ;; 2:Flickr_-_Government_Press_Office_(GPO)_-_Nebi_Shueib_Festival.jpg
+rel_east_west_schism|东西教会大分裂|1054|教皇特使把绝罚诏书拍在圣坛上——基督教从此分成了两个罗马。|0:Golden_Christian_Cross.svg
+pol_qing_tribute|明清朝贡体系|1644|不派兵驻扎,靠磕头和赏赐维持一整圈的地区秩序。|0:Tianxia_zh-hans.svg
+ren_boers|阿非利卡人的形成|1652|补给站待久了,荷兰人不再自称荷兰人。|0:Kruger_old_age.jpg ;; 1:Andries_Pretorius.jpg ;; 2:Louis_Botha.png
+pol_utrecht_treaty|乌得勒支和约与均势原则|1713|战胜国主动放弃部分战果,只为不让任何一方独大。|0:The_Treaty_of_Utrecht_(clean).jpg ;; 1:Europe_c._1700.png ;; 2:Nouvelle-France_map-zh-hans.svg
+rel_hasidism|哈西迪运动|1740|不必精通律法典籍,喜悦地跳舞唱歌就能亲近神——犹太教里的一场平民狂欢。|0:Star_of_David.svg
+phi_kyoto_school|京都学派 · 绝对无|1911|把"无"当作比"有"更根本的场所,禅的体验穿上了西方哲学的外衣。|0:Kitaro_Nishidain_in_Feb._1943.jpg
+ren_windrush|疾风世代|1948|英国请他们来重建家园,几十年后却怀疑他们的国籍。|0:HMT_Empire_Windrush_FL9448.jpg ;; 1:Rt_Hon_Theresa_May_MP,_Home_Secretary,_at_'The_Pioneers_Police_and_Crime_Commissioners,_one_year_on'_(10725847516).jpg
+phi_feminist_theory_beauvoir|波伏娃 ·《第二性》|1949|女人不是天生的,是被后天一步步塑造成的。|0:Feminist_philosophy.svg
+pol_oau_founding|非洲统一组织成立|1963|独立不是终点,新生的非洲国家决定先把边界问题锁进抽屉。|0:Flag_of_the_Organization_of_African_Unity_(1970–2002);_Flag_of_the_African_Union_(2004–2010).svg
+pol_eu_maastricht|欧盟正式成立|1993|十二个国家签字,把共同市场升级成了半个国家。|0:EU-candidate_countries_map.svg
+phi_ubuntu|乌班图 · 我在故我们在|1999|一个人之所以成为人,是因为有其他人——自我从不是孤零零地存在。|0:Experience_ubuntu.ogv
+eco_southern_whaling|南大洋捕鲸业|1904|南极的第一桶金是鲸油,半个世纪捕走的鲸以百万头计。|0:Whaling_harpoon.jpg ;; 1:Stralsund_Meeresmuseum.jpg ;; 2:Whaling.png
+sci_pole_race|极点竞赛 · 阿蒙森与斯科特|1911|一个月之差:一队靠雪橇犬凯旋,一队在归途全员冻毙。|0:Amundsen_in_fur_skins.jpg ;; 1:Antarctic_expedition_map_(Amundsen_-_Scott)-zh-hans.svg ;; 2:Amundsenboy.jpg
+ren_catalhoyuk|加泰土丘|-7100|九千年前的城市没有街道,人从屋顶进门,与祖先同住地板下。|0:Çatalhöyük_with_surroundings..jpg ;; 1:Catal_Hüyük_Restauration_B.JPG ;; 2:CatalHoyukSouthArea.JPG
+crusade_a|十字军东征|1096|以信仰之名的军事远征,意外重启了东西交流。|0:SiegeofAntioch.jpeg ;; 1:Golden_Christian_Cross.svg ;; 2:Carte_des_croisades_avec_participation_des_Français.png
+plague_a|黑死病|1347|三分之一欧洲人死去,动摇农奴制,间接催生近代。|0:Blackdeath2.gif ;; 1:Blackdeath2.gif ;; 2:Yersinia_pestis_fluorescent.jpeg
+zhenghe_a|郑和下西洋|1405|巨舰远航东非,然后戛然而止——一个没走下去的可能。|0:ZhengHeShips.gif
+arc_sogdian_trade|粟特商队东西网|200|不建帝国只建商站,粟特人把丝路经营成一门家族生意。|0:Afrasiab_-_details_from_The_Ambassadors'_Painting.JPG ;; 1:Sogdian_New_Year_Festival,_Northern_Qi.jpg ;; 2:SogdianCoin6thCentury.JPG
+arc_trans_saharan|跨撒哈拉金盐路|700|黄金与食盐按等重交换,撑起西非帝国的财富与信仰。|0:Great_Mosque_of_Djenné_1.jpg ;; 1:Niger_saharan_medieval_trade_routes.PNG
+arc_irish_famine|爱尔兰大饥荒移民|1845|土豆枯萎的十年,让爱尔兰失去四分之一人口给新大陆。|0:Skibbereen_by_James_Mahony,_1847.JPG ;; 1:Suggested_paths_of_migration_and_diversification_of_P._infestans_lineages_HERB-1_and_US-1.jpg ;; 2:An_Irish_Peasant_Family_Discovering_the_Blight_of_their_Store_by_Daniel_MacDonald.jpg
+arc_tea_transfer|茶树技术移植印度|1848|苏格兰植物学家乔装偷师,武夷茶种和茶工都到了阿萨姆。|0:RobertFortune.gif
+freud|精神分析 · 弗洛伊德|1900|把"潜意识"带进现代人的自我认知。|0:Structural-Iceberg-zh.svg
+eco_nixon_shock|尼克松冲击 · 美元与黄金脱钩|1971|一句电视讲话,美元说不换金子就不换了,固定汇率的时代一夜结束。|0:Nixon_30-0316a.jpg
+ren_denisovan|丹尼索瓦人混血|-40000|一节指骨牵出人类家谱里被遗忘的第三支旁系。|0:Fossil_of_Mandible_of_Penghu_1.JPG ;; 1:Denisova_Phalanx_distalis.jpg ;; 2:Denisova_Molar.jpg
+ren_han|汉人认同的形成|-206|战国七雄打出一堆敌对身份,一个朝代的名字却把大家焊在了一起。|0:Portraits_of_Famous_Men_-_Yellow_Emperor_(Huangdi).jpg ;; 1:Xu_Jetian_-_Shennong.jpg ;; 2:Portraits_of_Famous_Men_-_Da_Yu.jpg
+rel_daoist_religion|五斗米道|142|交五斗米入教,病由写忏悔书治——道家哲学第一次长出教团组织。|0:Pakua_with_frame.svg
+phi_leibniz|莱布尼茨 · 单子论|1714|宇宙由无数彼此不开窗的单子构成,却被预先设定得完美同步。|0:Leibniz_Monadology_2.jpg
+phi_analytic_frege_russell|分析哲学 · 弗雷格的概念文字|1879|把逻辑推理彻底符号化,数学的真假第一次能像算术一样被验算。|0:Philbar_4.png
+ren_pied_noir|阿尔及利亚黑脚移民|1962|在殖民地扎根三代,独立那年却成了法国的陌生人。|0:AlainChabat2006.jpg ;; 1:Albert_Camus,_gagnant_de_prix_Nobel,_portrait_en_buste,_posé_au_bureau,_faisant_face_à_gauche,_cigarette_de_tabagisme.jpg ;; 2:Claudia_Cardinale-signed.jpg
+arc_jewish_diaspora|犹太人大流散|70|圣殿两度被毁,一个民族学会带着经典而非国土生存。|0:Arch_of_Titus_Menorah.png ;; 1:Welcome_to_the_land_of_freedom_51996u.jpg ;; 2:1182_french_expulsion_of_jews.jpg
+phi_boethius|波爱修斯 · 哲学的慰藉|524|被冤下狱等死之际,他跟"哲学女神"聊了一整本书的命运与自由。|0:Boethius,_Consolatio_philosophiae_(French).jpg
+relativity|相对论与量子力学|1905|时空可弯、能量成块,经典世界观崩塌。|0:BBH_gravitational_lensing_of_gw150914.webm
+scholastic|经院哲学 · 阿奎那|1265|用亚里士多德重装神学,理性与信仰第一次正式握手。|0:Laurentius_de_Voltolina_Vorlesung_vor_Studenten_-_Min_1233_-_Kupferstichkabinett_Berlin.jpg
+pol_rwanda_tribunal|卢旺达问题国际法庭|1994|联合国第一次为种族灭绝罪单独设了一个法庭。|0:Plaque_of_International_Criminal_Tribunal_for_Rwanda-ICTR_-_Kimironko_District_-_Kigali_-_Rwanda_(cropped).jpg
+eco_sogdian_network|粟特商团 · 欧亚信用网络|600|没有统一国家护航,靠亲族信用和契约,粟特商人把中亚变成欧亚中转柜台。|0:Map_of_Sogdia.png
+phi_mingjia|名家 · 白马非马|-300|白马算不算马?公孙龙用一句诡辩,逼人认真区分概念与个别事物。|0:Birth_Places_of_Chinese_Philosophers.png
+arc_india_silicon_valley|印度赴硅谷科技人才流|1990|H-1B签证输出的工程师,一部分带着资本和人脉飞回班加罗尔。|0:Figure_2-_Process_of_Obtaining_an_H-1B_Visa_(5405276752).jpg
+eco_wall_street_origin|华尔街 · 梧桐树协议|1792|二十四人在一棵梧桐树下签约定佣金,华尔街的规矩比大楼早了一百年。|0:Buttonwood.png
+phi_quine|蒯因 · 经验论的两个教条|1951|分析命题与综合命题分不清界限,哲学与科学之间也没那么泾渭分明。|0:Logical_positivists_collage_free.png
+eco_daric_persia|大流克金币 · 波斯王室铸币|-515|只有国王能铸金币,行省却能铸银币,帝国把货币分成了两个等级。|0:Achaemenid_coin_daric_420BC_front.jpg
+ren_maroon|马龙人自治社群|1605|逃出种植园的奴隶,在雨林深处建起了另一个国家。|0:Leonard_Parkinson,_Maroon_Leader,_Jamaica,_1796.jpg
+eco_john_law_mississippi|密西西比公司 · 约翰·劳的纸币实验|1716|一个逃亡的苏格兰赌徒说服法国用纸币替代金银,结果泡沫破得比郁金香还快。|0:Armoiries_de_la_Compagnie_des_Indes_Orientales.jpg
+phi_zera_yacob|扎拉·雅各布 · 埃塞俄比亚理性|1667|逃进山洞躲避宗教迫害,他想明白了该用理性检验一切启示。|0:Zara_Yaqob.jpg
+thales|自然哲学 · 米利都|-600|第一次不靠神话、而用"本原"解释世界——科学的胚胎。|0:Western_Asia_Minor_Greek_Colonization.svg
+arc_afghan_refugees|阿富汗难民潮|1979|苏军入境的十年,把数百万阿富汗人推过一条殖民划定的边界。|0:Map_of_Afghanese_refugees_following_the_Soviet_invasion.png
+eco_aztec_market|特拉特洛尔科市场 · 阿兹特克商业|1450|西班牙人第一次见到这座湖上市场时,难以相信新大陆的集市比塞维利亚还大。|0:Gran_Piramide_desde_arriba_-_panoramio.jpg
+phi_neoplatonism|新柏拉图主义 · 普罗提诺|250|万物从"太一"流溢而出,像光从源头向外扩散,又终将逆流归一。|0:Roman_sarcophagus_of_a_reader_identified_to_Plotinus_and_disciples.jpg
