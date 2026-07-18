@@ -664,6 +664,82 @@
     openDetail(id);
   }
 
+  // —— 世界人口(HYDE/McEvedy/UN 标准估算混编;锚点间对数插值;远古为数量级)——
+  const POP_CURVE = [ // [年份, 百万]
+    [-3300000, 0.1], [-100000, 0.5], [-70000, 0.6], [-40000, 1.5], [-10000, 4],
+    [-5000, 5], [-4000, 7], [-3000, 14], [-2000, 27], [-1000, 50], [-500, 100],
+    [-200, 150], [1, 230], [200, 220], [500, 200], [800, 220], [1000, 265],
+    [1200, 360], [1340, 440], [1400, 350], [1500, 460], [1600, 555], [1700, 600],
+    [1750, 770], [1800, 950], [1850, 1240], [1900, 1650], [1930, 2070], [1950, 2520],
+    [1970, 3690], [1990, 5320], [2000, 6140], [2010, 6960], [2020, 7840], [2026, 8200],
+  ];
+  const POP_REGIONS = [ // [年份, 亚, 欧, 非, 美洲, 大洋洲] 百分比(示意)
+    [-1000, 68, 11, 14, 6, 1], [1, 69, 13, 11, 6, 1], [1000, 67, 14, 12, 6, 1],
+    [1500, 60, 17, 12, 10, 1], [1700, 65, 20, 11, 3, 1], [1800, 66, 21, 9, 3, 1],
+    [1900, 57, 25, 8, 9, 1], [1950, 55, 22, 9, 13, 1], [2000, 60.5, 12, 13, 14, 0.5],
+    [2026, 58.5, 9.2, 18.6, 13.2, 0.5],
+  ];
+  const REGION_META = [['亚洲', '#3FC6E4'], ['欧洲', '#9A7BEA'], ['非洲', '#E9B44C'], ['美洲', '#35C08A'], ['大洋洲', '#EA6BB0']];
+  function popAt(y) {
+    const C = POP_CURVE;
+    if (y <= C[0][0]) return C[0][1];
+    if (y >= C[C.length - 1][0]) return C[C.length - 1][1];
+    for (let i = 1; i < C.length; i++) if (y <= C[i][0]) {
+      const [y0, p0] = C[i - 1], [y1, p1] = C[i];
+      return Math.exp(lerp(Math.log(p0), Math.log(p1), (y - y0) / (y1 - y0)));
+    }
+    return C[C.length - 1][1];
+  }
+  function fmtPop(m) { // 百万 → 中文单位
+    if (m >= 100) return (m / 100 >= 10 ? Math.round(m / 100) : (m / 100).toFixed(1)) + ' 亿';
+    if (m >= 1) return Math.round(m * 100).toLocaleString() + ' 万';
+    return '约 ' + Math.max(1, Math.round(m * 100)) + ' 万';
+  }
+  let pbNum = null, pbSpark = null, pbBars = null, lastPopTxt = '';
+  function initPop() {
+    const box = $('.popbox'); if (!box) return;
+    pbNum = box.querySelector('.pb-num');
+    pbSpark = box.querySelector('.pb-spark');
+    pbBars = box.querySelector('.pb-bars');
+    const toggle = () => { box.classList.toggle('open'); renderPopBars(curYear()); };
+    box.addEventListener('click', toggle);
+    box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  }
+  function renderPopBars(yr) {
+    if (!pbBars) return;
+    let row = POP_REGIONS[0];
+    for (const r of POP_REGIONS) { if (r[0] <= yr) row = r; else break; }
+    pbBars.innerHTML = REGION_META.map(([nm, c], i) => {
+      const pc = row[i + 1];
+      return '<div class="pb-row" style="--c:' + c + '"><span class="nm">' + nm + '</span><span class="bar"><i style="width:' + pc + '%"></i></span><span class="pc">' + pc + '%</span></div>';
+    }).join('') + '<div class="pb-row" style="opacity:.55"><span class="nm"></span><span style="font-size:9.5px">' + fmtYear(row[0]) + ' 年样点</span></div>';
+  }
+  function updatePop(yr) {
+    if (!pbNum) return;
+    const txt = fmtPop(popAt(yr));
+    if (txt !== lastPopTxt) {
+      lastPopTxt = txt;
+      pbNum.textContent = txt;
+      if ($('.popbox').classList.contains('open')) renderPopBars(yr);
+    }
+    // 走势小图:x 轴复用时间轴的非线性刻度,与底部时间轴对齐直觉
+    const c = pbSpark; if (!c) return;
+    const x = c.getContext('2d'), W = c.width, H = c.height;
+    x.clearRect(0, 0, W, H);
+    const lnMin = Math.log(0.08), lnMax = Math.log(9000);
+    x.beginPath();
+    POP_CURVE.forEach(([y, p], i) => {
+      const px = yearToFrac(y) * (W - 6) + 3;
+      const py = H - 3 - (Math.log(p) - lnMin) / (lnMax - lnMin) * (H - 7);
+      i ? x.lineTo(px, py) : x.moveTo(px, py);
+    });
+    x.strokeStyle = 'rgba(233,180,76,.55)'; x.lineWidth = 1.4; x.stroke();
+    const mx = yearToFrac(yr) * (W - 6) + 3;
+    const my = H - 3 - (Math.log(popAt(yr)) - lnMin) / (lnMax - lnMin) * (H - 7);
+    x.beginPath(); x.arc(mx, my, 2.6, 0, 7); x.fillStyle = '#E9B44C'; x.fill();
+    x.beginPath(); x.arc(mx, my, 5, 0, 7); x.fillStyle = 'rgba(233,180,76,.25)'; x.fill();
+  }
+
   function updateReadout() {
     const yr = curYear(), yr0 = curYear0();
     const windowed = S.frac0 > 0.002;
@@ -675,6 +751,7 @@
     let recent = null;
     for (const it of Object.values(ITEMS)) if (it.y <= yr && it.y >= yr0 && (!recent || it.y > recent.y)) recent = it;
     $('.tl-ev').textContent = recent ? '　最新:' + recent.t : (windowed ? '　(窗内无事件)' : '');
+    updatePop(yr);
   }
 
   // —— 时间轴交互 ——
@@ -824,7 +901,7 @@
     if (!GLOBE3D) globeEl.style.display = 'none';
 
     resize();
-    buildLegend(); initTrack(); initModes(); initKeys(); syncPlay();
+    buildLegend(); initTrack(); initModes(); initKeys(); initPop(); syncPlay();
     window.addEventListener('resize', resize);
     window.addEventListener('pointermove', onMove, { passive: true });
     window.addEventListener('pointerdown', onPointerDown, true);

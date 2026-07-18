@@ -73,6 +73,15 @@ const html = `<!doctype html>
 
 <aside class="legend"><div class="lg-head"><span class="lg-title">领域</span><button class="lg-toggle" aria-label="收起/展开图例">⌃</button></div></aside>
 
+<aside class="popbox" role="button" aria-label="世界人口,点击展开分布" tabindex="0">
+  <div class="pb-main"><span class="pb-lb">世界人口</span><b class="pb-num">—</b></div>
+  <canvas class="pb-spark" width="164" height="30"></canvas>
+  <div class="pb-detail">
+    <div class="pb-bars"></div>
+    <div class="pb-note">HYDE / McEvedy 估算 · 远古为数量级</div>
+  </div>
+</aside>
+
 <section class="timeline">
   <button class="play" aria-label="播放"></button>
   <div class="tl-main">
