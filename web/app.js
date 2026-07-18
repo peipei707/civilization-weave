@@ -621,10 +621,13 @@
     if (baked) {
       const el = box(); if (!el) return;
       el.textContent = baked.e;
-      if (baked.u) {
+      if (baked.u || baked.l) {
         const fig = document.createElement('figure');
         fig.className = 'dt-media';
-        fig.innerHTML = '<span class="dm-hero"><img loading="lazy" src="' + baked.u + '" onerror="this.parentNode.parentNode.style.display=\'none\'"></span>';
+        // 本地资产优先(img/terr/ 随站点分发,零外网);失败回退远程维基,再失败隐藏
+        const local = baked.l ? 'img/terr/' + baked.l : null;
+        const fallback = local && baked.u ? 'this.onerror=null;this.src=\'' + baked.u + '\';' : 'this.parentNode.parentNode.style.display=\'none\';';
+        fig.innerHTML = '<span class="dm-hero"><img loading="lazy" src="' + (local || baked.u) + '" onerror="' + fallback + '"></span>';
         el.parentNode.insertBefore(fig, el);
       }
       const s = srcBox();
@@ -705,6 +708,8 @@
     box.addEventListener('click', e => {
       const cont = e.target.closest('.pb-cont');
       if (cont) { popView = { mode: 'countries', cont: cont.dataset.cont }; renderPopDetail(curYear()); return; }
+      const cty = e.target.closest('.pb-cty');
+      if (cty) { jumpCountry(cty.dataset.en); return; }
       if (e.target.closest('.pb-back')) { popView = { mode: 'conts' }; renderPopDetail(curYear()); return; }
       const chip = e.target.closest('.pb-chip');
       if (chip && chip.dataset.id) { selectAndReveal(chip.dataset.id); return; }
@@ -713,6 +718,37 @@
     });
     box.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); box.click(); } });
   }
+  // 人口榜国家名 → 地球定位:在疆界快照里(从最近代往回)找同名政权,取最大外环质心飞过去
+  const TERR_ALIAS = {
+    'United States': 'United States of America', 'Democratic Republic of Congo': 'Democratic Republic of the Congo',
+    'Ivory Coast': "Côte d'Ivoire", 'Czechia': 'Czech Republic', 'Myanmar': 'Burma', 'Vietnam': 'Viet Nam',
+  };
+  function terrFeatureByName(name) {
+    const B = window.BORDERS; if (!B) return null;
+    const tries = [name, TERR_ALIAS[name]].filter(Boolean);
+    for (let i = B.years.length - 1; i >= 0; i--) {
+      const list = B.sets[B.years[i]].f || [];
+      for (const t of tries) { const f = list.find(x => x.n === t); if (f) return f; }
+    }
+    return null;
+  }
+  function centroidOf(f) {
+    let best = null, bestLen = 0;
+    for (const poly of f.g) { const ring = poly[0]; if (ring && ring.length > bestLen) { bestLen = ring.length; best = ring; } }
+    if (!best) return null;
+    let sx = 0, sy = 0, n = best.length / 2;
+    for (let i = 0; i < best.length; i += 2) { sx += best[i]; sy += best[i + 1]; }
+    return { lat: sy / n, lon: sx / n };
+  }
+  function jumpCountry(en) {
+    const f = terrFeatureByName(en);
+    if (f) {
+      const c = centroidOf(f);
+      if (c && GLOBE3D && S.morph < 0.5) GlobeView.flyToItem({ kind: 'node', lat: c.lat, lon: c.lon });
+      openTerr(f.n);
+    } else openTerr(en); // 疆界里没有同名块:仍开资料面板(存续区间为空,简介照常)
+  }
+
   function countryAt(sam, yr) { // 国家人口:采样点对数插值;首个数据点之前无值
     if (!sam.length || yr < sam[0][0]) return null;
     if (yr >= sam[sam.length - 1][0]) return sam[sam.length - 1][1];
@@ -729,14 +765,14 @@
       const rows = [];
       for (const [en, rec] of Object.entries(window.POP_DATA[popView.cont])) {
         const v = countryAt(rec.s, yr);
-        if (v != null && v > 0.01) rows.push([rec.n || en, v]);
+        if (v != null && v > 0.01) rows.push([rec.n || en, v, en]);
       }
       rows.sort((a, b) => b[1] - a[1]);
       const top = rows.slice(0, 8), max = top.length ? top[0][1] : 1;
       pbBars.innerHTML = '<button class="pb-back">‹ ' + popView.cont + ' 各国 · 返回</button>' +
-        (top.length ? top.map(([nm, v]) =>
-          '<div class="pb-row" style="--c:#8FB0E0"><span class="nm" style="width:56px">' + nm + '</span><span class="bar"><i style="width:' + Math.max(3, v / max * 100).toFixed(1) + '%"></i></span><span class="pc">' + fmtPop(v) + '</span></div>'
-        ).join('') + '<div class="pb-row" style="opacity:.5;font-size:9.5px">Gapminder/HYDE/UN · 1800 前为稀疏估算</div>'
+        (top.length ? top.map(([nm, v, en]) =>
+          '<div class="pb-row pb-cty" data-en="' + en + '" title="点击飞往 ' + nm + '"><span class="nm" style="width:56px">' + nm + '</span><span class="bar" style="--c:#8FB0E0"><i style="width:' + Math.max(3, v / max * 100).toFixed(1) + '%"></i></span><span class="pc">' + fmtPop(v) + '</span></div>'
+        ).join('') + '<div class="pb-row" style="opacity:.5;font-size:9.5px">Gapminder/HYDE/UN · 1800 前为稀疏估算 · 点国名飞往</div>'
           : '<div class="pb-row" style="opacity:.6">该年代暂无国家级数据(1800 年前多为大洲级估算)</div>');
       return;
     }

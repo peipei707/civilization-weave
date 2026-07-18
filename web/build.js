@@ -122,6 +122,15 @@ const html = `<!doctype html>
 </html>`;
 
 fs.writeFileSync(path.join(dir, 'index.html'), html);
+// 政权缩略图本地资产:拷进 web/img/terr(预览)与 docs/img/terr(Pages 发布)
+const terrImgSrc = path.join(dir, '..', 'data', 'terr_img');
+if (fs.existsSync(terrImgSrc)) {
+  for (const outDir of [path.join(dir, 'img', 'terr'), path.join(dir, '..', 'docs', 'img', 'terr')]) {
+    fs.mkdirSync(outDir, { recursive: true });
+    for (const f of fs.readdirSync(terrImgSrc)) fs.copyFileSync(path.join(terrImgSrc, f), path.join(outDir, f));
+  }
+  console.log('政权缩略图本地资产:' + fs.readdirSync(terrImgSrc).length + ' 张已同步 web/img/terr 与 docs/img/terr');
+}
 // GitHub Pages 发布副本(Pages 源=main 分支 /docs 目录)
 const docsDir = path.join(dir, '..', 'docs');
 if (!fs.existsSync(docsDir)) fs.mkdirSync(docsDir);

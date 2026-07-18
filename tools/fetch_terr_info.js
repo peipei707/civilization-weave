@@ -52,28 +52,42 @@ console.log('待查中文条目', zhTitles.length, '个(已装', Object.keys(out
 
 (async () => {
   let hit = 0;
-  for (let i = 0; i < zhTitles.length; i += 20) {
-    const batch = zhTitles.slice(i, i + 20);
+  // TextExtracts 陷阱:名义 exlimit=20,实际每个响应只带前几题的摘要,其余要用 excontinue 续页;
+  // 之前没跟续页导致每批只有排头几个拿到简介(415/1021 且全是字母序前段)。小批次 + 续页循环收齐。
+  for (let i = 0; i < zhTitles.length; i += 5) {
+    const batch = zhTitles.slice(i, i + 5);
     try {
-      const j = await getJSON('https://zh.wikipedia.org/w/api.php?action=query&format=json&redirects=1' +
-        '&prop=extracts|pageimages&exintro=1&explaintext=1&exchars=260&exlimit=max&pithumbsize=320' +
-        '&titles=' + encodeURIComponent(batch.join('|')));
       const back = {};
       batch.forEach(t => back[t] = t);
-      (j.query.normalized || []).forEach(n => { back[n.to] = back[n.from] || n.from; });
-      (j.query.redirects || []).forEach(r => { back[r.to] = back[r.from] || r.from; });
-      Object.values(j.query.pages || {}).forEach(p => {
-        const orig = back[p.title];
-        if (!orig || !byZh[orig] || !p.extract || p.pageid == null) return;
-        const rec = { e: p.extract.trim(), p: p.title };
-        if (p.thumbnail && p.thumbnail.source) rec.u = p.thumbnail.source;
-        byZh[orig].forEach(en => { out[en] = rec; hit++; });
-      });
+      let cont = null, rounds = 0;
+      do {
+        const j = await getJSON('https://zh.wikipedia.org/w/api.php?action=query&format=json&redirects=1' +
+          '&prop=extracts|pageimages&exintro=1&explaintext=1&exchars=260&exlimit=max&pithumbsize=320' +
+          '&titles=' + encodeURIComponent(batch.join('|')) +
+          (cont ? '&excontinue=' + encodeURIComponent(cont) : ''));
+        (j.query.normalized || []).forEach(n => { back[n.to] = back[n.from] || n.from; });
+        (j.query.redirects || []).forEach(r => { back[r.to] = back[r.from] || r.from; });
+        Object.values(j.query.pages || {}).forEach(p => {
+          const orig = back[p.title];
+          if (!orig || !byZh[orig] || !p.pageid) return;
+          const prev = out[byZh[orig][0]] || {};
+          const rec = {
+            e: (p.extract && p.extract.trim()) || prev.e,
+            p: p.title,
+            u: (p.thumbnail && p.thumbnail.source) || prev.u,
+          };
+          if (!rec.e) return; // 摘要还没到,等续页
+          if (!rec.u) delete rec.u;
+          byZh[orig].forEach(en => { if (!out[en]) hit++; out[en] = rec; });
+        });
+        cont = j.continue && j.continue.excontinue;
+        if (cont) await sleep(400);
+      } while (cont && ++rounds < 8);
     } catch (e) { console.log(`\n批 ${i} 失败: ${e.message.slice(0, 60)}`); }
-    const done = Math.min(i + 20, zhTitles.length);
+    const done = Math.min(i + 5, zhTitles.length);
     process.stdout.write(`\r简介批次 ${done}/${zhTitles.length}`);
-    if (done % 100 < 20) fs.writeFileSync(OUT, JSON.stringify(out)); // 增量落盘=心跳
-    await sleep(1200);
+    if (done % 50 < 5) fs.writeFileSync(OUT, JSON.stringify(out)); // 增量落盘=心跳
+    await sleep(900);
   }
   fs.writeFileSync(OUT, JSON.stringify(out));
   const kb = Math.round(fs.statSync(OUT).size / 1024);
