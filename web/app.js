@@ -413,7 +413,7 @@
   // —— UI ——
   const $ = s => document.querySelector(s);
   const microcard = $('.microcard'), detail = $('.detail'), hintEl = $('.hint');
-  const UI_SEL = '.topbar,.legend,.timeline,.detail,.microcard,.hint,.attrib';
+  const UI_SEL = '.topbar,.legend,.timeline,.detail,.microcard,.hint,.attrib,.popbox';
 
   function buildLegend() {
     const wrap = $('.legend');
@@ -696,23 +696,64 @@
     return '约 ' + Math.max(1, Math.round(m * 100)) + ' 万';
   }
   let pbNum = null, pbSpark = null, pbBars = null, lastPopTxt = '';
+  let popView = { mode: 'conts' };   // conts=五大洲 | countries=某洲国家榜
   function initPop() {
     const box = $('.popbox'); if (!box) return;
     pbNum = box.querySelector('.pb-num');
     pbSpark = box.querySelector('.pb-spark');
     pbBars = box.querySelector('.pb-bars');
-    const toggle = () => { box.classList.toggle('open'); renderPopBars(curYear()); };
-    box.addEventListener('click', toggle);
-    box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    box.addEventListener('click', e => {
+      const cont = e.target.closest('.pb-cont');
+      if (cont) { popView = { mode: 'countries', cont: cont.dataset.cont }; renderPopDetail(curYear()); return; }
+      if (e.target.closest('.pb-back')) { popView = { mode: 'conts' }; renderPopDetail(curYear()); return; }
+      const chip = e.target.closest('.pb-chip');
+      if (chip && chip.dataset.id) { selectAndReveal(chip.dataset.id); return; }
+      box.classList.toggle('open');   // 空白处点击 = 开合
+      if (box.classList.contains('open')) { popView = { mode: 'conts' }; renderPopDetail(curYear()); }
+    });
+    box.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); box.click(); } });
   }
-  function renderPopBars(yr) {
+  function countryAt(sam, yr) { // 国家人口:采样点对数插值;首个数据点之前无值
+    if (!sam.length || yr < sam[0][0]) return null;
+    if (yr >= sam[sam.length - 1][0]) return sam[sam.length - 1][1];
+    for (let i = 1; i < sam.length; i++) if (yr <= sam[i][0]) {
+      const [y0, p0] = sam[i - 1], [y1, p1] = sam[i];
+      return Math.exp(lerp(Math.log(p0), Math.log(p1), (yr - y0) / (y1 - y0)));
+    }
+    return null;
+  }
+  function renderPopDetail(yr) {
     if (!pbBars) return;
+    // —— 国家榜视图 ——
+    if (popView.mode === 'countries' && window.POP_DATA && window.POP_DATA[popView.cont]) {
+      const rows = [];
+      for (const [en, rec] of Object.entries(window.POP_DATA[popView.cont])) {
+        const v = countryAt(rec.s, yr);
+        if (v != null && v > 0.01) rows.push([rec.n || en, v]);
+      }
+      rows.sort((a, b) => b[1] - a[1]);
+      const top = rows.slice(0, 8), max = top.length ? top[0][1] : 1;
+      pbBars.innerHTML = '<button class="pb-back">‹ ' + popView.cont + ' 各国 · 返回</button>' +
+        (top.length ? top.map(([nm, v]) =>
+          '<div class="pb-row" style="--c:#8FB0E0"><span class="nm" style="width:56px">' + nm + '</span><span class="bar"><i style="width:' + Math.max(3, v / max * 100).toFixed(1) + '%"></i></span><span class="pc">' + fmtPop(v) + '</span></div>'
+        ).join('') + '<div class="pb-row" style="opacity:.5;font-size:9.5px">Gapminder/HYDE/UN · 1800 前为稀疏估算</div>'
+          : '<div class="pb-row" style="opacity:.6">该年代暂无国家级数据(1800 年前多为大洲级估算)</div>');
+      return;
+    }
+    // —— 五大洲视图 + 进行中的迁徙流 ——
     let row = POP_REGIONS[0];
     for (const r of POP_REGIONS) { if (r[0] <= yr) row = r; else break; }
-    pbBars.innerHTML = REGION_META.map(([nm, c], i) => {
+    let html = REGION_META.map(([nm, c], i) => {
       const pc = row[i + 1];
-      return '<div class="pb-row" style="--c:' + c + '"><span class="nm">' + nm + '</span><span class="bar"><i style="width:' + pc + '%"></i></span><span class="pc">' + pc + '%</span></div>';
-    }).join('') + '<div class="pb-row" style="opacity:.55"><span class="nm"></span><span style="font-size:9.5px">' + fmtYear(row[0]) + ' 年样点</span></div>';
+      return '<div class="pb-row pb-cont" data-cont="' + nm + '" style="--c:' + c + '" title="点击看' + nm + '各国"><span class="nm">' + nm + ' ›</span><span class="bar"><i style="width:' + pc + '%"></i></span><span class="pc">' + pc + '%</span></div>';
+    }).join('');
+    const active = DATA.arcs.filter(a => a.y <= yr && a.y + (a.dur || 60) >= yr && itemOn(a))
+      .sort((a, b) => b.w - a.w || b.y - a.y).slice(0, 6);
+    if (active.length) {
+      html += '<div class="pb-sec">进行中的迁徙 · 流动</div><div class="pb-chips">' +
+        active.map(a => '<button class="pb-chip" data-id="' + a.id + '">' + a.t + '</button>').join('') + '</div>';
+    }
+    pbBars.innerHTML = html;
   }
   function updatePop(yr) {
     if (!pbNum) return;
@@ -720,7 +761,7 @@
     if (txt !== lastPopTxt) {
       lastPopTxt = txt;
       pbNum.textContent = txt;
-      if ($('.popbox').classList.contains('open')) renderPopBars(yr);
+      if ($('.popbox').classList.contains('open')) renderPopDetail(yr);
     }
     // 走势小图:x 轴复用时间轴的非线性刻度,与底部时间轴对齐直觉
     const c = pbSpark; if (!c) return;

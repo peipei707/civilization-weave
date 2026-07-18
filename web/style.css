@@ -143,7 +143,7 @@ body {
 /* —— 世界人口面板(右上) —— */
 .popbox {
   position: fixed; z-index: 6; right: 26px; top: 96px;
-  width: 188px; padding: 10px 12px 9px; cursor: pointer;
+  width: auto; min-width: 118px; padding: 7px 12px; cursor: pointer;
   border-radius: var(--r); background: var(--glass);
   border: 1px solid var(--glass-brd);
   box-shadow: inset 0 1px 0 var(--glass-hi), 0 18px 40px rgba(0,0,0,.35);
@@ -154,7 +154,23 @@ body {
 .popbox .pb-main { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
 .popbox .pb-lb { font-size: 10.5px; letter-spacing: .18em; color: var(--ink-3); text-transform: uppercase; }
 .popbox .pb-num { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: 16px; color: var(--ink); font-weight: 600; }
-.popbox .pb-spark { display: block; width: 100%; height: 30px; margin-top: 6px; opacity: .9; }
+.popbox .pb-spark { display: none; width: 100%; height: 30px; margin-top: 6px; opacity: .9; }
+.popbox.open { width: 218px; padding: 10px 12px 9px; }
+.popbox.open .pb-spark { display: block; }
+.popbox .pb-row.pb-cont { cursor: pointer; border-radius: 6px; padding: 1px 3px; margin: -1px -3px; }
+.popbox .pb-row.pb-cont:hover { background: rgba(255,255,255,.07); }
+.popbox .pb-back {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  color: var(--gold); font-size: 11px; padding: 2px 0 6px; display: block; text-align: left;
+}
+.popbox .pb-sec { font-size: 9.5px; letter-spacing: .16em; color: var(--ink-3); text-transform: uppercase; margin: 8px 0 4px; }
+.popbox .pb-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.popbox .pb-chip {
+  appearance: none; border: 1px solid var(--glass-brd); background: rgba(255,255,255,.05);
+  color: var(--ink-2); font-size: 10.5px; padding: 3px 8px; border-radius: 999px; cursor: pointer;
+  transition: background .15s var(--ease);
+}
+.popbox .pb-chip:hover { background: rgba(255,255,255,.12); color: var(--ink); }
 .popbox .pb-detail { display: none; margin-top: 8px; }
 .popbox.open .pb-detail { display: block; }
 .popbox .pb-bars { display: flex; flex-direction: column; gap: 4px; }

@@ -25,6 +25,8 @@ const terrainH = fs.existsSync(heightPath)
   : 'null';
 const zhPath = path.join(dir, '..', 'data', 'terr_zh.json');
 const terrZh = fs.existsSync(zhPath) ? fs.readFileSync(zhPath, 'utf8') : 'null';
+const popCPath = path.join(dir, '..', 'data', 'pop_countries.json');
+const popCountries = fs.existsSync(popCPath) ? fs.readFileSync(popCPath, 'utf8') : 'null';
 const tiPath = path.join(dir, '..', 'data', 'terr_info.json');
 const terrInfo = fs.existsSync(tiPath) ? fs.readFileSync(tiPath, 'utf8') : 'null';
 const imgPath = path.join(dir, '..', 'data', 'images.json');
@@ -112,7 +114,7 @@ const html = `<!doctype html>
 <div class="hint">▶ 点「播放」看文明演化 · 拖动旋转地球,滚轮缩放 · 点亮节点读其一生 · 切「网络」看影响星座</div>
 
 <script>${globeLib}</script>
-<script>window.LAND=${land};window.BORDERS=${borders};window.TERRAIN=${terrain};window.TERRAIN_H=${terrainH};window.TERR_ZH=${terrZh};window.TERR_INFO=${terrInfo};window.IMAGES=${images};</script>
+<script>window.LAND=${land};window.BORDERS=${borders};window.TERRAIN=${terrain};window.TERRAIN_H=${terrainH};window.TERR_ZH=${terrZh};window.TERR_INFO=${terrInfo};window.IMAGES=${images};window.POP_DATA=${popCountries};</script>
 <script>${data}</script>
 <script>${globeMod}</script>
 <script>${app}</script>
