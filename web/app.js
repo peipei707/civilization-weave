@@ -616,6 +616,21 @@
   async function fetchTerrWiki(name, zh, req) {
     const box = () => terrReq === req ? detail.querySelector('.terr-wiki') : null;
     const srcBox = () => terrReq === req ? detail.querySelector('.terr-src') : null;
+    // 预装快路径:构建时已把简介/缩略图直链烙进页面,点开零等待、离线可用
+    const baked = window.TERR_INFO && window.TERR_INFO[name];
+    if (baked) {
+      const el = box(); if (!el) return;
+      el.textContent = baked.e;
+      if (baked.u) {
+        const fig = document.createElement('figure');
+        fig.className = 'dt-media';
+        fig.innerHTML = '<span class="dm-hero"><img loading="lazy" src="' + baked.u + '" onerror="this.parentNode.parentNode.style.display=\'none\'"></span>';
+        el.parentNode.insertBefore(fig, el);
+      }
+      const s = srcBox();
+      if (s) s.innerHTML = '<a href="https://zh.wikipedia.org/wiki/' + encodeURIComponent(baked.p) + '" target="_blank" rel="noopener">维基百科:' + baked.p + ' ↗</a>';
+      return;
+    }
     const trySummary = async (lang, title) => {
       const r = await fetch('https://' + lang + '.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title));
       if (!r.ok) throw 0;
