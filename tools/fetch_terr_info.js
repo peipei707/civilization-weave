@@ -39,11 +39,14 @@ const names = fs.readFileSync(path.join(ROOT, 'data', 'terr_names.txt'), 'utf8')
 const zhMap = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'terr_zh.json'), 'utf8'));
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 
+// 个别政权的"通名条目"是文明/地理概念而非国家实体(首图不是国旗),改抓国家条目;显示名不受影响
+const ZH_QUERY_OVERRIDE = { China: '中华人民共和国' };
+
 // 英文名 → 中文标题;同中文题合并查询;断点续传跳过已装
 const byZh = {};
 for (const en of names) {
   if (out[en]) continue;
-  const zh = zhMap[en];
+  const zh = ZH_QUERY_OVERRIDE[en] || zhMap[en];
   if (!zh || zh === '无名地带') continue;
   (byZh[zh] = byZh[zh] || []).push(en);
 }
