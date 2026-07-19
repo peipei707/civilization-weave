@@ -36,7 +36,7 @@ const CONT = {
   美洲: 'United States Brazil Mexico Colombia Argentina Canada Peru Venezuela Chile Ecuador Guatemala Bolivia Cuba Haiti Dominican Republic Honduras Paraguay Nicaragua El Salvador Costa Rica Panama Uruguay Jamaica',
   大洋洲: 'Australia Papua New Guinea New Zealand Fiji Solomon Islands Vanuatu Samoa Tonga',
 };
-const ZH_EXTRA = {
+const ZH_EXTRA = {"Iceland":"冰岛","Luxembourg":"卢森堡","Malta":"马耳他","Cyprus":"塞浦路斯","Moldova":"摩尔多瓦","North Macedonia":"北马其顿","Montenegro":"黑山","Kosovo":"科索沃","Andorra":"安道尔","Monaco":"摩纳哥","Liechtenstein":"列支敦士登","San Marino":"圣马力诺","Bhutan":"不丹","Maldives":"马尔代夫","Brunei":"文莱","East Timor":"东帝汶","Bahrain":"巴林","Palestine":"巴勒斯坦","Turkmenistan":"土库曼斯坦","Kyrgyzstan":"吉尔吉斯斯坦","Tajikistan":"塔吉克斯坦","Eritrea":"厄立特里亚","Djibouti":"吉布提","Gambia":"冈比亚","Guinea-Bissau":"几内亚比绍","Sierra Leone":"塞拉利昂","Liberia":"利比里亚","Togo":"多哥","Mauritania":"毛里塔尼亚","Lesotho":"莱索托","Eswatini":"斯威士兰","Namibia":"纳米比亚","Botswana":"博茨瓦纳","Gabon":"加蓬","Congo":"刚果(布)","Central African Republic":"中非","South Sudan":"南苏丹","Equatorial Guinea":"赤道几内亚","Comoros":"科摩罗","Mauritius":"毛里求斯","Seychelles":"塞舌尔","Cape Verde":"佛得角","Sao Tome and Principe":"圣多美和普林西比","Belize":"伯利兹","Guyana":"圭亚那","Suriname":"苏里南","Trinidad and Tobago":"特立尼达和多巴哥","Bahamas":"巴哈马","Barbados":"巴巴多斯","Saint Lucia":"圣卢西亚","Grenada":"格林纳达","Antigua and Barbuda":"安提瓜和巴布达","Dominica":"多米尼克","Saint Vincent and the Grenadines":"圣文森特和格林纳丁斯","Saint Kitts and Nevis":"圣基茨和尼维斯","Kiribati":"基里巴斯","Micronesia (country)":"密克罗尼西亚","Marshall Islands":"马绍尔群岛","Palau":"帕劳","Nauru":"瑙鲁","Tuvalu":"图瓦卢",
   China: '中国', India: '印度', Indonesia: '印度尼西亚', Pakistan: '巴基斯坦', Bangladesh: '孟加拉国', Japan: '日本',
   Philippines: '菲律宾', Vietnam: '越南', Iran: '伊朗', Turkey: '土耳其', Thailand: '泰国', Myanmar: '缅甸',
   'South Korea': '韩国', Iraq: '伊拉克', Afghanistan: '阿富汗', 'Saudi Arabia': '沙特阿拉伯', Uzbekistan: '乌兹别克斯坦',
@@ -74,18 +74,26 @@ const SAMPLE_YEARS = [-1000, 1, 500, 1000, 1500, 1600, 1700, 1800, 1850, 1900, 1
     console.log('下载完成', Math.round(fs.statSync(csvPath).size / 1024), 'KB');
   } else console.log('用本地缓存 CSV');
 
-  const wanted = {};
-  for (const [cont, list] of Object.entries(CONT)) for (const c of list.split(' ').join('').split('')) { }
+  // 大洲归属:OWID 官方大陆映射(全量国家,不再手挑名单)
+  const contCsvPath = path.join(ROOT, 'data', '_owid_continents.csv');
+  if (!fs.existsSync(contCsvPath) || fs.statSync(contCsvPath).size < 2000) {
+    console.log('下载 OWID 大陆映射…');
+    await fetchText('https://ourworldindata.org/grapher/continents-according-to-our-world-in-data.csv?csvType=full&useColumnShortNames=true', contCsvPath);
+  }
+  const CONT_ZH = { Asia: '亚洲', Europe: '欧洲', Africa: '非洲', 'North America': '美洲', 'South America': '美洲', Oceania: '大洋洲' };
   const contOf = {};
-  for (const [cont, list] of Object.entries(CONT)) {
-    // 名单里有含空格的国名,按已知全名匹配
-    let rest = list;
-    const known = Object.keys(ZH_EXTRA).sort((a, b) => b.length - a.length);
-    for (const k of known) {
-      if (rest.includes(k)) { contOf[k] = cont; rest = rest.replace(k, '').replace(/\s+/g, ' '); }
+  {
+    const cl = fs.readFileSync(contCsvPath, 'utf8').split('\n');
+    const ch = cl[0].toLowerCase().split(',');
+    const cEnt = ch.findIndex(h => /entity/.test(h));
+    for (let i = 1; i < cl.length; i++) {
+      if (!cl[i]) continue;
+      const p = cl[i].split(',');
+      const zh = CONT_ZH[(p[p.length - 1] || '').trim().replace(/^"|"$/g, '')];
+      if (zh) contOf[p[cEnt].replace(/^"|"$/g, '')] = zh;
     }
   }
-  console.log('目标国家', Object.keys(contOf).length, '个');
+  console.log('大陆映射覆盖实体', Object.keys(contOf).length, '个');
 
   // CSV 表头动态识别(grapher 格式:entity,code,year,population…)
   const lines = fs.readFileSync(csvPath, 'utf8').split('\n');

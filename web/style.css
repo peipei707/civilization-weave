@@ -160,6 +160,9 @@ body {
 .popbox .pb-row.pb-cont, .popbox .pb-row.pb-cty { cursor: pointer; border-radius: 6px; padding: 1px 3px; margin: -1px -3px; }
 .popbox .pb-row.pb-cont:hover, .popbox .pb-row.pb-cty:hover { background: rgba(255,255,255,.07); }
 .popbox .pb-row.pb-cty:hover .nm { color: var(--gold); }
+.popbox .pb-bars.pb-scroll { max-height: 46vh; overflow-y: auto; padding-right: 4px; scrollbar-width: thin; }
+.popbox .pb-all { color: var(--ink-3); }
+.popbox .pb-all:hover { color: var(--gold); }
 .popbox .pb-back {
   appearance: none; border: 0; background: transparent; cursor: pointer;
   color: var(--gold); font-size: 11px; padding: 2px 0 6px; display: block; text-align: left;

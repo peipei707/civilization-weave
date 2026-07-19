@@ -710,6 +710,8 @@
       if (cont) { popView = { mode: 'countries', cont: cont.dataset.cont }; renderPopDetail(curYear()); return; }
       const cty = e.target.closest('.pb-cty');
       if (cty) { jumpCountry(cty.dataset.en); return; }
+      const allBtn = e.target.closest('.pb-all');
+      if (allBtn) { popView.all = !popView.all; renderPopDetail(curYear()); return; }
       if (e.target.closest('.pb-back')) { popView = { mode: 'conts' }; renderPopDetail(curYear()); return; }
       const chip = e.target.closest('.pb-chip');
       if (chip && chip.dataset.id) { selectAndReveal(chip.dataset.id); return; }
@@ -768,11 +770,16 @@
         if (v != null && v > 0.01) rows.push([rec.n || en, v, en]);
       }
       rows.sort((a, b) => b[1] - a[1]);
-      const top = rows.slice(0, 8), max = top.length ? top[0][1] : 1;
+      const showAll = !!popView.all;
+      const top = showAll ? rows : rows.slice(0, 10);
+      const max = rows.length ? rows[0][1] : 1;
+      pbBars.classList.toggle('pb-scroll', showAll);
       pbBars.innerHTML = '<button class="pb-back">‹ ' + popView.cont + ' 各国 · 返回</button>' +
         (top.length ? top.map(([nm, v, en]) =>
           '<div class="pb-row pb-cty" data-en="' + en + '" title="点击飞往 ' + nm + '"><span class="nm" style="width:56px">' + nm + '</span><span class="bar" style="--c:#8FB0E0"><i style="width:' + Math.max(3, v / max * 100).toFixed(1) + '%"></i></span><span class="pc">' + fmtPop(v) + '</span></div>'
-        ).join('') + '<div class="pb-row" style="opacity:.5;font-size:9.5px">Gapminder/HYDE/UN · 1800 前为稀疏估算 · 点国名飞往</div>'
+        ).join('') +
+        (rows.length > 10 ? '<button class="pb-back pb-all">' + (showAll ? '收起,只看前 10' : '展开全部 ' + rows.length + ' 国 ▾') + '</button>' : '') +
+        '<div class="pb-row" style="opacity:.5;font-size:9.5px">Gapminder/HYDE/UN · 1800 前为稀疏估算 · 点国名飞往</div>'
           : '<div class="pb-row" style="opacity:.6">该年代暂无国家级数据(1800 年前多为大洲级估算)</div>');
       return;
     }
