@@ -314,6 +314,15 @@
       if (a < 0.01) continue;
       const [x, y] = nodePos(n);
       const col = domById[n.d].color;
+      // 散开的节点画一根细蛛脚连回原锚点,拢住"同址一簇"的读感
+      if (S.morph < 0.5 && (n._sp || 0) > 2.5 && n._ax != null) {
+        const la = 0.16 * a * (1 - S.morph * 2);
+        if (la > 0.012) {
+          fx.beginPath(); fx.moveTo(n._ax, n._ay); fx.lineTo(x, y);
+          fx.lineWidth = 1; fx.strokeStyle = hexA('#AFC2E4', la); fx.stroke();
+          fx.beginPath(); fx.arc(n._ax, n._ay, 1.1, 0, 7); fx.fillStyle = hexA('#AFC2E4', la * 1.5); fx.fill();
+        }
+      }
       const R = (2.2 + n.w * 1.7) * (0.55 + 0.45 * n._a) * (isFoc ? 1.5 : 1);
       const g = fx.createRadialGradient(x, y, 0, x, y, R * 4.2);
       g.addColorStop(0, hexA(col, 0.5 * a)); g.addColorStop(0.5, hexA(col, 0.14 * a)); g.addColorStop(1, hexA(col, 0));
@@ -347,6 +356,57 @@
     }
   }
 
+  // —— 放大散开:同点位交叠的知识点,拉近后按向日葵螺旋扇开,各自可点;细蛛脚连回原锚点 ——
+  function declusterNodes(dt) {
+    const alt = GlobeView.altitude ? GlobeView.altitude() : 2.1;
+    const k = clamp((1.55 - alt) / 0.8, 0, 1); // 初始视距2.1不散;1.2半开;0.75(国家视距)全开
+    const yr = curYear(), yr0 = curYear0();
+    const vis = [];
+    for (const n of DATA.nodes) {
+      n._ax = n._gx; n._ay = n._gy; // 锚点=真实投影位(蛛脚线起点)
+      if (n._ox == null) { n._ox = 0; n._oy = 0; }
+      if (k <= 0.01 || !n._front || n._front <= 0 || n.y > yr || n.y < yr0 || !itemOn(n)) {
+        n.__tx = 0; n.__ty = 0;
+      } else vis.push(n);
+    }
+    if (vis.length) {
+      // 网格近邻并查集:15px 内视为一簇
+      const cell = 15, buckets = new Map();
+      const par = vis.map((_, i) => i);
+      const find = i => { while (par[i] !== i) { par[i] = par[par[i]]; i = par[i]; } return i; };
+      vis.forEach((n, i) => {
+        const cx = Math.floor(n._gx / cell), cy = Math.floor(n._gy / cell);
+        for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) {
+          const arr = buckets.get((cx + dx) + ',' + (cy + dy));
+          if (arr) for (const j of arr) {
+            const m = vis[j];
+            if ((n._gx - m._gx) ** 2 + (n._gy - m._gy) ** 2 < cell * cell) { const a = find(i), b = find(j); if (a !== b) par[b] = a; }
+          }
+        }
+        const key = cx + ',' + cy;
+        let arr = buckets.get(key); if (!arr) buckets.set(key, arr = []); arr.push(i);
+      });
+      const groups = new Map();
+      vis.forEach((n, i) => { const r = find(i); let g = groups.get(r); if (!g) groups.set(r, g = []); g.push(n); });
+      for (const g of groups.values()) {
+        if (g.length < 2) { g[0].__tx = 0; g[0].__ty = 0; continue; }
+        g.sort((a, b) => a.y - b.y || (a.id < b.id ? -1 : 1)); // 稳定序:老事件占中心
+        for (let i = 0; i < g.length; i++) {
+          const ang = i * 2.39996 + 0.6, rad = 13 * k * Math.sqrt(i);
+          g[i].__tx = Math.cos(ang) * rad; g[i].__ty = Math.sin(ang) * rad;
+        }
+      }
+    }
+    for (const n of DATA.nodes) {
+      n._ox = smooth(n._ox, n.__tx || 0, 0.16, dt);
+      n._oy = smooth(n._oy, n.__ty || 0, 0.16, dt);
+      const sp = Math.abs(n._ox) + Math.abs(n._oy);
+      n._sp = sp;
+      // 只对本帧有新投影的节点施加偏移:不可见节点的 _gx 是陈旧值,反复叠加会漂移
+      if (sp > 0.05 && n._front > 0) { n._gx += n._ox; n._gy += n._oy; }
+    }
+  }
+
   // —— 主循环 ——
   let lastGlobeOp = -1;
   function frame(now) {
@@ -362,7 +422,7 @@
     if (GLOBE3D) {
       GlobeView.setYear(curYear(), curYear0());
       GlobeView.tick(dt);
-      if (S.tMorph === 0) GlobeView.syncScreen(DATA.nodes);
+      if (S.tMorph === 0) { GlobeView.syncScreen(DATA.nodes); declusterNodes(dt); }
       const op = clamp(1 - S.morph * 1.25, 0, 1);
       if (Math.abs(op - lastGlobeOp) > 0.01) {
         lastGlobeOp = op;

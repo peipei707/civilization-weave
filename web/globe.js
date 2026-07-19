@@ -473,6 +473,7 @@ window.GlobeView = (function () {
     syncScreen,
     setYear: (y, y0) => { yr = y; yr0 = y0 == null ? -3300001 : y0; },
     setEnabled: () => { forceScan = true; },
+    altitude: () => G ? G.pointOfView().altitude : 2.1,
     setFocus: (hover, sel) => {
       const changed = focus.hover !== hover || focus.sel !== sel;
       focus.hover = hover; focus.sel = sel;
