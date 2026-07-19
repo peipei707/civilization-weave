@@ -39,6 +39,22 @@ const names = fs.readFileSync(path.join(ROOT, 'data', 'terr_names.txt'), 'utf8')
 const zhMap = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'terr_zh.json'), 'utf8'));
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 
+// 人口榜实体(领地/小国/历史政体)一并预装:显示名≠维基条目名的在这修正
+const QUERY_FIX = {
+  '刚果(金)': '刚果民主共和国', '台湾地区': '台湾', '密克罗尼西亚': '密克罗尼西亚联邦',
+  '北也门(1990前)': '阿拉伯也门共和国', '南也门(1990前)': '民主也门', '巴勒斯坦': '巴勒斯坦国',
+  '荷属加勒比区': '荷兰加勒比区', '根西': '根西岛', '泽西': '泽西岛',
+};
+try {
+  const pop = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pop_countries.json'), 'utf8'));
+  let added = 0;
+  for (const m of Object.values(pop)) for (const [en, rec] of Object.entries(m)) {
+    if (!names.includes(en)) { names.push(en); added++; }
+    if (!zhMap[en]) zhMap[en] = QUERY_FIX[rec.n] || rec.n.replace(/\(.*?\)\s*$/, '');
+  }
+  console.log('人口榜并入', added, '个疆界外实体');
+} catch (e) { console.log('pop_countries.json 不可用,跳过并入'); }
+
 // 个别政权的"通名条目"是文明/地理概念而非国家实体(首图不是国旗),改抓国家条目;显示名不受影响
 const ZH_QUERY_OVERRIDE = { China: '中华人民共和国' };
 

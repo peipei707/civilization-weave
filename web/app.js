@@ -587,7 +587,7 @@
     return terrYears[name] || [];
   }
   function openTerr(name) {
-    const zh = (window.TERR_ZH && window.TERR_ZH[name]) || name;
+    const zh = (window.TERR_ZH && window.TERR_ZH[name]) || popZhOf(name) || name;
     const years = terrYearsOf(name);
     const chips = years.map(y =>
       '<button class="chip terr-y" data-y="' + y + '"><span class="dot"></span>' + fmtYear(y) + '</button>').join('');
@@ -725,6 +725,48 @@
     'United States': 'United States of America', 'Democratic Republic of Congo': 'Democratic Republic of the Congo',
     'Ivory Coast': "Côte d'Ivoire", 'Czechia': 'Czech Republic', 'Myanmar': 'Burma', 'Vietnam': 'Viet Nam',
   };
+  // 疆界数据没有独立版图的小国/群岛/领地(每快照只留面积前120)→ 坐标兜底,保证飞行必达
+  const COORD_FALLBACK = {
+    'Bahrain': [26.0, 50.55], 'East Timor': [-8.8, 125.9], 'Hong Kong': [22.3, 114.17], 'Lebanon': [33.9, 35.9],
+    'Macao': [22.17, 113.55], 'Maldives': [3.2, 73.2], 'North Korea': [40.0, 127.0], 'Palestine': [31.9, 35.2],
+    'Qatar': [25.3, 51.2], 'Singapore': [1.35, 103.82], 'South Korea': [36.5, 127.8], 'Taiwan': [23.7, 121.0],
+    'Yemen Arab Republic': [15.5, 44.2], "Yemen People's Republic": [14.0, 46.0], 'Andorra': [42.5, 1.5],
+    'Belarus': [53.7, 27.9], 'Bosnia and Herzegovina': [44.0, 17.7], 'Faroe Islands': [62.0, -6.9],
+    'Gibraltar': [36.14, -5.35], 'Guernsey': [49.45, -2.58], 'Isle of Man': [54.2, -4.5], 'Jersey': [49.21, -2.13],
+    'Kosovo': [42.6, 20.9], 'Liechtenstein': [47.16, 9.55], 'Malta': [35.9, 14.4], 'Monaco': [43.73, 7.42],
+    'North Macedonia': [41.6, 21.7], 'San Marino': [43.94, 12.46], 'Serbia and Montenegro': [43.5, 20.5],
+    'Slovakia': [48.7, 19.5], 'Slovenia': [46.1, 14.8], 'Vatican': [41.9, 12.45], 'Cape Verde': [15.1, -23.6],
+    'Comoros': [-11.7, 43.35], "Cote d'Ivoire": [7.5, -5.5], 'Democratic Republic of Congo': [-2.9, 23.6],
+    'Eswatini': [-26.5, 31.5], 'Ethiopia (former)': [9.0, 39.0], 'Gambia': [13.45, -15.4], 'Mauritius': [-20.3, 57.55],
+    'Mayotte': [-12.83, 45.15], 'Reunion': [-21.1, 55.5], 'Saint Helena': [-15.95, -5.7],
+    'Sao Tome and Principe': [0.3, 6.6], 'Seychelles': [-4.6, 55.45], 'South Sudan': [7.0, 30.0],
+    'Tanzania': [-6.3, 34.8], 'American Samoa': [-14.3, -170.7], 'Cook Islands': [-21.2, -159.77],
+    'French Polynesia': [-17.6, -149.4], 'Guam': [13.45, 144.78], 'Kiribati': [1.4, 173.0],
+    'Marshall Islands': [7.1, 171.1], 'Micronesia (country)': [6.9, 158.2], 'Nauru': [-0.52, 166.93],
+    'New Caledonia': [-21.3, 165.5], 'Niue': [-19.05, -169.87], 'Northern Mariana Islands': [15.2, 145.75],
+    'Palau': [7.5, 134.6], 'Samoa': [-13.75, -172.1], 'Solomon Islands': [-9.6, 160.2], 'Tokelau': [-9.2, -171.85],
+    'Tonga': [-21.2, -175.2], 'Tuvalu': [-8.5, 179.2], 'Vanuatu': [-16.7, 168.3], 'Wallis and Futuna': [-13.3, -176.2],
+    'Anguilla': [18.22, -63.06], 'Antigua and Barbuda': [17.08, -61.8], 'Aruba': [12.52, -69.97],
+    'Bahamas': [24.25, -76.0], 'Barbados': [13.17, -59.55], 'Bermuda': [32.32, -64.75],
+    'Bonaire Sint Eustatius and Saba': [12.2, -68.26], 'British Virgin Islands': [18.42, -64.62],
+    'Cayman Islands': [19.31, -81.25], 'Curacao': [12.17, -69.0], 'Dominica': [15.42, -61.35],
+    'Falkland Islands': [-51.75, -59.0], 'Grenada': [12.11, -61.68], 'Guadeloupe': [16.25, -61.55],
+    'Jamaica': [18.1, -77.3], 'Martinique': [14.65, -61.0], 'Montserrat': [16.75, -62.2],
+    'Netherlands Antilles': [12.2, -68.9], 'Saint Barthelemy': [17.9, -62.83], 'Saint Kitts and Nevis': [17.33, -62.75],
+    'Saint Lucia': [13.9, -60.97], 'Saint Martin (French part)': [18.08, -63.05], 'Saint Pierre and Miquelon': [46.9, -56.3],
+    'Saint Vincent and the Grenadines': [13.25, -61.2], 'Sint Maarten (Dutch part)': [18.03, -63.05],
+    'Trinidad and Tobago': [10.45, -61.25], 'Turks and Caicos Islands': [21.75, -71.6],
+    'United States Virgin Islands': [18.34, -64.9],
+  };
+  let POP_ZH = null; // 人口数据里的英→中名(领地/历史政体不在 TERR_ZH 里,面板标题从这补)
+  function popZhOf(en) {
+    if (!POP_ZH) {
+      POP_ZH = {};
+      if (window.POP_DATA) for (const m of Object.values(window.POP_DATA))
+        for (const [k, rec] of Object.entries(m)) POP_ZH[k] = rec.n;
+    }
+    return POP_ZH[en];
+  }
   function terrFeatureByName(name) {
     const B = window.BORDERS; if (!B) return null;
     const tries = [name, TERR_ALIAS[name]].filter(Boolean);
@@ -746,9 +788,14 @@
     const f = terrFeatureByName(en);
     if (f) {
       const c = centroidOf(f);
-      if (c && GLOBE3D && S.morph < 0.5) GlobeView.flyToItem({ kind: 'node', lat: c.lat, lon: c.lon });
+      if (c && GLOBE3D && S.morph < 0.5) GlobeView.focusCountry({ lat: c.lat, lon: c.lon, name: f.n });
       openTerr(f.n);
-    } else openTerr(en); // 疆界里没有同名块:仍开资料面板(存续区间为空,简介照常)
+    } else {
+      // 疆界里没有独立版图(小国/群岛/领地被面积截断):坐标兜底照样飞过去
+      const c = COORD_FALLBACK[en];
+      if (c && GLOBE3D && S.morph < 0.5) GlobeView.focusCountry({ lat: c[0], lon: c[1] });
+      openTerr(en);
+    }
   }
 
   function countryAt(sam, yr) { // 国家人口:采样点对数插值;首个数据点之前无值
@@ -760,12 +807,41 @@
     }
     return null;
   }
+  // —— 历史政体存在窗:苏联/南斯拉夫等只在存续期上榜;存续期内其成员国反向隐藏,杜绝双算 ——
+  // (OWID 给两边都配了全时段回溯序列:苏联疆界内人口回溯到前1000年,俄罗斯现代疆界同样回溯,不加窗则全史双算)
+  const HIST_WINDOW = {
+    'USSR': [1922, 1991], 'Yugoslavia': [1918, 1991], 'Serbia and Montenegro': [1992, 2006],
+    'Czechoslovakia': [1918, 1992], 'East Germany': [1949, 1989], 'West Germany': [1949, 1989],
+    'Yemen Arab Republic': [1918, 1989], "Yemen People's Republic": [1967, 1989],
+    'Netherlands Antilles': [1954, 2010], 'Ethiopia (former)': [1600, 1992],
+  };
+  const HIDE_WHEN = {}; // 成员国 → 被联盟遮蔽的时间窗列表
+  [
+    [['Russia', 'Ukraine', 'Belarus', 'Moldova', 'Armenia', 'Azerbaijan', 'Georgia', 'Kazakhstan',
+      'Uzbekistan', 'Turkmenistan', 'Kyrgyzstan', 'Tajikistan', 'Estonia', 'Latvia', 'Lithuania'], [1922, 1991]],
+    [['Serbia', 'Croatia', 'Slovenia', 'Bosnia and Herzegovina', 'North Macedonia', 'Montenegro', 'Kosovo'], [1918, 1991]],
+    [['Serbia', 'Montenegro', 'Kosovo'], [1992, 2006]],
+    [['Czechia', 'Slovakia'], [1918, 1992]],
+    [['Germany'], [1949, 1989]],
+    [['Yemen'], [1918, 1989]],
+    [['Curacao', 'Sint Maarten (Dutch part)', 'Bonaire Sint Eustatius and Saba'], [1954, 2010]],
+    [['Aruba'], [1954, 1985]],
+    [['Ethiopia', 'Eritrea'], [1600, 1992]],
+  ].forEach(([list, w]) => list.forEach(n => (HIDE_WHEN[n] = HIDE_WHEN[n] || []).push(w)));
+  function popVisible(en, yr) {
+    const h = HIST_WINDOW[en];
+    if (h) return yr >= h[0] && yr <= h[1];
+    const hw = HIDE_WHEN[en];
+    if (hw) for (const w of hw) if (yr >= w[0] && yr <= w[1]) return false;
+    return true;
+  }
   function renderPopDetail(yr) {
     if (!pbBars) return;
     // —— 国家榜视图 ——
     if (popView.mode === 'countries' && window.POP_DATA && window.POP_DATA[popView.cont]) {
       const rows = [];
       for (const [en, rec] of Object.entries(window.POP_DATA[popView.cont])) {
+        if (!popVisible(en, yr)) continue; // 历史政体只在存续期上榜;存续期内成员国隐藏
         const v = countryAt(rec.s, yr);
         if (v != null && v > 0.01) rows.push([rec.n || en, v, en]);
       }

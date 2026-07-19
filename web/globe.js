@@ -237,13 +237,16 @@ window.GlobeView = (function () {
     for (let i = 0; i < ys.length; i++) { if (ys[i] <= year) idx = i; else break; }
     return idx;
   }
+  let hiName = null, hiTimer = null; // 人口榜跳转后的目标政权高亮(几秒后自动熄)
   function capCol(f) {
-    const a = (f.n ? 0.16 : 0.055) * f.__fa * (hoverFeat === f ? 1.8 : 1);
-    return f.n ? `hsla(${f.hue},32%,30%,${a.toFixed(3)})` : `rgba(96,126,176,${a.toFixed(3)})`;
+    const hi = hiName && f.n === hiName;
+    const a = (f.n ? 0.16 : 0.055) * f.__fa * (hoverFeat === f ? 1.8 : 1) * (hi ? 2.6 : 1);
+    return f.n ? `hsla(${f.hue},${hi ? 60 : 32}%,${hi ? 44 : 30}%,${Math.min(a, 0.6).toFixed(3)})` : `rgba(96,126,176,${a.toFixed(3)})`;
   }
   function strokeCol(f) {
-    const a = (f.n ? 0.5 : 0.2) * f.__fa * (hoverFeat === f ? 1.7 : 1);
-    return f.n ? `hsla(${f.hue},45%,64%,${a.toFixed(3)})` : `rgba(120,150,200,${a.toFixed(3)})`;
+    const hi = hiName && f.n === hiName;
+    const a = (f.n ? 0.5 : 0.2) * f.__fa * (hoverFeat === f ? 1.7 : 1) * (hi ? 2 : 1);
+    return f.n ? `hsla(${f.hue},${hi ? 70 : 45}%,${hi ? 78 : 64}%,${Math.min(a, 1).toFixed(3)})` : `rgba(120,150,200,${a.toFixed(3)})`;
   }
   function refreshBorderColors() {
     G.polygonCapColor(f => capCol(f));
@@ -433,7 +436,7 @@ window.GlobeView = (function () {
       .onArcClick(e => { if (e) cb.onClick(e.a.id); })
       .ringLat(r => r.lat).ringLng(r => r.lon).ringAltitude(0.03)
       .ringMaxRadius(4.6).ringPropagationSpeed(1.5).ringRepeatPeriod(1150)
-      .ringColor(r => t => hexA(domById[r.d].color, 0.55 * (1 - t)))
+      .ringColor(r => t => hexA(r.__c || domById[r.d].color, 0.55 * (1 - t)))
       .onGlobeClick(() => cb.onBg());
 
     refreshBorderColors();
@@ -484,6 +487,18 @@ window.GlobeView = (function () {
       if (!G || !it) return;
       if (it.kind === 'arc') flyTo((it.from[0] + it.to[0]) / 2, midLon(it.from[1], it.to[1]), 1200);
       else flyTo(it.lat, it.lon, 1100);
+    },
+    // 人口榜/资料面板跳国家:停自转、拉近到国家级视距、版图亮起、落点脉冲环
+    focusCountry: o => {
+      if (!G || !o) return;
+      userInteracted(); // 停自转 + 18 秒后自动恢复,飞到不再被转走
+      const pov = G.pointOfView();
+      G.pointOfView({ lat: o.lat, lng: o.lon, altitude: clamp(Math.min(pov.altitude, 1.0), 0.72, 1.0) }, 1250);
+      hiName = o.name || null;
+      refreshBorderColors();
+      if (hiTimer) clearTimeout(hiTimer);
+      hiTimer = setTimeout(() => { hiName = null; hiTimer = null; refreshBorderColors(); }, 7000);
+      G.ringsData([{ lat: o.lat, lon: o.lon, __c: '#8FB0E0' }]);
     },
     setActive: on => {
       active = on;
