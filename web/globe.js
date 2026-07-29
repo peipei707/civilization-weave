@@ -85,7 +85,7 @@ window.GlobeView = (function () {
   function bakeBlob(blob) {
     lastBlob = blob;
     if (!texCv) { pendingBlob = blob; return; }
-    if (realOn) return; // 实景模式下不烙丝绒皮;记下 lastBlob,切回时补烙
+    if (realOn || potatoOn) return; // 实景/土豆模式下不烙丝绒皮;记下 lastBlob,切回时补烙
     const x = texCv.getContext('2d');
     x.clearRect(0, 0, TW, TH);
     x.drawImage(baseCv, 0, 0);
@@ -210,7 +210,7 @@ window.GlobeView = (function () {
   //    画布重绘 + needsUpdate 是已被烘焙通路天天验证的可靠路径)——
   let realImg = null, realOn = false;
   function applyRealEarth() {
-    if (!texCv) return;
+    if (!texCv || potatoOn) return; // 土豆模式独占画布,退出时会回调恢复
     if (realOn && realImg) {
       // 画布临时升到影像原生分辨率(4096×2048),拉近不糊;退出时降回省显存
       const W = realImg.naturalWidth || 4096, H = realImg.naturalHeight || 2048;
@@ -239,6 +239,56 @@ window.GlobeView = (function () {
       return;
     }
     applyRealEarth();
+  }
+
+  // —— 重力土豆:EGM96 大地水准面。色带画进 texCv(与实景同路),位移图换成 geoid 起伏、倍率拉满 ——
+  let potatoOn = false, potatoImg = null, potatoHTex = null, terrDispTex = null;
+  function applyPotato() {
+    if (!texCv || !potatoOn || !potatoImg) return;
+    if (texCv.width !== TW) { texCv.width = TW; texCv.height = TH; }
+    texCv.getContext('2d').drawImage(potatoImg, 0, 0, texCv.width, texCv.height);
+    if (texRef) texRef.needsUpdate = true;
+    const m = G && G.globeMaterial();
+    if (!m) return;
+    const mount = () => {
+      if (!potatoOn) return;
+      if (m.displacementMap && m.displacementMap !== potatoHTex) terrDispTex = m.displacementMap;
+      m.displacementMap = potatoHTex;
+      m.displacementScale = 13;   // ±100m → 半径的 ±6.5%,GFZ「土豆」观感
+      m.displacementBias = -6.5;  // 像素0.5=0米 → 不涨不缩
+      m.needsUpdate = true;
+    };
+    if (potatoHTex) mount();
+    else if (window.GEOID_H) {
+      const hi = new Image();
+      hi.onload = () => {
+        potatoHTex = new (m.map.constructor)(hi); // 独立纹理,绝不 clone(共享 source 之坑)
+        potatoHTex.colorSpace = '';
+        potatoHTex.needsUpdate = true;
+        mount();
+      };
+      hi.src = window.GEOID_H;
+    }
+  }
+  function setPotato(on) {
+    potatoOn = !!on;
+    if (potatoOn) {
+      if (potatoImg) applyPotato();
+      else if (window.GEOID_TEX) {
+        const im = new Image();
+        im.onload = () => { potatoImg = im; applyPotato(); };
+        im.src = window.GEOID_TEX;
+      }
+    } else {
+      const m = G && G.globeMaterial();
+      if (m) {
+        if (terrDispTex) m.displacementMap = terrDispTex;
+        m.displacementScale = realOn ? 3.4 : 2.2;
+        m.displacementBias = 0;
+        m.needsUpdate = true;
+      }
+      applyRealEarth(); // 回实景或丝绒
+    }
   }
 
   // 1×1 深色占位图:只为让 globe.gl 的加载器创建 Texture 对象,随后图像源即被换成 texCv
@@ -587,6 +637,7 @@ window.GlobeView = (function () {
     setYear: (y, y0) => { yr = y; yr0 = y0 == null ? -3300001 : y0; refreshTrade(); },
     setTrade: on => { tradeOn = !!on; forceScan = true; refreshTrade(); },
     setRealEarth,
+    setPotato,
     tradeScreenLabels,
     setEnabled: () => { forceScan = true; },
     altitude: () => G ? G.pointOfView().altitude : 2.1,

@@ -24,7 +24,7 @@ for (const f of files) {
   // 越古老的地图越"示意",精简可以更狠一点
   const pct = y < -3000 ? 3 : 4;
   if (!fs.existsSync(out)) {
-    const cmd = `npx -y mapshaper "${path.join(RAW, f)}" -simplify weighted ${pct}% keep-shapes -clean -filter-islands min-area=2500km2 -filter-fields NAME,SUBJECTO -o precision=0.01 format=geojson "${out}"`;
+    const cmd = `npx -y mapshaper "${path.join(RAW, f)}" -simplify weighted ${pct}% keep-shapes -clean -filter-islands min-area=250km2 -filter-fields NAME,SUBJECTO -o precision=0.01 format=geojson "${out}"`;
     execSync(cmd, { stdio: 'pipe' });
   }
   const j = JSON.parse(fs.readFileSync(out, 'utf8'));
@@ -62,11 +62,11 @@ for (const f of files) {
     }
     if (!g.length) continue;
     const p = ft.properties || {};
-    feats.push({ n: p.NAME || null, s: p.SUBJECTO || null, g });
+    feats.push({ n: (p.NAME || '').trim() || null, s: (p.SUBJECTO || '').trim() || null, g });
   }
-  // —— 控制要素数:只保留面积前 KEEP 名的政权单独成块(可悬停),其余合并为"小邦与部落地带" ——
-  // 目的:three-globe 每个多边形要素 = 多个 mesh/draw call,快照切换与逐帧渲染都吃要素数。
-  const KEEP = 120;
+  // —— 要素策略(2026-07-29 应用户要求放开):所有命名政权全量入矢量层(以色列等小国不再被面积截掉),
+  //    无名地带仍合并烘纹理。要素数上限只做安全阀。 ——
+  const KEEP = 999;
   const areaOf = f => {
     let A = 0;
     for (const poly of f.g) {

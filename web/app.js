@@ -1315,6 +1315,14 @@
       if (GLOBE3D) GlobeView.setRealEarth(S.real);
       dismissHint();
     };
+    // 重力土豆:EGM96 大地水准面演示(真实数据,起伏放大约8000倍)
+    const gb = document.querySelector('.potato-toggle');
+    if (gb) gb.onclick = () => {
+      S.potato = !S.potato;
+      gb.setAttribute('aria-pressed', S.potato ? 'true' : 'false');
+      if (GLOBE3D) GlobeView.setPotato(S.potato);
+      dismissHint();
+    };
   }
 
   // —— 全局搜索:知识点(题名+要旨)/ 国家政权(中英)/ 贸易路线,一栏直达 ——
