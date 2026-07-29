@@ -543,7 +543,8 @@ window.GlobeView = (function () {
       .globeImageUrl(TINY_DARK)
       .polygonsTransitionDuration(0)
       .polygonGeoJsonGeometry(f => f.geometry)
-      .polygonAltitude(0.028)  // 抬到珠峰位移(2.2)之上,疆界不被山体戳穿
+      .polygonAltitude(0.018)  // 高度权衡:太高→近景斜视角疆界视差漂移+悬停错位(以色列级小国没法对齐);
+                               // 太低→珠峰级位移(2.2%)戳穿。0.018 只让喜马拉雅/安第斯尖端穿层,悬停精度全球受益
       .polygonSideColor(() => 'rgba(0,0,0,0)')
       .polygonLabel(f => {
         if (focus.hover) return null; // 正悬停节点/弧时,版图提示静默,不与微卡叠层
