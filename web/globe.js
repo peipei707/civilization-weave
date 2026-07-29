@@ -388,14 +388,22 @@ window.GlobeView = (function () {
       if (nm && r.pts[i]) hubs.push({ lat: r.pts[i][0], lon: r.pts[i][1], n: nm, cat: r.cat, route: r.t });
     });
     G.pointsData(hubs);
-    // 场景无灯(设计使然),点柱的受光材质会渲成黑色 → 把颜色搬进自发光
-    if (hubs.length) requestAnimationFrame(() => {
-      G.scene().traverse(o => {
-        if (o.isMesh && o.material && o.material.isMeshLambertMaterial && o.material.emissive && o.material.emissive.getHex() === 0) {
-          o.material.emissive.copy(o.material.color);
-        }
-      });
-    });
+    // 场景无灯(设计使然),点柱的受光材质会渲成黑色 → 把颜色搬进自发光。
+    // 修复必须确定性:双 rAF + 定时兜底(单次 rAF 会和层刷新赛跑,输了就顶盖全黑——塞得港黑块事故)
+    if (hubs.length) {
+      const fixEmissive = () => {
+        if (!G) return;
+        G.scene().traverse(o => {
+          if (o.isMesh && o.material && o.material.isMeshLambertMaterial && o.material.emissive &&
+              o.geometry && /Cylinder/.test(o.geometry.type)) {
+            o.material.emissive.copy(o.material.color);
+          }
+        });
+      };
+      requestAnimationFrame(() => requestAnimationFrame(fixEmissive));
+      setTimeout(fixEmissive, 600);
+      setTimeout(fixEmissive, 2000);
+    }
   }
   // 活跃路线的屏幕投影标注(app 前景层每帧取走绘制;中点定位+地平线剔除)
   function tradeScreenLabels() {
