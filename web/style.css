@@ -465,3 +465,33 @@ body {
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: .01ms !important; }
 }
+
+/* —— 触控:禁掉浏览器原生手势,捏合交给应用层;可滚动面板放行纵向滑动 —— */
+body { touch-action: none; }
+.detail, .popbox .pb-bars.pb-scroll, .legend { touch-action: pan-y; }
+
+/* —— 人口面板:出生死亡统计卡(替代长文本行,防溢出) —— */
+.pb-stats { display: flex; gap: 6px; margin: 6px 0 2px; }
+.pb-stat { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 1px;
+  background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); border-radius: 7px;
+  padding: 6px 2px 5px; font-size: 9.5px; color: var(--ink-3); letter-spacing: .04em; }
+.pb-stat b { font-size: 13px; font-weight: 600; color: var(--ink); letter-spacing: 0; }
+.pb-src { opacity: .48; font-size: 9px; line-height: 1.55; margin-top: 5px; padding-right: 2px; }
+
+/* —— 国家榜:五色年龄分段条 + 迷你图例 —— */
+.pb-agekey { display: flex; gap: 8px; font-size: 9px; color: var(--ink-3); margin: 2px 0 4px; flex-wrap: wrap; }
+.pb-agekey i { width: 7px; height: 7px; border-radius: 2px; display: inline-block; margin-right: 3px; vertical-align: -1px; }
+.pb-bars .bar.seg { background: rgba(255,255,255,.05); }
+.pb-bars .bar.seg .tot { display: flex; height: 100%; border-radius: inherit; overflow: hidden; }
+.pb-bars .bar.seg .tot i { height: 100%; min-width: 0; width: auto; position: static; border-radius: 0; }
+
+/* —— 贸易模式图例(左下,随开关出现) —— */
+.trade-key { position: fixed; left: 18px; bottom: 92px; z-index: 5; display: none; align-items: center; gap: 12px;
+  padding: 8px 12px; border-radius: 10px; background: rgba(10,14,24,.72); border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(6px); font-size: 11px; color: var(--ink-2); flex-wrap: wrap; max-width: min(92vw, 560px); }
+.trade-key.on { display: flex; }
+.trade-key b { font-size: 11.5px; color: var(--gold); font-weight: 600; letter-spacing: .08em; }
+.trade-key span { display: inline-flex; align-items: center; gap: 5px; }
+.trade-key i { width: 16px; height: 3px; border-radius: 2px; display: inline-block; }
+.trade-key .tk-note { color: var(--ink-3); font-size: 9.5px; letter-spacing: .03em; }
+@media (max-width: 640px) { .trade-key { left: 10px; bottom: 108px; gap: 8px; padding: 7px 10px; } .trade-key .tk-note { display: none; } }

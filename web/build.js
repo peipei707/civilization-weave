@@ -31,6 +31,10 @@ const tiPath = path.join(dir, '..', 'data', 'terr_info.json');
 const terrInfo = fs.existsSync(tiPath) ? fs.readFileSync(tiPath, 'utf8') : 'null';
 const imgPath = path.join(dir, '..', 'data', 'images.json');
 const images = fs.existsSync(imgPath) ? fs.readFileSync(imgPath, 'utf8') : 'null';
+const tradePath = path.join(dir, '..', 'data', 'trade_routes.json');
+const trade = fs.existsSync(tradePath) ? fs.readFileSync(tradePath, 'utf8') : 'null';
+const demogPath = path.join(dir, '..', 'data', 'demography.json');
+const demog = fs.existsSync(demogPath) ? fs.readFileSync(demogPath, 'utf8') : 'null';
 
 // —— 数据校验 ——
 global.window = {}; eval(data); const D = global.window.DATA;
@@ -70,6 +74,7 @@ const html = `<!doctype html>
   <div class="modes" role="group" aria-label="视图切换">
     <button data-mode="map" aria-pressed="true">地图</button>
     <button data-mode="net" aria-pressed="false">网络</button>
+    <button class="trade-toggle" aria-pressed="false" title="隐去知识点,显示历代贸易路线(带文献佐证)">贸易</button>
   </div>
 </header>
 
@@ -110,11 +115,12 @@ const html = `<!doctype html>
 
 <aside class="detail" aria-live="polite"></aside>
 
+<div class="trade-key"><b>贸易路线</b><span><i style="background:#E9B44C"></i>陆路驼马</span><span><i style="background:#49CCEC"></i>风帆海路</span><span><i style="background:#A8C8FF"></i>机械化海运</span><span class="tk-note">线宽∝重要度 · 流动虚线=方向 · 光柱=枢纽港市 · 点路线看文献</span></div>
 <div class="attrib">疆界:historical-basemaps · 示意性重建,存在争议与简化</div>
 <div class="hint">▶ 点「播放」看文明演化 · 拖动旋转地球,滚轮缩放 · 点亮节点读其一生 · 切「网络」看影响星座</div>
 
 <script>${globeLib}</script>
-<script>window.LAND=${land};window.BORDERS=${borders};window.TERRAIN=${terrain};window.TERRAIN_H=${terrainH};window.TERR_ZH=${terrZh};window.TERR_INFO=${terrInfo};window.IMAGES=${images};window.POP_DATA=${popCountries};</script>
+<script>window.LAND=${land};window.BORDERS=${borders};window.TERRAIN=${terrain};window.TERRAIN_H=${terrainH};window.TERR_ZH=${terrZh};window.TERR_INFO=${terrInfo};window.IMAGES=${images};window.POP_DATA=${popCountries};window.TRADE=${trade};window.DEMOG=${demog};</script>
 <script>${data}</script>
 <script>${globeMod}</script>
 <script>${app}</script>

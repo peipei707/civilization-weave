@@ -1,0 +1,145 @@
+{
+  "_readme": "贸易路线图层数据。字段:id/t名称/en英文/y0-y1存续窗(负=公元前)/cat类别(land陆路|sail风帆海路|modern机械化海运)/mode交通方式/w粗细1-3(≈重要度,线宽按此)/pts途经点[lat,lon]/stops与pts对齐的站名(空串=无名途经)/gist一句话/src真实文献佐证。可视化遵循 OD 流图设计原则(Jenny et al. 2018, Cartography & GIS 45(1)):线宽∝流量级、色相=方式、曲线避让、节点显枢纽。",
+  "routes": [
+    {
+      "id": "tr_obsidian", "t": "黑曜石之路", "en": "Neolithic Obsidian Trade", "y0": -9000, "y1": -3000, "cat": "land", "mode": "步行驮运商队", "w": 1,
+      "pts": [[38.3, 34.6], [37.0, 35.8], [36.2, 36.9], [33.5, 36.3], [31.9, 35.4]],
+      "stops": ["卡帕多细亚矿源", "", "阿穆克平原", "大马士革盆地", "耶利哥"],
+      "gist": "安纳托利亚火山玻璃沿黎凡特走廊南下,是化学溯源法证实的最早远程贸易之一。",
+      "src": "Renfrew, Dixon & Cann (1966) \"Obsidian and Early Cultural Contact in the Near East\", Proc. Prehistoric Society 32"
+    },
+    {
+      "id": "tr_lapis", "t": "青金石之路", "en": "Lapis Lazuli Road", "y0": -3500, "y1": -1500, "cat": "land", "mode": "驴队驮运", "w": 1,
+      "pts": [[36.2, 70.8], [36.7, 67.1], [34.3, 62.2], [31.0, 61.5], [29.3, 58.0], [32.2, 48.3], [30.96, 46.1]],
+      "stops": ["巴达赫尚矿区", "", "赫拉特", "锡斯坦", "", "苏萨", "乌尔"],
+      "gist": "阿富汗巴达赫尚的青金石经伊朗高原进入两河与埃及王室墓葬,单一矿源横贯四千公里。",
+      "src": "Herrmann (1968) \"Lapis Lazuli: The Early Phases of Its Trade\", Iraq 30; Casanova (2013) Le lapis-lazuli dans l'Orient ancien"
+    },
+    {
+      "id": "tr_uluburun", "t": "青铜时代地中海环流", "en": "Late Bronze Age Circuit", "y0": -1600, "y1": -1180, "cat": "sail", "mode": "桨帆货船", "w": 1,
+      "pts": [[31.2, 29.9], [33.9, 35.5], [35.6, 35.8], [34.7, 33.0], [36.1, 29.7], [36.4, 28.2], [35.3, 25.1], [37.0, 23.0]],
+      "stops": ["尼罗河三角洲", "比布鲁斯", "乌加里特", "塞浦路斯", "乌鲁布伦", "罗得岛", "克里特", "迈锡尼希腊"],
+      "gist": "乌鲁布伦沉船载着塞浦路斯铜锭、迦南罐与波罗的海琥珀,一船货物写尽青铜时代的国际化。",
+      "src": "Pulak (1998) \"The Uluburun Shipwreck: An Overview\", Int. J. Nautical Archaeology 27"
+    },
+    {
+      "id": "tr_amber", "t": "琥珀之路", "en": "Amber Road", "y0": -1600, "y1": 400, "cat": "land", "mode": "车马驮运", "w": 1,
+      "pts": [[54.35, 18.65], [51.76, 18.09], [49.6, 17.7], [48.11, 16.86], [45.77, 13.37]],
+      "stops": ["格但斯克湾", "卡利什", "摩拉维亚门", "卡农图姆", "阿奎莱亚"],
+      "gist": "波罗的海琥珀纵贯欧洲直抵亚得里亚海,罗马时代在阿奎莱亚设专坊加工。",
+      "src": "de Navarro (1925) \"Prehistoric Routes between Northern Europe and Italy Defined by the Amber Trade\", Geographical Journal 66"
+    },
+    {
+      "id": "tr_silk", "t": "丝绸之路(陆上)", "en": "Overland Silk Road", "y0": -130, "y1": 1500, "cat": "land", "mode": "骆驼商队(绿洲接力)", "w": 3,
+      "pts": [[34.3, 108.9], [36.0, 103.8], [40.1, 94.7], [42.0, 86.0], [39.47, 75.99], [39.65, 66.96], [37.66, 62.16], [35.7, 51.4], [33.3, 44.4], [34.55, 38.28], [36.2, 36.15], [41.01, 28.98]],
+      "stops": ["长安", "兰州", "敦煌", "焉耆", "喀什", "撒马尔罕", "梅尔夫", "雷伊", "巴格达", "帕尔米拉", "安条克", "君士坦丁堡"],
+      "gist": "张骞凿空后连接长安与地中海的绿洲接力网:丝绸西去,良马、玻璃、佛法东来。",
+      "src": "Hansen (2012) The Silk Road: A New History, Oxford UP; UNESCO 丝绸之路跨国申遗档案 (2014)"
+    },
+    {
+      "id": "tr_monsoon", "t": "印度洋季风贸易", "en": "Indian Ocean Monsoon Trade", "y0": -100, "y1": 1500, "cat": "sail", "mode": "独桅三角帆船(乘季风)", "w": 3,
+      "pts": [[23.9, 35.5], [12.8, 45.0], [10.2, 76.2], [6.0, 80.5], [2.2, 102.25], [23.1, 113.3]],
+      "stops": ["贝勒尼基(红海)", "亚丁", "穆泽里斯", "斯里兰卡", "马六甲", "广州"],
+      "gist": "驭季风往返红海与印度、远及广州:胡椒、乳香与织物构成前近代最大宗海上贸易。",
+      "src": "《厄立特里亚海航行记》(公元1世纪, Casson 1989 校译本, Princeton UP); Chaudhuri (1985) Trade and Civilisation in the Indian Ocean, Cambridge UP"
+    },
+    {
+      "id": "tr_sahara", "t": "跨撒哈拉黄金盐路", "en": "Trans-Saharan Gold-Salt Trade", "y0": 700, "y1": 1600, "cat": "land", "mode": "骆驼商队(沙漠驿站)", "w": 2,
+      "pts": [[31.28, -4.28], [27.0, -4.5], [23.6, -5.0], [20.0, -4.0], [16.77, -3.0], [16.27, -0.05]],
+      "stops": ["西吉尔马萨", "", "塔加扎盐矿", "", "廷巴克图", "加奥"],
+      "gist": "驼队以塔加扎的盐换廷巴克图的金,曼萨·穆萨的朝觐让欧洲第一次看清西非的财富。",
+      "src": "Bovill (1958) The Golden Trade of the Moors, Oxford UP; Austen (2010) Trans-Saharan Africa in World History, Oxford UP"
+    },
+    {
+      "id": "tr_varangian", "t": "瓦兰吉-希腊之路", "en": "Varangian Route", "y0": 800, "y1": 1100, "cat": "land", "mode": "长船河运+陆桥拖运", "w": 1,
+      "pts": [[59.33, 18.07], [59.45, 24.75], [58.52, 31.27], [54.78, 32.05], [50.45, 30.52], [46.3, 30.7], [41.01, 28.98]],
+      "stops": ["比尔卡", "塔林湾", "诺夫哥罗德", "格涅兹多沃", "基辅", "第聂伯河口", "君士坦丁堡"],
+      "gist": "维京长船拖过第聂伯河间陆桥,把毛皮、蜜蜡与奴隶运抵君士坦丁堡,顺路缔造了罗斯。",
+      "src": "《往年纪事》(12世纪初); Franklin & Shepard (1996) The Emergence of Rus 750–1200, Longman"
+    },
+    {
+      "id": "tr_hansa", "t": "汉萨同盟商路", "en": "Hanseatic Network", "y0": 1250, "y1": 1600, "cat": "sail", "mode": "柯克帆船", "w": 2,
+      "pts": [[58.52, 31.27], [59.44, 24.75], [57.64, 18.3], [53.87, 10.69], [53.55, 9.99], [51.21, 3.22], [51.5, -0.1]],
+      "stops": ["诺夫哥罗德", "雷瓦尔", "维斯比", "吕贝克", "汉堡", "布鲁日", "伦敦"],
+      "gist": "吕贝克法串起波罗的海到伦敦的城市同盟:粮食、鲱鱼、毛皮与呢绒的中世纪共同市场。",
+      "src": "Dollinger (1970) The German Hansa, Macmillan"
+    },
+    {
+      "id": "tr_spice", "t": "香料之路(海线)", "en": "Maritime Spice Route", "y0": 1200, "y1": 1600, "cat": "sail", "mode": "多式帆船接力(戎克/独桅/桨帆)", "w": 2,
+      "pts": [[0.8, 127.4], [2.2, 102.25], [11.25, 75.78], [12.8, 45.0], [21.5, 39.2], [30.0, 32.55], [31.2, 29.92], [45.44, 12.34]],
+      "stops": ["特尔纳特(马鲁古)", "马六甲", "卡利卡特", "亚丁", "吉达", "苏伊士地峡", "亚历山大", "威尼斯"],
+      "gist": "丁香肉豆蔻只产马鲁古数岛,经马六甲、红海到威尼斯身价百倍——正是这条线诱出了大航海。",
+      "src": "Reid (1988) Southeast Asia in the Age of Commerce, Yale UP; Findlay & O'Rourke (2007) Power and Plenty, Princeton UP"
+    },
+    {
+      "id": "tr_teahorse", "t": "茶马古道", "en": "Tea Horse Road", "y0": 960, "y1": 1950, "cat": "land", "mode": "骡马帮(高原驿运)", "w": 1,
+      "pts": [[22.8, 101.0], [25.6, 100.23], [26.87, 100.23], [28.5, 98.9], [31.14, 97.17], [29.65, 91.1]],
+      "stops": ["普洱", "大理", "丽江", "德钦", "昌都", "拉萨"],
+      "gist": "以滇茶易藏马的高原马帮网络,海拔落差四千米,是持续运转最久的山地商路之一。",
+      "src": "木霁弘等 (1992)《滇藏川\"大三角\"文化探秘》(首次提出\"茶马古道\"); Freeman & Ahmed (2011) Tea Horse Road, River Books"
+    },
+    {
+      "id": "tr_zhenghe", "t": "郑和下西洋航线", "en": "Zheng He Voyages", "y0": 1405, "y1": 1433, "cat": "sail", "mode": "宝船风帆船队(国家远洋)", "w": 2,
+      "pts": [[31.45, 121.1], [13.75, 109.2], [2.2, 102.25], [6.0, 80.2], [11.25, 75.78], [27.1, 56.45], [12.8, 45.0], [2.05, 45.3], [-3.2, 40.1]],
+      "stops": ["太仓刘家港", "占城", "马六甲", "锡兰", "古里", "忽鲁谟斯", "阿丹", "木骨都束", "麻林地"],
+      "gist": "七下西洋的宝船队远抵霍尔木兹与东非,是蒸汽时代前规模最大的国家远洋船队。",
+      "src": "马欢 (1433)《瀛涯胜览》; Dreyer (2007) Zheng He: China and the Oceans in the Early Ming, Pearson"
+    },
+    {
+      "id": "tr_galleon", "t": "马尼拉大帆船", "en": "Manila Galleon", "y0": 1565, "y1": 1815, "cat": "sail", "mode": "盖伦大帆船(跨洋年航)", "w": 2,
+      "pts": [[14.6, 121.0], [22.0, 135.0], [36.0, 155.0], [38.0, -145.0], [30.0, -118.0], [16.85, -99.9]],
+      "stops": ["马尼拉", "", "黑潮北上带", "", "加州外海", "阿卡普尔科"],
+      "gist": "乌尔达内塔发现北太平洋回程航线后,中国丝绸与美洲白银经此对流二百五十年,太平洋首次被商路缝合。",
+      "src": "Schurz (1939) The Manila Galleon, E.P. Dutton; Giráldez (2015) The Age of Trade, Rowman & Littlefield"
+    },
+    {
+      "id": "tr_triangle", "t": "大西洋三角贸易", "en": "Atlantic Triangular Trade", "y0": 1520, "y1": 1850, "cat": "sail", "mode": "风帆商船(三段航程)", "w": 3,
+      "pts": [[53.4, -3.0], [14.7, -17.4], [5.08, -1.35], [13.1, -59.62], [32.78, -79.93], [45.0, -40.0], [53.4, -3.0]],
+      "stops": ["利物浦", "戈雷岛(达喀尔)", "埃尔米纳", "巴巴多斯", "查尔斯顿", "", "利物浦"],
+      "gist": "工业品-被奴役者-蔗糖棉花的闭环;\"中央航路\"约运送1250万非洲人,是数据库可查证的至暗航线。",
+      "src": "Curtin (1969) The Atlantic Slave Trade: A Census, U. Wisconsin Press; Eltis 等 SlaveVoyages.org 跨大西洋奴隶贸易数据库"
+    },
+    {
+      "id": "tr_capeindia", "t": "好望角东印度航线", "en": "Cape Route (East Indiamen)", "y0": 1600, "y1": 1869, "cat": "sail", "mode": "东印度武装商帆船", "w": 2,
+      "pts": [[52.37, 4.9], [15.0, -23.5], [-33.9, 18.4], [-36.0, 75.0], [-6.13, 106.8], [23.1, 113.3]],
+      "stops": ["阿姆斯特丹", "佛得角", "开普敦", "咆哮西风带", "巴达维亚", "广州"],
+      "gist": "荷英东印度公司借咆哮西风带直插爪哇与广州,茶叶、瓷器与香料改写欧洲餐桌与财政。",
+      "src": "Parthesius (2010) Dutch Ships in Tropical Waters, Amsterdam UP; Findlay & O'Rourke (2007) Power and Plenty, Princeton UP"
+    },
+    {
+      "id": "tr_suez", "t": "苏伊士航线(亚欧干线)", "en": "Suez Route / Asia-Europe Mainline", "y0": 1869, "y1": 2026, "cat": "modern", "mode": "蒸汽班轮→集装箱轮", "w": 3,
+      "pts": [[51.95, 4.1], [36.1, -5.35], [35.9, 14.5], [31.26, 32.3], [12.8, 45.0], [6.9, 79.85], [1.29, 103.85], [31.2, 121.5]],
+      "stops": ["鹿特丹", "直布罗陀", "马耳他", "塞得港(运河)", "亚丁湾", "科伦坡", "新加坡", "上海"],
+      "gist": "运河把伦敦-孟买缩短四成航程;今日亚欧集装箱干线仍走同一水道,约占全球集装箱运量四分之一。",
+      "src": "Fletcher (1958) \"The Suez Canal and World Shipping, 1869–1914\", J. Economic History 18; UNCTAD Review of Maritime Transport 2024"
+    },
+    {
+      "id": "tr_transpacific", "t": "跨太平洋集装箱干线", "en": "Trans-Pacific Container Lane", "y0": 1956, "y1": 2026, "cat": "modern", "mode": "集装箱轮(大圆航线)", "w": 3,
+      "pts": [[31.2, 121.5], [35.1, 129.04], [43.0, 165.0], [48.0, -150.0], [33.74, -118.26]],
+      "stops": ["上海", "釜山", "", "阿留申外海", "洛杉矶/长滩"],
+      "gist": "集装箱化(1956)把跨洋运费打到趴地,东亚-北美大圆航线成为全球化的物理主动脉。",
+      "src": "Levinson (2006) The Box: How the Shipping Container Made the World Smaller, Princeton UP; UNCTAD Review of Maritime Transport 2024"
+    },
+    {
+      "id": "tr_transatlantic", "t": "跨大西洋干线", "en": "Trans-Atlantic Lane", "y0": 1838, "y1": 2026, "cat": "modern", "mode": "蒸汽班轮→集装箱轮", "w": 2,
+      "pts": [[51.95, 4.1], [50.0, -5.0], [52.0, -35.0], [40.6, -74.05]],
+      "stops": ["鹿特丹", "英吉利海峡", "", "纽约"],
+      "gist": "自蒸汽班轮\"大西方号\"起的欧美定期航线,百年间承载移民潮,今日仍是三大东西干线之一。",
+      "src": "Hyde (1975) Cunard and the North Atlantic 1840–1973, Macmillan; Rodrigue (2020) The Geography of Transport Systems, Routledge"
+    },
+    {
+      "id": "tr_panama", "t": "巴拿马运河线", "en": "Panama Canal Lane", "y0": 1914, "y1": 2026, "cat": "modern", "mode": "集装箱/散货轮(闸室运河)", "w": 2,
+      "pts": [[40.6, -74.05], [25.0, -77.0], [9.36, -79.92], [8.9, -79.56], [20.0, -120.0], [34.05, -125.0], [35.45, 139.65]],
+      "stops": ["纽约", "", "科隆(大西洋侧)", "巴拿马城(太平洋侧)", "", "加州外海", "横滨"],
+      "gist": "两洋通道免去合恩角万里绕行,美东-亚洲航线因之成立;约5%的全球海运贸易经此闸室。",
+      "src": "Maurer & Yu (2011) The Big Ditch, Princeton UP; UNCTAD Review of Maritime Transport 2024"
+    },
+    {
+      "id": "tr_oil", "t": "霍尔木兹石油航线", "en": "Hormuz Oil Lifeline", "y0": 1950, "y1": 2026, "cat": "modern", "mode": "超级油轮(VLCC)", "w": 3,
+      "pts": [[26.64, 50.16], [26.57, 56.25], [12.0, 65.0], [5.0, 78.0], [2.2, 102.25], [10.0, 112.0], [29.87, 122.1], [35.45, 139.65]],
+      "stops": ["拉斯坦努拉", "霍尔木兹海峡", "", "", "马六甲", "南海航道", "宁波舟山", "横滨"],
+      "gist": "全球约两成石油消费经霍尔木兹海峡出波斯湾,东行马六甲供给东亚——最重的单一能源动脉。",
+      "src": "U.S. EIA (2023) World Oil Transit Chokepoints; UNCTAD Review of Maritime Transport 2024"
+    }
+  ]
+}

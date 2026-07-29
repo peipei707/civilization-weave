@@ -276,6 +276,8 @@
   }
 
   function drawEdges() {
+    const tm = 1 - (S.tradeMix || 0);
+    if (tm < 0.08) return; // 贸易模式:影响边随知识层一起隐去
     const focus = S.sel || S.hover;
     const showAll = S.morph > 0.03;
     if (!showAll && !focus) return;
@@ -285,7 +287,7 @@
       let alpha;
       if (showAll) alpha = (rel ? 0.5 : 0.10) * S.morph + (rel ? 0.32 * (1 - S.morph) : 0);
       else alpha = rel ? 0.42 : 0;
-      alpha *= Math.min(na._a * frontOf(na), nb._a * frontOf(nb));
+      alpha *= Math.min(na._a * frontOf(na), nb._a * frontOf(nb)) * tm;
       if (alpha < 0.02) continue;
       const pa = nodePos(na), pb = nodePos(nb);
       const c = bez(pa, pb, Math.hypot(pb[0] - pa[0], pb[1] - pa[1]) * 0.16);
@@ -296,6 +298,34 @@
 
   const FONT_LABEL = "12.5px 'Source Han Serif SC','Noto Serif SC',Georgia,serif";
   const FONT_LABEL_FOC = "600 13px 'Source Han Serif SC','Noto Serif SC',Georgia,serif";
+  // 贸易模式:路线名常驻标注(中点投影,晕影衬底,简易纵向避让)——流图设计惯例:标签直接压线
+  const TRADE_LABEL_COL = { land: '#E9B44C', sail: '#49CCEC', modern: '#A8C8FF' };
+  function drawTradeLabels() {
+    const tm = S.tradeMix || 0;
+    if (tm < 0.05 || !GLOBE3D || S.morph > 0.5 || !GlobeView.tradeScreenLabels) return;
+    const Ls = GlobeView.tradeScreenLabels();
+    if (!Ls.length) return;
+    fx.textAlign = 'center'; fx.textBaseline = 'alphabetic';
+    fx.font = FONT_LABEL_FOC;
+    const placed = [];
+    for (const L of Ls) {
+      const a = tm * L.front;
+      if (a < 0.05) continue;
+      const w = fx.measureText(L.t).width;
+      let y = L.y - 10;
+      for (const p of placed) if (Math.abs(p.x - L.x) < (p.w + w) / 2 + 10 && Math.abs(p.y - y) < 17) y = p.y - 19;
+      placed.push({ x: L.x, y, w });
+      fx.shadowColor = 'rgba(6,9,17,.95)'; fx.shadowBlur = 5;
+      fx.fillStyle = hexA(TRADE_LABEL_COL[L.cat] || '#49CCEC', 0.94 * a);
+      fx.fillText(L.t, L.x, y);
+      fx.font = "9.5px 'Source Han Sans SC','Noto Sans SC',sans-serif";
+      fx.fillStyle = hexA('#C9D4E8', 0.66 * a);
+      fx.fillText(L.mode, L.x, y + 12);
+      fx.font = FONT_LABEL_FOC;
+      fx.shadowBlur = 0;
+    }
+    fx.textAlign = 'left';
+  }
   function drawNodes(dt) {
     const yr = curYear(), yr0 = curYear0();
     const focus = S.sel || S.hover;
@@ -309,8 +339,9 @@
       const isFoc = focus === n.id, isNb = neigh && neigh.has(n.id);
       const dim = focus && !isFoc && !isNb ? 0.28 : 1;
       const twinkle = 0.88 + 0.12 * Math.sin(S.t * 1.4 + n.lon);
-      const a = n._a * twinkle * dim * front;
-      n._vis = n._a * front;
+      const tm = 1 - (S.tradeMix || 0); // 贸易模式:知识点整层隐去
+      const a = n._a * twinkle * dim * front * tm;
+      n._vis = n._a * front * tm;
       if (a < 0.01) continue;
       const [x, y] = nodePos(n);
       const col = domById[n.d].color;
@@ -418,6 +449,7 @@
     S.frac = smooth(S.frac, S.tFrac, 0.2, dt);
     S.frac0 = smooth(S.frac0, S.tFrac0, 0.2, dt);
     S.morph = smooth(S.morph, S.tMorph, 0.14, dt);
+    S.tradeMix = smooth(S.tradeMix || 0, S.trade ? 1 : 0, 0.12, dt);
 
     if (GLOBE3D) {
       GlobeView.setYear(curYear(), curYear0());
@@ -440,6 +472,7 @@
     drawEdges();
     if (!GLOBE3D) drawArcs(dt);
     drawNodes(dt);
+    drawTradeLabels();
     // 地球自转/播放时鼠标不动,悬停会过期:低频在原地重拾取
     if ((S._hoverT = (S._hoverT || 0) + dt) > 0.25) {
       S._hoverT = 0;
@@ -452,6 +485,7 @@
 
   // —— 命中检测(前景节点;fallback 下再查弧线)——
   function pick(mx, my) {
+    if (S.trade) return null; // 贸易模式:知识点不可选,点击透给路线/版图
     let best = null, bd = 22 * 22;
     for (const n of DATA.nodes) {
       if ((n._vis || 0) < 0.3) continue;
@@ -473,7 +507,7 @@
   // —— UI ——
   const $ = s => document.querySelector(s);
   const microcard = $('.microcard'), detail = $('.detail'), hintEl = $('.hint');
-  const UI_SEL = '.topbar,.legend,.timeline,.detail,.microcard,.hint,.attrib,.popbox';
+  const UI_SEL = '.topbar,.legend,.timeline,.detail,.microcard,.hint,.attrib,.popbox,.trade-key';
 
   function buildLegend() {
     const wrap = $('.legend');
@@ -720,6 +754,24 @@
     }
   }
 
+  function openTradeDetail(r) {
+    const catNm = r.cat === 'land' ? '陆路' : r.cat === 'sail' ? '风帆海路' : '机械化海运';
+    detail.style.setProperty('--c', r.cat === 'land' ? '#E9B44C' : r.cat === 'sail' ? '#49CCEC' : '#A8C8FF');
+    const stops = (r.stops || []).filter(Boolean);
+    detail.innerHTML =
+      '<button class="dt-close" aria-label="关闭">✕</button>' +
+      '<span class="dt-domain"><span class="dot"></span>贸易路线 · ' + catNm + '</span>' +
+      '<h2>' + r.t + '<span class="dt-en">' + r.en + '</span></h2>' +
+      '<div class="dt-meta"><span class="badge">' + fmtYear(r.y0) + ' — ' + fmtYear(r.y1) + '</span><span class="badge">' + r.mode + '</span></div>' +
+      '<p class="dt-gist">' + r.gist + '</p>' +
+      (stops.length ? '<div class="dt-sec">枢纽与途经</div><div class="dt-links">' + stops.map(s => '<span class="chip"><span class="dot"></span>' + s + '</span>').join('') + '</div>' : '') +
+      '<div class="dt-sec">文献佐证</div><p class="dt-detail">' + r.src + '</p>' +
+      '<div class="dt-note">走廊为示意性概括,不代表精确航迹或驿道;线宽∝重要度,虚线流动方向=主要流向(参照 Jenny 等 2018 OD 流图设计原则)</div>';
+    detail.classList.add('on');
+    detail.querySelector('.dt-close').onclick = closeDetail;
+    dismissHint();
+  }
+
   function selectAndReveal(id) {
     const it = ITEMS[id]; if (!it) return;
     const f = yearToFrac(it.y);
@@ -743,6 +795,7 @@
     [2026, 58.5, 9.2, 18.6, 13.2, 0.5],
   ];
   const REGION_META = [['亚洲', '#3FC6E4'], ['欧洲', '#9A7BEA'], ['非洲', '#E9B44C'], ['美洲', '#35C08A'], ['大洋洲', '#EA6BB0']];
+  const AGE_COLS = ['#7BC8A4', '#3FC6E4', '#9A7BEA', '#E9B44C', '#E4573D']; // 幼/少/青/壮/老
   function popAt(y) {
     const C = POP_CURVE;
     if (y <= C[0][0]) return C[0][1];
@@ -910,10 +963,24 @@
       const top = showAll ? rows : rows.slice(0, 10);
       const max = rows.length ? rows[0][1] : 1;
       pbBars.classList.toggle('pb-scroll', showAll);
-      pbBars.innerHTML = '<button class="pb-back">‹ ' + popView.cont + ' 各国 · 返回</button>' +
-        (top.length ? top.map(([nm, v, en]) =>
-          '<div class="pb-row pb-cty" data-en="' + en + '" title="点击飞往 ' + nm + '"><span class="nm" style="width:56px">' + nm + '</span><span class="bar" style="--c:#8FB0E0"><i style="width:' + Math.max(3, v / max * 100).toFixed(1) + '%"></i></span><span class="pc">' + fmtPop(v) + '</span></div>'
-        ).join('') +
+      // 每国条按五年龄段分色(1950 前或缺数据国退回世界结构);悬停见分段数值
+      const DGc = window.DEMOG;
+      const bandsOf = en => {
+        if (DGc && DGc.cage && DGc.cage[en] && yr >= 1950) return interpRow(DGc.cage[en], yr).slice(1);
+        return DGc ? interpRow(DGc.age, yr).slice(1) : null;
+      };
+      const ageKey = DGc ? '<div class="pb-agekey">' + DGc.bands.map((b, i) =>
+        '<span><i style="background:' + AGE_COLS[i] + '"></i>' + b.split(' ')[0] + '</span>').join('') + '</div>' : '';
+      pbBars.innerHTML = '<button class="pb-back">‹ ' + popView.cont + ' 各国 · 返回</button>' + ageKey +
+        (top.length ? top.map(([nm, v, en]) => {
+          const fr = bandsOf(en);
+          const bar = fr
+            ? '<span class="bar seg"><span class="tot" style="width:' + Math.max(4, v / max * 100).toFixed(1) + '%">' +
+              fr.map((p, i) => '<i style="flex:' + p + ' 0 0;background:' + AGE_COLS[i] + '"></i>').join('') + '</span></span>'
+            : '<span class="bar" style="--c:#8FB0E0"><i style="width:' + Math.max(3, v / max * 100).toFixed(1) + '%"></i></span>';
+          const tip = fr ? nm + ':幼' + fr[0] + '% 少' + fr[1] + '% 青' + fr[2] + '% 壮' + fr[3] + '% 老' + fr[4] + '% · 点击飞往' : '点击飞往 ' + nm;
+          return '<div class="pb-row pb-cty" data-en="' + en + '" title="' + tip + '"><span class="nm" style="width:56px">' + nm + '</span>' + bar + '<span class="pc">' + fmtPop(v) + '</span></div>';
+        }).join('') +
         (rows.length > 10 ? '<button class="pb-back pb-all">' + (showAll ? '收起,只看前 10' : '展开全部 ' + rows.length + ' 国 ▾') + '</button>' : '') +
         '<div class="pb-row" style="opacity:.5;font-size:9.5px">Gapminder/HYDE/UN · 1800 前为稀疏估算 · 点国名飞往</div>'
           : '<div class="pb-row" style="opacity:.6">该年代暂无国家级数据(1800 年前多为大洲级估算)</div>');
@@ -926,6 +993,20 @@
       const pc = row[i + 1];
       return '<div class="pb-row pb-cont" data-cont="' + nm + '" style="--c:' + c + '" title="点击看' + nm + '各国"><span class="nm">' + nm + ' ›</span><span class="bar"><i style="width:' + pc + '%"></i></span><span class="pc">' + pc + '%</span></div>';
     }).join('');
+    // —— 年龄结构五段 + 出生/死亡率(世界;UN WPP 2024,1950 前为文献模型估算)——
+    const DG = window.DEMOG;
+    if (DG) {
+      const ar = interpRow(DG.age, yr);
+      html += '<div class="pb-sec">世界年龄结构</div>' + DG.bands.map((b, i) =>
+        '<div class="pb-row"><span class="nm" style="width:66px">' + b + '</span><span class="bar" style="--c:' + AGE_COLS[i] + '"><i style="width:' + Math.min(100, ar[i + 1] * 2).toFixed(0) + '%"></i></span><span class="pc">' + ar[i + 1] + '%</span></div>').join('');
+      const cb = interpRow(DG.cbr, yr)[1], cd = interpRow(DG.cdr, yr)[1];
+      const inc = +(cb - cd).toFixed(1);
+      html += '<div class="pb-stats">' +
+        '<span class="pb-stat"><b>' + cb + '‰</b>出生</span>' +
+        '<span class="pb-stat"><b>' + cd + '‰</b>死亡</span>' +
+        '<span class="pb-stat"><b>' + (inc > 0 ? '+' : '') + inc + '‰</b>自然增长</span></div>' +
+        '<div class="pb-src">1950起:UN《世界人口展望2024》 · 之前:Livi-Bacci 2017 / Coale-Demeny 1966 模型估算</div>';
+    }
     const active = DATA.arcs.filter(a => a.y <= yr && a.y + (a.dur || 60) >= yr && itemOn(a))
       .sort((a, b) => b.w - a.w || b.y - a.y).slice(0, 6);
     if (active.length) {
@@ -933,6 +1014,15 @@
         active.map(a => '<button class="pb-chip" data-id="' + a.id + '">' + a.t + '</button>').join('') + '</div>';
     }
     pbBars.innerHTML = html;
+  }
+  function interpRow(rows, yr) { // [[年, v1..vn]] 分段线性;界外取端点
+    if (yr <= rows[0][0]) return rows[0];
+    if (yr >= rows[rows.length - 1][0]) return rows[rows.length - 1];
+    for (let i = 1; i < rows.length; i++) if (yr <= rows[i][0]) {
+      const a = rows[i - 1], b = rows[i], t = (yr - a[0]) / (b[0] - a[0]);
+      return a.map((v, j) => j === 0 ? yr : +lerp(v, b[j], t).toFixed(1));
+    }
+    return rows[rows.length - 1];
   }
   function updatePop(yr) {
     if (!pbNum) return;
@@ -995,8 +1085,9 @@
   // —— 事件(挂 window:前景画布不截获指针,地球在下层照常拖转)——
   function onMove(e) {
     S.mx = e.clientX; S.my = e.clientY;
+    if (pinchMove(e)) return; // 双指捏合优先,吞掉平移与悬停
     // 网络模式下按住左键拖动 = 平移星座(与地图模式拖转地球对位)
-    if (pd && !pd.ui && S.morph > 0.5 && e.buttons === 1) {
+    if (pd && !pd.ui && S.morph > 0.5 && e.buttons === 1 && ptrs.size < 2) {
       S.netPanX += e.clientX - pd.lx; S.netPanY += e.clientY - pd.ly;
       pd.lx = e.clientX; pd.ly = e.clientY;
       pd.panned = true;
@@ -1016,8 +1107,10 @@
       t: performance.now(), panned: false,
       ui: !!(e.target.closest && e.target.closest(UI_SEL)),
     };
+    pinchDown(e);
   }
   function onPointerUp(e) {
+    pinchUp(e);
     if (!pd) return;
     const moved = Math.hypot(e.clientX - pd.x, e.clientY - pd.y), dt = performance.now() - pd.t;
     const wasPan = pd.panned, wasUi = pd.ui;
@@ -1028,18 +1121,53 @@
     const id = pick(e.clientX, e.clientY);
     if (id) { S.clickHandledAt = performance.now(); openDetail(id); }
   }
-  // 网络模式滚轮缩放(光标锚定);地图模式的滚轮由地球的轨道控制器自行消费
+  // 网络模式缩放核心(光标/捏合中点锚定);滚轮与双指捏合共用
+  function netZoomBy(cx, cy, factor) {
+    const z0 = S.netZoom, z1 = clamp(z0 * factor, 0.5, 6);
+    if (z1 === z0) return;
+    const k = z1 / z0;
+    S.netPanX = cx - netCenter.x - (cx - netCenter.x - S.netPanX) * k;
+    S.netPanY = cy - netCenter.y - (cy - netCenter.y - S.netPanY) * k;
+    S.netZoom = z1;
+  }
+  // 网络模式滚轮缩放;地图模式的滚轮由地球的轨道控制器自行消费
   function onWheel(e) {
     if (S.morph < 0.5) return;
     if (e.target.closest && e.target.closest(UI_SEL)) return;
     e.preventDefault();
-    const z0 = S.netZoom, z1 = clamp(z0 * Math.exp(-e.deltaY * 0.0012), 0.5, 6);
-    if (z1 === z0) return;
-    const k = z1 / z0;
-    S.netPanX = e.clientX - netCenter.x - (e.clientX - netCenter.x - S.netPanX) * k;
-    S.netPanY = e.clientY - netCenter.y - (e.clientY - netCenter.y - S.netPanY) * k;
-    S.netZoom = z1;
+    netZoomBy(e.clientX, e.clientY, Math.exp(-e.deltaY * 0.0012));
     dismissHint();
+  }
+  // 手机双指捏合缩放(网络模式;地图模式由轨道控制器原生支持双指)
+  const ptrs = new Map();
+  let pinch = null;
+  function pinchDown(e) {
+    if (e.target.closest && e.target.closest(UI_SEL)) return;
+    ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (ptrs.size === 2 && S.morph > 0.5) {
+      const [p1, p2] = [...ptrs.values()];
+      pinch = { d: Math.hypot(p1.x - p2.x, p1.y - p2.y) };
+      if (pd) pd.panned = true; // 双指期间不算单指平移/点选
+    }
+  }
+  function pinchMove(e) {
+    if (!ptrs.has(e.pointerId)) return false;
+    ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pinch && ptrs.size === 2 && S.morph > 0.5) {
+      const [p1, p2] = [...ptrs.values()];
+      const d1 = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+      if (pinch.d > 24 && d1 > 24) netZoomBy((p1.x + p2.x) / 2, (p1.y + p2.y) / 2, d1 / pinch.d);
+      pinch.d = Math.max(d1, 1);
+      if (pd) pd.panned = true;
+      microcard.classList.remove('on');
+      dismissHint();
+      return true; // 捏合中,吞掉本次 move
+    }
+    return false;
+  }
+  function pinchUp(e) {
+    ptrs.delete(e.pointerId);
+    if (ptrs.size < 2) pinch = null;
   }
   function onDblClick(e) { // 双击空白:网络视角复位
     if (S.morph < 0.5) return;
@@ -1079,15 +1207,29 @@
   }
 
   function initModes() {
-    document.querySelectorAll('.modes button').forEach(b => {
+    document.querySelectorAll('.modes button[data-mode]').forEach(b => {
       b.onclick = () => {
         const net = b.dataset.mode === 'net';
         if (GLOBE3D) GlobeView.setActive(!net);
         S.tMorph = net ? 1 : 0;
-        document.querySelectorAll('.modes button').forEach(x => x.setAttribute('aria-pressed', x === b));
+        document.querySelectorAll('.modes button[data-mode]').forEach(x => x.setAttribute('aria-pressed', x === b));
         if (net) { closeDetail(); dismissHint(); }
       };
     });
+    // 贸易开关:显示历代贸易路线、隐去知识点(与地图/网络互不排斥,但网络模式下先切回地图)
+    const tb = document.querySelector('.trade-toggle');
+    if (tb) tb.onclick = () => {
+      S.trade = !S.trade;
+      tb.setAttribute('aria-pressed', S.trade ? 'true' : 'false');
+      if (S.trade && S.tMorph === 1) {
+        const mb = document.querySelector('.modes button[data-mode="map"]');
+        if (mb) mb.click();
+      }
+      if (GLOBE3D) GlobeView.setTrade(S.trade);
+      const tk = document.querySelector('.trade-key');
+      if (tk) tk.classList.toggle('on', S.trade);
+      closeDetail(); dismissHint();
+    };
   }
 
   function initKeys() {
@@ -1106,6 +1248,7 @@
       GLOBE3D = GlobeView.init({
         el: globeEl,
         DATA, LAND, BORDERS: window.BORDERS || null,
+        TRADE: (window.TRADE && window.TRADE.routes) || [],
         domById, fmtYear,
         enabled: S.enabled,
         isOn: itemOn,
@@ -1115,6 +1258,7 @@
           onBg: () => { if (clickGuard()) return; closeDetail(); },
           onTerr: on => { S.terrHover = on; applyHover(); },
           onTerrClick: name => { if (clickGuard()) return; S.clickHandledAt = performance.now(); openTerr(name); },
+          onTradeClick: r => { S.clickHandledAt = performance.now(); openTradeDetail(r); },
         },
       }) === true;
     }
@@ -1126,6 +1270,7 @@
     window.addEventListener('pointermove', onMove, { passive: true });
     window.addEventListener('pointerdown', onPointerDown, true);
     window.addEventListener('pointerup', onPointerUp, true);
+    window.addEventListener('pointercancel', e => { pinchUp(e); pd = null; }, true);
     window.addEventListener('wheel', onWheel, { passive: false });
     window.addEventListener('dblclick', onDblClick);
     $('.play').onclick = togglePlay;

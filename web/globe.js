@@ -237,6 +237,7 @@ window.GlobeView = (function () {
     for (let i = 0; i < ys.length; i++) { if (ys[i] <= year) idx = i; else break; }
     return idx;
   }
+  let TRADE = [], tradeOn = false, liveTradeKey = ''; // 贸易路线图层(时代门控;开启时隐去知识层)
   let hiName = null, hiTimer = null; // 人口榜跳转后的目标政权高亮(几秒后自动熄)
   function capCol(f) {
     const hi = hiName && f.n === hiName;
@@ -276,9 +277,64 @@ window.GlobeView = (function () {
     if (t >= 1) { const to = borderFade.to; borderFade = null; G.polygonsData(to); }
   }
 
+  // —— 贸易路线:paths 图层。路线是有生命期的:未截取时间段时=当前时刻在营运的;截取时=与区间重叠的。
+  //    表达遵循 OD 流图设计研究(Jenny et al. 2018):线宽∝重要度、色相=交通方式、动态虚线示流向、枢纽设节点 ——
+  const TRADE_COL = {
+    land: ['rgba(233,180,76,.95)', 'rgba(196,138,48,.6)'],
+    sail: ['rgba(73,204,236,.95)', 'rgba(46,134,200,.6)'],
+    modern: ['rgba(168,200,255,.95)', 'rgba(105,145,225,.6)'],
+  };
+  const TRADE_HUE = { land: '#E9B44C', sail: '#49CCEC', modern: '#A8C8FF' };
+  let liveTradeActs = [];
+  function refreshTrade() {
+    if (!G) return;
+    const w0 = yr0 > -3000000 ? yr0 : yr;
+    const act = tradeOn ? TRADE.filter(r => r.y0 <= yr && r.y1 >= w0) : [];
+    const key = act.map(r => r.id).join(',');
+    if (key === liveTradeKey) return;
+    liveTradeKey = key;
+    liveTradeActs = act;
+    G.pathsData(act);
+    // 枢纽港市光柱(有名字的途经点)
+    const hubs = [];
+    for (const r of act) (r.stops || []).forEach((nm, i) => {
+      if (nm && r.pts[i]) hubs.push({ lat: r.pts[i][0], lon: r.pts[i][1], n: nm, cat: r.cat, route: r.t });
+    });
+    G.pointsData(hubs);
+    // 场景无灯(设计使然),点柱的受光材质会渲成黑色 → 把颜色搬进自发光
+    if (hubs.length) requestAnimationFrame(() => {
+      G.scene().traverse(o => {
+        if (o.isMesh && o.material && o.material.isMeshLambertMaterial && o.material.emissive && o.material.emissive.getHex() === 0) {
+          o.material.emissive.copy(o.material.color);
+        }
+      });
+    });
+  }
+  // 活跃路线的屏幕投影标注(app 前景层每帧取走绘制;中点定位+地平线剔除)
+  function tradeScreenLabels() {
+    if (!G || !liveTradeActs.length) return [];
+    const pov = G.pointOfView();
+    const cf = Math.cos(pov.lat * RAD), sf = Math.sin(pov.lat * RAD);
+    const cl = Math.cos(pov.lng * RAD), sl = Math.sin(pov.lng * RAD);
+    const cx = cf * cl, cy = sf, cz = cf * sl;
+    const limit = 1 / (1 + pov.altitude) + 0.02;
+    const out = [];
+    for (const r of liveTradeActs) {
+      const mid = r.pts[Math.floor(r.pts.length / 2)];
+      const f = mid[0] * RAD, l = mid[1] * RAD;
+      const dot = Math.cos(f) * Math.cos(l) * cx + Math.sin(f) * cy + Math.cos(f) * Math.sin(l) * cz;
+      const front = clamp((dot - limit) * 9, 0, 1);
+      if (front <= 0) continue;
+      const p = G.getScreenCoords(mid[0], mid[1], 0.04);
+      if (p) out.push({ x: p.x, y: p.y, t: r.t, mode: r.mode, cat: r.cat, front });
+    }
+    return out;
+  }
+
   // —— 迁徙弧:halo+core 两条目,入场用 dashInitialGap 从 1 收 0 = 沿线生长 ——
   function arcEntries() {
     const out = [];
+    if (tradeOn) return out; // 贸易模式下迁徙弧让位,免得与路线混读
     for (const a of DATA.arcs) {
       if (a.y > yr || a.y + (a.dur || 0) < yr0 || !isOn(a)) continue; // 流动期与时间窗相交才显示
       if (a.__enter == null) { a.__enter = 0; arcEntering = true; }
@@ -383,6 +439,7 @@ window.GlobeView = (function () {
   function init(opts) {
     if (!supported()) return false;
     DATA = opts.DATA; BORDERS = opts.BORDERS; domById = opts.domById;
+    TRADE = opts.TRADE || [];
     cb = opts.callbacks; fmtYear = opts.fmtYear;
     enabled = opts.enabled;
     if (opts.isOn) isOn = opts.isOn;
@@ -434,6 +491,25 @@ window.GlobeView = (function () {
       .arcDashAnimateTime(e => 5200 - e.a.w * 900)
       .onArcHover(e => cb.onHover(e ? e.a.id : null))
       .onArcClick(e => { if (e) cb.onClick(e.a.id); })
+      .pathTransitionDuration(0)
+      .pathPoints(r => r.pts)
+      .pathPointLat(p => p[0]).pathPointLng(p => p[1])
+      .pathPointAlt(0.032)
+      .pathResolution(1.5)
+      .pathColor(r => TRADE_COL[r.cat] || TRADE_COL.sail)
+      .pathStroke(r => 0.9 + r.w * 0.65)
+      .pathDashLength(0.24).pathDashGap(0.05)
+      .pathDashAnimateTime(r => 18000 - r.w * 3200)
+      .pathLabel(r =>
+        `<div class="terr-tip" style="max-width:290px"><b>${r.t}</b><span>${r.en}</span>` +
+        `<span>${fmtYear(r.y0)} — ${fmtYear(r.y1)} · ${r.mode}</span>` +
+        `<span>${r.gist}</span><span style="opacity:.65">文献:${r.src}</span></div>`)
+      .onPathClick(r => { if (r && cb.onTradeClick) cb.onTradeClick(r); })
+      .pointsTransitionDuration(0)
+      .pointLat(h => h.lat).pointLng(h => h.lon)
+      .pointAltitude(0.05).pointRadius(0.34)
+      .pointColor(h => TRADE_HUE[h.cat] || '#49CCEC')
+      .pointLabel(h => `<div class="terr-tip"><b>${h.n}</b><span>${h.route} · 枢纽</span></div>`)
       .ringLat(r => r.lat).ringLng(r => r.lon).ringAltitude(0.03)
       .ringMaxRadius(4.6).ringPropagationSpeed(1.5).ringRepeatPeriod(1150)
       .ringColor(r => t => hexA(r.__c || domById[r.d].color, 0.55 * (1 - t)))
@@ -471,7 +547,9 @@ window.GlobeView = (function () {
     init,
     tick,
     syncScreen,
-    setYear: (y, y0) => { yr = y; yr0 = y0 == null ? -3300001 : y0; },
+    setYear: (y, y0) => { yr = y; yr0 = y0 == null ? -3300001 : y0; refreshTrade(); },
+    setTrade: on => { tradeOn = !!on; forceScan = true; refreshTrade(); },
+    tradeScreenLabels,
     setEnabled: () => { forceScan = true; },
     altitude: () => G ? G.pointOfView().altitude : 2.1,
     setFocus: (hover, sel) => {
