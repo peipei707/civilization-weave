@@ -1306,6 +1306,81 @@
       if (tk) tk.classList.toggle('on', S.trade);
       closeDetail(); dismissHint();
     };
+    // 实景开关:NASA Blue Marble 真实地球 ↔ 黑丝绒手绘风(地形位移两种模式都在)
+    const rb = document.querySelector('.real-toggle');
+    if (rb) rb.onclick = () => {
+      S.real = !S.real;
+      rb.setAttribute('aria-pressed', S.real ? 'true' : 'false');
+      if (GLOBE3D) GlobeView.setRealEarth(S.real);
+      dismissHint();
+    };
+  }
+
+  // —— 全局搜索:知识点(题名+要旨)/ 国家政权(中英)/ 贸易路线,一栏直达 ——
+  function initSearch() {
+    const box = document.querySelector('.searchbox'); if (!box) return;
+    const inp = box.querySelector('.sb-in'), res = box.querySelector('.sb-res');
+    let idx = null;
+    const build = () => {
+      idx = [];
+      for (const n of DATA.nodes) idx.push({ tl: n.t.toLowerCase(), gl: (n.gist || '').toLowerCase(), t: n.t, sub: fmtYear(n.y) + ' · ' + (domById[n.d] || {}).name, c: (domById[n.d] || {}).color || '#ccc', kind: 'it', id: n.id });
+      for (const a of DATA.arcs) idx.push({ tl: a.t.toLowerCase(), gl: (a.gist || '').toLowerCase(), t: a.t, sub: fmtYear(a.y) + ' · 迁徙/流动', c: (domById[a.d] || {}).color || '#ccc', kind: 'it', id: a.id });
+      const seen = new Set();
+      if (window.TERR_ZH) for (const [en, zh] of Object.entries(window.TERR_ZH)) {
+        if (!zh || zh === '无名地带') continue; seen.add(en);
+        idx.push({ tl: (zh + ' ' + en).toLowerCase(), gl: '', t: zh, sub: en + ' · 版图/政权', c: '#8FB0E0', kind: 'terr', id: en });
+      }
+      if (window.POP_DATA) for (const m of Object.values(window.POP_DATA)) for (const [en, rec] of Object.entries(m)) {
+        if (seen.has(en)) continue; seen.add(en);
+        idx.push({ tl: (rec.n + ' ' + en).toLowerCase(), gl: '', t: rec.n, sub: en + ' · 国家/地区', c: '#8FB0E0', kind: 'terr', id: en });
+      }
+      for (const r of ((window.TRADE && window.TRADE.routes) || []))
+        idx.push({ tl: (r.t + ' ' + r.en).toLowerCase(), gl: (r.gist || '').toLowerCase(), t: r.t, sub: fmtYear(r.y0) + '—' + fmtYear(r.y1) + ' · 贸易路线', c: r.cat === 'land' ? '#E9B44C' : r.cat === 'sail' ? '#49CCEC' : '#A8C8FF', kind: 'trade', id: r.id });
+    };
+    const go = it => {
+      res.classList.remove('on'); inp.blur();
+      if (it.kind === 'it') {
+        selectAndReveal(it.id);
+        const item = ITEMS[it.id];
+        if (GLOBE3D && S.morph < 0.5 && item)
+          GlobeView.flyToItem(item.from ? { kind: 'arc', from: item.from, to: item.to } : { kind: 'node', lat: item.lat, lon: item.lon });
+      } else if (it.kind === 'terr') {
+        jumpCountry(it.id);
+      } else {
+        const r = ((window.TRADE && window.TRADE.routes) || []).find(x => x.id === it.id);
+        if (!r) return;
+        if (!S.trade) { const tb = document.querySelector('.trade-toggle'); if (tb) tb.click(); }
+        const mid = r.pts[Math.floor(r.pts.length / 2)];
+        if (GLOBE3D && S.morph < 0.5) GlobeView.focusCountry({ lat: mid[0], lon: mid[1] });
+        openTradeDetail(r);
+      }
+    };
+    inp.addEventListener('input', () => {
+      if (!idx) build();
+      const q = inp.value.trim().toLowerCase();
+      if (!q) { res.classList.remove('on'); return; }
+      const hits = [];
+      for (const it of idx) {
+        const p1 = it.tl.indexOf(q);
+        if (p1 >= 0) { hits.push([0, p1, it]); continue; }
+        const p2 = it.gl.indexOf(q);
+        if (p2 >= 0) hits.push([1, p2, it]);
+      }
+      hits.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+      const top = hits.slice(0, 9).map(h => h[2]);
+      res.innerHTML = top.length
+        ? top.map((it, i) => '<div class="sb-row" data-i="' + i + '"><span class="dot" style="background:' + it.c + '"></span><span>' + it.t + '</span><span class="sub">' + it.sub + '</span></div>').join('')
+        : '<div class="sb-row" style="opacity:.5;cursor:default">没有匹配</div>';
+      res.classList.add('on');
+      res.querySelectorAll('.sb-row[data-i]').forEach(row => row.onclick = () => go(top[+row.dataset.i]));
+    });
+    inp.addEventListener('keydown', e => {
+      if (e.key === 'Enter') { const first = res.querySelector('.sb-row[data-i]'); if (first) first.click(); }
+      if (e.key === 'Escape') { res.classList.remove('on'); inp.blur(); }
+    });
+    document.addEventListener('pointerdown', e => {
+      if (!(e.target.closest && e.target.closest('.searchbox'))) res.classList.remove('on');
+    }, true);
   }
 
   function initKeys() {
@@ -1341,7 +1416,7 @@
     if (!GLOBE3D) globeEl.style.display = 'none';
 
     resize();
-    buildLegend(); initTrack(); initModes(); initKeys(); initPop(); syncPlay();
+    buildLegend(); initTrack(); initModes(); initKeys(); initPop(); initSearch(); syncPlay();
     window.addEventListener('resize', resize);
     window.addEventListener('pointermove', onMove, { passive: true });
     window.addEventListener('pointerdown', onPointerDown, true);

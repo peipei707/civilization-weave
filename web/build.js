@@ -31,6 +31,11 @@ const tiPath = path.join(dir, '..', 'data', 'terr_info.json');
 const terrInfo = fs.existsSync(tiPath) ? fs.readFileSync(tiPath, 'utf8') : 'null';
 const imgPath = path.join(dir, '..', 'data', 'images.json');
 const images = fs.existsSync(imgPath) ? fs.readFileSync(imgPath, 'utf8') : 'null';
+// 实景地球:NASA Blue Marble(topo+bathy,公有领域)2048×1024
+const earthPath = path.join(dir, '..', 'data', 'earth_real.jpg');
+const earthTex = fs.existsSync(earthPath)
+  ? "'data:image/jpeg;base64," + fs.readFileSync(earthPath).toString('base64') + "'"
+  : 'null';
 const tradePath = path.join(dir, '..', 'data', 'trade_routes.json');
 const trade = fs.existsSync(tradePath) ? fs.readFileSync(tradePath, 'utf8') : 'null';
 const demogPath = path.join(dir, '..', 'data', 'demography.json');
@@ -71,10 +76,12 @@ const html = `<!doctype html>
     <h1>文明星图</h1>
     <span class="sub">人类迁徙 × 七大领域 · 走出非洲至今</span>
   </div>
+  <div class="searchbox"><input class="sb-in" type="search" placeholder="搜索:知识点 / 国家 / 贸易路线" aria-label="搜索"><div class="sb-res"></div></div>
   <div class="modes" role="group" aria-label="视图切换">
     <button data-mode="map" aria-pressed="true">地图</button>
     <button data-mode="net" aria-pressed="false">网络</button>
     <button class="trade-toggle" aria-pressed="false" title="隐去知识点,显示历代贸易路线(带文献佐证)">贸易</button>
+    <button class="real-toggle" aria-pressed="false" title="真实地球样貌(NASA Blue Marble 卫星影像,含地形晕渲)">实景</button>
   </div>
 </header>
 
@@ -120,7 +127,7 @@ const html = `<!doctype html>
 <div class="hint">▶ 点「播放」看文明演化 · 拖动旋转地球,滚轮缩放 · 点亮节点读其一生 · 切「网络」看影响星座</div>
 
 <script>${globeLib}</script>
-<script>window.LAND=${land};window.BORDERS=${borders};window.TERRAIN=${terrain};window.TERRAIN_H=${terrainH};window.TERR_ZH=${terrZh};window.TERR_INFO=${terrInfo};window.IMAGES=${images};window.POP_DATA=${popCountries};window.TRADE=${trade};window.DEMOG=${demog};</script>
+<script>window.LAND=${land};window.BORDERS=${borders};window.TERRAIN=${terrain};window.TERRAIN_H=${terrainH};window.TERR_ZH=${terrZh};window.TERR_INFO=${terrInfo};window.IMAGES=${images};window.POP_DATA=${popCountries};window.TRADE=${trade};window.DEMOG=${demog};window.EARTH_TEX=${earthTex};</script>
 <script>${data}</script>
 <script>${globeMod}</script>
 <script>${app}</script>

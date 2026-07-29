@@ -85,6 +85,7 @@ window.GlobeView = (function () {
   function bakeBlob(blob) {
     lastBlob = blob;
     if (!texCv) { pendingBlob = blob; return; }
+    if (realOn) return; // 实景模式下不烙丝绒皮;记下 lastBlob,切回时补烙
     const x = texCv.getContext('2d');
     x.clearRect(0, 0, TW, TH);
     x.drawImage(baseCv, 0, 0);
@@ -202,6 +203,34 @@ window.GlobeView = (function () {
     }
     try { x.letterSpacing = '0px'; } catch (e) { }
     x.restore();
+  }
+
+  // —— 实景地球:把 NASA Blue Marble 直接画进 texCv(换 Texture.image 在此管线不生效——版本消费时机吃掉更新;
+  //    画布重绘 + needsUpdate 是已被烘焙通路天天验证的可靠路径)——
+  let realImg = null, realOn = false;
+  function applyRealEarth() {
+    if (!texCv) return;
+    if (realOn && realImg) {
+      const x = texCv.getContext('2d');
+      x.save();
+      try { x.filter = 'brightness(1.45) saturate(1.25)'; } catch (e) { } // 12月版原片偏暗,提到星图观感
+      x.drawImage(realImg, 0, 0, texCv.width, texCv.height);
+      x.restore();
+      if (texRef) texRef.needsUpdate = true;
+    } else {
+      // 回丝绒:重铺底图并重烙当前时代的小邦底色(bakeBlob 自带 needsUpdate)
+      bakeBlob(lastBlob);
+    }
+  }
+  function setRealEarth(on) {
+    realOn = !!on;
+    if (realOn && !realImg && window.EARTH_TEX) {
+      const im = new Image();
+      im.onload = () => { realImg = im; if (realOn) applyRealEarth(); };
+      im.src = window.EARTH_TEX;
+      return;
+    }
+    applyRealEarth();
   }
 
   // 1×1 深色占位图:只为让 globe.gl 的加载器创建 Texture 对象,随后图像源即被换成 texCv
@@ -549,6 +578,7 @@ window.GlobeView = (function () {
     syncScreen,
     setYear: (y, y0) => { yr = y; yr0 = y0 == null ? -3300001 : y0; refreshTrade(); },
     setTrade: on => { tradeOn = !!on; forceScan = true; refreshTrade(); },
+    setRealEarth,
     tradeScreenLabels,
     setEnabled: () => { forceScan = true; },
     altitude: () => G ? G.pointOfView().altitude : 2.1,
