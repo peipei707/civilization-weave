@@ -689,17 +689,50 @@
       ? '<div class="dt-meta"><span class="badge">' + fmtYear(years[0]) + ' — ' + fmtYear(years[years.length - 1]) + '</span><span class="badge">' + years.length + ' 个快照在册</span></div>'
       : '';
     detail.style.setProperty('--c', '#8FB0E0');
+    // —— 人口 + 年龄结构(分国 UN 数据,缺则按世界结构近似)——
+    const en2 = TERR_REV[name] || name;
+    const yrNow = curYear();
+    let extra = '';
+    const recP = popRecOf(en2);
+    const DGx = window.DEMOG;
+    let popBadge = '';
+    if (recP) {
+      const v = countryAt(recP.s, yrNow);
+      if (v != null && v > 0.005 && popVisible(en2, yrNow)) popBadge = '<span class="badge">人口约 ' + fmtPop(v) + '(' + fmtYear(yrNow) + ')</span>';
+    }
+    if (DGx && (recP || (DGx.cage && DGx.cage[en2]))) {
+      const own = DGx.cage && DGx.cage[en2];
+      const ar = interpRow(own || DGx.age, own ? Math.max(yrNow, 1950) : yrNow);
+      extra += '<div class="dt-sec">年龄结构 · ' + fmtYear(yrNow) + (own ? '(本国,UN WPP 2024' + (yrNow < 1950 ? ',按1950近似' : '') + ')' : '(按世界结构近似)') + '</div>' +
+        '<div class="dt-age">' + popBadge.replace('badge">', 'badge" style="align-self:flex-start">') +
+        DGx.bands.map((b, i) =>
+          '<div class="row"><span class="nm">' + b + '</span><span class="bar"><i style="width:' + Math.min(100, ar[i + 1] * 1.6).toFixed(0) + '%;background:' + AGE_COLS[i] + '"></i></span><span class="pc">' + ar[i + 1] + '%</span></div>').join('') + '</div>';
+    } else if (popBadge) {
+      extra += '<div class="dt-meta">' + popBadge + '</div>';
+    }
+    // —— 途经的贸易路线(点芯片看该路线与文献)——
+    const tr = routesTouchingCountry(name);
+    if (tr.length) {
+      extra += '<div class="dt-sec">境内经过的贸易路线</div><div class="dt-links">' +
+        tr.map(r => '<button class="chip dt-troute" data-tr="' + r.id + '"><span class="dot" style="background:' +
+          (r.cat === 'land' ? '#E9B44C' : r.cat === 'sail' ? '#49CCEC' : '#A8C8FF') + '"></span>' + r.t + ' <span style="opacity:.55">' + fmtYear(r.y0) + '起</span></button>').join('') + '</div>';
+    }
     detail.innerHTML =
       '<button class="dt-close" aria-label="关闭">✕</button>' +
       '<span class="dt-domain"><span class="dot"></span>版图 · 历史政权</span>' +
       '<h2>' + zh + (zh !== name ? '<span class="dt-en">' + name + '</span>' : '') + '</h2>' +
       span +
       (chips ? '<div class="dt-sec">在册年代(点击跳转时间轴)</div><div class="dt-links">' + chips + '</div>' : '') +
+      extra +
       '<div class="dt-sec">沿革</div><p class="dt-detail terr-wiki">正在从维基百科取简介…</p>' +
       '<div class="dt-src terr-src"></div>' +
       '<div class="dt-note">疆界与年代为 historical-basemaps 示意性重建,存在争议与简化</div>';
     detail.classList.add('on');
     detail.querySelector('.dt-close').onclick = closeDetail;
+    detail.querySelectorAll('.dt-troute').forEach(c => c.onclick = () => {
+      const r = ((window.TRADE && window.TRADE.routes) || []).find(x => x.id === c.dataset.tr);
+      if (r) openTradeDetail(r);
+    });
     detail.querySelectorAll('.terr-y').forEach(c => c.onclick = () => {
       S.tFrac = clamp(yearToFrac(+c.dataset.y) + 0.004, 0, 1);
       S.playing = false; syncPlay(); dismissHint();
@@ -879,6 +912,49 @@
         for (const [k, rec] of Object.entries(m)) POP_ZH[k] = rec.n;
     }
     return POP_ZH[en];
+  }
+  let POP_REC = null; // 英文名 → 人口记录(国家详情面板取当年人口/年龄结构)
+  function popRecOf(en) {
+    if (!POP_REC) {
+      POP_REC = {};
+      if (window.POP_DATA) for (const m of Object.values(window.POP_DATA))
+        for (const [k, rec] of Object.entries(m)) POP_REC[k] = rec;
+    }
+    return POP_REC[en];
+  }
+  // 疆界名 → OWID 实体名(TERR_ALIAS 的反查:United States of America → United States)
+  const TERR_REV = {};
+  for (const [owid, border] of Object.entries(TERR_ALIAS)) TERR_REV[border] = owid;
+  // 射线法:经纬点是否在版图外环内(ring 为 [lon,lat,...] 扁平数组)
+  function pinp(lon, lat, ring) {
+    let inside = false;
+    for (let i = 0, j = ring.length - 2; i < ring.length; j = i, i += 2) {
+      const xi = ring[i], yi = ring[i + 1], xj = ring[j], yj = ring[j + 1];
+      if ((yi > lat) !== (yj > lat) && lon < (xj - xi) * (lat - yi) / (yj - yi) + xi) inside = !inside;
+    }
+    return inside;
+  }
+  // 该国境内经过哪些贸易路线(陆路看途经点、海路看停靠港;无版图的领地按坐标半径)
+  function routesTouchingCountry(name) {
+    const RT = (window.TRADE && window.TRADE.routes) || [];
+    if (!RT.length) return [];
+    const f = terrFeatureByName(name);
+    const out = [];
+    for (const r of RT) {
+      let hit = false;
+      if (f) {
+        for (const pt of r.pts) {
+          for (const poly of f.g) if (poly[0] && pinp(pt[1], pt[0], poly[0])) { hit = true; break; }
+          if (hit) break;
+        }
+      } else {
+        const c = COORD_FALLBACK[name];
+        if (c) hit = r.pts.some(pt =>
+          Math.hypot(pt[0] - c[0], (pt[1] - c[1]) * Math.cos(c[0] * Math.PI / 180)) < 8);
+      }
+      if (hit) out.push(r);
+    }
+    return out.sort((a, b) => a.y0 - b.y0);
   }
   function terrFeatureByName(name) {
     const B = window.BORDERS; if (!B) return null;
