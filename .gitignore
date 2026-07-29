@@ -2,3 +2,7 @@ node_modules/
 data/raw_borders/
 *.log
 Thumbs.db
+data/_earth_5400.jpg
+data/_earth_21600.jpg
+data/_egm96.tar.bz2
+web/tiles/

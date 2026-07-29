@@ -154,6 +154,15 @@ if (fs.existsSync(terrImgSrc)) {
   }
   console.log('政权缩略图本地资产:' + fs.readdirSync(terrImgSrc).length + ' 张已同步 web/img/terr 与 docs/img/terr');
 }
+// 实景高清瓦片:data/earth_tiles → web/tiles/earth(预览)与 docs/tiles/earth(发布)
+const tilesSrc = path.join(dir, '..', 'data', 'earth_tiles');
+if (fs.existsSync(tilesSrc)) {
+  for (const outDir of [path.join(dir, 'tiles', 'earth'), path.join(dir, '..', 'docs', 'tiles', 'earth')]) {
+    fs.mkdirSync(outDir, { recursive: true });
+    for (const f of fs.readdirSync(tilesSrc)) fs.copyFileSync(path.join(tilesSrc, f), path.join(outDir, f));
+  }
+  console.log('实景高清瓦片:' + fs.readdirSync(tilesSrc).length + ' 张已同步 web/tiles 与 docs/tiles');
+}
 // GitHub Pages 发布副本(Pages 源=main 分支 /docs 目录)
 const docsDir = path.join(dir, '..', 'docs');
 if (!fs.existsSync(docsDir)) fs.mkdirSync(docsDir);

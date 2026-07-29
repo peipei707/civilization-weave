@@ -232,6 +232,7 @@ window.GlobeView = (function () {
   }
   function setRealEarth(on) {
     realOn = !!on;
+    if (!realOn) hqRemove();
     if (realOn && !realImg && window.EARTH_TEX) {
       const im = new Image();
       im.onload = () => { realImg = im; if (realOn) applyRealEarth(); };
@@ -272,6 +273,7 @@ window.GlobeView = (function () {
   }
   function setPotato(on) {
     potatoOn = !!on;
+    if (potatoOn) hqRemove();
     if (potatoOn) {
       if (potatoImg) applyPotato();
       else if (window.GEOID_TEX) {
@@ -289,6 +291,127 @@ window.GlobeView = (function () {
       }
       applyRealEarth(); // 回实景或丝绒
     }
+  }
+
+  // —— 谷歌式按需高清(实景专属):拉近到国家级视距时,自动加载视野所在的 2×2 原生瓦片
+  //    (NASA 21600 全图切 32 片,≈1.8km/px,同源随站点分发),组成带地形起伏的高清补丁叠在球面;
+  //    拉远/切模式即撤。比全球 4096 底图清晰约 5 倍。 ——
+  let hqKey = '', hqMesh = null, hqTimer = null, hqBusy = false, hqHS = null;
+  const hqTileCache = {};
+  function hqLoadTile(c, r) {
+    return new Promise(res => {
+      const k = c + '_' + r;
+      if (hqTileCache[k]) return res(hqTileCache[k]);
+      const im = new Image();
+      im.onload = () => { hqTileCache[k] = im; res(im); };
+      im.onerror = () => res(null);
+      im.src = 'tiles/earth/t_' + c + '_' + r + '.jpg';
+    });
+  }
+  function hqHeightSampler() { // 全球高度图读进小画布一次,给补丁顶点做 CPU 采样
+    if (hqHS !== null) return hqHS;
+    hqHS = false;
+    if (!window.TERRAIN_H) return hqHS;
+    const im = new Image();
+    im.onload = () => {
+      const c = document.createElement('canvas'); c.width = 1024; c.height = 512;
+      const cx = c.getContext('2d', { willReadFrequently: true });
+      cx.drawImage(im, 0, 0, 1024, 512);
+      const d = cx.getImageData(0, 0, 1024, 512).data;
+      hqHS = (lon, lat) => {
+        const xx = Math.round(((lon + 540) % 360) / 360 * 1023);
+        const yy = Math.max(0, Math.min(511, Math.round((90 - lat) / 180 * 511)));
+        return d[(yy * 1024 + xx) * 4] / 255;
+      };
+      hqKey = ''; // 高度就绪后,下次刷新重建带地形的补丁
+    };
+    im.src = window.TERRAIN_H;
+    return hqHS;
+  }
+  function hqRemove() {
+    hqKey = '';
+    if (hqMesh) {
+      try {
+        G.scene().remove(hqMesh);
+        hqMesh.geometry.dispose();
+        if (hqMesh.material.map) hqMesh.material.map.dispose();
+        hqMesh.material.dispose();
+      } catch (e) { }
+      hqMesh = null;
+    }
+  }
+  function hqTick() {
+    if (!G || hqTimer) return;
+    hqTimer = setTimeout(() => { hqTimer = null; hqUpdate(); }, 450);
+  }
+  async function hqUpdate() {
+    const pov = G.pointOfView();
+    if (!(realOn && !potatoOn && pov.altitude < 0.62)) { if (hqMesh) hqRemove(); return; }
+    let c0 = Math.floor((pov.lng + 180) / 45 - 0.5);
+    let r0 = Math.max(0, Math.min(2, Math.floor((90 - pov.lat) / 45 - 0.5)));
+    const key = ((c0 + 8) % 8) + '_' + r0;
+    if (key === hqKey || hqBusy) return;
+    hqBusy = true;
+    try {
+      const jobs = [];
+      for (let dr = 0; dr < 2; dr++) for (let dc = 0; dc < 2; dc++)
+        jobs.push(hqLoadTile(((c0 + dc) % 8 + 8) % 8, r0 + dr));
+      const imgs = await Promise.all(jobs);
+      if (imgs.some(x => !x)) { hqBusy = false; return; }
+      const S = 2700;
+      const cv = document.createElement('canvas'); cv.width = S * 2; cv.height = S * 2;
+      const x = cv.getContext('2d');
+      try { x.filter = 'brightness(1.45) saturate(1.25)'; } catch (e) { } // 与实景基底同亮度
+      let i = 0;
+      for (let dr = 0; dr < 2; dr++) for (let dc = 0; dc < 2; dc++) x.drawImage(imgs[i++], dc * S, dr * S);
+      // 顶点网格:90°×90° 窗,96×96 格,叠地形位移(与球面 displacement 同公式)
+      const lon0 = c0 * 45 - 180, lat1 = 90 - r0 * 45;
+      const N = 96, hs = hqHeightSampler();
+      const posArr = new Float32Array((N + 1) * (N + 1) * 3);
+      const uvArr = new Float32Array((N + 1) * (N + 1) * 2);
+      const idx = [];
+      const dispScale = 3.4;
+      let p = 0, q = 0;
+      for (let iy = 0; iy <= N; iy++) {
+        const lat = lat1 - iy / N * 90;
+        for (let ix = 0; ix <= N; ix++) {
+          const lon = lon0 + ix / N * 90;
+          const h = hs ? hs(lon, lat) : 0;
+          const v3 = G.getCoords(lat, lon, (dispScale * h + 0.09) / 100);
+          posArr[p++] = v3.x; posArr[p++] = v3.y; posArr[p++] = v3.z;
+          uvArr[q++] = ix / N; uvArr[q++] = 1 - iy / N; // three 默认 flipY:v=1 是图顶(北)
+        }
+      }
+      for (let iy = 0; iy < N; iy++) for (let ix = 0; ix < N; ix++) {
+        const a = iy * (N + 1) + ix, b = a + 1, c2 = a + N + 1, d2 = c2 + 1;
+        idx.push(a, c2, b, b, c2, d2);
+      }
+      const m0 = G.globeMaterial();
+      let globeMesh = null;
+      G.scene().traverse(o => { if (!globeMesh && o.isMesh && o.material === m0) globeMesh = o; });
+      if (!globeMesh) { hqBusy = false; return; }
+      // 类全部借自现有实例,零跨实例(BufferGeometry = SphereGeometry 的祖类)
+      const BufGeo = Object.getPrototypeOf(Object.getPrototypeOf(globeMesh.geometry)).constructor;
+      const BufAttr = globeMesh.geometry.attributes.position.constructor;
+      const geo = new BufGeo();
+      geo.setAttribute('position', new BufAttr(posArr, 3));
+      geo.setAttribute('uv', new BufAttr(uvArr, 2));
+      geo.setIndex(idx);
+      const tex = new (m0.map.constructor)(cv);
+      tex.colorSpace = 'srgb';
+      try { tex.anisotropy = G.renderer().capabilities.getMaxAnisotropy(); } catch (e) { }
+      tex.needsUpdate = true;
+      const mat = new (m0.constructor)();
+      if (mat.color && mat.color.set) mat.color.set('#000000');
+      if (mat.emissive && mat.emissive.set) mat.emissive.set('#ffffff');
+      mat.emissiveMap = tex; mat.map = tex; mat.shininess = 0;
+      const mesh = new (globeMesh.constructor)(geo, mat);
+      hqRemove();
+      hqKey = key;
+      G.scene().add(mesh);
+      hqMesh = mesh;
+    } catch (e) { /* 高清补丁是增强项,失败静默退回 4096 底图 */ }
+    hqBusy = false;
   }
 
   // 1×1 深色占位图:只为让 globe.gl 的加载器创建 Texture 对象,随后图像源即被换成 texCv
@@ -485,6 +608,7 @@ window.GlobeView = (function () {
       if (!still) arcEntering = false;
     }
     tickBorders(dt);
+    hqTick(); // 实景高清补丁:450ms 防抖检查视距/视野
   }
 
   // —— 节点投影同步:把球面坐标投到屏幕,写回 n._gx/_gy/_front(地平线剔除系数) ——
