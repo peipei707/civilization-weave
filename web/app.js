@@ -1003,6 +1003,7 @@
     'Czechoslovakia': [1918, 1992], 'East Germany': [1949, 1989], 'West Germany': [1949, 1989],
     'Yemen Arab Republic': [1918, 1989], "Yemen People's Republic": [1967, 1989],
     'Netherlands Antilles': [1954, 2010], 'Ethiopia (former)': [1600, 1992],
+    'Israel': [1948, 9999], // 1948 建国起上榜;此前该地区人口由巴勒斯坦承载
   };
   const HIDE_WHEN = {}; // 成员国 → 被联盟遮蔽的时间窗列表
   [

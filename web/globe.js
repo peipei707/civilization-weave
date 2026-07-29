@@ -111,6 +111,7 @@ window.GlobeView = (function () {
     if (!m || !m.map) return;
     m.map.image = texCv;
     m.map.colorSpace = 'srgb'; // 画布是 sRGB 颜色;不标注会被当线性数据、输出时二次编码提亮成灰
+    try { m.map.anisotropy = G.renderer().capabilities.getMaxAnisotropy(); } catch (e) { } // 斜视角不糊
     m.map.needsUpdate = true;
     texRef = m.map;
     m.emissiveMap = m.map;
@@ -211,16 +212,23 @@ window.GlobeView = (function () {
   function applyRealEarth() {
     if (!texCv) return;
     if (realOn && realImg) {
+      // 画布临时升到影像原生分辨率(4096×2048),拉近不糊;退出时降回省显存
+      const W = realImg.naturalWidth || 4096, H = realImg.naturalHeight || 2048;
+      if (texCv.width !== W) { texCv.width = W; texCv.height = H; }
       const x = texCv.getContext('2d');
       x.save();
       try { x.filter = 'brightness(1.45) saturate(1.25)'; } catch (e) { } // 12月版原片偏暗,提到星图观感
-      x.drawImage(realImg, 0, 0, texCv.width, texCv.height);
+      x.drawImage(realImg, 0, 0, W, H);
       x.restore();
       if (texRef) texRef.needsUpdate = true;
     } else {
-      // 回丝绒:重铺底图并重烙当前时代的小邦底色(bakeBlob 自带 needsUpdate)
+      // 回丝绒:画布降回原尺寸,重铺底图并重烙当前时代的小邦底色(bakeBlob 自带 needsUpdate)
+      if (texCv.width !== TW) { texCv.width = TW; texCv.height = TH; }
       bakeBlob(lastBlob);
     }
+    // 实景模式地形位移加深,立体感更强;丝绒回默认
+    const m = G && G.globeMaterial();
+    if (m && m.displacementMap) { m.displacementScale = realOn ? 3.4 : 2.2; m.needsUpdate = true; }
   }
   function setRealEarth(on) {
     realOn = !!on;
