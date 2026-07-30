@@ -543,3 +543,8 @@ body { touch-action: none; }
   .tl-era { display: none; }
   .tl-ticks { display: none; }
 }
+
+/* —— 彩蛋三态按钮 —— */
+.modes .egg-toggle { font-size: 13px; line-height: 1; }
+.modes .egg-toggle.gray { filter: grayscale(1); }
+.modes .egg-toggle.off { opacity: .38; }

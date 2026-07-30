@@ -305,7 +305,9 @@ window.GlobeView = (function () {
       const im = new Image();
       im.onload = () => { hqTileCache[k] = im; res(im); };
       im.onerror = () => res(null);
-      im.src = 'tiles/earth/t_' + c + '_' + r + '.jpg';
+      // 离线超清版把瓦片内嵌成 dataURL(不污染画布,file:// 双击可用);常规版走同源文件
+      const td = window.TILE_DATA;
+      im.src = (td && td[k]) ? td[k] : 'tiles/earth/t_' + c + '_' + r + '.jpg';
     });
   }
   function hqHeightSampler() { // 全球高度图读进小画布一次,给补丁顶点做 CPU 采样
@@ -345,9 +347,9 @@ window.GlobeView = (function () {
     hqTimer = setTimeout(() => { hqTimer = null; hqUpdate(); }, 450);
   }
   async function hqUpdate() {
-    // file:// 双击打开时,本地图片会被当跨源污染画布,WebGL 拒收纹理 → 补丁必黑;
-    // 此时直接退回内联 4096 底图(自包含单文件模式的清晰度上限)
-    if (location.protocol === 'file:') return;
+    // file:// 双击打开时,本地图片文件会被当跨源污染画布,WebGL 拒收纹理 → 补丁必黑;
+    // 但离线超清版的瓦片是内嵌 dataURL(不污染),照常放行
+    if (location.protocol === 'file:' && !window.TILE_DATA) return;
     const pov = G.pointOfView();
     if (!(realOn && !potatoOn && pov.altitude < 0.62)) { if (hqMesh) hqRemove(); return; }
     let c0 = Math.floor((pov.lng + 180) / 45 - 0.5);

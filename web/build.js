@@ -94,6 +94,7 @@ const html = `<!doctype html>
     <button class="trade-toggle" aria-pressed="false" title="隐去知识点,显示历代贸易路线(带文献佐证)">贸易</button>
     <button class="real-toggle" aria-pressed="false" title="真实地球样貌(NASA Blue Marble 卫星影像,含地形晕渲)">实景</button>
     <button class="potato-toggle" aria-pressed="false" title="地球的真实重力形状:大地水准面(EGM96 实测,±100米起伏放大约8000倍——传说中的「重力土豆」)">土豆</button>
+    <button class="egg-toggle" title="彩蛋显示:彩色 → 黑白 → 关闭">🥚</button>
   </div>
 </header>
 
@@ -155,6 +156,24 @@ if (fs.existsSync(terrImgSrc)) {
     for (const f of fs.readdirSync(terrImgSrc)) fs.copyFileSync(path.join(terrImgSrc, f), path.join(outDir, f));
   }
   console.log('政权缩略图本地资产:' + fs.readdirSync(terrImgSrc).length + ' 张已同步 web/img/terr 与 docs/img/terr');
+}
+// 离线超清单文件版(--offline):瓦片全部内嵌 dataURL,file:// 双击即有超清补丁(约 +24MB)
+if (process.argv.includes('--offline')) {
+  const tilesDir = path.join(dir, '..', 'data', 'earth_tiles');
+  if (fs.existsSync(tilesDir)) {
+    const td = {};
+    for (const f of fs.readdirSync(tilesDir)) {
+      const m = f.match(/^t_(\d+)_(\d+)\.jpg$/);
+      if (m) td[m[1] + '_' + m[2]] = 'data:image/jpeg;base64,' + fs.readFileSync(path.join(tilesDir, f)).toString('base64');
+    }
+    const inject = '<script>window.TILE_DATA=' + JSON.stringify(td) + ';</script>\n<script>window.LAND=';
+    const offline = html.replace('<script>window.LAND=', inject);
+    const offPath = path.join(dir, 'index_offline.html');
+    fs.writeFileSync(offPath, offline);
+    const rootCopy = path.join(dir, '..', '离线超清版.html');
+    fs.copyFileSync(offPath, rootCopy);
+    console.log(`✓ 离线超清版 — ${(fs.statSync(offPath).size / 1048576).toFixed(1)} MB(${Object.keys(td).length} 瓦片内嵌)→ ${rootCopy}`);
+  }
 }
 // 实景高清瓦片:data/earth_tiles → web/tiles/earth(预览)与 docs/tiles/earth(发布)
 const tilesSrc = path.join(dir, '..', 'data', 'earth_tiles');

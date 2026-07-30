@@ -549,6 +549,11 @@ body { touch-action: none; }
   .tl-era { display: none; }
   .tl-ticks { display: none; }
 }
+
+/* —— 彩蛋三态按钮 —— */
+.modes .egg-toggle { font-size: 13px; line-height: 1; }
+.modes .egg-toggle.gray { filter: grayscale(1); }
+.modes .egg-toggle.off { opacity: .38; }
 </style>
 </head>
 <body>
@@ -570,6 +575,7 @@ body { touch-action: none; }
     <button class="trade-toggle" aria-pressed="false" title="隐去知识点,显示历代贸易路线(带文献佐证)">贸易</button>
     <button class="real-toggle" aria-pressed="false" title="真实地球样貌(NASA Blue Marble 卫星影像,含地形晕渲)">实景</button>
     <button class="potato-toggle" aria-pressed="false" title="地球的真实重力形状:大地水准面(EGM96 实测,±100米起伏放大约8000倍——传说中的「重力土豆」)">土豆</button>
+    <button class="egg-toggle" title="彩蛋显示:彩色 → 黑白 → 关闭">🥚</button>
   </div>
 </header>
 
@@ -3422,7 +3428,9 @@ window.GlobeView = (function () {
       const im = new Image();
       im.onload = () => { hqTileCache[k] = im; res(im); };
       im.onerror = () => res(null);
-      im.src = 'tiles/earth/t_' + c + '_' + r + '.jpg';
+      // 离线超清版把瓦片内嵌成 dataURL(不污染画布,file:// 双击可用);常规版走同源文件
+      const td = window.TILE_DATA;
+      im.src = (td && td[k]) ? td[k] : 'tiles/earth/t_' + c + '_' + r + '.jpg';
     });
   }
   function hqHeightSampler() { // 全球高度图读进小画布一次,给补丁顶点做 CPU 采样
@@ -3462,9 +3470,9 @@ window.GlobeView = (function () {
     hqTimer = setTimeout(() => { hqTimer = null; hqUpdate(); }, 450);
   }
   async function hqUpdate() {
-    // file:// 双击打开时,本地图片会被当跨源污染画布,WebGL 拒收纹理 → 补丁必黑;
-    // 此时直接退回内联 4096 底图(自包含单文件模式的清晰度上限)
-    if (location.protocol === 'file:') return;
+    // file:// 双击打开时,本地图片文件会被当跨源污染画布,WebGL 拒收纹理 → 补丁必黑;
+    // 但离线超清版的瓦片是内嵌 dataURL(不污染),照常放行
+    if (location.protocol === 'file:' && !window.TILE_DATA) return;
     const pov = G.pointOfView();
     if (!(realOn && !potatoOn && pov.altitude < 0.62)) { if (hqMesh) hqRemove(); return; }
     let c0 = Math.floor((pov.lng + 180) / 45 - 0.5);
@@ -4383,6 +4391,7 @@ window.GlobeView = (function () {
   const EGG_FONT = k => `${Math.round(k)}px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif`;
   function updateEggs(dt) {
     if (!GLOBE3D || S.morph > 0.5 || !EGGS.length) return;
+    if (S.eggMode === 'off') { for (const g of EGGS) { g._a = 0; g._hx = -9999; g._x = -9999; } return; }
     const alt = GlobeView.altitude ? GlobeView.altitude() : 2.1;
     const pov = window.__CIV_G ? window.__CIV_G.pointOfView() : null;
     let cx = 0, cy = 0, cz = 0;
@@ -4403,15 +4412,16 @@ window.GlobeView = (function () {
     }
   }
   function eggAt(mx, my) {
-    if (S.morph > 0.5) return null;
+    if (S.morph > 0.5 || S.eggMode === 'off') return null;
     for (const g of EGGS) {
       if ((mx - g._hx) ** 2 + (my - g._hy) ** 2 < 24 * 24) return g;
     }
     return null;
   }
   function drawEggs(dt) {
-    if (!GLOBE3D || S.morph > 0.5) return;
+    if (!GLOBE3D || S.morph > 0.5 || S.eggMode === 'off') return;
     const t = S.t;
+    const gray = S.eggMode === 'gray';
     for (const g of EGGS) {
       const a = g._a;
       const hov = S.eggHover === g;
@@ -4442,6 +4452,7 @@ window.GlobeView = (function () {
       const ph = (g.id.charCodeAt(4) || 7);  // 相位错开
       fx.save();
       fx.globalAlpha = a;
+      if (gray) { try { fx.filter = 'grayscale(1)'; } catch (e) { } } // 黑白档:老照片味
       fx.textAlign = 'center'; fx.textBaseline = 'middle';
       switch (g.anim) {
         case 'sink': { // 沉船:摇晃下沉 + 气泡上冒
@@ -5531,6 +5542,23 @@ window.GlobeView = (function () {
       if (GLOBE3D) GlobeView.setPotato(S.potato);
       dismissHint();
     };
+    // 彩蛋三态:彩色 → 黑白 → 关闭(记忆到 localStorage)
+    const eb = document.querySelector('.egg-toggle');
+    if (eb) {
+      let em; try { em = localStorage.getItem('cw_eggmode') || 'color'; } catch (e) { em = 'color'; }
+      const applyEgg = () => {
+        S.eggMode = em;
+        eb.classList.toggle('gray', em === 'gray');
+        eb.classList.toggle('off', em === 'off');
+        eb.title = '彩蛋:' + (em === 'color' ? '彩色(点击切黑白)' : em === 'gray' ? '黑白(点击关闭)' : '已关闭(点击开启)');
+      };
+      applyEgg();
+      eb.onclick = () => {
+        em = em === 'color' ? 'gray' : em === 'gray' ? 'off' : 'color';
+        try { localStorage.setItem('cw_eggmode', em); } catch (e) { }
+        applyEgg(); dismissHint();
+      };
+    }
   }
 
   // —— 全局搜索:知识点(题名+要旨)/ 国家政权(中英)/ 贸易路线,一栏直达 ——

@@ -446,6 +446,7 @@
   const EGG_FONT = k => `${Math.round(k)}px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif`;
   function updateEggs(dt) {
     if (!GLOBE3D || S.morph > 0.5 || !EGGS.length) return;
+    if (S.eggMode === 'off') { for (const g of EGGS) { g._a = 0; g._hx = -9999; g._x = -9999; } return; }
     const alt = GlobeView.altitude ? GlobeView.altitude() : 2.1;
     const pov = window.__CIV_G ? window.__CIV_G.pointOfView() : null;
     let cx = 0, cy = 0, cz = 0;
@@ -466,15 +467,16 @@
     }
   }
   function eggAt(mx, my) {
-    if (S.morph > 0.5) return null;
+    if (S.morph > 0.5 || S.eggMode === 'off') return null;
     for (const g of EGGS) {
       if ((mx - g._hx) ** 2 + (my - g._hy) ** 2 < 24 * 24) return g;
     }
     return null;
   }
   function drawEggs(dt) {
-    if (!GLOBE3D || S.morph > 0.5) return;
+    if (!GLOBE3D || S.morph > 0.5 || S.eggMode === 'off') return;
     const t = S.t;
+    const gray = S.eggMode === 'gray';
     for (const g of EGGS) {
       const a = g._a;
       const hov = S.eggHover === g;
@@ -505,6 +507,7 @@
       const ph = (g.id.charCodeAt(4) || 7);  // 相位错开
       fx.save();
       fx.globalAlpha = a;
+      if (gray) { try { fx.filter = 'grayscale(1)'; } catch (e) { } } // 黑白档:老照片味
       fx.textAlign = 'center'; fx.textBaseline = 'middle';
       switch (g.anim) {
         case 'sink': { // 沉船:摇晃下沉 + 气泡上冒
@@ -1594,6 +1597,23 @@
       if (GLOBE3D) GlobeView.setPotato(S.potato);
       dismissHint();
     };
+    // 彩蛋三态:彩色 → 黑白 → 关闭(记忆到 localStorage)
+    const eb = document.querySelector('.egg-toggle');
+    if (eb) {
+      let em; try { em = localStorage.getItem('cw_eggmode') || 'color'; } catch (e) { em = 'color'; }
+      const applyEgg = () => {
+        S.eggMode = em;
+        eb.classList.toggle('gray', em === 'gray');
+        eb.classList.toggle('off', em === 'off');
+        eb.title = '彩蛋:' + (em === 'color' ? '彩色(点击切黑白)' : em === 'gray' ? '黑白(点击关闭)' : '已关闭(点击开启)');
+      };
+      applyEgg();
+      eb.onclick = () => {
+        em = em === 'color' ? 'gray' : em === 'gray' ? 'off' : 'color';
+        try { localStorage.setItem('cw_eggmode', em); } catch (e) { }
+        applyEgg(); dismissHint();
+      };
+    }
   }
 
   // —— 全局搜索:知识点(题名+要旨)/ 国家政权(中英)/ 贸易路线,一栏直达 ——
