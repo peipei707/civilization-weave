@@ -49,6 +49,8 @@ const tradePath = path.join(dir, '..', 'data', 'trade_routes.json');
 const trade = fs.existsSync(tradePath) ? fs.readFileSync(tradePath, 'utf8') : 'null';
 const demogPath = path.join(dir, '..', 'data', 'demography.json');
 const demog = fs.existsSync(demogPath) ? fs.readFileSync(demogPath, 'utf8') : 'null';
+const eggsPath = path.join(dir, '..', 'data', 'easter_eggs.json');
+const eggs = fs.existsSync(eggsPath) ? fs.readFileSync(eggsPath, 'utf8') : '[]';
 
 // —— 数据校验 ——
 global.window = {}; eval(data); const D = global.window.DATA;
@@ -137,7 +139,7 @@ const html = `<!doctype html>
 <div class="hint">▶ 点「播放」看文明演化 · 拖动旋转地球,滚轮缩放 · 点亮节点读其一生 · 切「网络」看影响星座</div>
 
 <script>${globeLib}</script>
-<script>window.LAND=${land};window.BORDERS=${borders};window.TERRAIN=${terrain};window.TERRAIN_H=${terrainH};window.TERR_ZH=${terrZh};window.TERR_INFO=${terrInfo};window.IMAGES=${images};window.POP_DATA=${popCountries};window.TRADE=${trade};window.DEMOG=${demog};window.EARTH_TEX=${earthTex};window.GEOID_TEX=${geoidTex};window.GEOID_H=${geoidH};</script>
+<script>window.LAND=${land};window.BORDERS=${borders};window.TERRAIN=${terrain};window.TERRAIN_H=${terrainH};window.TERR_ZH=${terrZh};window.TERR_INFO=${terrInfo};window.IMAGES=${images};window.POP_DATA=${popCountries};window.TRADE=${trade};window.DEMOG=${demog};window.EGGS=${eggs};window.EARTH_TEX=${earthTex};window.GEOID_TEX=${geoidTex};window.GEOID_H=${geoidH};</script>
 <script>${data}</script>
 <script>${globeMod}</script>
 <script>${app}</script>

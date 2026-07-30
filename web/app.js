@@ -441,6 +441,190 @@
     }
   }
 
+  // —— 彩蛋层:平时不可见,实拉近到点位附近才现身,各有专属小动画;点击出故事卡 ——
+  const EGGS = (window.EGGS || []).map(e => ({ ...e, y: -3300001, _a: 0 }));
+  const EGG_FONT = k => `${Math.round(k)}px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif`;
+  function updateEggs(dt) {
+    if (!GLOBE3D || S.morph > 0.5 || !EGGS.length) return;
+    const alt = GlobeView.altitude ? GlobeView.altitude() : 2.1;
+    const pov = window.__CIV_G ? window.__CIV_G.pointOfView() : null;
+    let cx = 0, cy = 0, cz = 0;
+    if (pov) {
+      const f = pov.lat * Math.PI / 180, l = pov.lng * Math.PI / 180;
+      cx = Math.cos(f) * Math.cos(l); cy = Math.sin(f); cz = Math.cos(f) * Math.sin(l);
+    }
+    GlobeView.syncScreen(EGGS);
+    for (const g of EGGS) {
+      let want = 0;
+      if (pov && alt < 0.85 && g._front > 0.2 && g.__v3) {
+        const d = g.__v3[0] * cx + g.__v3[1] * cy + g.__v3[2] * cz;
+        if (d > 0.90) want = 1; // 视野中心 ~26° 内才现身:必须"逛到附近"
+      }
+      g._a = smooth(g._a, want, 0.1, dt);
+    }
+  }
+  function drawEggs(dt) {
+    if (!GLOBE3D || S.morph > 0.5) return;
+    const t = S.t;
+    for (const g of EGGS) {
+      const a = g._a;
+      if (a < 0.02 || !(g._front > 0)) { g._x = -9999; continue; }
+      const x = g._gx, y = g._gy;
+      g._x = x; g._y = y;
+      const pop = 0.6 + 0.4 * a;             // 出场弹性
+      const base = 26 * pop;                 // 表情字号
+      const ph = (g.id.charCodeAt(4) || 7);  // 相位错开
+      fx.save();
+      fx.globalAlpha = a;
+      fx.textAlign = 'center'; fx.textBaseline = 'middle';
+      switch (g.anim) {
+        case 'sink': { // 沉船:摇晃下沉 + 气泡上冒
+          const bob = Math.sin(t * 1.1 + ph) * 2.5;
+          fx.translate(x, y + bob);
+          fx.rotate(Math.sin(t * 0.7 + ph) * 0.1 - 0.12);
+          fx.font = EGG_FONT(base);
+          fx.fillText(g.e, 0, 0);
+          fx.rotate(0.12 - Math.sin(t * 0.7 + ph) * 0.1);
+          fx.fillStyle = 'rgba(160,210,255,.6)';
+          for (let i = 0; i < 3; i++) {
+            const c = ((t * (0.5 + i * 0.17) + i * 0.37 + ph) % 1);
+            fx.globalAlpha = a * (1 - c) * 0.7;
+            fx.beginPath(); fx.arc(8 - i * 5, -bob - 10 - c * 26, 1.6 + i * 0.7, 0, 7); fx.fill();
+          }
+          break;
+        }
+        case 'meteor': { // 流星:周期划入 → 撞击闪光 → 冲击环
+          const cyc = ((t * 0.25 + ph * 0.13) % 1);
+          fx.font = EGG_FONT(base * 0.92);
+          fx.fillText(g.e, x, y);
+          if (cyc < 0.22) { // 划入
+            const k = cyc / 0.22;
+            const sx = x + (1 - k) * 90, sy = y - (1 - k) * 120;
+            const grd = fx.createLinearGradient(sx + 26, sy - 36, sx, sy);
+            grd.addColorStop(0, 'rgba(255,210,140,0)'); grd.addColorStop(1, 'rgba(255,230,170,.95)');
+            fx.strokeStyle = grd; fx.lineWidth = 2.6;
+            fx.beginPath(); fx.moveTo(sx + 26, sy - 36); fx.lineTo(sx, sy); fx.stroke();
+            fx.fillStyle = '#FFE9B0';
+            fx.beginPath(); fx.arc(sx, sy, 3.2, 0, 7); fx.fill();
+          } else if (cyc < 0.5) { // 冲击环
+            const k = (cyc - 0.22) / 0.28;
+            fx.strokeStyle = `rgba(255,190,120,${(1 - k) * 0.9})`;
+            fx.lineWidth = 2.2 * (1 - k) + 0.6;
+            fx.beginPath(); fx.arc(x, y, 6 + k * 34, 0, 7); fx.stroke();
+            if (k < 0.3) { fx.font = EGG_FONT(base * (1 + k)); fx.globalAlpha = a * (1 - k * 3); fx.fillText('💥', x, y); fx.globalAlpha = a; }
+          }
+          break;
+        }
+        case 'burst': { // 火山/核:呼吸辉光 + 周期冲击波
+          const glow = 0.5 + 0.5 * Math.sin(t * 2 + ph);
+          const gr = fx.createRadialGradient(x, y, 0, x, y, 30);
+          gr.addColorStop(0, `rgba(255,120,60,${0.28 * glow * a})`); gr.addColorStop(1, 'rgba(255,120,60,0)');
+          fx.fillStyle = gr; fx.beginPath(); fx.arc(x, y, 30, 0, 7); fx.fill();
+          const cyc = ((t * 0.4 + ph * 0.21) % 1);
+          if (cyc < 0.45) {
+            const k = cyc / 0.45;
+            fx.strokeStyle = `rgba(255,150,80,${(1 - k) * 0.8})`;
+            fx.lineWidth = 2 * (1 - k) + 0.5;
+            fx.beginPath(); fx.arc(x, y, 8 + k * 30, 0, 7); fx.stroke();
+          }
+          fx.font = EGG_FONT(base);
+          fx.fillText(g.e, x, y);
+          break;
+        }
+        case 'rise': { // 石像:周期破土而出 + 尘粒
+          const cyc = ((t * 0.22 + ph * 0.19) % 1);
+          const up = cyc < 0.35 ? (cyc / 0.35) : 1;          // 前35%上升,之后立定
+          const ease = 1 - Math.pow(1 - up, 3);
+          const h = base * 1.1;
+          fx.save();
+          fx.beginPath(); fx.rect(x - h, y - h * 1.15, h * 2, h * 1.35); fx.clip(); // 地平线裁剪
+          fx.font = EGG_FONT(base * 1.05);
+          fx.fillText(g.e, x, y + (1 - ease) * h * 0.95 + Math.sin(t * 14) * (up < 1 ? 0.8 : 0)); // 上升时微震
+          fx.restore();
+          fx.strokeStyle = `rgba(200,180,150,${a * 0.5})`;
+          fx.lineWidth = 1; fx.beginPath(); fx.moveTo(x - h * 0.9, y + h * 0.2); fx.lineTo(x + h * 0.9, y + h * 0.2); fx.stroke();
+          if (up < 1) {
+            fx.fillStyle = `rgba(210,190,160,${a * 0.7})`;
+            for (let i = 0; i < 4; i++) {
+              const dk = ((t * 1.4 + i * 0.31) % 1);
+              fx.globalAlpha = a * (1 - dk) * 0.6;
+              fx.beginPath(); fx.arc(x + (i - 1.5) * 8, y + h * 0.18 - dk * 9, 1.3, 0, 7); fx.fill();
+            }
+          }
+          break;
+        }
+        case 'launch': { // 火箭:蓄势喷汽 → 点火上升 → 复位
+          const cyc = ((t * 0.18 + ph * 0.11) % 1);
+          let oy = 0, flame = 0;
+          if (cyc > 0.62 && cyc < 0.86) { const k = (cyc - 0.62) / 0.24; oy = -k * k * 70; flame = 1; }
+          else if (cyc >= 0.86) { oy = -9999; } // 出画,等下一轮
+          if (oy > -9000) {
+            fx.font = EGG_FONT(base);
+            fx.save(); fx.translate(x, y + oy); fx.rotate(-0.6); fx.fillText('🚀', 0, 0); fx.restore();
+            if (flame) {
+              fx.fillStyle = `rgba(255,190,90,${a * 0.9})`;
+              fx.beginPath();
+              fx.moveTo(x - 3 + 8, y + oy + 8); fx.lineTo(x + 3 + 8, y + oy + 8); fx.lineTo(x + 8, y + oy + 20 + Math.random() * 5);
+              fx.closePath(); fx.fill();
+            } else {
+              fx.fillStyle = `rgba(220,220,220,${a * 0.35})`;
+              const sk = ((t * 0.8) % 1);
+              fx.beginPath(); fx.arc(x + 10, y + 12 + sk * 4, 3 + sk * 3, 0, 7); fx.fill();
+            }
+          }
+          break;
+        }
+        case 'ripple': { // 深海/溅落:同心涟漪
+          for (let i = 0; i < 2; i++) {
+            const k = ((t * 0.5 + i * 0.5 + ph * 0.3) % 1);
+            fx.strokeStyle = `rgba(120,200,255,${(1 - k) * 0.65})`;
+            fx.lineWidth = 1.6 * (1 - k) + 0.4;
+            fx.beginPath(); fx.ellipse(x, y + 8, 6 + k * 26, (6 + k * 26) * 0.38, 0, 0, 7); fx.stroke();
+          }
+          fx.font = EGG_FONT(base);
+          fx.fillText(g.e, x, y - 2 + Math.sin(t * 1.3 + ph) * 2);
+          break;
+        }
+        default: { // shimmer / flag:幽浮闪烁 or 旗帜飘动
+          if (g.anim === 'flag') {
+            fx.font = EGG_FONT(base);
+            fx.save(); fx.translate(x, y);
+            fx.rotate(Math.sin(t * 3 + ph) * 0.06);
+            fx.fillText(g.e, 0, 0); fx.restore();
+            const sp = ((t * 0.7 + ph * 0.4) % 1);
+            if (sp < 0.3) { fx.font = EGG_FONT(11); fx.globalAlpha = a * (1 - sp / 0.3); fx.fillText('✨', x + 14, y - 12); }
+          } else {
+            fx.globalAlpha = a * (0.5 + 0.4 * Math.sin(t * 1.6 + ph));
+            fx.font = EGG_FONT(base);
+            fx.fillText(g.e, x + Math.sin(t * 0.9 + ph) * 2.5, y);
+          }
+        }
+      }
+      fx.restore();
+    }
+  }
+  function pickEgg(mx, my) {
+    for (const g of EGGS) {
+      if ((g._a || 0) < 0.5) continue;
+      if ((mx - g._x) ** 2 + (my - g._y) ** 2 < 24 * 24) return g;
+    }
+    return null;
+  }
+  function openEggDetail(g) {
+    detail.style.setProperty('--c', '#E9B44C');
+    detail.innerHTML =
+      '<button class="dt-close" aria-label="关闭">✕</button>' +
+      '<span class="dt-domain"><span class="dot"></span>彩蛋 · 地球奇闻</span>' +
+      '<h2 style="display:flex;align-items:center;gap:10px"><span style="font-size:34px">' + g.e + '</span>' + g.t + '</h2>' +
+      '<div class="dt-meta"><span class="badge">' + g.yr + '</span><span class="badge">' + g.lat.toFixed(1) + '°, ' + g.lon.toFixed(1) + '°</span></div>' +
+      '<p class="dt-gist">' + g.gist + '</p>' +
+      '<div class="dt-sec">出处</div><p class="dt-detail">' + g.src + '</p>' +
+      '<div class="dt-note">彩蛋层:拉近地球到点位附近才会现身——还有 ' + (EGGS.length - 1) + ' 个藏在各处</div>';
+    detail.classList.add('on');
+    detail.querySelector('.dt-close').onclick = closeDetail;
+    dismissHint();
+  }
+
   // —— 主循环 ——
   let lastGlobeOp = -1;
   function frame(now) {
@@ -475,6 +659,7 @@
     drawEdges();
     if (!GLOBE3D) drawArcs(dt);
     drawNodes(dt);
+    updateEggs(dt); drawEggs(dt);
     drawTradeLabels();
     // 地球自转/播放时鼠标不动,悬停会过期:低频在原地重拾取
     if ((S._hoverT = (S._hoverT || 0) + dt) > 0.25) {
@@ -1247,6 +1432,8 @@
     if (wasPan) { document.body.style.cursor = ''; return; }  // 平移收尾不算点选
     if (moved > 5 || dt > 600) return;                        // 拖拽/长按不算点选
     if (wasUi) return;
+    const egg = pickEgg(e.clientX, e.clientY);
+    if (egg) { S.clickHandledAt = performance.now(); openEggDetail(egg); return; }
     const id = pick(e.clientX, e.clientY);
     if (id) { S.clickHandledAt = performance.now(); openDetail(id); }
   }
