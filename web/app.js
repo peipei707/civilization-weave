@@ -461,18 +461,47 @@
         if (d > 0.90) want = 1; // 视野中心 ~26° 内才现身:必须"逛到附近"
       }
       g._a = smooth(g._a, want, 0.1, dt);
+      // 悬停判定坐标:不论是否现身都记录(藏着时悬到附近→放大镜光标提示"这里有货")
+      if (g._front > 0.35) { g._hx = g._gx; g._hy = g._gy; } else { g._hx = -9999; g._hy = -9999; }
     }
+  }
+  function eggAt(mx, my) {
+    if (S.morph > 0.5) return null;
+    for (const g of EGGS) {
+      if ((mx - g._hx) ** 2 + (my - g._hy) ** 2 < 24 * 24) return g;
+    }
+    return null;
   }
   function drawEggs(dt) {
     if (!GLOBE3D || S.morph > 0.5) return;
     const t = S.t;
     for (const g of EGGS) {
       const a = g._a;
-      if (a < 0.02 || !(g._front > 0)) { g._x = -9999; continue; }
+      const hov = S.eggHover === g;
+      if (a < 0.02 || !(g._front > 0)) {
+        g._x = -9999;
+        // 未现身但被悬停:一圈呼吸金环示意"放大看看这里"
+        if (hov && g._hx > -9000) {
+          const k = 0.5 + 0.5 * Math.sin(t * 4);
+          fx.save();
+          fx.strokeStyle = `rgba(233,180,76,${0.22 + 0.2 * k})`;
+          fx.lineWidth = 1.4; fx.setLineDash([4, 5]);
+          fx.beginPath(); fx.arc(g._hx, g._hy, 13 + k * 3, 0, 7); fx.stroke();
+          fx.restore();
+        }
+        continue;
+      }
       const x = g._gx, y = g._gy;
       g._x = x; g._y = y;
-      const pop = 0.6 + 0.4 * a;             // 出场弹性
-      const base = 26 * pop;                 // 表情字号
+      const pop = (0.6 + 0.4 * a) * (hov ? 1.25 : 1); // 出场弹性;悬停放大
+      const base = 26 * pop;                          // 表情字号
+      if (hov) { // 悬停高亮环
+        fx.save();
+        fx.strokeStyle = 'rgba(233,180,76,.75)';
+        fx.lineWidth = 1.6; fx.setLineDash([5, 4]);
+        fx.beginPath(); fx.arc(x, y, base * 0.85, 0, 7); fx.stroke();
+        fx.restore();
+      }
       const ph = (g.id.charCodeAt(4) || 7);  // 相位错开
       fx.save();
       fx.globalAlpha = a;
@@ -835,7 +864,8 @@
       if (GLOBE3D) GlobeView.setFocus(S.hover, S.sel);
     }
     if (id) showMicro(id, S.mx, S.my); else microcard.classList.remove('on');
-    const cur = id ? 'pointer' : (S.terrHover ? 'help' : 'default');
+    // 光标权重:彩蛋(放大镜)> 知识点(手)> 版图(?)
+    const cur = S.eggHover ? 'zoom-in' : id ? 'pointer' : (S.terrHover ? 'help' : 'default');
     globeEl.style.cursor = cur; document.body.style.cursor = GLOBE3D ? '' : cur;
   }
 
@@ -1409,7 +1439,9 @@
       microcard.classList.remove('on');
       return;
     }
-    S.hover2d = e.target.closest && e.target.closest(UI_SEL) ? null : pick(S.mx, S.my);
+    const onUi = e.target.closest && e.target.closest(UI_SEL);
+    S.hover2d = onUi ? null : pick(S.mx, S.my);
+    S.eggHover = onUi || !GLOBE3D ? null : eggAt(S.mx, S.my);
     applyHover();
   }
   // 节点点击走 pointerup 捕获:globe.gl 在 pointerup(早于 click)就派发自己的点击,
