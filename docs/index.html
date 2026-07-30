@@ -3397,6 +3397,9 @@ window.GlobeView = (function () {
     hqTimer = setTimeout(() => { hqTimer = null; hqUpdate(); }, 450);
   }
   async function hqUpdate() {
+    // file:// 双击打开时,本地图片会被当跨源污染画布,WebGL 拒收纹理 → 补丁必黑;
+    // 此时直接退回内联 4096 底图(自包含单文件模式的清晰度上限)
+    if (location.protocol === 'file:') return;
     const pov = G.pointOfView();
     if (!(realOn && !potatoOn && pov.altitude < 0.62)) { if (hqMesh) hqRemove(); return; }
     let c0 = Math.floor((pov.lng + 180) / 45 - 0.5);
@@ -3418,6 +3421,8 @@ window.GlobeView = (function () {
       try { x.filter = 'brightness(1.45) saturate(1.25)'; } catch (e) { } // 与实景基底同亮度
       let i = 0;
       for (let dr = 0; dr < 2; dr++) for (let dc = 0; dc < 2; dc++) x.drawImage(imgs[i++], dc * S, dr * S, S, S);
+      // 画布污染硬检测:被跨源图污染的画布读像素会抛 SecurityError,这种画布上 GPU 只会渲黑
+      try { x.getImageData(0, 0, 1, 1); } catch (e) { hqBusy = false; return; }
       // 顶点网格:90°×90° 窗,96×96 格,叠地形位移(与球面 displacement 同公式)
       const lon0 = c0 * 45 - 180, lat1 = 90 - r0 * 45;
       const N = 96, hs = hqHeightSampler();
