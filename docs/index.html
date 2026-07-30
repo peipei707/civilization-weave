@@ -531,6 +531,24 @@ body { touch-action: none; }
   .searchbox { order: 3; flex: 1 1 100%; margin: 8px 0 0; }
   .sb-res { width: 100%; }
 }
+
+/* —— 手机布局收拾(统一压轴覆盖):顶栏一行品牌+按钮、搜索独占次行,面板让出地球 —— */
+@media (max-width: 640px) {
+  .brand .eyebrow, .brand .sub { display: none; }
+  .brand h1 { font-size: 17px; line-height: 1.2; }
+  .topbar { padding: 9px 10px 8px; gap: 6px; align-items: center; }
+  .modes { margin-left: auto; gap: 4px; flex-wrap: nowrap; }
+  .modes button { padding: 5px 8px; font-size: 11px; letter-spacing: 0; }
+  .searchbox { order: 3; flex: 1 1 100%; margin: 7px 0 0; }
+  .legend { top: 92px; left: 8px; }
+  .popbox { top: 92px; right: 8px; width: 148px; }
+  .detail { width: 100vw; padding: 22px 16px 18px; }
+  .microcard { max-width: 72vw; }
+  .attrib, .hint { display: none; }
+  .trade-key { bottom: 118px; max-width: 94vw; }
+  .tl-era { display: none; }
+  .tl-ticks { display: none; }
+}
 </style>
 </head>
 <body>
@@ -3392,12 +3410,14 @@ window.GlobeView = (function () {
         jobs.push(hqLoadTile(((c0 + dc) % 8 + 8) % 8, r0 + dr));
       const imgs = await Promise.all(jobs);
       if (imgs.some(x => !x)) { hqBusy = false; return; }
-      const S = 2700;
+      let maxTex = 4096;
+      try { maxTex = G.renderer().capabilities.maxTextureSize || 4096; } catch (e) { }
+      const S = maxTex >= 8192 ? 2700 : 1350; // 弱GPU(多数手机上限4096)降半采样,纹理超限同样渲黑
       const cv = document.createElement('canvas'); cv.width = S * 2; cv.height = S * 2;
       const x = cv.getContext('2d');
       try { x.filter = 'brightness(1.45) saturate(1.25)'; } catch (e) { } // 与实景基底同亮度
       let i = 0;
-      for (let dr = 0; dr < 2; dr++) for (let dc = 0; dc < 2; dc++) x.drawImage(imgs[i++], dc * S, dr * S);
+      for (let dr = 0; dr < 2; dr++) for (let dc = 0; dc < 2; dc++) x.drawImage(imgs[i++], dc * S, dr * S, S, S);
       // 顶点网格:90°×90° 窗,96×96 格,叠地形位移(与球面 displacement 同公式)
       const lon0 = c0 * 45 - 180, lat1 = 90 - r0 * 45;
       const N = 96, hs = hqHeightSampler();
@@ -3431,6 +3451,7 @@ window.GlobeView = (function () {
       geo.setAttribute('position', new BufAttr(posArr, 3));
       geo.setAttribute('uv', new BufAttr(uvArr, 2));
       geo.setIndex(idx);
+      geo.computeVertexNormals(); // Phong 没法线在部分驱动上算出 NaN → 整块补丁渲成全黑(线上黑屏事故根源)
       const tex = new (m0.map.constructor)(cv);
       tex.colorSpace = 'srgb';
       try { tex.anisotropy = G.renderer().capabilities.getMaxAnisotropy(); } catch (e) { }
@@ -4379,16 +4400,32 @@ window.GlobeView = (function () {
       counts[it.d]++;
       if (it.sub) { const k = it.d + ':' + it.sub; subCounts[k] = (subCounts[k] || 0) + 1; }
     });
+    const domBtns = []; // 领域按钮池:solo 时统一刷状态
+    let soloId = null;  // 记住当前独显者(不能看 enabled 推断:双击前必经的单击会把状态搅乱)
+    const soloDomain = id => {
+      S.enabled.clear();
+      if (soloId === id) { DATA.domains.forEach(x => S.enabled.add(x.id)); soloId = null; } // 再双击 → 恢复全部
+      else { S.enabled.add(id); soloId = id; }                                              // 只看这一个
+      domBtns.forEach(([bid, btn]) => btn.setAttribute('aria-pressed', S.enabled.has(bid)));
+      if (GLOBE3D) GlobeView.setEnabled();
+      dismissHint();
+    };
     DATA.domains.forEach(d => {
       const row = document.createElement('div'); row.className = 'lg-row';
       const b = document.createElement('button');
       b.setAttribute('aria-pressed', 'true'); b.style.setProperty('--c', d.color);
+      b.title = '单击:开/关 · 双击:只看' + d.name;
       b.innerHTML = '<span class="dot"></span><span class="nm">' + d.name + '</span><span class="ct">' + counts[d.id] + '</span>';
+      let lastTap = 0;
       b.onclick = () => {
+        const now = performance.now();
+        if (now - lastTap < 350) { lastTap = 0; soloDomain(d.id); return; } // 双击/双触=只看
+        lastTap = now;
         if (S.enabled.has(d.id)) S.enabled.delete(d.id); else S.enabled.add(d.id);
         b.setAttribute('aria-pressed', S.enabled.has(d.id));
         if (GLOBE3D) GlobeView.setEnabled();
       };
+      domBtns.push([d.id, b]);
       row.appendChild(b);
       // 分支:该领域有带 sub 的条目才给展开箭头
       const subs = (SUBCATS[d.id] || []).filter(([slug]) => subCounts[d.id + ':' + slug]);

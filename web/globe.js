@@ -358,12 +358,14 @@ window.GlobeView = (function () {
         jobs.push(hqLoadTile(((c0 + dc) % 8 + 8) % 8, r0 + dr));
       const imgs = await Promise.all(jobs);
       if (imgs.some(x => !x)) { hqBusy = false; return; }
-      const S = 2700;
+      let maxTex = 4096;
+      try { maxTex = G.renderer().capabilities.maxTextureSize || 4096; } catch (e) { }
+      const S = maxTex >= 8192 ? 2700 : 1350; // 弱GPU(多数手机上限4096)降半采样,纹理超限同样渲黑
       const cv = document.createElement('canvas'); cv.width = S * 2; cv.height = S * 2;
       const x = cv.getContext('2d');
       try { x.filter = 'brightness(1.45) saturate(1.25)'; } catch (e) { } // 与实景基底同亮度
       let i = 0;
-      for (let dr = 0; dr < 2; dr++) for (let dc = 0; dc < 2; dc++) x.drawImage(imgs[i++], dc * S, dr * S);
+      for (let dr = 0; dr < 2; dr++) for (let dc = 0; dc < 2; dc++) x.drawImage(imgs[i++], dc * S, dr * S, S, S);
       // 顶点网格:90°×90° 窗,96×96 格,叠地形位移(与球面 displacement 同公式)
       const lon0 = c0 * 45 - 180, lat1 = 90 - r0 * 45;
       const N = 96, hs = hqHeightSampler();
@@ -397,6 +399,7 @@ window.GlobeView = (function () {
       geo.setAttribute('position', new BufAttr(posArr, 3));
       geo.setAttribute('uv', new BufAttr(uvArr, 2));
       geo.setIndex(idx);
+      geo.computeVertexNormals(); // Phong 没法线在部分驱动上算出 NaN → 整块补丁渲成全黑(线上黑屏事故根源)
       const tex = new (m0.map.constructor)(cv);
       tex.colorSpace = 'srgb';
       try { tex.anisotropy = G.renderer().capabilities.getMaxAnisotropy(); } catch (e) { }

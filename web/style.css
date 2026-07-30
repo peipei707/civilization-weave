@@ -525,3 +525,21 @@ body { touch-action: none; }
   .searchbox { order: 3; flex: 1 1 100%; margin: 8px 0 0; }
   .sb-res { width: 100%; }
 }
+
+/* —— 手机布局收拾(统一压轴覆盖):顶栏一行品牌+按钮、搜索独占次行,面板让出地球 —— */
+@media (max-width: 640px) {
+  .brand .eyebrow, .brand .sub { display: none; }
+  .brand h1 { font-size: 17px; line-height: 1.2; }
+  .topbar { padding: 9px 10px 8px; gap: 6px; align-items: center; }
+  .modes { margin-left: auto; gap: 4px; flex-wrap: nowrap; }
+  .modes button { padding: 5px 8px; font-size: 11px; letter-spacing: 0; }
+  .searchbox { order: 3; flex: 1 1 100%; margin: 7px 0 0; }
+  .legend { top: 92px; left: 8px; }
+  .popbox { top: 92px; right: 8px; width: 148px; }
+  .detail { width: 100vw; padding: 22px 16px 18px; }
+  .microcard { max-width: 72vw; }
+  .attrib, .hint { display: none; }
+  .trade-key { bottom: 118px; max-width: 94vw; }
+  .tl-era { display: none; }
+  .tl-ticks { display: none; }
+}

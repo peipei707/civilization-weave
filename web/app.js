@@ -533,16 +533,32 @@
       counts[it.d]++;
       if (it.sub) { const k = it.d + ':' + it.sub; subCounts[k] = (subCounts[k] || 0) + 1; }
     });
+    const domBtns = []; // 领域按钮池:solo 时统一刷状态
+    let soloId = null;  // 记住当前独显者(不能看 enabled 推断:双击前必经的单击会把状态搅乱)
+    const soloDomain = id => {
+      S.enabled.clear();
+      if (soloId === id) { DATA.domains.forEach(x => S.enabled.add(x.id)); soloId = null; } // 再双击 → 恢复全部
+      else { S.enabled.add(id); soloId = id; }                                              // 只看这一个
+      domBtns.forEach(([bid, btn]) => btn.setAttribute('aria-pressed', S.enabled.has(bid)));
+      if (GLOBE3D) GlobeView.setEnabled();
+      dismissHint();
+    };
     DATA.domains.forEach(d => {
       const row = document.createElement('div'); row.className = 'lg-row';
       const b = document.createElement('button');
       b.setAttribute('aria-pressed', 'true'); b.style.setProperty('--c', d.color);
+      b.title = '单击:开/关 · 双击:只看' + d.name;
       b.innerHTML = '<span class="dot"></span><span class="nm">' + d.name + '</span><span class="ct">' + counts[d.id] + '</span>';
+      let lastTap = 0;
       b.onclick = () => {
+        const now = performance.now();
+        if (now - lastTap < 350) { lastTap = 0; soloDomain(d.id); return; } // 双击/双触=只看
+        lastTap = now;
         if (S.enabled.has(d.id)) S.enabled.delete(d.id); else S.enabled.add(d.id);
         b.setAttribute('aria-pressed', S.enabled.has(d.id));
         if (GLOBE3D) GlobeView.setEnabled();
       };
+      domBtns.push([d.id, b]);
       row.appendChild(b);
       // 分支:该领域有带 sub 的条目才给展开箭头
       const subs = (SUBCATS[d.id] || []).filter(([slug]) => subCounts[d.id + ':' + slug]);
