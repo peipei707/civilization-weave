@@ -3977,7 +3977,10 @@ window.GlobeView = (function () {
   }
   const curYear = () => fracToYear(S.frac);
   const curYear0 = () => S.frac0 < 0.002 ? -3300001 : fracToYear(S.frac0); // 贴左端=全包含
-  const itemOn = it => S.enabled.has(it.d) && !(it.sub && S.subOff.has(it.d + ':' + it.sub));
+  // soloSub = 'art:painting' 之类:只看这一个小类(双击子类触发),优先级高于领域/子类开关
+  const itemOn = it => S.soloSub
+    ? (it.d + ':' + (it.sub || '')) === S.soloSub
+    : S.enabled.has(it.d) && !(it.sub && S.subOff.has(it.d + ':' + it.sub));
 
   function eraOf(y) {
     if (y < -70000) return '深史前 · 人类摇篮';
@@ -4400,13 +4403,36 @@ window.GlobeView = (function () {
       counts[it.d]++;
       if (it.sub) { const k = it.d + ':' + it.sub; subCounts[k] = (subCounts[k] || 0) + 1; }
     });
-    const domBtns = []; // 领域按钮池:solo 时统一刷状态
-    let soloId = null;  // 记住当前独显者(不能看 enabled 推断:双击前必经的单击会把状态搅乱)
+    const domBtns = [];  // 领域按钮池:solo 时统一刷状态
+    const subBtns = [];  // 子类按钮池 [key, btn]
+    let soloId = null;   // 记住当前独显领域(不能看 enabled 推断:双击前必经的单击会把状态搅乱)
+    const syncAllBtns = () => {
+      domBtns.forEach(([bid, btn]) => btn.setAttribute('aria-pressed', S.enabled.has(bid)));
+      subBtns.forEach(([k, btn]) => btn.setAttribute('aria-pressed', !S.subOff.has(k)));
+    };
+    const exitSoloSub = () => { // 退出子类独显 → 全部恢复
+      if (!S.soloSub) return;
+      S.soloSub = null;
+      S.enabled.clear(); DATA.domains.forEach(x => S.enabled.add(x.id));
+      S.subOff.clear();
+      syncAllBtns();
+    };
     const soloDomain = id => {
+      S.soloSub = null;
       S.enabled.clear();
       if (soloId === id) { DATA.domains.forEach(x => S.enabled.add(x.id)); soloId = null; } // 再双击 → 恢复全部
       else { S.enabled.add(id); soloId = id; }                                              // 只看这一个
-      domBtns.forEach(([bid, btn]) => btn.setAttribute('aria-pressed', S.enabled.has(bid)));
+      syncAllBtns();
+      if (GLOBE3D) GlobeView.setEnabled();
+      dismissHint();
+    };
+    const soloSub = (key, did) => { // 双击子类:只看这一个小类;再双击恢复全部(单击已延迟化,活状态判定可靠)
+      if (S.soloSub === key) { exitSoloSub(); }
+      else {
+        S.soloSub = key; soloId = null;
+        domBtns.forEach(([bid, btn]) => btn.setAttribute('aria-pressed', bid === did));
+        subBtns.forEach(([k, btn]) => btn.setAttribute('aria-pressed', k === key));
+      }
       if (GLOBE3D) GlobeView.setEnabled();
       dismissHint();
     };
@@ -4421,6 +4447,7 @@ window.GlobeView = (function () {
         const now = performance.now();
         if (now - lastTap < 350) { lastTap = 0; soloDomain(d.id); return; } // 双击/双触=只看
         lastTap = now;
+        exitSoloSub(); // 子类独显中来任何单击 → 先恢复再执行开关
         if (S.enabled.has(d.id)) S.enabled.delete(d.id); else S.enabled.add(d.id);
         b.setAttribute('aria-pressed', S.enabled.has(d.id));
         if (GLOBE3D) GlobeView.setEnabled();
@@ -4439,12 +4466,21 @@ window.GlobeView = (function () {
           const c = document.createElement('button');
           c.className = 'lg-sub'; c.style.setProperty('--c', d.color);
           c.setAttribute('aria-pressed', 'true');
+          c.title = '单击:开/关 · 双击:只看「' + name + '」';
           c.innerHTML = '<span class="dot"></span>' + name + '<span class="ct">' + subCounts[key] + '</span>';
+          let subTimer = null;
           c.onclick = () => {
-            if (S.subOff.has(key)) S.subOff.delete(key); else S.subOff.add(key);
-            c.setAttribute('aria-pressed', !S.subOff.has(key));
-            if (GLOBE3D) GlobeView.setEnabled();
+            // 单击延迟 300ms 执行;窗口内第二击=双击独显,并取消单击(否则单击会先清掉独显态,恢复判定必错)
+            if (subTimer) { clearTimeout(subTimer); subTimer = null; soloSub(key, d.id); return; }
+            subTimer = setTimeout(() => {
+              subTimer = null;
+              exitSoloSub();
+              if (S.subOff.has(key)) S.subOff.delete(key); else S.subOff.add(key);
+              c.setAttribute('aria-pressed', !S.subOff.has(key));
+              if (GLOBE3D) GlobeView.setEnabled();
+            }, 300);
           };
+          subBtns.push([key, c]);
           subBox.appendChild(c);
         });
         caret.onclick = () => {
