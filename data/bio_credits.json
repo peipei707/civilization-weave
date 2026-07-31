@@ -1,0 +1,199 @@
+{
+ "bald-eagle": {
+  "silhouette": {
+   "src": "PhyloPic",
+   "url": "https://images.phylopic.org/images/80064052-3255-4b19-9125-5a0c79dec5bf/raster/1536x655.png",
+   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Andy Wilson",
+   "matched": "Haliaeetus leucocephalus",
+   "level": "species"
+  }
+ },
+ "american-bison": {
+  "src": "iNaturalist",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/297923496/medium.jpg",
+  "license": "cc0",
+  "author": "no rights reserved, uploaded by Kathlin Simpkins",
+  "matched": "Bos bison",
+  "size": [
+   376,
+   249
+  ],
+  "opaque": 0.566,
+  "sci": "Bison bison"
+ },
+ "pronghorn": {
+  "src": "iNaturalist",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/250039273/medium.jpg",
+  "license": "cc-by-nc",
+  "author": "(c) Aidan Campos, some rights reserved (CC BY-NC), uploaded by Aidan Campos",
+  "matched": "Antilocapra americana",
+  "size": [
+   312,
+   260
+  ],
+  "opaque": 0.334,
+  "sci": "Antilocapra americana",
+  "silhouette": {
+   "src": "PhyloPic",
+   "url": "https://images.phylopic.org/images/26f9f4f5-135c-42e2-959a-9d27848b33d7/raster/1536x1440.png",
+   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Caleb M. Gordon",
+   "matched": "Antilocapra americana",
+   "level": "species"
+  }
+ },
+ "saguaro-cactus": {
+  "src": "iNaturalist",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/77029090/medium.jpg",
+  "license": "cc-by-nc",
+  "author": "(c) Marianne Skov Jensen, some rights reserved (CC BY-NC), uploaded by Marianne Skov Jensen",
+  "matched": "Carnegiea gigantea",
+  "size": [
+   326,
+   372
+  ],
+  "opaque": 0.09,
+  "sci": "Carnegiea gigantea",
+  "silhouette": {
+   "src": "PhyloPic",
+   "url": "https://images.phylopic.org/images/6942bca0-cce0-49a8-bca9-3a042da3655d/raster/809x1536.png",
+   "license": "https://creativecommons.org/licenses/by/4.0/",
+   "author": "Gabriela Palomo-Munoz",
+   "matched": "Carnegiea gigantea",
+   "level": "species"
+  }
+ },
+ "american-alligator": {
+  "src": "iNaturalist",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/446571555/medium.jpg",
+  "license": "cc-by-nc",
+  "author": "(c) sandiwheeler, some rights reserved (CC BY-NC), uploaded by sandiwheeler",
+  "matched": "Alligator mississippiensis",
+  "size": [
+   457,
+   324
+  ],
+  "opaque": 0.292,
+  "sci": "Alligator mississippiensis",
+  "silhouette": {
+   "src": "PhyloPic",
+   "url": "https://images.phylopic.org/images/0f07b2f6-92f5-40df-9cb0-6f30cb18dc60/raster/1512x1536.png",
+   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Caleb M. Gordon",
+   "matched": "Alligator mississippiensis",
+   "level": "species"
+  }
+ },
+ "monarch-butterfly": {
+  "src": "iNaturalist",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/227923335/medium.jpeg",
+  "license": "cc-by-nc-sa",
+  "author": "(c) Alejandro Lopez, some rights reserved (CC BY-NC-SA), uploaded by Alejandro Lopez",
+  "matched": "Danaus plexippus",
+  "size": [
+   428,
+   252
+  ],
+  "opaque": 0.432,
+  "sci": "Danaus plexippus",
+  "silhouette": {
+   "src": "PhyloPic",
+   "url": "https://images.phylopic.org/images/e2cdafc4-2e97-45e3-8799-1a965fc24d85/raster/1536x885.png",
+   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Andy Wilson",
+   "matched": "Danaus plexippus",
+   "level": "species"
+  }
+ },
+ "periodical-cicada": {
+  "src": "iNaturalist",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/5139584/medium.jpg",
+  "license": "cc-by-nc",
+  "author": "(c) jsatler, some rights reserved (CC BY-NC), uploaded by jsatler",
+  "matched": "Magicicada septendecim",
+  "size": [
+   453,
+   250
+  ],
+  "opaque": 0.206,
+  "sci": "Magicicada septendecim",
+  "silhouette": {
+   "src": "PhyloPic",
+   "url": "https://images.phylopic.org/images/97fbc065-760a-4a23-bada-ce88871eeded/raster/1536x741.png",
+   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Caleb M. Gordon",
+   "matched": "Magicicada",
+   "level": "genus"
+  }
+ },
+ "snowy-owl": {
+  "src": "iNaturalist",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/150549757/medium.jpg",
+  "license": "cc-by-nc-sa",
+  "author": "(c) Patrick Randall, some rights reserved (CC BY-NC-SA)",
+  "matched": "Bubo scandiacus",
+  "size": [
+   450,
+   224
+  ],
+  "opaque": 0.177,
+  "sci": "Bubo scandiacus",
+  "silhouette": {
+   "src": "PhyloPic",
+   "url": "https://images.phylopic.org/images/ea71ef37-b1ce-428b-84d0-438d0d954f32/raster/1536x1408.png",
+   "license": "https://creativecommons.org/publicdomain/mark/1.0/",
+   "author": "xgirouxb",
+   "matched": "Bubo scandiacus",
+   "level": "species"
+  }
+ },
+ "scarlet-macaw": {
+  "src": "iNaturalist",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/233350330/medium.jpg",
+  "license": "cc-by-nc",
+  "author": "(c) Matthew Patchett, some rights reserved (CC BY-NC), uploaded by Matthew Patchett",
+  "matched": "Ara macao",
+  "size": [
+   271,
+   256
+  ],
+  "opaque": 0.234,
+  "sci": "Ara macao",
+  "silhouette": {
+   "src": "PhyloPic",
+   "url": "https://images.phylopic.org/images/0d19238f-25ca-42a5-a1e2-d108defb75f1/raster/731x1536.png",
+   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "author": "Myriam_Ramirez",
+   "matched": "Ara macao",
+   "level": "species"
+  }
+ },
+ "coast-redwood": {
+  "src": "iNaturalist",
+  "url": "https://static.inaturalist.org/photos/61295436/medium.jpeg",
+  "license": "unknown",
+  "author": "(c) kmvogelsang, all rights reserved, uploaded by kmvogelsang",
+  "matched": "Sequoia sempervirens",
+  "size": [
+   296,
+   374
+  ],
+  "opaque": 0.0,
+  "sci": "Sequoia sempervirens",
+  "review": "主体占比过低,疑似抠错"
+ },
+ "jaguar": {
+  "src": "iNaturalist",
+  "url": "https://static.inaturalist.org/photos/51015966/medium.jpg",
+  "license": "unknown",
+  "author": "(c) rdwilcox51, all rights reserved, uploaded by rdwilcox51",
+  "matched": "Panthera onca",
+  "size": [
+   414,
+   230
+  ],
+  "opaque": 0.336,
+  "sci": "Panthera onca"
+ }
+}

@@ -8,3 +8,7 @@ data/_egm96.tar.bz2
 web/tiles/
 web/index_offline.html
 离线超清版.html
+data/.rembg_models/
+data/bio_test/
+data/_owid_*.csv
+data/geoids/
